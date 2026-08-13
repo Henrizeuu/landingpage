@@ -21,8 +21,13 @@ st.markdown("Insira os dados do prestador de serviço abaixo para raspar as info
 # ==========================================
 with st.sidebar:
     st.header("🔑 Configurações de API")
-    apify_token = st.text_input("Apify API Token", value="apify_api_HrvGIIfKg85b3my2mKw1LemyZnbK134kJQbr", type="password")
-    gemini_key = st.text_input("Gemini API Key", value="AIzaSyCAMwvIyo1fRIjdrHPVFTwbIds2COS7Rng", type="password")
+    
+    # Tenta puxar dos segredos do Streamlit; se não achar, deixa em branco
+    default_apify = st.secrets.get("APIFY_TOKEN", "")
+    default_gemini = st.secrets.get("GEMINI_API_KEY", "")
+    
+    apify_token = st.text_input("Apify API Token", value=default_apify, type="password")
+    gemini_key = st.text_input("Gemini API Key", value=default_gemini, type="password")
     
     st.header("📂 Arquivos Base Necessários")
     st.info("Certifique-se de que os arquivos `menu.txt`, `estrutura.txt` e os `.txt` dos componentes estão na mesma pasta que este script.")
