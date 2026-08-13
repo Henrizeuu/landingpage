@@ -1,0 +1,324 @@
+Estrutura de página para prestação de serviço ou profissional com WhatsApp
+Indicada para: advogados, nutricionistas, psicólogos, terapeutas, consultores, arquitetos, médicos, dentistas, personal trainers, social medias, gestores de tráfego, designers, contadores e outros profissionais que vendem por conversa.
+
+Problema específico
+Confiança
+Método
+Prova
+Agendamento
+WhatsApp
+Bloco 01 — Hero com promessa e CTA para WhatsApp
+O que tem na seção:
+
+Headline clara, subheadline, foto profissional ou imagem contextual, botão para WhatsApp e pequeno reforço de confiança.
+
+O objetivo:
+
+Fazer o visitante entender rapidamente qual problema o profissional resolve e iniciar uma conversa.
+
+O que colocar:
+
+Headline com especialidade e benefício.
+
+Subheadline explicando para quem é o atendimento.
+
+Foto profissional.
+
+Botão: “Agendar conversa pelo WhatsApp”, “Falar com a equipe” ou “Ver horários disponíveis”.
+
+Microprova: registro profissional, anos de experiência, cidade, modalidade online/presencial.
+
+Exemplo de lógica:
+
+“Nutrição comportamental para mulheres que querem melhorar a relação com a comida sem dietas extremas.”
+
+Bloco 02 — Identificação do problema
+O que tem na seção:
+
+Descrição das dores, dúvidas ou situações que levam a pessoa a buscar o serviço.
+
+O objetivo:
+
+Criar identificação e mostrar que o profissional entende o contexto do visitante.
+
+O que colocar:
+
+4 a 6 sinais de que a pessoa precisa de ajuda.
+
+Linguagem simples.
+
+Situações reais do cotidiano.
+
+Evitar promessas exageradas.
+
+Exemplo:
+
+“Você sente que já tentou resolver isso sozinha, mas sempre volta para o mesmo ponto?”
+
+Bloco 03 — Apresentação do profissional
+O que tem na seção:
+
+Foto, nome, formação, registro profissional quando aplicável, especialidade e posicionamento.
+
+O objetivo:
+
+Construir confiança.
+
+O que colocar:
+
+Nome completo.
+
+Formação.
+
+Registro profissional, quando houver.
+
+Especialização.
+
+Breve história ou motivo pelo qual atua naquela área.
+
+Abordagem de trabalho.
+
+Importante:
+
+Para profissões regulamentadas, mantenha o texto ético, sem prometer resultado garantido.
+
+Bloco 04 — Serviços ou áreas de atuação
+O que tem na seção:
+
+Lista dos serviços oferecidos ou principais demandas atendidas.
+
+O objetivo:
+
+Ajudar o visitante a identificar se aquele profissional atende exatamente o que ele procura.
+
+O que colocar:
+
+Cards por serviço.
+
+Nome do serviço.
+
+Breve explicação.
+
+Para quem é indicado.
+
+Botão secundário para WhatsApp, se a página for longa.
+
+Exemplo de estrutura:
+
+“Consulta individual”
+
+“Plano alimentar personalizado”
+
+“Acompanhamento mensal”
+
+“Atendimento para compulsão alimentar”
+
+Bloco 05 — Método de atendimento ou processo
+O que tem na seção:
+
+Passo a passo de como funciona a contratação ou atendimento.
+
+O objetivo:
+
+Reduzir ansiedade e tornar o próximo passo simples.
+
+O que colocar:
+
+1. Você chama no WhatsApp.
+
+2. A equipe entende sua necessidade.
+
+3. Você recebe as orientações ou horários.
+
+4. O atendimento é agendado.
+
+5. Você inicia o processo.
+
+Por que funciona:
+
+Serviços geralmente têm mais fricção do que produtos digitais. Explicar o processo ajuda a pessoa a agir.
+
+Bloco 06 — Provas de confiança
+O que tem na seção:
+
+Depoimentos, avaliações, certificações, aparições, cases, números ou evidências permitidas pela área.
+
+O objetivo:
+
+Mostrar que o profissional é confiável.
+
+O que colocar:
+
+Depoimentos autorizados.
+
+Avaliações do Google.
+
+Certificados.
+
+Participações em eventos.
+
+Fotos do espaço.
+
+Marcas atendidas, quando aplicável.
+
+Resultados de clientes apenas se forem permitidos pelas normas da profissão.
+
+Atenção:
+
+Para saúde, direito e outras áreas regulamentadas, avalie as regras do conselho profissional antes de usar depoimentos, antes/depois ou promessas de resultado.
+
+Bloco 07 — Benefícios do atendimento
+O que tem na seção:
+
+Benefícios práticos de contratar o serviço.
+
+O objetivo:
+
+Mostrar a transformação esperada sem prometer resultado absoluto.
+
+O que colocar:
+
+Mais clareza sobre o problema.
+
+Plano personalizado.
+
+Acompanhamento.
+
+Segurança no processo.
+
+Economia de tempo.
+
+Direcionamento profissional.
+
+Modelo de frase:
+
+“Você sai da consulta com clareza sobre os próximos passos e um plano adaptado à sua realidade.”
+
+Bloco 08 — Chamada para WhatsApp com qualificação
+O que tem na seção:
+
+CTA forte para iniciar conversa, junto com instrução do que enviar.
+
+O objetivo:
+
+Gerar um lead mais qualificado no WhatsApp.
+
+O que colocar:
+
+Botão direto.
+
+Texto orientando a conversa.
+
+Exemplo de mensagem automática.
+
+Exemplo de mensagem automática:
+
+“Olá, gostaria de saber mais sobre o atendimento e verificar disponibilidade.”
+
+Dica:
+
+Quando possível, use uma pergunta de qualificação:
+
+“Você busca atendimento online ou presencial?”
+
+“Qual serviço você procura?”
+
+“Você quer agendar ou tirar uma dúvida?”
+
+Bloco 09 — FAQ
+O que tem na seção:
+
+Perguntas frequentes sobre atendimento, valores, horários, modalidade e processo.
+
+O objetivo:
+
+Diminuir objeções antes da conversa.
+
+O que colocar:
+
+O atendimento é online ou presencial?
+
+Como funciona a primeira consulta?
+
+Quanto tempo dura?
+
+Preciso fazer algo antes?
+
+Como agendar?
+
+Aceita convênio?
+
+Quais formas de pagamento?
+
+O valor é informado pelo WhatsApp?
+
+Bloco 10 — CTA final e rodapé
+O que tem na seção:
+
+Última chamada para conversa e informações legais.
+
+O objetivo:
+
+Fechar a página com segurança e ação.
+
+O que colocar:
+
+Botão final para WhatsApp.
+
+Nome do profissional ou empresa.
+
+Registro, se aplicável.
+
+Endereço, se houver atendimento presencial.
+
+Política de privacidade.
+
+Avisos éticos necessários.
+
+Blocos opcionais para página de serviço/profissional
+Localização e mapa
+Quando usar:
+Quando o atendimento é presencial.
+
+Onde inserir:
+Depois do processo ou antes do CTA final.
+
+Preço ou faixa de investimento
+Quando usar:
+Quando o preço ajuda a qualificar o lead.
+
+Onde inserir:
+Na seção de serviços ou perto do CTA.
+
+Quando não usar:
+Quando o valor depende de diagnóstico, escopo ou regras profissionais.
+
+Conteúdo educativo
+Quando usar:
+Quando o público ainda precisa entender o problema.
+
+Onde inserir:
+Antes do CTA de WhatsApp.
+
+O que colocar:
+Pequeno bloco explicativo, vídeo curto ou artigo resumido.
+
+Lead magnet
+Quando usar:
+Quando o visitante ainda não está pronto para conversar.
+
+Onde inserir:
+Como CTA secundário.
+
+Exemplo:
+“Baixe o checklist gratuito” ou “Receba um guia inicial”.
+
+Triagem antes do WhatsApp
+Quando usar:
+Quando o profissional recebe muitos curiosos.
+
+Onde inserir:
+Antes do botão ou no próprio fluxo do WhatsApp.
+
+O que colocar:
+Formulário rápido ou perguntas automáticas.
