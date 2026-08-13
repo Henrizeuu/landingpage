@@ -36,7 +36,7 @@ with st.sidebar:
     st.info("Este gerador utiliza inteligência artificial avançada e web scraping para estruturar landing pages premium baseadas em dados reais.")
     
     st.header("📂 Estrutura")
-    st.success("✔ menu.txt\n✔ estrutura.txt\n✔ Biblioteca de Componentes"
+    st.success("✔ menu.txt\n✔ estrutura.txt\n✔ Biblioteca de Componentes")
 
 # ==========================================
 # ENTRADA DE DADOS DO CLIENTE
