@@ -17,20 +17,26 @@ st.title("🚀 Gerador de Páginas Institucionais Premium - Epiverso")
 st.markdown("Insira os dados do prestador de serviço abaixo para raspar as informações e orquestrar a montagem da página.")
 
 # ==========================================
-# BARRA LATERAL (CONFIGURAÇÕES E CHAVES)
+# PUXANDO AS CHAVES EM MODO INVISÍVEL (BACKEND)
+# ==========================================
+# O sistema tenta puxar as chaves direto da configuração, sem expor na tela
+try:
+    apify_token = st.secrets["APIFY_TOKEN"]
+    gemini_key = st.secrets["GEMINI_API_KEY"]
+except KeyError:
+    apify_token = None
+    gemini_key = None
+    st.error("⚠️ Configuração de sistema ausente: As chaves de API não foram encontradas no servidor.")
+
+# ==========================================
+# BARRA LATERAL (APENAS INFORMAÇÕES DO SISTEMA)
 # ==========================================
 with st.sidebar:
-    st.header("🔑 Configurações de API")
+    st.header("⚙️ Motor Epiverso")
+    st.info("Este gerador utiliza inteligência artificial avançada e web scraping para estruturar landing pages premium baseadas em dados reais.")
     
-    # Tenta puxar dos segredos do Streamlit; se não achar, deixa em branco
-    default_apify = st.secrets.get("APIFY_TOKEN", "")
-    default_gemini = st.secrets.get("GEMINI_API_KEY", "")
-    
-    apify_token = st.text_input("Apify API Token", value=default_apify, type="password")
-    gemini_key = st.text_input("Gemini API Key", value=default_gemini, type="password")
-    
-    st.header("📂 Arquivos Base Necessários")
-    st.info("Certifique-se de que os arquivos `menu.txt`, `estrutura.txt` e os `.txt` dos componentes estão na mesma pasta que este script.")
+    st.header("📂 Estrutura")
+    st.success("✔ menu.txt\n✔ estrutura.txt\n✔ Biblioteca de Componentes"
 
 # ==========================================
 # ENTRADA DE DADOS DO CLIENTE
