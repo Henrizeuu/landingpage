@@ -343,9 +343,11 @@ Não converse, não explique. Apenas receba os blocos de código, mude as variá
                 status.update(label="❌ Ocorreu um erro no processo", state="error")
                 st.error(f"Erro: {e}")
 
-        # ==========================================
-        # RESULTADO E DOWNLOAD
-        # ==========================================
+    # ==========================================
+    # RESULTADO E DOWNLOAD (CORRIGIDO)
+    # ==========================================
+    # A trava de segurança: só exibe o sucesso e o botão se o ZIP realmente foi gerado
+    if os.path.exists("landing_page_pronta.zip"):
         st.success(f"A página de **{empresa_alvo}** foi montada com sucesso!")
         
         with open("landing_page_pronta.zip", "rb") as fp:
@@ -357,5 +359,9 @@ Não converse, não explique. Apenas receba os blocos de código, mude as variá
                 type="primary"
             )
         
-        with st.expander("Ver Blueprint Gerado"):
-            st.markdown(resposta_blueprint.text)
+        if 'resposta_blueprint' in locals():
+            with st.expander("Ver Blueprint Gerado"):
+                st.markdown(resposta_blueprint.text)
+    else:
+        # Se falhou e o arquivo não existe, avisa sem quebrar o app
+        st.warning("⚠️ O arquivo .zip não foi gerado. Verifique a caixa de status acima para ver qual API falhou (Apify ou Gemini).")
