@@ -1,0 +1,5 @@
+streamlit
+apify-client
+requests
+google-genai
+pillow
