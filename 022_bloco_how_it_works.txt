@@ -1,0 +1,6 @@
+BLOCO: How It Works
+- Layout: Margin-top 40px, padding top/bottom 80px desktop. Padding horizontal 32px (mobile) e 24px (desktop). Max-width 72rem. Background de transição vertical sutil (transparent para dark com opacidade 20%).
+- Header: Centralizado. H2 font size 36px. Parágrafo max-width 42rem, margin-bottom 48px.
+- Grid Desktop: 3 colunas. Gap 32px.
+- Method Cards: Injetar Componente "Border Gradient Method Card". Padding interno (80px top, 32px sides/bottom). Incluir número superdimensionado/destacado (40px) no topo. Adicionar "Glass Card Masked Border" para o overlay final da borda luminosa.
+- Regra Responsiva (Mobile <= 767px): O Grid empilha para 1 coluna. O H2 reduz para 30px. O padding horizontal interno da seção preserva os 32px para respiro.

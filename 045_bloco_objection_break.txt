@@ -1,0 +1,6 @@
+BLOCO: Objection Break
+- Layout: Fundo escuro gradient. Conteúdo centralizado. 
+- Efeitos Absolutos: Glows radiais (cor principal/secundária) fixados nos cantos superior esquerdo e inferior direito.
+- Grid: max-width 700px, 2 colunas, gap 24px, margin-top 40px.
+- Itens de Quebra: Translucent panel (fundo com opacidade < 10%), radius 16px, padding 24px, flex row, gap 16px. Ícone de "X" ou semelhante na esquerda.
+- Regra Responsiva: Em telas <=768px, o grid empilha para 1 coluna.

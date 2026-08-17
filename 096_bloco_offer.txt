@@ -1,0 +1,8 @@
+BLOCO: Offer
+- Fundo: Asset de background de feixe luminoso central. Overlays de fade no topo e no rodapé (height ~13rem).
+- Layout: Padding vertical massivo, overflow clip.
+- Inner Card: Injetar "Dark Glass Card". Max-width restrito (ex: 53rem). Top highlight via ::before (linha horizontal gradient 1px). Backdrop filter alto.
+- Checklist Central: Gap pequeno, bullet com dot com outer glow na cor de acento.
+- Bloco de Preços: Old price com line-through. Price stack com Label, Parcelamento Traduzido para cima (-0.3rem) e Valor Gigante (Inter Tight, letter-spacing denso).
+- CTA: Injetar Componente "Action Button (Pill)".
+- Regra Responsiva: Em telas <=834px, background image passa de auto para cover. Card interno preenche 100% da largura do contêiner adaptado.

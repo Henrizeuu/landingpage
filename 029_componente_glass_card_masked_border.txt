@@ -1,0 +1,6 @@
+COMPONENTE: Glass Card With Masked Border
+- Estrutura: Container relative. Opcionalmente, uma camada absoluta de fundo com gradient translúcido e backdrop-blur-xl.
+- Content Layer: Display flex column, overflow hidden, padding interno (geralmente 32px), z-index superior.
+- Border Overlay (O Macete): Uma camada absolute inset 0, pointer-events none, com a seguinte regra de máscara CSS para criar uma borda fina com gradiente dinâmico apenas nas arestas:
+  padding: 1px; background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 30%, transparent 50%); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
+- Hover: Apenas mudanças sutis de brilho na borda. Sem transforms bruscos de escala.

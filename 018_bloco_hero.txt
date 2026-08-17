@@ -1,0 +1,7 @@
+BLOCO: Hero Section
+- Background: Injetar Componente "Fixed Background Glow Field" atrás desta seção na hierarquia. Adicionar dois glows absolutos locais na própria seção (esquerdo e direito com blur de 140px).
+- Layout: min-height calc(100vh - 56px), flex column, items center, justify center. Padding desktop: top 70px, bottom 160px.
+- H1: text-align center, tracking-tight, line-height 1.12, max-width 64rem.
+- Subtitle: text center, font-size 24px (desktop), max-width 48rem, margin-bottom 32px.
+- Ação: Renderizar Componente "Primary CTA Button". Incluir gap de 16px entre o botão e a nota de texto inferior.
+- Regra Responsiva (Mobile <= 639px): H1 ajusta margin-bottom para 16px e limita o max-width a 22ch para forçar quebra de linha elegante. Subtitle reduz font-size para 14px. O CTA principal perde o radius redondo e vira full-width (limitado a max-width 320px) com border-radius 12px.

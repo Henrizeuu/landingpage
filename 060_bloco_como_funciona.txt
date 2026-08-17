@@ -1,0 +1,7 @@
+BLOCO: How It Works (Lista de Passos)
+- Layout: Fundo claro/neutro. Header alinhado à esquerda.
+- Estrutura da Lista: Coluna única. Cada item é um grid de 2 colunas (ex: 80px 1fr) contendo o Número e o Conteúdo (Título + Texto). Border-bottom divisória, padding 32px 16px, radius 12px.
+- Número: Fonte de heading/display com cor de destaque.
+- Hover no Item: O item inteiro faz translateX(8px), ganha fundo sutil, e o número escala (scale 1.15).
+- Animação GSAP: Itens entram alternando o eixo X (x: -30 e x: 30) com opacity 0.
+- Regras Responsivas: Ajustar paddings e tamanhos de fonte no Mobile. O grid do item pode ser reajustado se o número gigante ocupar muito espaço.

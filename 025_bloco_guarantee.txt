@@ -1,0 +1,5 @@
+BLOCO: Guarantee
+- Layout: Padding 48px 24px. Container restrito a max-width 36rem.
+- Card: Position relative, rounded 24px, padding 32px, text-align center. Fundo com backdrop blur, borda simples translúcida. Injetar overlay de borda mascarada.
+- Elementos Internos: Ícone decorativo grande (48px centralizado, margin-bottom 16px). Título 30px desktop semibold. Copy descritiva 18px desktop com line-height relaxed e opacidade 70%.
+- Regra Estrutural e Responsiva: Como na oferta, proibido esticar o card. O max-width (36rem) é uma trava rígida. No Mobile (<= 639px), o título ajusta o tamanho (24px) e a fonte do texto cai para 16px.

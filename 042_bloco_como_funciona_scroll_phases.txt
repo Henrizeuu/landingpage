@@ -1,0 +1,9 @@
+BLOCO: How It Works (Scroll Phase Steps)
+- Layout: Padding 120px 0. Panels wrapper: flex column, gap 24px, margin-top 40px.
+- Panels: max-width 780px, centralizado. Display flex, align-items flex-start, gap 40px, padding 40px 64px. Fundo branco translúcido, backdrop-filter blur(8px).
+- Numeração: Número gigante e translúcido na esquerda de cada panel.
+- Phase Behavior JS (O Macete):
+  - IntersectionObserver nos painéis (threshold 0.5).
+  - Ao rolar e atingir painéis avançados, o background da *seção inteira* muda suavemente (ex: de fundo claro para fundo escuro).
+  - Os painéis acompanham a transição de tema: fundos brancos viram translúcidos escuros, fontes pretas viram brancas, bordas adaptam. Tudo através de transições CSS demoradas (ex: 0.7s) ativadas por uma classe no container pai (ex: .phase-2).
+- Regra Responsiva: Em telas <=768px, a direção do flex dentro dos painéis muda para coluna (stack). Padding interno reduz para 40px (ou 24px no mobile menor).

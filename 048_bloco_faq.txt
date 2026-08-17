@@ -1,0 +1,6 @@
+BLOCO: FAQ Accordion
+- Layout: Max-width 720px, centralizado.
+- Lista FAQ: Cada item possui border-bottom sutil.
+- Toggle Button (Pergunta): flex space-between, gap 16px, padding 24px 0, width 100%, background none, text-align left, cursor pointer. Ícone de "plus" (24x24) na direita.
+- JS Behavior: Clique numa pergunta fecha todas as outras abertas (comportamento estrito de accordion isolado). Ao abrir, o ícone roda 45deg (formando um 'X') e o container da resposta anima seu `max-height` (de 0 para valor alto) e `padding`.
+- Regras Responsivas: Em <=768px, ajustar margens e fontes.

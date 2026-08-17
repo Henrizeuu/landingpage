@@ -1,0 +1,16 @@
+GLOBAL STYLES & TOKENS
+- Resets: box-sizing: border-box; html { width: 100%; min-height: 100%; overflow-x: hidden; overflow-y: auto; scroll-behavior: smooth; }
+- Body: margin: 0; width: 100%; min-height: 100%; overflow-x: hidden; -webkit-font-smoothing: antialiased;
+- Tipografia: Definir tokens para Fonte Primária e Fonte de Destaque. Ativar text-wrap: balance onde suportado (relaxar no mobile hero se necessário).
+- Custom Scrollbar: Estilizar track com a Cor Base Escura e thumb com a Cor de Acento.
+- Tokens de Estrutura (Para injeção dinâmica):
+  --page-background (Base muito escura)
+  --card-surface (Fundo escuro/glass translúcido)
+  --accent-color (Acento principal para botões, glows e SVGs)
+  --danger-color (Para cards negativos)
+  --success-color (Para cards positivos)
+  --text-primary (Branco/Claro)
+  --text-muted (Translúcido)
+- Card Radii base: 12px a 20px.
+- Sombras: Sombras profundas pretas mescladas com glows sutis da cor de acento.
+- Regra de Arquitetura: Plain HTML, CSS e Vanilla JS. Proibido usar bibliotecas de carrossel prontas.

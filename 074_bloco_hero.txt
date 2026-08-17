@@ -1,0 +1,9 @@
+BLOCO: Hero Section
+- Background: Base escura.
+- Estrutura de Efeitos: 
+  1. Injetar Componente "Three.js Dotted Hero Surface" como fundo absoluto.
+  2. Adicionar ::before criando um "Glow Radial" gigante absoluto (blur altíssimo, opacity contida) fixo perto do topo central.
+  3. `isolation: isolate` na seção.
+- Layout de Conteúdo: Min-height 95vh. Flex column, items center, justify flex-end. Z-index 1 (sobre o WebGL). Padding bottom generoso (ex: 30px).
+- Elementos: H1 (max-width ~960px, centrado), Parágrafo explicativo (max-width ~600px), Componente "Primary CTA Button", Nota de Preço abaixo do botão, Row de Ícones (estrelas de avaliação).
+- Regra Responsiva: Em telas Mobile (<= 767px), o padding lateral da seção vai para 16px. O H1 usa clamp severo (ex: clamp(34px, 10.6vw, 42px)). É obrigatório manter o WebGL rodando no mobile (ajustando a quantidade de pontos na lógica JS).

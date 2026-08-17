@@ -1,0 +1,8 @@
+BLOCO: Pain Points (O Problema Real)
+- Layout: Header max-width 800px. Fundo neutro base.
+- Grid Desktop: 3 colunas.
+- Cards: Radius 4px, padding 32px, border-left espessa (3px) com cor de destaque. Sombra muito leve. Flex column, gap 16px.
+- Elementos do Card: Injetar Componente "Icon Wrappers", Título e Texto.
+- Hover: Intensifica sombra e a border-left fica mais saturada.
+- Animação GSAP: Cards entram deslizando do eixo X (ex: x:-40), opacity 0, stagger 0.15.
+- Regras Responsivas: Em <= 1023px (Tablet), grid vira 2 colunas. Em <= 767px (Mobile), vira 1 coluna.

@@ -1,0 +1,8 @@
+BLOCO: Final CTA
+- Layout: Padding 80px 24px (desktop). Max-width 56rem.
+- Card: Relative, rounded 24px. Fundo com gradiente suave translúcido. Padding interno com flex column, text center. Desktop padding: 40px 64px.
+- Injeções de Componente: Adicionar "Glass Card Masked Border" para a moldura luminosa.
+- Heading: H2 font-size 48px desktop. (Caso use fonte Serifada/Display, aplicar nela).
+- Parágrafo: Max-width 42rem, centralizado. Margin-bottom 40px. Font-size dinâmico clamp(14px, 2.5vw, 20px).
+- Ação: Injetar "Primary CTA Button". Nota inferior com font-size 14px translúcida.
+- Regra Responsiva: Em telas Mobile (<= 639px), o padding interno flex column deve ser reduzido drasticamente para 48px 12px. O tamanho da fonte do H2 não deve ultrapassar 36px. O padding lateral da seção cai para 24px.

@@ -1,0 +1,4 @@
+COMPONENTE: Testimonial Marquee (Rolagem Infinita)
+- Estrutura: Container com overflow: hidden (mask) contendo um track interno.
+- Lógica JS (O Macete): Duplicar os cards de depoimentos via código (para criar um loop perfeito). Calcular a largura de metade do track e aplicar a distância negativa numa variável CSS (--dist).
+- Animação: O track sofre translateY continuo e infinito através de CSS keyframes. Recalcular sempre no DOMContentLoaded e eventos de resize.

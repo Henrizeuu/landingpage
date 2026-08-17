@@ -1,0 +1,3 @@
+COMPONENTE: Grid Section Background
+- Estrutura CSS: background-position: center center; background-repeat: no-repeat; background-size: cover;
+- Comportamento: Aguardar a injeção da URL da textura base via CSS (background-image). Deve ser aplicado como fundo da seção principal para criar a textura rasterizada da página.

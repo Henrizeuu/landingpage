@@ -1,0 +1,5 @@
+BLOCO: About / Explanation
+- Layout Seção: Flex column, gap 18px, padding 4vw.
+- Header Panel: Width 100%, min-height 120px, border-radius 20px, padding 4vw, gap 12px.
+- Media/Text Rows: Flex row, center, gap 33px, padding 12px 0. Bloco de texto max-width 28%. Mídia vertical restrita.
+- Regras Responsivas: Em <= 1100px, blocos de Mídia/Texto empilham. Em <= 767px, forçar a ordem de exibição: na primeira row, o texto deve vir antes da imagem; na segunda row, manter ordem alternada.

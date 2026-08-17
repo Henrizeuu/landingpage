@@ -1,0 +1,4 @@
+COMPONENTE: Gradient Transition Strips
+- Estrutura: height 60px, width 100%, z-index 1, margin-top e margin-bottom -1px, pointer-events none.
+- Comportamento: Faixas com gradiente linear usadas para suavizar a transição entre seções de cores opostas (ex: seção clara para seção escura).
+- Interação GSAP: Durante o scroll, a section anterior aplica um filter: blur(3px) e opacity 0.7 enquanto a transição passa por cima, restaurando ao normal logo após.

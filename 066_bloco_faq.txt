@@ -1,0 +1,8 @@
+BLOCO: FAQ Accordion
+- Layout: Fundo neutro. Header alinhado à esquerda ou centralizado.
+- Lista FAQ: Sem cards flutuantes, apenas itens com border-bottom simples.
+- Toggle Button (Pergunta): Botão full width, padding 24px 16px, text-align left. Ícone de plus/cross à direita. Hover muda a cor do texto.
+- Estrutura da Resposta: Max-height 0, overflow hidden, transição suave.
+- Lógica JS Nativa: Ao clicar, o item ativo abre (max-height aumenta, ganha padding-bottom). O ícone gira 45deg (X). OBRIGATÓRIO: Se um item for aberto, fechar qualquer outro que estiver aberto (Single-open mode).
+- Animação GSAP de Entrada: Itens surgem deslizando do lado (x:-25, opacity 0, stagger rápido).
+- Regras Responsivas: Em <= 767px, reduzir paddings laterais e verticais do botão de toggle.

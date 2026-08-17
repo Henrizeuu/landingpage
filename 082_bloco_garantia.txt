@@ -1,0 +1,5 @@
+BLOCO: Guarantee
+- Layout: Fundo escuro. Conteúdo centralizado. Glow radial sutil atrás do asset principal.
+- Asset (Visual): SVG de Selo Circular de Garantia (injetado via URL). Filtros de saturate, brightness e drop-shadow aplicados via CSS.
+- Texto: Título e parágrafo da garantia centralizados abaixo ou ao lado do asset.
+- Regra Responsiva: A largura do SVG deve ser controlada rigidamente usando `clamp()`: Desktop `clamp(180px, 20vw, 290px)`, Mobile `clamp(150px, 48vw, 220px)`.

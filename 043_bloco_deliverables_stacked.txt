@@ -1,0 +1,9 @@
+BLOCO: Deliverables (Stacked Cards)
+- Layout: Max-width 760px, centralizado. Flex column, gap 0.
+- Stack Behavior (O Macete):
+  - Cards sobrepostos verticalmente. 
+  - `margin-top: -12px` (ou valor negativo) em cada card subsequente para criar sobreposição.
+  - Z-index decrescente (primeiro card = z-index mais alto, ex: 4; o último = 1).
+  - Hover no card: z-index sobe para 10, translateY(-6px), sombra aumenta para saltar da pilha.
+- Conteúdo do Card: flex align-items flex-start, gap 24px.
+- Regras Responsivas: Em <=768px, o overlap (margin-top negativo) diminui para -8px ou -4px. Em mobile, flex dos elementos internos pode empilhar se faltar espaço.

@@ -1,0 +1,7 @@
+BLOCO: Difference & Word Reveal
+- Layout: Border-top 1px translúcido. Bottom fade via ::after (height 14rem). Fundo possui glow radial e grãos.
+- Título Gigante (Hero Sub-block): Fonte Display, clamp imenso (ex: 7rem a 12rem). Animação clip-path linha por linha na entrada do scroll.
+- Footer Layout: Grid 30% / 70%. Borda superior separadora.
+- Nota à Esquerda: Composta com setas indicativas (pseudo-elemento) e borda na direita.
+- Bloco à Direita: Injetar Componente "Scroll-Linked Word Reveal". O parágrafo principal será dividido palavra por palavra e revelado de acordo com a porcentagem de scroll.
+- Regra Responsiva: Em telas <=834px, Footer layout quebra para coluna única (100%). A borda direita da nota esquerda vira border-bottom.

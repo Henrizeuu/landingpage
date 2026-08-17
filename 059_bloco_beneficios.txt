@@ -1,0 +1,7 @@
+BLOCO: Benefits
+- Layout: Fundo com gradiente contrastante (escuro). Padding vertical acentuado. Header centralizado.
+- Grid Desktop: 3 colunas.
+- Cards (Glassmorphism): Padding 32px, radius 24px, fundo translúcido (opacity 4%), backdrop blur 12px, borda translúcida.
+- Hover Effect (O Macete): Pseudo-elemento ::before criando um glow radial no topo do card, que vai de opacidade 0 para opacidade leve no hover. Fundo principal ganha leve saturação.
+- Animação GSAP: Entrada de baixo para cima (y:50, blur 8px, stagger).
+- Regras Responsivas: Em <= 1023px, grid vira 2 colunas. Em <= 767px, vira 1 coluna.

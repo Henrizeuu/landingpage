@@ -1,0 +1,16 @@
+GLOBAL STYLES & TOKENS
+- Resets: box-sizing: border-box; html { overflow: initial !important; scroll-behavior: smooth; }
+- Body: margin: 0; min-height: 100vh; max-width: 100%; overflow-x: hidden !important; overflow-y: scroll !important; text-rendering: optimizeLegibility; antialiased;
+- Root Wrapper: O container principal deve ter min-height 100vh e overflow visible.
+- Tipografia (Funções): Definir variáveis ou classes utilitárias para Fonte Primária (textos), Fonte Serifada/Display (títulos do hero) e Fonte Pixel/Mono (labels decorativos).
+- Tokens (Estrutura Base para injeção dinâmica):
+  --juicy-dark
+  --juicy-card-bg
+  --juicy-card-dark
+  --gradient-green
+  --gradient-dark-green
+  --gradient-lime
+  --gradient-teal
+  --gradient-emerald
+- Card Radii: 24px (large cards), 16px to 24px (icons), 999px (desktop CTA), 12px (mobile CTA).
+- Regra de Arquitetura: Breakpoints principais em 640px (sm), 768px (md) e 1024px (lg). Nenhuma estrutura adicional de navegação (Navbar), footer complexo ou carrosséis externos devem ser criados. Preservar o comportamento de scroll nativo (Single-scroll fix).

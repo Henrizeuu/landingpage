@@ -1,0 +1,4 @@
+BLOCO: FAQ
+- Container: Width 85%, min-height 358px, flex column center, gap 12px, border-radius 20px.
+- Conteúdo Interno: Width ~279px, fonte 16px.
+- Regras Estruturais e Responsivas: Apenas um item do acordeão pode estar aberto por vez. Em telas <= 767px, o container ganha padding vertical 4vw 0. Proibido usar cards gigantes e desproporcionais para acomodar o texto das perguntas, manter a largura interna restrita para facilitar leitura rápida.

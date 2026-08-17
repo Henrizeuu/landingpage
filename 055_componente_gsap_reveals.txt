@@ -1,0 +1,4 @@
+COMPONENTE: GSAP Scroll Reveals Base
+- Headers (Label, H2, Parágrafo): Entrada de y:30, opacity 0, blur(6px), staggerizado, gatilho top 85%.
+- Cards Genéricos: Entrada de y:50 (ou x:-40 dependendo do bloco), opacity 0, blur 8px, stagger dinâmico.
+- Word Reveal (O Macete): Para textos longos de destaque. Quebrar palavras em `<span>` mantendo espaços. Animar spans com y:30, opacity 0, blur(4px), duration 0.7, stagger 0.04.

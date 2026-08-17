@@ -1,0 +1,4 @@
+COMPONENTE: Section Header Badge
+- Estrutura: inline-flex center; gap: 8px; padding: 6px 14px; border-radius: 9999px; border: 1px solid (borda sutil translúcida).
+- Tipografia: Fonte Mono (monospace), 13px, uppercase ou normal dependendo da injeção.
+- Variação Escura: Quando em fundo escuro, o fundo do badge fica branco translúcido e o texto mais claro.

@@ -1,0 +1,8 @@
+BLOCO: Offer / Pricing
+- Layout: Fundo claro/suave.
+- Pricing Box: Max-width 560px, centralizado. Radius 24px, padding 64px, box-shadow de altíssima elevação (--kit-shadow-card-lg).
+- Visual Strip (O Macete): Usar ::before absoluto no topo do card com height de 4px e cor principal de acento, criando uma "faixa" superior colorida.
+- Estrutura Interna: Intro, checklist de itens, linha divisória.
+- Bloco de Preço: Preço anterior com line-through translúcido. Label em Fonte Mono (uppercase). Valor principal gigante (72px, letter-spacing apertado, line-height 1).
+- CTA: Renderizar "Primary CTA Button", largura 100%.
+- Regras Responsivas: Proibido esticar o Pricing Box além dos 560px. Em telas <=768px, padding interno cai para 40px, e o preço gigante reduz proporcionalmente (ex: 56px ou 48px).

@@ -1,0 +1,6 @@
+COMPONENTE: Scroll Reveal System
+- Configuração Base: Estado oculto com opacity 0, translateY(28px), scale(0.985).
+- Estado Visível (.is-visible): opacity 1, transform reseta (0, escala 1).
+- Transição: opacity 0.75s ease, transform 0.75s cubic-bezier(0.16,1,0.3,1).
+- Controle de Delays: Usar variável CSS `--delay` aplicada via JS para criar efeitos de stagger (efeito cascata).
+- Gatilho: IntersectionObserver com threshold 0.18.

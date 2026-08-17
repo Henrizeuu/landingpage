@@ -1,0 +1,7 @@
+BLOCO: Target Audience (Para Quem É)
+- Layout: Header padronizado.
+- Grid Desktop: 2 colunas amplas.
+- Colunas (Cards): Fundo claro, padding 48px, radius 24px, sombra leve. Hover aumenta a sombra.
+- Coluna Positiva: Título em cor de sucesso. Itens com ícone de check.
+- Coluna Negativa: Título em cor de alerta/erro. Itens com ícone de "X".
+- Regras Responsivas: Em <= 767px, o grid empilha obrigatoriamente para 1 coluna e o padding interno do card cai para ~32px.

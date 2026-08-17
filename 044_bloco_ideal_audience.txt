@@ -1,0 +1,5 @@
+BLOCO: Ideal Audience
+- Layout: Fundo claro/suave. Header padrão.
+- Center Card: Max-width 720px. Injetar "Elevated SaaS Card".
+- Checklist: Vertical, gap 16px. Ícones de check circulares (injetados via pseudo-elemento ou data-URI).
+- Regras Responsivas: Padding da seção principal contrai, padding interno do card adapta para telas pequenas.

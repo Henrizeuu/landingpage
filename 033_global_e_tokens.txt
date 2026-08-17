@@ -1,0 +1,16 @@
+GLOBAL STYLES & TOKENS
+- Resets: box-sizing: border-box; margin: 0; padding: 0; html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+- Body: overflow-x: hidden;
+- Tipografia: Definir tokens/variáveis para Fonte de Heading (Display/Serif/Sans principal), Fonte de Body e Fonte Mono (usada em badges e labels pequenos).
+- Tokens (Estrutura Base para injeção dinâmica):
+  --kit-primary
+  --kit-primary-75 / 50 / 25
+  --kit-dark
+  --kit-dark-alt
+  --kit-white
+  --kit-bg-light
+  --kit-bg-surface
+  --kit-accent-main (Cor principal do CTA, ex: lime)
+  --kit-accent-secondary (Orbs/Glows)
+- Sombras: Usar sistema de sombras em camadas (--kit-shadow-card, --kit-shadow-card-md, --kit-shadow-card-lg) para criar aspecto "SaaS" flutuante e suave.
+- Regra de Arquitetura: Os espaçamentos de seção (padding-top/bottom) devem seguir escala fluida: 120px (Desktop) -> 80px (Tablet) -> 72px (Mobile) -> 56px (Small Mobile). Container max-width: 1200px.

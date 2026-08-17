@@ -1,0 +1,4 @@
+COMPONENTE: Decorative Parallax Orbs
+- Estrutura: position absolute, circular, blur agressivo (ex: 80px), pointer-events none, z-index 0.
+- Motion CSS: Animação infinita flutuante de 8s ease-in-out (sobe 12px e volta).
+- Motion GSAP (Parallax): ScrollTrigger no elemento pai. Animar o eixo Y alternando valores dependendo do scroll (scrub: 2).

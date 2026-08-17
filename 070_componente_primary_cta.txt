@@ -1,0 +1,7 @@
+COMPONENTE: Primary CTA Button
+- Estrutura Base: inline-flex centered. padding desktop: 20px 40px; gap: 8px.
+- Tipografia: Fonte de destaque, font-weight 600, text-transform uppercase.
+- Visual: Fundo de alto contraste (ex: branco ou cor muito clara) com texto escuro.
+- Hover: Subtle lift e leve brilho, preservando a cor do texto e ícone.
+- Ícone: Injetar SVG inline (ex: raio/seta) ao lado do texto.
+- Regras Responsivas: Em mobile, botão ajusta padding para 20px 42px e centraliza com width: auto (margin auto).

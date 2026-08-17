@@ -1,0 +1,6 @@
+BLOCO: Pain Points
+- Layout: Flex column, justify-content center, align-items center, gap 18px, padding 4vw.
+- Headings: Width 53%, font-size 30px. Parágrafo: width 52%.
+- Topic Row: Flex row centralizado, gap 12px, margin-bottom 24px. Composto por 4 Pills de tamanhos variados (ex: 220px, 265px, 160px, 400px), min-height 60px, radius 999px. Aplicar "Hard Shadow".
+- Summary Panel: Width 75%, min-height 150px, flex row center, gap 12px, radius 20px, padding 24px 0.
+- Regras Responsivas: Em <= 1100px, os textos expandem. Em <= 767px, o grid de Pills deve empilhar ou usar full-width, mas é obrigatório preservar o min-height de 60px e a sombra dura offset de cada pill individualmente.

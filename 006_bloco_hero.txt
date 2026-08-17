@@ -1,0 +1,7 @@
+BLOCO: Hero Section
+- Layout Desktop: display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 18px; padding: 4vw 0;
+- Textos: Heading principal com max-width 53%, font-size 30px, weight 700, line-height 1.2, centralizado. Parágrafo com max-width 52%, font-size 18px, centralizado.
+- Mídia (Thumbnail): Container width 25%. Imagem com proporção 9/16 (vertical), object-fit: cover. Largura visual de min(320px, 86vw).
+- Ação: Renderizar "Primary CTA Button".
+- Regras Responsivas: No breakpoint <= 1100px, os textos expandem para 80% a 90% da largura. Em <= 767px, o padding vertical expande e o horizontal contrai. Heading e Parágrafo assumem width de 90%. Heading reduz font-size para ~26px. 
+- Regra Estrita de Layout: É proibido esticar as imagens verticais de mockups/celular para preencher horizontalmente a tela. Devem manter o aspecto vertical.

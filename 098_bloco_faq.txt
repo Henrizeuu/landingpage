@@ -1,0 +1,6 @@
+BLOCO: FAQ
+- Layout: Inner max-width 78rem centralizado.
+- FAQ List: Elementos verticais usando a tag nativa HTML `<details>`.
+- FAQ Item: Injetar "Dark Glass Card" com paddings internos controlados. Ocultar marcador padrão do summary (::marker).
+- Interação: Botão de toggle com pseudo-elemento à direita (+). Quando o `<details>` possuir atributo `open`, transicionar para sinal de (-). O comportamento nativo permite várias abas; um snippet opcional de JS pode fechar os outros ao abrir um, se desejado.
+- Regra Responsiva: Em telas <=834px, paddings da seção e do card de pergunta/resposta reduzem drasticamente. Títulos diminuem clamp ratio.

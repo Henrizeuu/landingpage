@@ -1,0 +1,5 @@
+BLOCO: Method Steps (Holographic/Scroll)
+- Layout: Overflow clip. Stage (container) com min-height 78rem e position relative.
+- Ativo Visual (Centro): Asset fixado ao centro (`translate(-50%, -50%)`). Escala, blur e opacidade vinculados diretamente ao scroll da seção através da variável `--method-visual-progress`. Animado também com CSS Keyframes para flutuação vertical contínua (-1.4rem no midpoint, 4.6s).
+- Cards (Desktop): Position absolute (espalhados pelas bordas do container). Injetar Componente "Dark Glass Card". Opacidade vinculada à variável `--card-progress`.
+- Regra Responsiva: Estritamente em telas <=834px, a estrutura absoluta DEVE ser desativada. Stage vira `flex column`. O Ativo Visual assume posição relativa (order 2), limitando a largura. Os cards viram estáticos (order 1, largura 100%, dispostos em grid).

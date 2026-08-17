@@ -1,0 +1,5 @@
+BLOCO: Final CTA & Footer
+- Transição: Injetar Componente "Gradient Transition Strip" antes do CTA.
+- CTA Final: Seção com fundo de alto contraste (primário escuro). Padding vertical 48px. Coluna centralizada, H2, Texto, Componente "CTA Button Animado".
+- Footer: Fundo o mais escuro da paleta. Linha superior com logo/marca e links legais (Termos/Privacidade) dispostos em linha. Divisor horizontal. Caption de copyright na base.
+- Regras Responsivas: Em <= 767px, os links do footer e a marca devem empilhar (flex-direction: column) e centralizar para não causar overflow horizontal.

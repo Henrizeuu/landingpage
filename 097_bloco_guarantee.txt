@@ -1,0 +1,5 @@
+BLOCO: Guarantee (3D Badge)
+- Layout: Max-width 72rem centralizado. Elemento de badge posicionado no topo, seguido de Eyebrow, Title e Texto.
+- Badge Animado (O Macete 3D): Perspective 120rem. Elemento estrutural circular. Efeito de Animação (6s ease-in-out): flutuação translacional (-0.8rem em Y) combinada com rotações nos eixos X e Y.
+- Número 3D: Estrutura composta por duas camadas do número "7" (ou injetável). Fundo com blur e translúcido (efeito profundidade), frente em texto opaco text-shadow, projetado para frente usando `translate3d(0,0,40px)`. Base possui pill com radial glow.
+- Regra Responsiva: Em telas <=834px, o badge e a fonte 3D interna devem ser reduzidos usando valores proporcionais menores.

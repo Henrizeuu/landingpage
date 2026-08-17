@@ -1,0 +1,7 @@
+BLOCO: FAQ
+- Layout: Padding 80px 24px. Max-width 48rem. Header centralizado (margin-bottom 64px). H2 font-size 48px desktop.
+- FAQ List: Elementos verticais com gap de 16px entre os cards.
+- Item Card: Construído nativamente com a tag <details>. Relative, rounded 24px, padding 24px. Fundo dark translúcido com backdrop blur, borda simples 1px translúcida. Nenhuma borda mascarada luminosa deve ser aplicada aqui.
+- Interação (<summary>): Remover o list-marker nativo do navegador via CSS. Display flex, justify-content space-between, align-items center. Cursor pointer. Font size 18px semibold. Um ícone de chevron na direita deve rotacionar 180deg quando o card estiver aberto.
+- Resposta: Parágrafo com margin-top 16px, line-height relaxed.
+- Regra de Comportamento e Responsividade: A tag <details> é nativa; é estritamente proibido criar scripts JS para forçar o fechamento das outras abas. O usuário tem liberdade para abrir múltiplas dúvidas ao mesmo tempo. No Mobile (<= 639px), o H2 deve reduzir para 36px.

@@ -1,0 +1,4 @@
+BLOCO: Ticker Strip
+- Layout: min-height: 83px; display: flex; flex-direction: row; justify-content: center; align-items: center; padding: 1em 0 0.5em; overflow: hidden;
+- Elementos (Pills): border-radius: 999px; font-weight: 700; alinhados verticalmente ao centro.
+- Regras Responsivas: Em telas <= 767px, a seção não deve quebrar em múltiplas linhas, mas sim se comportar como um marquee (scroll horizontal contínuo ou rolável).

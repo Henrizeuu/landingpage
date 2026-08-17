@@ -1,0 +1,8 @@
+BLOCO: Hero Section (Animated Orbs)
+- Layout: Top padding 80px (não forçar 100vh). Conteúdo centralizado com respiro generoso.
+- Background Mechanics (O Macete):
+  - Fundo estático + pseudo-elemento ::before com gradiente radial animado no topo (animação de shift infinito de 8s).
+  - Orbs (Bolas de luz): Injetar 3 divs absolutas com blur gigante (70px a 90px) e opacidade reduzida (~30%). Animações keyframes individuais e dessincronizadas (ex: 20s, 25s, 17s) fazendo floats pelo fundo.
+  - Overlay de Grid: Div absoluta cobrindo tudo com linhas de grid sutis e uma máscara radial (radial mask ellipse) no centro para não poluir as bordas.
+- Conteúdo: Badge no topo. H1 com text-wrap: balance, max-width 1040px, margin-top 24px, tamanho escalável (clamp gigante). Parágrafo max-width 640px. CTA stack (Botão + nota de preço).
+- Regra Responsiva: Em <=1024px o H1 reduz; em <=768px padding vertical contrai e H1 cai para tamanhos adaptados para mobile. Os Orbs devem continuar existindo, mas contidos no overflow da seção.

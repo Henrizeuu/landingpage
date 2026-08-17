@@ -1,0 +1,4 @@
+COMPONENTE: Primary CTA Button
+- Estrutura Base: inline-flex center; gap: 8px; padding: 16px 32px; border-radius: 9999px; border: none; font-size: 16px; font-weight: 600; line-height: 1; white-space: nowrap; transition: all 0.2s ease.
+- Hover: translateY(-1px); box-shadow com a cor de acento principal translúcida.
+- Ícone: Injetar SVG inline (ex: seta para direita) após o texto.

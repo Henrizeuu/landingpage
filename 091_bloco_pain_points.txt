@@ -1,0 +1,7 @@
+BLOCO: Pain Points Grid
+- Layout: Position relative, overflow clip, padding top/bottom generoso (ex: 9.6rem). Pseudo-elemento no topo cria um fade out de transição (height 10rem) e glows radiais sutis espalhados.
+- Header (Intro): Grid assimétrico alinhado na base (align end), separando Título (max-width 62rem) do Parágrafo.
+- Cards Grid: 3 colunas, margin-top 5.6rem.
+- Visual do Card: Linha no topo (1px gradient). Índice numérico superdimensionado usando a Fonte Display, com animação clip-path de revelação (`inset(0 100% 0 0)` para `inset(0)`).
+- Animações (JS): Os cards revelam de opacidade 0 e translateY(2.4rem) com stagger de 90ms usando IntersectionObserver.
+- Regra Responsiva: Em telas <=834px, intro vira 1 coluna. Grid de cards vira 1 coluna. Linha de gradiente no topo do card deve ser transformada em um `border-top` sólido/translúcido simples.

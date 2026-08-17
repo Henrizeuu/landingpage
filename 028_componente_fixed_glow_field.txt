@@ -1,0 +1,6 @@
+COMPONENTE: Fixed Background Glow Field
+- Uso: Atmosfera de fundo fixada atrás de todas as seções (fixed inset-0, z-index negativo, pointer-events-none).
+- Camada 1: Círculo 500x500px, border-radius 999px, blur 150px, opacity 0.40, posicionado em left: calc(50% - 400px), top: -200px.
+- Camada 2: Círculo 800x800px, border-radius 999px, blur 150px, opacity 0.10, posicionado em right: calc(50% - 600px), top: -400px.
+- Camada 3: Oval 1400x1000px, gradient translúcido, border-radius 999px, blur 250px, opacity 0.50, centralizado em left: 50%; top: 15%; transform: translateX(-50%).
+- Camada 4: Canvas transparente decorativo (opacity 0.02) cobrindo todo o espaço.

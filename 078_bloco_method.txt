@@ -1,0 +1,6 @@
+BLOCO: Method / 3 Steps
+- Layout: Padding top/bottom generoso. Header centralizado com Título e Descrição.
+- Grid Desktop: 3 colunas em linha.
+- Cards: Injetar Componente "Lamp Glow Reveal" nos cards. O card deve possuir radius grande, borda sutil, box-shadow escura com glow na cor de acento e backdrop-filter blur pesado.
+- Conteúdo do Card: Número da etapa no topo, Título H3, Copy explicativo. Elementos com position relative e z-index 1 para sobrepor a luz.
+- Regra Responsiva: Em telas Mobile (<= 767px), o grid muda para coluna única, align stretch, gap 16px. Padding interno dos cards cai para ~30px.

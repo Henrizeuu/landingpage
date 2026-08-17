@@ -1,0 +1,7 @@
+BLOCO: Before / After Comparison
+- Layout: Max-width 980px, centralizado. Flex column, gap 44px. Padding generoso. Título H2 centralizado.
+- Grid Desktop: 2 colunas proporcionais. Gap 24px.
+- Left Card (Situação Atual): Estética de alerta. Fundo escuro translúcido. Borda, sombra e ícone com a "Cor de Perigo" (Danger Color). 
+- Right Card (Solução): Estética de sucesso. Fundo escuro translúcido. Borda, sombra, ícone e glow interno com a "Cor de Acento" principal. Injetar Componente "Scroll Reveal" com delay neste card.
+- Elementos Internos: Listas com gap 16px, linhas de texto com coloração translúcida.
+- Regra Responsiva: Em telas Mobile (<= 767px), o grid vira 1 coluna obrigatoriamente.

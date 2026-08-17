@@ -1,0 +1,8 @@
+BLOCO: Before / After Comparison
+- Layout: max-width 56rem, centralizado. Padding horizontal 24px. Margin-top 40px.
+- Heading: Text center, font-size 36px (desktop). Label tipográfico destacado (ex: fonte Pixel/Mono).
+- Grid Desktop: 2 colunas. Gap 24px. Margin-top 48px.
+- Left Card (Negativo): Usar "Glass Card Masked Border". Fundo com gradiente sutil escuro. Ícone do header em holder 48x48px com fundo de cor quente suave (20% opacidade). Textos da lista com opacidade 70%. Borda mascarada com tons quentes translúcidos.
+- Right Card (Positivo): Usar "Glass Card Masked Border". Fundo com gradiente escuro. Ícone em holder com fundo de cor fria/destaque suave (20% opacidade). Textos com opacidade 90% e peso 500. Borda mascarada com tons frios translúcidos.
+- CTA Inferior: Centralizado abaixo do grid, margin-top 24px.
+- Regra Responsiva (Mobile <= 767px): O Grid deve obrigatoriamente empilhar para 1 coluna. O padding horizontal da seção inteira se mantém.

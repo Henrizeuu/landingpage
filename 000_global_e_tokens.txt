@@ -1,0 +1,17 @@
+GLOBAL STYLES & TOKENS
+- Resets: box-sizing: border-box; html { scroll-behavior: smooth; }
+- Body: margin: 0; min-height: 100vh; overflow-x: hidden; text-rendering: optimizeLegibility; antialiased;
+- Tokens de Estrutura:
+  --navy
+  --navy-shadow
+  --teal
+  --teal-dark
+  --teal-border
+  --cream
+  --cream-bg
+  --grid-cream
+  --border-bluegray
+  --yellow
+  --yellow-dark
+  --yellow-border
+- Regra de Arquitetura: Breakpoints principais estabelecidos em 1100px e 767px. Nenhuma estrutura adicional de navegação (Navbar) ou footer complexo deve ser criada.

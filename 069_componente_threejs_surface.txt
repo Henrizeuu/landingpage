@@ -1,0 +1,6 @@
+COMPONENTE: Three.js Dotted Hero Surface (WebGL)
+- Estrutura: Div absolute com z-index 0, overflow hidden, atrás do conteúdo do Hero.
+- Comportamento Obrigatório: Criar um campo de ondas pontilhadas em WebGL puro usando a classe `THREE.Points`. As posições (x, y, z) dos pontos formam um grid centralizado, onde o eixo "Y" é atualizado por Math.sin frame a frame para criar o efeito de onda fluida.
+- Câmera e Névoa (Fog): Usar PerspectiveCamera e cena com Fog combinando com a Cor de Fundo para dar profundidade.
+- Cores: Injetadas nos atributos de vértice para acompanhar o tema da página.
+- Regra Estrita e Acessibilidade: É PROIBIDO substituir isso por Canvas 2D, imagem estática, CSS dots ou vídeo genérico. O loop de requestAnimationFrame deve pausar quando `document.hidden` for true e renderizar apenas um frame estático se `prefers-reduced-motion: reduce` for detectado no sistema do usuário.

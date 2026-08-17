@@ -1,0 +1,5 @@
+BLOCO: Identification (Spotlight Grid)
+- Layout: Fundo com gradiente suave/claro. Header max-width 920px.
+- Grid: max-width 860px, margin-top 40px. 2 colunas, gap 16px.
+- Cards: Radius 24px, padding 24px 40px, flex row com gap 16px. Alinhamento com "dot" decorativo (círculo 8px com cor de acento). Hover com lift e sombra mais forte.
+- Regras Responsivas: Em telas <=768px, o grid empilha obrigatoriamente para 1 coluna e o padding lateral da seção cai para 20px (ou 16px no mobile pequeno).

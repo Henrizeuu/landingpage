@@ -1,0 +1,10 @@
+BLOCO: Bonus Section
+- Layout: Fundo com contraste agressivo (ex: escuro sólido).
+- Grid Desktop: 3 colunas.
+- Cards: Fundo branco/claro, radius 16px, padding 32px.
+- Efeitos Visuais (O Macete):
+  - Badge de valor absoluto no canto superior direito.
+  - Pseudo ::before desenhando linha superior de 3px com gradiente (aparece no hover).
+  - Pseudo ::after com glow radial sutil transbordando no canto superior direito (aparece no hover).
+- Animação GSAP: Entrada tipo "pop" (scale: 0.85, opacity: 0, ease: elastic.out).
+- Regras Responsivas: Em <= 1023px, 2 colunas. Em <= 767px, 1 coluna.

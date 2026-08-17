@@ -1,0 +1,9 @@
+COMPONENTE: Lamp Glow Reveal (Luz de Palco)
+- Uso: Nos cards da seção "Método".
+- Estrutura: Cards com `position: relative; isolation: isolate; overflow: hidden;`
+- Feixe de Luz (Beam): Pseudo-elemento ::before posicionado no topo (`top: -120px; width: 170%; height: 220px`). Usa uma composição de dois `conic-gradient` translúcidos com a Cor de Acento para simular um cone de luz.
+- Foco da Luz (Glow): Pseudo-elemento ::after lavando o topo (`top: 6px; width: 84%; height: 72px`). Filtro blur(10px).
+- Animações (Ao adicionar classe .lamp-on via JS): 
+  1. `cardLampBeam`: opacidade e translateY pulsando suavemente.
+  2. `cardLampGlow`: opacidade e scaleX pulsando.
+- O conteúdo do card deve ter z-index 1 para não ser ofuscado pela luz.

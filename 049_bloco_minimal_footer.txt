@@ -1,0 +1,5 @@
+BLOCO: Minimal Footer
+- Layout: Padding generoso no topo (ex: 120px) e menor na base (40px). Fundo sólido ou gradiente do fundo da página.
+- Conteúdo: Display flex, align items center, justify-content space-between. Copyright na esquerda, links de políticas na direita (ou vice-versa).
+- Tipografia: Fonte de Body em tamanho small, cores semitransparentes (muted).
+- Regra Responsiva: Em telas estreitas, permitir flex-wrap para que os elementos empilhem graciosamente e não quebrem o layout horizontal.

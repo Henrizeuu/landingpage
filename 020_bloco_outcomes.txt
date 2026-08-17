@@ -1,0 +1,6 @@
+BLOCO: Four-Week Outcomes
+- Layout: Padding 80px 24px. Max-width 72rem. Header centralizado com margin-bottom 48px.
+- Headings: H2 Font size 36px (desktop), weight 500. Parágrafo max-width 48rem, line-height relaxed.
+- Grid Desktop: 3 colunas. Gap 32px.
+- Cards: Injetar "Glass Card Masked Border". Fundo de gradiente escuro. Ícone no topo (40px, margin-bottom 16px). Título font-size 20px, semibold. Texto com opacidade 70%.
+- Regra Responsiva (Mobile <= 767px): O Grid empilha rigidamente para 1 coluna. Tamanho do H2 deve reduzir proporcionalmente (ex: 30px).

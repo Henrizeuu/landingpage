@@ -1,0 +1,9 @@
+BLOCO: Hero Section
+- Layout: min-height 100vh, display flex, alinhamento vertical, padding-top max(20vh, 120px).
+- Fundo: Gradiente vertical fluido + injeção de Componente "Decorative Parallax Orbs" nos cantos.
+- Conteúdo: max-width 1000px, flex column, gap 24px. Elementos (H1, Subtítulo, Label) com text-shadow para legibilidade.
+- Social Proof: Container com 4 avatares circulares sobrepostos + texto de prova social.
+- Ação: Injetar Componente "CTA Button Animado".
+- Transição Inferior: Injetar Componente "Gradient Transition Strip".
+- Animação GSAP: Todo o bloco de conteúdo faz fade de saída no scroll (y:80, opacity:0, scrub 1).
+- Regras Responsivas: Em <= 767px, H1 cai para ~36px. Padding-top ajusta para max(15vh, 80px). Ações alinham à esquerda ou centralizam ocupando 100% da largura.

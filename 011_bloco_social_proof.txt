@@ -1,0 +1,6 @@
+BLOCO: Authority / Social Proof
+- Main Panel: Width 75% (desktop), min-height 150px, flex row center, radius 20px, padding 24px, margin-bottom 42px.
+- Header Panel: min-height 120px, radius 20px, padding 6vw.
+- Grid Desktop: 3 colunas, cada uma com 33.3%.
+- Cards: width 100%, height auto, bordas arredondadas e sombras adaptadas ao container.
+- Regras Responsivas: Em <= 1100px, pode empilhar conforme necessário. Em <= 767px, assume rigidamente 1 coluna com gap de 12px.

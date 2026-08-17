@@ -1,0 +1,3 @@
+COMPONENTE: Elevated SaaS Card
+- Estrutura Base: background claro/branco, radius: 20px, padding: 40px, border de 1px sutil, box-shadow de elevação suave, overflow: hidden, position: relative.
+- Hover Lift (O Macete): translateY(-4px) e transição para uma sombra maior (--kit-shadow-card-lg).

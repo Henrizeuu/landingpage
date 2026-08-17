@@ -1,0 +1,5 @@
+BLOCO: Deliverables
+- Layout: Padding 80px 24px. Max-width 64rem. Header centralizado (margin-bottom 48px). H2 font-size 48px desktop. Parágrafo max-width 42rem.
+- Grid Desktop: 2 colunas. Gap 32px, margin-bottom 48px.
+- Cards: Injetar Componente "Glass Card Masked Border". Fundo gradient escuro com backdrop blur. Ícone 40px (margin-bottom 16px), título 20px semibold, texto descritivo com opacidade 70%.
+- Regra Responsiva (Mobile <= 767px): O Grid empilha para 1 coluna. O H2 deve reduzir para 40px.

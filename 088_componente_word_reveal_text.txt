@@ -1,0 +1,5 @@
+COMPONENTE: Scroll-Linked Word Reveal
+- Uso: Em títulos ou parágrafos longos que revelam conforme o scroll da página.
+- Lógica JS (O Macete): O script mapeia o texto e envelopa cada palavra em um `<span>` dinâmico preservando os espaços em branco.
+- CSS Oculto: opacity baixo (ex: 0.06), translateY (0.55rem), blur (0.28rem).
+- Gatilho: As palavras se tornam totalmente visíveis iterativamente dependendo do progresso do viewport (scroll).

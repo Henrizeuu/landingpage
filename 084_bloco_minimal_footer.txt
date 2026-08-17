@@ -1,0 +1,4 @@
+BLOCO: Minimal Footer
+- Background: Escuro sólido.
+- Conteúdo: Copyright, Links de Políticas e Termos. Ícones sociais (Inline SVGs dentro de chips circulares/redondos com fundo claro).
+- Regra de Arquitetura: Manter compacto, alinhado e simples. Ocultar qualquer outro bloco CTA subjacente não especificado na estrutura primária de vendas, garantindo o fechamento estrito da página.

@@ -1,0 +1,13 @@
+GLOBAL STYLES & TOKENS
+- Resets: box-sizing: border-box; margin: 0; padding: 0;
+- Body: overflow-x: hidden; antialiasing ativado; background e color baseados em tokens.
+- Stack Obrigatória: HTML, CSS e JavaScript puro + GSAP e ScrollTrigger via CDN. Proibido usar React, Tailwind ou Bootstrap.
+- Tokens de Tipografia: Utilizar variáveis para Fonte de Heading (títulos grandes/números), Fonte de Body e Fonte Mono (labels).
+- Tokens de Escala e Espaçamento (Usar Clamp):
+  --kit-fs-h1: clamp(40px, 5vw, 72px)
+  --kit-fs-h2: clamp(24px, 2.5vw, 32px)
+  --kit-section-py: clamp(60px, 8vw, 100px)
+  --kit-section-px: clamp(20px, 4.4vw, 64px)
+  --kit-container-max: 1312px
+- Tokens de Gaps e Radius: Lg (48px), Md (32px), Sm (24px), Xs (16px). Radius: md (12px), lg (16px), xl (24px), pill (50px).
+- Regra de Arquitetura e Responsividade: Breakpoints de referência em 1023px (Tablet) e 767px (Mobile). O layout nunca deve gerar scroll horizontal. Todos os paddings e gaps devem consumir estritamente as variáveis CSS.

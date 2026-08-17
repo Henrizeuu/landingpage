@@ -1,0 +1,8 @@
+BLOCO: Offer / Pricing
+- Layout: Padding 80px 24px (desktop). Max-width 48rem centralizado.
+- Badge: Wrapper centralizado (margin-bottom 32px). Pill arredondada, padding 4px 16px, texto 14px semibold, overlay de borda mascarada injetado.
+- Offer Card: Max-width 36rem centralizado. Rounded 24px, padding 32px, flex column gap 24px. Fundo dark translúcido com backdrop blur e overlay de borda mascarada.
+- Elementos Internos: H2 30px desktop. Subcopy centralizado com margin-bottom 8px. Checklist vertical gap 12px com checkmarks alinhados ao topo da linha.
+- Pricing Block: Preço original riscado e translúcido (24px). Label pequena semibold de ancoragem. Preço principal em destaque gigante (60px bold).
+- CTA: Renderizar "Primary CTA Button", largura 100%.
+- Regra Estrutural e Responsiva: É proibido esticar o card de oferta horizontalmente além de 36rem. O formato contido e centralizado deve ser preservado. Em telas Mobile (<= 639px), a seção ganha padding 64px 24px e o H2 cai para 24px para evitar quebra de layout no preço gigante.

@@ -1,0 +1,7 @@
+COMPONENTE: CTA Button Animado (GSAP/CSS)
+- Base: inline-flex, centralizado, gap 8px, padding 20px 40px, border-radius 50px, font-weight bold, sem underline.
+- Efeito Visual: Fundo com gradiente (injetado via token de acento), box-shadow colorida flutuante.
+- Motion (O Macete): Animação de pulso contínua (3s) alternando a força da sombra. Pseudo-elemento ::before criando um efeito "shimmer" (faixa translúcida varrendo da esquerda para a direita a cada 2.5s).
+- Hover: translateY(-2px) scale(1.03), intensifica sombra e brilho.
+- Ícone: Injetar SVG de seta (18x18px, stroke-width 1.5) alinhado ao texto.
+- Regras Responsivas: Em telas <= 767px, o botão pode assumir 100% da largura do container, mas deve manter o padding e a estrutura do ícone.

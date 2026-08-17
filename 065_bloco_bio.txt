@@ -1,0 +1,6 @@
+BLOCO: Author Bio
+- Layout: Fundo neutro/claro. Grid Desktop de 2 colunas (ex: 1fr 1.5fr).
+- Imagem: Aspect-ratio 3/4, radius 24px, overflow hidden. Injetar um placeholder de gradiente (não usar foto real no dev). Hover na imagem faz scale(1.03) rotate(-1deg). Imagem executa parallax GSAP (y:40 para y:-40 no scroll).
+- Conteúdo: Label, H2, Textos narrativos.
+- Stats: Linha inferior de métricas (Número gigante + descrição), com borda superior divisória.
+- Regras Responsivas: Em <= 767px, o grid vira 1 coluna e a imagem perde o aspect-ratio rígido se necessário para caber na tela.

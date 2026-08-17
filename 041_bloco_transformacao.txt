@@ -1,0 +1,6 @@
+BLOCO: Transformation Benefits
+- Layout: Fundo neutro/claro. Header max-width 920px.
+- Grid: 2 colunas, gap 24px, margin-top 40px.
+- Cards: Injetar Componente "Elevated SaaS Card". Dentro do card: flex column, gap 16px. Ícone no topo (48x48, radius 12px, centralizado com fundo suave).
+- Ação: Botão secundário ou link centralizado abaixo do grid.
+- Regras Responsivas: Em <=768px, grid empilha para 1 coluna. O H2 acompanha o scale clamp.

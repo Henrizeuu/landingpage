@@ -1,0 +1,5 @@
+COMPONENTE: Scroll Reveal Animation
+- Estado Oculto: opacity: 0; transform: translateY(20px); filter: blur.
+- Estado Visível: opacity: 1; transform: none; filter: none.
+- Comportamento: Usar IntersectionObserver. Executar apenas uma vez por elemento.
+- Regra de Acessibilidade: Desativar imediatamente se prefers-reduced-motion: reduce for detectado.

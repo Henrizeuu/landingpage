@@ -1,0 +1,4 @@
+COMPONENTE: Icon Wrappers (Cards)
+- Estrutura: width 48px, height 48px, border-radius var(--kit-radius-md), display flex centralizado, flex-shrink 0.
+- Estilo: O fundo e a cor do ícone devem usar a mesma paleta de acento (ex: fundo com 20% de opacidade e borda com 30% de opacidade da cor principal do ícone).
+- SVG Interno: 24x24px, stroke-width 1.5, fill none, stroke currentColor.

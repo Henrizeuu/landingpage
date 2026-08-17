@@ -1,0 +1,9 @@
+BLOCO: Sticky Scroll Story
+- Layout Mecânico: Altura total da seção = 250vh. Área sticky interna: position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center.
+- Fundo: Fundo escuro com glow radial suave centralizado.
+- Tipografia das Frases: Posição absoluta, centralizada, max-width 92vw. Fonte gigante (clamp) com letter-spacing negativo.
+- JS Behavior (O Macete): 
+  - Calcular o progresso de scroll da seção (0 a 1).
+  - Progresso < 0.45: Frase 1 visível (opacidade 1, blur 0, translate 0). Frase 2 oculta.
+  - Progresso >= 0.45: Frase 1 ganha classe de saída (translates para cima, blur aumenta, opacity 0). Frase 2 entra.
+- Regra Responsiva: Em telas <=768px, o tamanho da fonte (clamp) faz o ajuste sozinho. Manter a lógica de 250vh para garantir tempo de leitura durante o scroll no touch.

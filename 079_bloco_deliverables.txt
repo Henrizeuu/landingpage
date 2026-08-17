@@ -1,0 +1,7 @@
+BLOCO: Deliverables Grid
+- Layout: Fundo base escura. Label superior gerado via pseudo-elemento (ex: [ O QUE VOCÊ RECEBE ]). Título H2 centralizado. Margin-top grande.
+- Grid Desktop: 2 colunas, max-width ~1100px. Gap 16px.
+- Cards: Fundo linear-gradient quase preto absoluto. Borda de 1px translúcida. Radius 18px. Padding 20px. Min-height 280px (display flex column). Sombra base pesada.
+- Efeitos de Hover: A borda clareia. Pseudo ::before acende um glow sutil na diagonal. Pseudo ::after cria pequenos quadrados (10px) brancos/claros nos cantos (usando mask-image).
+- Conteúdo: Caixa de ícone no topo (64x64px, radius 11px, com ícone SVG). Título semibold, Descrição translúcida.
+- Regra Responsiva: Em telas Mobile (<= 767px), o grid vira 1 coluna com gap 12px.

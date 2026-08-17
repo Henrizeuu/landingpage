@@ -1,0 +1,9 @@
+BLOCO: Method (Deck 3D Sobreposto)
+- Layout: Header centralizado, max-width 680px. Fundo claro.
+- Container do Deck (O Macete): display flex, justify-content center, perspective 1500px, padding vertical generoso.
+- Layout dos Cards (Desktop): Cards lado a lado sobrepostos com margin-left negativo (ex: -60px). Largura fixa ~320px, altura ~420px. Transformação inicial: rotateY(15deg) scale(0.9).
+- Z-Index: Card 1 acima, Card 2 no meio, Card 3 atrás.
+- Hover Interativo: Ao passar o mouse no container, cards não focados reduzem (scale 0.85, translateX 20px, brilho/opacidade caem). Card em foco salta: rotateY(0) scale(1.1) translateY(-20px), z-index 10, ganha sombra profunda.
+- Conteúdo do Card: Topo visual (height 140px) com gradiente e SVG gigante (56x56). Body com padding, label, H5, parágrafo. Número decorativo gigante absoluto no canto inferior direito.
+- Animação GSAP de Entrada: rotateY: 0, scale: 0.9, y: 50, ease back.out.
+- Regras Responsivas: ESTRITAMENTE em <= 1023px (Tablet/Mobile), a mecânica 3D é desativada. O Deck vira uma coluna simples (gap 24px) com max-width 100% (ou 560px em tablet), margin-left 0 e transforms removidos para não quebrar a tela.

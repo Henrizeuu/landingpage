@@ -1,0 +1,5 @@
+BLOCO: Guarantee
+- Layout: Padding 4vw.
+- Visual Badge/Selo: Elemento gráfico com max-width ~388px.
+- Text Panel Desktop: Width 50%, min-height 261px, flex column center, gap 12px, padding 2vw. Heading max-width ~394px. Parágrafo max-width ~285px.
+- Regras Estruturais e Responsivas: O selo visual DEVE preservar escala legível, proibido reduzi-lo a um ícone minúsculo. Em telas <= 1100px os elementos empilham. Em <= 767px padding vira 8vw 4vw.

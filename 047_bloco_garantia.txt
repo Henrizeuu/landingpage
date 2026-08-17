@@ -1,0 +1,5 @@
+BLOCO: Guarantee
+- Layout: Pode ser posicionado logo abaixo da oferta. Max-width 560px centralizado.
+- Card: Background destacado do fundo da página, radius 16px, display flex, align-items flex-start, gap 24px, padding 24px.
+- Conteúdo: Ícone de shield/check destacado. Textos informativos.
+- Regras Responsivas: Em <=768px, muda para flex column (empilha o ícone acima do texto), alinha ao centro e centraliza o texto.

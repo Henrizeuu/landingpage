@@ -1,0 +1,4 @@
+BLOCO: Floating Action Button (WhatsApp)
+- Comportamento: Fixado em posição absolute/fixed no bottom-right da tela.
+- Visual: Formato compacto, label acessível. 
+- Regra de Isolamento: Este elemento é o único que tem permissão para quebrar a paleta principal injetada (ex: utilizando a cor verde nativa do app), mas não deve contaminar os tokens globais da página.

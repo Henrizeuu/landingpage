@@ -1,0 +1,4 @@
+BLOCO: Minimal Footer
+- Layout: Padding compacto. Centralizado. Background da cor de base da página.
+- Tipografia: Fonte UI, weight leve (400), cor translúcida (muted).
+- Regra de Arquitetura: Nenhuma seção flutuante, footer pesado ou menus de navegação complexos devem ser adicionados aqui.

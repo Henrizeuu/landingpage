@@ -1,0 +1,7 @@
+BLOCO: Course Modules
+- Layout: Grid Desktop 2 colunas.
+- Cards: Padding 48px, radius 20px. Display flex column, gap pequeno.
+- Estrutura Interna: Numeração (Fonte Mono, uppercase), Título, Descrição.
+- Hover Effect (O Macete): Barra lateral esquerda surge no hover via pseudo-elemento ::after (width 4px, height 100%, transition de opacity). Sombra acende.
+- Animação GSAP: y: 40, rotation: 1, opacity: 0, stagger 0.1.
+- Regras Responsivas: Em <= 767px, grid empilha para 1 coluna. Padding do card reduz.

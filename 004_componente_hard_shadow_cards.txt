@@ -1,0 +1,4 @@
+COMPONENTE: Hard Shadow Cards
+- Estilo Obrigatório: box-shadow: 0px 4px 0px 0px var(--navy-shadow); (Sombra dura, sólida, offset para baixo).
+- Uso: Em pills, painéis e cards de destaque.
+- Regra Estrita: Proibido o uso de sombras desfocadas ou suaves (estilo SaaS). A sombra deve criar um aspecto de bloco sólido e rígido.

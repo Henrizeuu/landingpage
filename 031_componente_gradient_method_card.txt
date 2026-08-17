@@ -1,0 +1,5 @@
+COMPONENTE: Border Gradient Method Card
+- Base CSS: background-clip: padding-box; border: 2px solid transparent; position: relative;
+- Pseudo-elemento ::before: absolute inset 0, margin -2px, z-index -1, background com gradiente vertical escuro base.
+- Pseudo-elemento ::after: absolute inset 0, margin -2px, pointer-events none, background com gradiente diagonal luminoso, mix-blend-mode: plus-lighter, opacidade 0.05.
+- Hover: Opacidade do ::after sobe para 0.15, iluminando as bordas de forma suave.

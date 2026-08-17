@@ -1,0 +1,7 @@
+BLOCO: Offer & Guarantee
+- Layout da Oferta: Seção com gradiente denso, padding vertical muito alto. Card centralizado, max-width 680px, radius 24px, padding escalável (clamp). Sombra de alta elevação.
+- Preço (Oferta): Preço riscado, preço principal gigante (clamp) com animação CSS nativa de "glow/brilho" a cada 3s. Parcela e CTA Injetado.
+- Card de Garantia: Posicionado abaixo da oferta. Max-width 720px. Grid de 2 colunas (Selo + Texto).
+- Selo de Garantia: Círculo grande, gradiente radial, ring interno. Ícone de check centralizado.
+- Animação GSAP: Card de oferta sobe (y: 60, scale 0.95). Garantia entra com delay.
+- Regras Responsivas: Em <= 767px, o card de Garantia vira 1 coluna (Selo centralizado em cima do texto). O padding de ambos os cards ajusta para não quebrar telas pequenas. A tipografia do preço deve usar os menores valores do Clamp.

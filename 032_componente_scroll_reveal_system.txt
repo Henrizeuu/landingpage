@@ -1,0 +1,6 @@
+COMPONENTE: Scroll Reveal System
+- Configuração Base: --reveal-distance: 28px; --reveal-duration: 0.8s; --reveal-ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+- Estado Oculto: opacity: 0; transform: translate3d(0, var(--reveal-distance), 0) scale(0.985); filter: blur(8px);
+- Estado Visível (.is-visible): opacity: 1; transform: none; filter: none;
+- Variações: .reveal-left (translate3d -36px), .reveal-right (translate3d 36px), .reveal-zoom (scale 0.94).
+- Regra de Comportamento: Usar IntersectionObserver com threshold 0.18 e rootMargin 0px 0px -8% 0px. Desativar transformações e exibir o conteúdo normalmente se prefers-reduced-motion estiver ativo.

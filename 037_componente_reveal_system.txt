@@ -1,0 +1,6 @@
+COMPONENTE: Reveal Animation System
+- Comportamento Base: Elementos ganham opacidade 0 e translateY(24px). 
+- Animação: transition: opacity 0.6s ease-out, transform 0.6s ease-out.
+- Estado Visível: opacity: 1; transform: translateY(0).
+- Variações Dinâmicas (data-anim): "scale-in" (scale 0.95), "slide-left" (translateX -30px), "slide-right".
+- Gatilho JS: IntersectionObserver com threshold 0.1 e rootMargin 0px 0px -60px 0px. Desobservar após a primeira exibição. Para evitar blank page, inicializar o JS adicionando a classe "js-ready".

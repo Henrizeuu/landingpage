@@ -1,0 +1,5 @@
+BLOCO: Method / 3 Steps
+- Header Panel: min-height 120px, radius 20px, padding 6vw. Título centralizado com max-width 980px.
+- Grid Desktop: display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; width 85%. Cards com largura base de ~380px.
+- Card Estilo: Geometria de bordas duras/retas (proibido rounded agressivo de SaaS tiles). Image box width 90%. Alinhamento flex-start.
+- Regras Responsivas: Em <= 767px, empilha para 1 coluna, gap 10px, padding principal 0 2vw 8vw. Card ganha padding interno de 4vw. Título reduz para 26px.

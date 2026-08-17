@@ -1,0 +1,6 @@
+BLOCO: Results Unlock / Support Materials
+- Layout: Padding 64px 24px. Max-width 64rem. Header centralizado.
+- Grid Desktop: 3 colunas. Gap 20px. Margin-bottom 32px.
+- Mini-Cards: Rounded 16px, padding 20px, borda simples 1px translúcida (opacidade 10%), fundo translúcido (opacidade 20%). Textos concisos.
+- Textos Adicionais: Closing Statement centralizado na base da seção.
+- Regra Responsiva (Mobile <= 767px): O Grid empilha para 1 coluna para evitar compressão ilegível do conteúdo nos cards menores.

@@ -1,0 +1,5 @@
+BLOCO: Testimonials
+- Layout: Fundo escuro. Título centralizado no topo.
+- Estrutura: Injetar Componente "Testimonial Marquee (Rolagem Infinita)" ocupando a largura total da tela.
+- Estilo dos Cards: Glassy/escuro, contendo estrelas, citação em itálico e autor/função no rodapé.
+- Regra de Arquitetura: Proibido usar swipers/carrosséis que exijam cliques. O marquee deve rolar livre e responsivamente.

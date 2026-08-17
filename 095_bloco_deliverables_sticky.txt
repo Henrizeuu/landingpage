@@ -1,0 +1,6 @@
+BLOCO: Deliverables (Sticky Horizontal Track)
+- Mecânica de Scroll (O Macete Principal): A altura da seção (`min-height`) começa gigante (ex: 300vh), mas o JS recalcula baseando-se no `scrollWidth` da trilha. O elemento interno usa `position: sticky; top: 0; height: 100vh; overflow: hidden;`. O Scroll Vertical da página é traduzido em `translateX` negativo da trilha de cards.
+- Layout Base: Grid assimétrico. Esquerda = Textos introdutórios (Intro). Direita = Trilha Horizontal de Cards (`grid-auto-flow: column`).
+- Cards (Entregáveis): Injetar "Dark Glass Card". Min-width travado (ex: 57.5rem). Overlay interno inset 1.2rem com padrão radial.
+- Paginação (Desktop): Pílula absoluta na base. JS gera botões baseados no número de cards; ao clicar, scrolla suavemente a página verticalmente para a posição equivalente do card.
+- Regras Responsivas (<=1023px - Tablet/Mobile): O min-height da seção é reduzido drasticamente no JS. O estágio muda para `flex column`. Os cards ajustam o `min-width` para `calc(100vw - 3.2rem)`. A paginação é ocultada. É obrigatório injetar um script de `drag-to-scroll` onde o swipe horizontal pelo usuário no touch mova o container (traduzindo o delta de arrasto para o scroll do viewport).

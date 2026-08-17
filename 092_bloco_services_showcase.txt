@@ -1,0 +1,7 @@
+BLOCO: Services Showcase (Interativo)
+- Layout: Z-index 3, overflow-x clip. Glows grandes desfocados centralizados no topo.
+- Grid: Flex wrap, centralizado. Painel com largura de calc((100% - 6.4rem)/3).
+- Cards Base: Injetar "Dark Glass Card". Aspect-ratio 1/1. Estrutura de selo circular no topo-direita.
+- Interação Card Padrão (O Macete): JS rastreia o mouse sobre o card e atualiza as variáveis `--hover-x` e `--hover-y`. Um radial glow dinâmico (borrado) aparece na posição exata do cursor.
+- Interação Card Destacado (O Macete 2): O card central/featured possui um glow de `conic-gradient` cujos graus giram continuamente via `requestAnimationFrame`. Aplica-se também uma sobreposição sutil de noise/texture via data-URI.
+- Regra Responsiva: Em <=1260px, os cards viram aspect-ratio 1/0.8. Em <=1060px, os painéis forçam 100% de largura (max 48rem), empilhando. Em <=834px, padding reduz e CTA vira 100% (limitado a 34rem).

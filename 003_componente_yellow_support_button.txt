@@ -1,0 +1,5 @@
+COMPONENTE: Secondary Support Button
+- Uso: Elementos de oferta ou suporte secundário.
+- Estilo: border-radius: 14px; font-weight: 800; padding: 10px 14px; box-shadow (offset duro).
+- Icon Chip (Interno): Chip integrado com width de 70px e margin-left de 10px.
+- Regra Estrita: Preservar a mesma anatomia de icon-chip do botão principal, apenas adaptando cores/sombras conforme injeção de tokens.

@@ -1,0 +1,4 @@
+COMPONENTE: Dark Glass Card
+- Uso: Painéis de serviços, cards do método, itens de FAQ e oferta.
+- Estrutura CSS: linear-gradient escuro translúcido, bordas sutis (translúcidas na cor de acento ou branco), backdrop-filter blur (0.8rem a 1rem), border-radius variando de 2rem a 2.8rem.
+- Efeitos Adicionais (Injetáveis): Overlay de inner borders ou texturas dot-pattern via pseudo-elementos.

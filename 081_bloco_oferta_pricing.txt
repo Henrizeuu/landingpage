@@ -1,0 +1,7 @@
+BLOCO: Offer / Pricing
+- Background: Gradiente de transição para tom escuro absoluto.
+- Layout: Card de preço centralizado. Estética Glass Escuro.
+- Componentes Internos: Título, Checklist de Benefícios.
+- Checklist Customizado: Ícones de check circulares (20x20px, radius 999px, fundo translúcido da Cor de Acento, ring interno).
+- Bloco de Preços: Preço antigo (riscado, cor de perigo). Frase "por apenas" (Cor de acento clara, letter-spacing largo). Preço atual gigante (font-weight 800, line-height 0.95).
+- Ação: Injetar Componente "Primary CTA Button". Separadores horizontais.

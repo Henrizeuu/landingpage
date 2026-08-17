@@ -1,0 +1,4 @@
+COMPONENTE: Eyebrow Label
+- Uso: Acima dos títulos de seção.
+- Estilo: Fonte UI (uppercase), color var(--color-primary), weight 600, font-size ~1.2rem, letter-spacing largo (0.18em). 
+- Detalhes visuais opcionais: Adição de brackets "[" e "]" via pseudo-elementos.

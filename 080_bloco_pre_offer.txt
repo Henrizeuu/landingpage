@@ -1,0 +1,4 @@
+BLOCO: Pre-Offer Value Card
+- Layout: Seção com padding top/bottom generoso.
+- Card: Max-width 760px, centralizado. Fundo escuro sólido. Borda sutil na Cor de Acento. Radius 16px. Sombra pesada. Padding interno 48px 52px. Animação de fade-up na entrada.
+- Conteúdo: Texto introdutório, Lista de itens de ancoragem de preço (justificando o valor). Destaques de preços pintados com a Cor de Acento.

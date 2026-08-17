@@ -1,0 +1,5 @@
+BLOCO: Urgency Impact
+- Layout: Max-width centralizado. Painel estilo "Glassy Escuro". Radius desktop ~20px. Padding interno generoso. Fundo da seção com glow radial sutil.
+- Conteúdo: Título forte com parte destacada na cor de Perigo/Alerta. Texto de corpo. 
+- Flow Row (O Macete): Linha horizontal demonstrando o ciclo (ex: VONTADE -> PROCRASTINAÇÃO -> DESISTÊNCIA). Elementos intercalados com ícones de seta.
+- Regra Responsiva: Em telas Mobile (<= 767px), padding geral da seção e painel reduzem. A "Flow Row" DEVE permanecer na mesma linha (nowrap), reduzindo o tamanho da fonte dos chips para ~12px para caber sem quebrar.

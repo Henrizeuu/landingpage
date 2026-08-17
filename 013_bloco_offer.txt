@@ -1,0 +1,7 @@
+BLOCO: Offer / Pricing
+- Layout Seção: Padding 4vw. Gap 18px.
+- Grid Desktop: 2 colunas. Left Block (Benefícios) width 50%, min-height 350px, flex-start, radius 10px. Right Block (Pricing) width 50%, min-height 350px, justify-center, radius 10px, padding 6vw.
+- Título da Oferta: Width ~394px, centralizado.
+- Valores: Label (width ~222px, font 16px). Preço em destaque (width ~284px, font ~63px).
+- Ação: Renderizar "Secondary Support Button", width 100%, max-width 425px.
+- Regras Responsivas: Em <= 1100px o grid de oferta empilha. Em <= 767px, o Right Block (Preço) assume width 100%, min-height ~536px, e padding interno de 10vw. Section padding muda para 8vw 4vw.

@@ -1,0 +1,5 @@
+COMPONENTE: Primary CTA Button
+- Base: display: inline-flex; align-items: center; justify-content: center; flex-direction: row-reverse; gap: 0; width: 100%; max-width: 418px; min-height: 58px; padding: 18px 22px 18px 32px; border-radius: 14px; font-size: 18px; font-weight: 700; text-align: center;
+- Motion: Animação infinita ctaPulse 1.8s ease-in-out. Hover levanta levemente.
+- Icon Chip (O Macete Interno): width: 70px; padding: 12px; margin-left: 10px; border-radius: 200px; display: inline-flex; align-items: center; justify-content: center.
+- Regra Estrita: Proibido alterar a anatomia deste CTA. Ele DEVE conter o ícone engessado dentro de um chip redondo de 70px na lateral. Em telas menores, o botão deve assumir 100% da largura do seu container pai.
