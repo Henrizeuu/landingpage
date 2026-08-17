@@ -1,0 +1,5 @@
+COMPONENTE: Horizontal Ticker (Marquee)
+- Estrutura: Wrapper com `overflow: hidden` contendo uma trilha (`.ticker-track`) com `display: inline-flex; white-space: nowrap; min-width: max-content;`.
+- Animação CSS (O Macete): Keyframes indo de `translateX(0)` para `translateX(-33.333%)` com tempo linear infinito. O texto interno deve ser repetido para não gerar quebra visual durante o loop.
+- Modificadores: Pode ter bordas top/bottom (seção de Insight) ou ser absoluto flutuando no fundo (seção Stack).
+- Regra Responsiva: Em mobile, as durações da animação devem aumentar (ex: 40s) para compensar a leitura.

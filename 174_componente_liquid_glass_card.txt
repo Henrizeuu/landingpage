@@ -1,0 +1,6 @@
+COMPONENTE: Liquid Glass Card
+- Uso: Cards de benefícios/impacto e cards da seção de vídeo[cite: 19].
+- Estrutura: Elemento `<article>` ou container `.card` contendo pseudo-elementos `::before` e `::after` para texturas e realces internos[cite: 19].
+- Estilização Visual: Gradientes lineares e radiais translúcidos, borda de `1px solid rgba(255,255,255,.68)`, raios grandes (`clamp(26px, 3.5vw, 54px)` nos principais)[cite: 19].
+- O Macete do Filtro (Glass): `backdrop-filter: url("#card-liquid-glass") blur(32px) saturate(1.35) contrast(0.92)` combinado com sombras profundas externas (`0 28px 76px rgba(28, 38, 46, 0.16)`)[cite: 19].
+- Animação de Entrada: Entrada gerenciada via GSAP com opacidade 0, desfoque de 12-16px e escala reduzida (0.94 a 0.98)[cite: 19].

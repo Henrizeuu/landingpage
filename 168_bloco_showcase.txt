@@ -1,0 +1,7 @@
+BLOCO: Showcase & How we work
+- Layout: Fundo escuro. O wrapper tem um grid assimétrico invertido: Card Feature menor na Esquerda, Conteúdo Principal na Direita[cite: 16]. Align-items stretch[cite: 16].
+- Feature Card (Esquerda): Padding, radius arredondado, grid display[cite: 16]. Ícone gigante (92x92) com gradiente, inset shadows, e ::before para radial glow. Textos com weight 800 e line-height exprimido[cite: 16].
+- Conteúdo Principal (Direita): Heading layout (Kicker em uppercase e letter-spacing largo, Título em weight 700 com span da Cor de Acento)[cite: 16]. 
+- Grade de Implementação: 3 cards. Injetar "White/Accent Card Surface"[cite: 16]. Cada card tem um Número (top, letter-spacing largo), Título e Texto[cite: 16].
+- Animações (O Macete): Aplicar "Scroll Reveal" em todos (Feature + 3 Cards) utilizando delay em cascata por índice, garantindo que disparem juntos via IntersectionObserver threshold baixo e rootMargin profundo[cite: 16].
+- Regra Responsiva: Em <= 760px, o layout quebra para 1 coluna vertical. Inverter a ordem visual: Feature Card vai para baixo (order 2), Conteúdo vai para cima (order 1). Cards de implementação empilham[cite: 16].

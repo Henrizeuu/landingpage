@@ -1,0 +1,7 @@
+COMPONENTE: Pill CTA Button
+- Estrutura Base: tag `<a>` inline-flex centered, border-radius 999px[cite: 16].
+- Tipografia: Text-transform uppercase, font-weight 900, letter-spacing exagerado (ex: 0.24em a 0.26em), tamanho reduzido (ex: 0.68rem)[cite: 16].
+- Visual Base: Fundo claro/branco, texto escuro, border fina translúcida, shadow forte e agressiva preta[cite: 16].
+- Variações: Hero CTA (menor height, margin superior ajustada) e Final CTA (levemente maior)[cite: 16].
+- Interaction/Hover (O Macete): Background muda para um tom derivado da Cor de Acento clara, ganha uma purple/accent glow shadow (ex: 0 20px 52px), translateY(-2px), com transição suave de 180ms[cite: 16]. Estado `:focus-visible` ganha outline de 2px com offset de 5px na Cor de Acento[cite: 16].
+- Lógica JS: O botão do Hero deve ter o evento padrão (click) interceptado e preventDefault() aplicado[cite: 16].

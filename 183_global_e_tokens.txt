@@ -1,0 +1,13 @@
+GLOBAL STYLES & TOKENS
+- Resets: * { box-sizing: border-box; margin: 0; padding: 0; } html { scroll-behavior: smooth; } body { min-height: 100vh; }
+- Tipografia: Fonte Base "Poppins" (pesos 400 a 800). Fonte Destaque "Bebas Neue" para a marca ATLAS e títulos dos cards de acesso. A fonte "Instrument Serif" deve ser importada no head, mesmo que não seja usada ativamente no CSS.
+- Tokens Estruturais e de Cores (Injeção Dinâmica):
+  --bg-page: #050505
+  --text-main: #ffffff
+  --text-muted: #d6d0cc
+  --accent-color: #ef6d5b (Coral/Red-orange)
+  --accent-soft: #d88a76
+  --shadow-base: 0 30px 80px rgba(0, 0, 0, 0.45)
+- Sombras Extras: Sombras escuras em painéis variam em `0 24px 48px rgba(0,0,0,.24)` e `0 30px 70px rgba(0,0,0,.34)`.
+- Arredondamentos (O Macete): Regra estrita de design. Quase todos os painéis e cards usam CANTOS QUADRADOS (0px radius). Apenas botões CTA, badges, controles circulares e ícones podem usar border-radius (999px ou 50%).
+- Otimização / Acessibilidade: O layout e JS devem possuir fallback caso IntersectionObserver falhe (ou via prefers-reduced-motion), exibindo elementos com opacity 1 imediatamente.

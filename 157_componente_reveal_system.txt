@@ -1,0 +1,5 @@
+COMPONENTE: Reveal On Scroll & Word-by-Word
+- Base Lógica: IntersectionObserver (threshold 0.18 a 0.22). 
+- Reveal Padrão: opacity 0, translateY(44px) -> opacity 1, translateY(0). Transição de ~0.8s ease.
+- Word-by-Word Reveal (O Macete): Para o título principal do Insight. O JS quebra a frase em `<span>` com `display: inline-block`. O estado inicial é opacity 0.14, blur(5px) e translateY(0.32em). A transição (0.45s) traz para opacity 1, blur 0, translateY 0.
+- Staggering: Linhas/Tópicos devem usar delay em cascata (ex: index * 160ms no desktop).

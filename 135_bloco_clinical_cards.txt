@@ -1,0 +1,7 @@
+BLOCO: Psychology Clinical Cards
+- Layout da Seção: Padding superior zero, padding inferior ajustável. Shell interno com max-width 1536px, fundo claro, padding interno forte e box-shadow inset superior suave.
+- Header: Eyebrow text (uppercase, letter-spacing grande) e H2. Max-width restrito e centralizado.
+- Grid de Cards: Gap de 1rem. Display grid.
+- Estilo dos Cards Base: Fundo claro translúcido, borda sutil, radius de 1.4rem, box-shadow de elevação (18px 48px). Overflow hidden.
+- Variações de Conteúdo: "Mini card" (layout compacto), "Feature card", "Tall card" (visualmente mais alto, gradiente suave), "Data card" e "Oracle card" (com ícone simples de linha).
+- Regra Responsiva: Mobile = 1 coluna. Desktop (>=768px) = Grid de 3 colunas assimétricas (`0.95fr 1.12fr 1.12fr`), `grid-auto-rows: minmax(12rem, auto)`.

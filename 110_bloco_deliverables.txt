@@ -1,0 +1,7 @@
+BLOCO: Deliverables
+- Layout: Fundo invertido (claro/respiro). Header estreito (max-width 520px) alinhado à esquerda.
+- Grid Desktop: 4 colunas (repeat 4, 1fr), align-items start.
+- Cards (Offset/Cascata): Radius 18px. O Card 2 e o Card 4 possuem uma classe modificadora que aplica margin-top: 46px no desktop, criando um efeito de grid em cascata.
+- Captions do Card: Parte inferior com borda superior divisória e fundo ligeiramente diferente para destacar.
+- Hover: translateY(-4px). Injetar "Scroll Reveal" (reveal-up).
+- Regra Responsiva: Em <= 720px, o grid vira estritamente 1 coluna. IMPORTANTE: Os cards offset (2 e 4) PERDEM o margin-top de 46px para não deixar buracos no layout mobile.

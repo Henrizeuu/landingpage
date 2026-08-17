@@ -1,0 +1,6 @@
+BLOCO: Author Section
+- Layout: Padding 92px 24px 88px. Fundo claro com glow radial brilhante. "Top Notch" branco centralizado na divisória superior. Grid max-width 1180px, colunas `minmax(320px, 0.92fr) minmax(360px, 1.08fr)`.
+- Textos (Esquerda): Eyebrow. Título H2 clamp gigante. Múltiplos parágrafos alinhados à esquerda.
+- Visual Social (Direita - O Macete): Elemento imitando visualmente a UI nativa de um Story de rede social. Largura min(100%, 520px), radius 18px. Possui um "Topbar" escuro com textos falsos simulando handle do usuário, timer e "X" de fechar. A imagem cobre a área útil do card (height 408px). 
+- Selo de Autoria: Círculo (96x96px) contendo a logo da marca sobreposto na borda direita do card visual (vazando metade para fora).
+- Regra Responsiva: Em <= 1100px, o card visual assume a primeira ordem (grid) e vai para o topo, antes do texto. Em <= 720px, a altura da imagem dentro da UI de rede social cai para 290px e o selo sobreposto encolhe para 68px.

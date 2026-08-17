@@ -1,0 +1,8 @@
+COMPONENTE: Featured Card Aura (Animação Contínua)
+- Uso: Exclusivo para o card de destaque (ex: 2º card do grid). Este card não possui o Mouse Tracking Glow, ele se destaca pela sua moldura animada.
+- Estrutura Expandida: O wrapper visual cresce para fora (ex: 2.4rem de expansão visual), border-radius: 4rem, border de 0.2rem translúcida. IMPORTANTE: Essa expansão visual não deve usar "margin" que quebre o alinhamento da grade ou empurre os outros cards.
+- Aura Animada (O Macete JS/CSS): Pseudo-elemento com `conic-gradient` amarrado à variável `--shell-angle`. Blur forte (~2.6rem), opacidade média (0.65). 
+- Lógica JS: Usar `requestAnimationFrame` para incrementar continuamente `--shell-angle` em cerca de 0.7deg por frame, criando uma aura viva e circular orbitando o card. Não pode parecer um "spinner" duro.
+- Textura Interna: Aplicar noise/grão fino muito sutil dentro do card de destaque (via SVG inline ou CSS procedural). Opacidade do noise: ~0.1 no desktop. Fica abaixo do texto e acima do fundo.
+- Ícone do Topo: Inverter as cores (Fundo claro/branco, glifo pontilhado escuro).
+- Regra Responsiva: Em <= 1060px, o card de destaque perde a expansão externa para não vazar a tela. Ele deve ficar alinhado horizontalmente com os demais no layout empilhado. Opacidade do noise interno cai para 0.05 no mobile.

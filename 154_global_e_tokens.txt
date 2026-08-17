@@ -1,0 +1,13 @@
+GLOBAL STYLES & TOKENS
+- Resets: * { box-sizing: border-box; } html, body { margin: 0; min-height: 100%; }
+- Body: overflow-x: hidden; text-rendering: optimizeLegibility;
+- Otimização de Renderização: Aplicar `content-visibility: auto; contain-intrinsic-size: 1000px;` nas seções inferiores pesadas.
+- Tipografia: Fonte Primária (Sans-serif, limpa). Heading gigantes usam letter-spacing negativo pesado (ex: -0.05em a -0.07em). Botões usam letter-spacing positivo (0.07em a 0.18em).
+- Tokens Estruturais (Injeção Dinâmica):
+  --bg-page (Fundo claro/branco)
+  --text-main (Cor escura primária)
+  --text-muted (Cor translúcida/secundária)
+  --accent-color (Cor de acento para tickers e dots ativos)
+  --borda-suave (Bordas divisórias translúcidas)
+  --btn-light-grad / --btn-dark-grad
+- Acessibilidade: Em `prefers-reduced-motion: reduce`, forçar animações/transições para 0.01ms, desativar scroll behaviors e exibir elementos no estado final.

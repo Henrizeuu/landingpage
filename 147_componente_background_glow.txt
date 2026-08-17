@@ -1,0 +1,6 @@
+COMPONENTE: Section Background Glow
+- Estrutura: Camada `position: absolute` ocupando toda a seção, sem interação (z-index negativo).
+- Visual: 2 formas idênticas de glow sobrepostas e centralizadas horizontalmente. Devem parecer uma "névoa tecnológica" ou aurora difusa.
+- Comportamento e Posição (O Macete): O glow deve ficar concentrado ATRÁS da área dos cards (especialmente a primeira linha e o card de destaque). É ESTRITAMENTE PROIBIDO que o glow fique atrás do título principal do cabeçalho; ele deve começar abaixo dele.
+- Filtros: Blur agressivo, bordas extremamente dissolvidas, intensidade baixa/média.
+- Finalização: Aplicar uma máscara vertical (`mask-image`) para o brilho desaparecer suavemente nas extremidades superior e inferior.

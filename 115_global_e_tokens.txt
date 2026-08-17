@@ -1,0 +1,14 @@
+GLOBAL STYLES & TOKENS
+- Resets: box-sizing: border-box; html, body { margin: 0; min-height: 100%; overflow-x: hidden; }
+- Body: Fundo composto por uma combinação de 'radial glows' (posicionados em 18% 14% e 82% 16%) mesclado com um linear-gradient vertical. overflow-y: auto;
+- Tipografia: Definir tokens dinâmicos para --font-display (usado em títulos com letter-spacing negativo) e --font-body (usado em textos, botões e labels).
+- Tokens de Estrutura (Para injeção dinâmica):
+  --bg-deep (Fundos escuros intensos)
+  --bg-light (Fundos claros de seção)
+  --text-main 
+  --text-muted 
+  --accent-main (Cor principal de CTA e destaques)
+  --accent-deep 
+  --accent-soft
+  --outline-border
+- Regra de Arquitetura: Plain HTML, CSS e Vanilla JS. Nenhum framework permitido. A página não possui footer isolado; ela deve terminar fluidamente após a seção de FAQ.

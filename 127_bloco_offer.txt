@@ -1,0 +1,6 @@
+BLOCO: Offer (Ribbons & Giant Price)
+- Layout da Seção: Padding vertical pesado. O overflow da seção DEVE ser visible para os elementos vazarem pelas laterais de forma calculada.
+- Faixas Diagonais (Ribbons - O Macete): Criar duas divs que ultrapassem a tela (largura `min(108vw, 1600px)`). Repetir a mesma palavra espaçada dentro da faixa (letter-spacing enorme). Faixa 1 (topo -34px) com rotate(-0.9deg) e efeito blur/glass. Faixa 2 (topo -6px) rotate(0.9deg) mais suave.
+- Card da Oferta: Largura min(100%, 640px), centralizado. Radius 22px, sombra pesada. 
+- Elementos do Card: "Badge" flutuante (pílula tracejada) quebrando o topo do card. Lista de features. Lead in ("de R$ X por apenas"). Preço gigantesco em clamp(5rem, 8vw, 7rem). Labels das bandeiras de pagamento no rodapé. Ação "Action CTA Pill".
+- Regra Responsiva: Em <= 720px, as faixas (Ribbons) devem ficar mais finas (height) e mover-se mais para o topo para não engolir o card. O CTA assume largura de 100% com padding contraído.

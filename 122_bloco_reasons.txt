@@ -1,0 +1,9 @@
+BLOCO: Reasons / Method
+- Layout: Position relative; padding 102px 24px 88px. Fundo escuro misturando glow radial e gradiente linear.
+- Top Notch Decorativo: Pílula cortada pela metade (70x28px) fixada no top-center contendo um ícone de chevron apontando para baixo.
+- Título H2: max-width 980px, centralizado.
+- Grid Desktop: 2 colunas com gap 16px. IMPORTANTE: O 3º card da seção DEVE ser uma linha inteira (grid-column: 1 / -1; span full width).
+- Cards (Estilo Base): min-height 262px, padding 50px 30px 36px, radius 8px. Possuem labels "Etapa 0X" com um pequeno ponto colorido ao lado. Fundo gradiente profundo.
+- Card Destaque (3º Card): Possui um arranjo visual interno especial com duas imagens rotacionadas e sobrepostas no canto inferior direito do card.
+- Ação: "Action CTA Pill" centralizado abaixo de tudo.
+- Regra Responsiva: Em telas <= 767px, grid empilha estritamente para 1 coluna e as imagens flutuantes do 3º card diminuem seu tamanho em CSS para evitar estouro da div.

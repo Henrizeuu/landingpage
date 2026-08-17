@@ -1,0 +1,10 @@
+BLOCO: Hero Section
+- Layout: min-height 100vh. Grid, `place-items: center`, padding lateral e top fluidos. `isolation: isolate`[cite: 16].
+- Fundo: Cor base escura[cite: 16]. Media (Vídeo Obrigatório): absolute inset 0, z-index 0, object-fit cover, height/width 100%. Oculto de leitores de tela com aria-hidden="true"[cite: 16].
+- Conteúdo Centralizado: z-index 2. Largura contida. Alinhamento textual ao centro[cite: 16].
+- Textos:
+  - Eyebrow: Usa a Fonte Secundária (Serif, Italic). font-weight 500. Tamanho muito grande e letter-spacing negativo[cite: 16].
+  - H1: Fonte Base. Tamanho GIGANTE (ex: clamp 4rem a 9.2rem), weight 900, uppercase, letter-spacing -0.075em, line-height exprimido (0.82)[cite: 16].
+  - Description: font-weight 700, max-width controlado[cite: 16].
+- Ação: Injetar "Pill CTA Button"[cite: 16].
+- Regra Responsiva: Em <= 760px, remover dependência do 100vh limitando a min-height para ~780px. Margem superior do conteúdo fica negativa para subir o bloco[cite: 16]. Em <= 480px, reajustar tamanho das fontes extremas para não gerar barra de rolagem horizontal[cite: 16].

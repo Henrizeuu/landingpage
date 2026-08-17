@@ -1,0 +1,12 @@
+COMPONENTE: Scroll Reveal System
+- Configuração Base: Gatilho via IntersectionObserver (threshold 0.08 e rootMargin 0px 0px -4% 0px).
+- Estado Oculto: opacity: 0; transition: opacity 0.6s ease, transform 0.65s cubic-bezier(0.22,1,0.36,1), filter 0.6s ease.
+- Estado Visível: opacity: 1; transform: none; filter: blur(0).
+- Variações (injetáveis via data-reveal):
+  [fade-up]: translateY(26px)
+  [slide-right]: translateX(-32px)
+  [slide-left]: translateX(32px)
+  [blur-in]: translateY(20px) scale(0.985), filter: blur(10px)
+  [soft-scale]: translateY(18px) scale(0.975)
+  [tilt-up]: translateY(24px) rotate(-1.2deg) scale(0.99)
+- Regra Estrita: Se `prefers-reduced-motion: reduce` for detectado, todas as transições devem ser desativadas e o conteúdo imediatamente visível.

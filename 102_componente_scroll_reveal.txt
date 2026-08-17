@@ -1,0 +1,9 @@
+COMPONENTE: Scroll Reveal System (Blocos e Imagens)
+- Configuração Base: Gatilho via IntersectionObserver (threshold 0.22, rootMargin 0px 0px -8% 0px). Executa apenas uma vez.
+- Variações Ocultas: 
+  .reveal-media (opacity 0, translateY 46px, scale 0.96, blur 18px)
+  .reveal-side (opacity 0, translateX 48px, blur 10px)
+  .reveal-up (opacity 0, translateY 52px, blur 10px)
+- Estado Visível: opacity 1, transform e filter resetados (none). 
+- Transição: opacity 900ms, transform/filter 1100ms.
+- Acessibilidade: Fallback para conteúdo imediatamente visível caso IntersectionObserver falhe ou prefers-reduced-motion esteja ativo.

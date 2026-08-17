@@ -1,0 +1,8 @@
+COMPONENTE: Draggable Horizontal Carousel
+- Uso: Track de rolagem contínua para exibir cards.
+- Estilo do Track: grid-auto-flow: column; overflow-x: auto; sem barras de rolagem visíveis (hide scrollbar); cursor: grab (grabbing ao segurar); scroll-behavior: smooth; user-select: none; scroll-snap-type: x mandatory.
+- Lógica JS (O Macete):
+  - Pointer Events: Capturar `pointerdown`, armazenar `clientX` e `scrollLeft`, acionar `.is-dragging` e chamar `setPointerCapture`.
+  - Atualizar `scrollLeft` dinamicamente no `pointermove`.
+  - Remover estilos de arrasto no `pointerup`/`pointercancel`.
+  - Botões de navegação lateral (prev/next) avançam ou recuam usando a largura calculada do primeiro card do track + gap.

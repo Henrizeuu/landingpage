@@ -1,0 +1,5 @@
+BLOCO: Manifesto Strip
+- Layout: Shell com min-height 260px (mobile) a 330px (desktop). Radius arredondado (até 2.2rem). Flex center, text-align center.
+- Background Complexo: Camada inferior com glow radial intenso mesclado a um gradiente linear. Camada superior/interna DEVE conter um overlay sutil com linhas verticais repetitivas ou textura pontilhada para dar profundidade.
+- Conteúdo: Copy textual gigante (H2) em branco/claro + Botão de ação (Pill Button).
+- Regra Responsiva: O texto deve usar clamp() para se ajustar graciosamente, quebrando linha no <br> indicado.

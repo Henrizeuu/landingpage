@@ -1,0 +1,4 @@
+COMPONENTE: Scroll Reveal System (Cards)
+- Lógica JS: Uso de IntersectionObserver (comportamento de "revelar apenas uma vez")[cite: 16]. Aplicar classe `.is-visible` ao entrar na view[cite: 16].
+- Audience Card (O Macete): Começa com `opacity: 0`, `translate3d(0,88px,0)`, `scale(0.985)` e um `clip-path` agressivo (`inset(18% 0 0 0 round 28px)`). Quando `.is-visible`, zera o clip-path e o transform. A transição deve dividir os tempos: opacity (ex: 720ms) vs transform/clip-path (ex: 960ms cubic-bezier)[cite: 16].
+- Showcase / Benefits / Testimonial Cards: Usam translateY ou translate3d para baixo, opacity 0, e dependem de CSS variable `--reveal-delay` (calculada via index) para efeito cascata (staggering)[cite: 16]. Testimonial inclui também `blur(18px)` na origem[cite: 16].

@@ -1,0 +1,6 @@
+BLOCO: Insight Section
+- Layout: Fundo claro/base. Ticker horizontal (Componente) no topo servindo como divisor superior. Padding inferior massivo (ex: 120px).
+- Copy Principal: Grid assimétrico (ex: minmax 720px e minmax 220px). Título principal aplica o "Word-by-Word Reveal". Meta texto alinhado ao topo.
+- Tópicos (Linhas): Grid de 2 colunas com `justify-content: space-between`. Border-top nas linhas.
+- Elemento de Ícone: Um simples `+` textual dentro de um círculo vazado de 22x22px acompanhando cada título de tópico.
+- Regra Responsiva: Em <= 920px, a grade principal vira 1 coluna. As linhas de tópicos empilham verticalmente. Em <= 520px, reduzir drasticamente o tamanho das fontes e margens.

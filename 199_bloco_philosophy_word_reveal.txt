@@ -1,0 +1,8 @@
+BLOCO: Philosophy Statement (Word Reveal)
+- Layout: Fundo aquecido da seção (`--color-surface-warm`). Altura virtual massiva (`min-height: 220vh`). Container interno `.philosophy__sticky` fixado (`sticky top 0`, `min-height 100vh`, `flex centered`)[cite: 16].
+- Conteúdo: Parágrafo H2 gigante centralizado, coloração Tinta[cite: 16].
+- Animação de Texto (O Macete JS GSAP):
+  1. O JS varre a frase e isola CADA palavra num `<span>` (`.word`), marcando com peso 700 as palavras predefinidas de "ênfase"[cite: 16].
+  2. Estado inicial dos spans: `opacity: var(--word-dim)` (0.18), `will-change: opacity`, `display: inline-block`[cite: 16].
+  3. ScrollTrigger aciona um scrub da opacidade para 1, com `stagger: 0.5`, começando do `top top` da seção até o `bottom bottom`[cite: 16].
+- Regra Responsiva: Em <=760px, a tipografia ganha clamps menores e o padding do sticky muda para `64px 20px`[cite: 16].

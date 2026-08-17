@@ -1,0 +1,7 @@
+COMPONENTE: Interactive Hover Card
+- Estrutura Base: min-height 100%, padding 35px, border 1px solid, border-radius 10px, background gradiente suave, text-align left[cite: 22].
+- Sombras e Transição: box-shadow leve no estado normal. transições suaves (0.9s ease) para transform, opacity e box-shadow[cite: 22]. Cursor pointer, relative, z-index 1[cite: 22].
+- Interação de Hover (O Macete - Apenas Desktop >= 768px): 
+  - Ao passar o mouse no container pai (grid), todos os cards caem para opacity 0.5 e scale 1[cite: 22].
+  - O card especificamente focado ganha opacity 1, scale 1.05, z-index 2 e box-shadow reforçada (var(--bloco-shadow))[cite: 22].
+- Regra de Arquitetura: Os cards não possuem efeito glassmorphism ou glow interno, apenas o gradiente base discreto[cite: 22].

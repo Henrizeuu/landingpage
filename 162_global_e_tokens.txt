@@ -1,0 +1,11 @@
+GLOBAL STYLES & TOKENS
+- Resets: * { box-sizing: border-box; } html { scroll-behavior: smooth; } body { margin: 0; min-width: 320px; }[cite: 16]
+- Body: overflow: hidden (apenas o wrapper, se houver, ou aplicar na .page); background baseado na cor base escura[cite: 16].
+- Tipografia: Fonte Primária (Sans-serif base), Fonte de Destaque (Serif Italic para o Eyebrow do Hero)[cite: 16].
+- Tokens Estruturais (Injeção Dinâmica):
+  --color-base-dark (Fundo de tela principal)[cite: 16]
+  --color-white / --color-muted (Textos principais e translúcidos)[cite: 16]
+  --color-accent-primary / --color-accent-secondary (Para glows, bordas de destaque e detalhes de card)[cite: 16]
+  --card-gradient-light / --card-gradient-accent (Para superfícies Glass)[cite: 16]
+  --max-width: 1180px[cite: 16]
+- Animações e Acessibilidade: Em `prefers-reduced-motion: reduce`, forçar exibição imediata de elementos ocultos (opacity 1) e remover transformações, clip-path, e delays (ex: no Word Reveal)[cite: 16].

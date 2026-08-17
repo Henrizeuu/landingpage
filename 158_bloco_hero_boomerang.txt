@@ -1,0 +1,10 @@
+BLOCO: Hero Section (Canvas Boomerang)
+- Layout: min-height 100vh. Flex, align-items flex-start, justify-content center. Padding superior forte. Position relative, isolation isolate, overflow hidden.
+- Media Traseira: Absolute inset 0, z-index 0. Contém um `<video>` e um `<canvas>` sobrepostos, ambos com `width/height 100%`, `object-fit: cover`.
+- Efeito Canvas Boomerang (O Macete JS Extremo): 
+  1. O vídeo roda UMA vez em autoplay.
+  2. Enquanto roda, o JS usa `requestAnimationFrame` para capturar os frames em canvases offscreen (limitando a largura para otimização de RAM).
+  3. Quando o vídeo termina (`ended`), ele é ocultado e a `<canvas>` principal assume.
+  4. O JS reproduz os frames armazenados em loop (frente e trás - boomerang) a 30fps no canvas visível, ajustando matematicamente o "object-fit: cover" interno usando `devicePixelRatio`.
+- Conteúdo Central: H1 gigante com `text-wrap: balance` e letter-spacing negativo. Parágrafo explicativo. Componente "Section Button".
+- Regra Responsiva: Em <= 920px e <= 520px, reduzir padding-top. Em telas muito pequenas, forçar H1 a esconder `<br>` nativos.

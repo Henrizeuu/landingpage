@@ -1,0 +1,9 @@
+BLOCO: Sticky Science Timeline
+- Layout Desktop: Altura massiva (ex: 260vh). Inner container `sticky top 0`, `min-height 100vh`, alinhamento flex center.
+- Inner Shell: Card branco contendo todo o bloco. Box-shadow finíssima (1px). Layout divide entre Título/Ação no topo e Conteúdo no centro.
+- Texto Dinâmico (Lede): Texto grande e balanceado (ex: `font-size: 3rem`).
+- Timeline: Trilha horizontal construída em CSS Grid (4 colunas) com uma linha absoluta que os conecta. Dots de estado: inativo (cinza) e ativo (Cor de Acento + glow com box-shadow e expansão de width/height).
+- Dinâmica JS de Timeline (O Macete Múltiplo):
+  - No Desktop: Progresso de scroll dentro dos 260vh define o índice ativo (0 a 3).
+  - Troca de Texto: O JS faz a opacidade do Lede cair para 0.35 e transladar 10px. Após ~140ms, o innerHTML é substituído pelo conteúdo lido do atributo `data-lede` do passo ativo, e a opacidade volta para 1.
+- Regras de Interação Mobile (O Macete 2): Em <= 920px (e <= 520px), a seção continua sticky. COMO FAZER SCROLL? O JS aplica listeners de `wheel` e `touchstart/touchmove`. Se o delta do scroll/arrasto for maior que um threshold (ex: > 36px), o JS troca o índice ativo manualmente e trava a interação (lock delay de ~320ms) para não pular freneticamente os passos.

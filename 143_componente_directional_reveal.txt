@@ -1,0 +1,7 @@
+COMPONENTE: Directional Scroll Reveal
+- Configuração Base: backface-visibility hidden, perspective 1000px[cite: 22].
+- Estados Ocultos Direcionais:
+  - Cima / Baixo / Esquerda / Direita: iniciam com opacity 0, filter blur(10px) e translate3d(30px ou -30px dependendo do eixo X ou Y)[cite: 22].
+- Transição: transform, opacity e filter com duração de 0.8s e curva cubic-bezier(0.25, 0.46, 0.45, 0.94)[cite: 22].
+- Estado Visível (.ativo): opacity 1, filter blur(0), translate3d(0, 0, 0)[cite: 22].
+- Lógica JS: Aplicar will-change nos elementos. Usar IntersectionObserver com threshold 0.15 e rootMargin "0px 0px -50px 0px". Adicionar e remover a classe ativa entrando e saindo da viewport via requestAnimationFrame[cite: 22].

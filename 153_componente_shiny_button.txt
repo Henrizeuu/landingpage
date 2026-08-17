@@ -1,0 +1,17 @@
+COMPONENTE: Shiny Button (CTA Animado)
+- Descrição Visual: Botão de ação (CTA) estático no estado normal que, ao receber hover, exibe borda giratória, brilho interno e efeitos de luz para chamar atenção[cite: 13]. Nenhuma dependência externa é necessária[cite: 13].
+- Estrutura HTML Obrigatória: Um wrapper `<button class="shiny-cta">` contendo internamente um `<span>` para o texto[cite: 13]. O span é necessário com z-index 1 para manter o texto acima das camadas de efeitos visuais[cite: 13].
+- CSS Houdini (O Macete): Exige a declaração de propriedades animáveis customizadas via `@property` para funcionar (`--gradient-angle`, `--gradient-angle-offset`, `--gradient-percent`, `--gradient-shine`)[cite: 13].
+- Estrutura CSS Base: isolation isolate, position relative, overflow hidden, border-radius 360px[cite: 13].
+- Borda Animada: Combina um `linear-gradient` ancorado no `padding-box` com um `conic-gradient` ancorado no `border-box` utilizando os ângulos e percentuais dinâmicos do Houdini[cite: 13].
+- Efeitos via Pseudo-elementos[cite: 13]:
+  1. ::before (Padrão de Pontos): Criado via `radial-gradient` (dots), dimensionado por `background-size` e cortado por um `mask-image` em conic-gradient[cite: 13].
+  2. ::after (Shimmer Interno): Fundo linear-gradient mascarado por um `radial-gradient` posicionado no bottom[cite: 13].
+  3. span::before (Glow Interno): Uma box-shadow inset (sombra interna) ativada apenas no hover que executa uma animação de "respiração" (breathe) alterando o scale[cite: 13].
+- Comportamento de Interação:
+  - As animações começam `paused` por padrão[cite: 13].
+  - O estado `:hover` e `:focus-visible` ativa o `animation-play-state: running` em todas as camadas e altera as variáveis percentuais e de ângulo[cite: 13].
+  - Clique (`:active`) aciona um deslocamento visual de `translate: 0 1px`[cite: 13].
+- Acessibilidade: OBRIGATÓRIO envolver em media query `@media (prefers-reduced-motion: reduce)` definindo `animation: none` para o botão e seus pseudo-elementos[cite: 13].
+- Lógica JS: Nenhuma necessária, o efeito é controlado por CSS puro[cite: 13].
+- Regras de Integração (Prevenção de Bugs): Ajustar todas as variáveis de paleta (ex: `--shiny-cta-bg`, `--shiny-cta-highlight`) para a identidade da página[cite: 13]. Proibido aplicar bordas, fundos ou sombras diretamente no container para não quebrar o cálculo das camadas[cite: 13].

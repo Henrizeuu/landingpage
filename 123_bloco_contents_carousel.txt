@@ -1,0 +1,7 @@
+BLOCO: Contents Carousel
+- Layout: Padding 42px 0 90px. Inner min(100%, 1200px).
+- Header: Grid de 2 colunas: Esquerda = Título em 3 linhas com span de acento. Direita = Botão circular grande de navegação e linha de 1px ligando os lados.
+- Track de Rolagem: Injetar Componente "Draggable Horizontal Carousel". grid-auto-columns: 336px; gap 16px; padding 0 24px.
+- Fading Overlay (O Macete): Div absoluta com gradiente na borda direita do container para indicar que há mais conteúdo. O JS deve interceptar a rolagem e adicionar uma classe (ex: `.is-end`) para ocultar este fade quando chegar ao fim do track.
+- Cards Internos: min-height 672px, radius 10px. Área de topo preenchida por imagem unificada. Injetar "Brand Mark" centralizado sob a imagem. Textos explicativos abaixo.
+- Regra Responsiva: Em Mobile (<= 720px), a largura do card (grid-auto-columns) cai rigorosamente para 286px, altura da imagem no topo cai para 170px e a altura total cai para 620px.

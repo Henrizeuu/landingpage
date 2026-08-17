@@ -1,0 +1,5 @@
+BLOCO: Principles / Differentials
+- Layout: Fundo aquecido (`var(--section-warm-bg)`). Padding com clamp triplo. Grid interno de 3 colunas iguais (`width min(100%, 1180px)`)[cite: 19].
+- Elementos: Eyebrow, H2 e 3 colunas de diferenciais (cada uma com H3 em uppercase e weight 800, seguido de parágrafo)[cite: 19].
+- Animação (GSAP Scrub): O título H2 (iniciando em `y 26`, `opacity 0`, `blur 14px`) e os itens do grid (iniciando em `y 54`, `opacity 0`, `blur 12px`, `scale .96`) são revelados através de um `scroll-scrub` (`scrub: .35`) com um `stagger .12` nos itens[cite: 19].
+- Regra Responsiva: Em <= 900px, o grid vira 1 coluna com largura máxima de 520px e padding 64px 24px[cite: 19]. Em <= 560px, padding 56px 18px e H2 cai para 30px[cite: 19].

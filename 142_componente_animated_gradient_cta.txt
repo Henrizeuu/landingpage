@@ -1,0 +1,8 @@
+COMPONENTE: Animated Gradient CTA
+- Estrutura Base: position relative, inline-flex center, width 100%, padding 30px 45px, border 1px solid translúcida, border-radius 8px[cite: 22].
+- Fundo: background com o gradiente injetado (var(--bloco-button-gradient)) e background-size esticado para 800% 400%[cite: 22].
+- Efeitos (O Macete):
+  - Box-shadow complexa envolvendo inset e drop-shadow para profundidade[cite: 22].
+  - Animação infinita no background: keyframes movendo o background-position de 0% para 100% e de volta a 0% a cada 10s (loop infinito)[cite: 22].
+- Hover: transform scale(1.03) com transição de 0.5s[cite: 22].
+- Tipografia: font-weight 700, text-transform uppercase, line-height ~1.27[cite: 22].

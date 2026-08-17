@@ -1,0 +1,5 @@
+COMPONENTE: FAQ Accordion (Nativo)
+- Estrutura: Lista baseada na tag HTML nativa `<details class="faq-item">` com subelementos `<summary>`[cite: 19].
+- Estilização Visual: Raio de 8px, borda sutil, fundo em vidro quente, padding no summary de `20px 56px 20px 22px`[cite: 19].
+- Ícone de Expansão: Sinais de mais (+) e menos (-) gerados puramente com pseudo-elementos no summary[cite: 19].
+- Interação: Comportamento nativo do navegador para abrir/fechar; barra vertical do ícone de mais esmaece/escala ao abrir com transição suave de 180ms[cite: 19].

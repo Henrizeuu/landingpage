@@ -1,0 +1,7 @@
+BLOCO: Hero Section (Sticky Video)
+- Layout Base: `min-height: 100svh` no desktop. `position: sticky; top: 0; z-index: 0; isolation: isolate; overflow: hidden;` (O Herói fica preso ao fundo enquanto a próxima seção rola por cima dele)[cite: 16]. Aplicar `will-change: filter, transform, opacity`[cite: 16].
+- Vídeo Background (O Macete Responsivo): `<video>` em position absolute (z-index -1, `aria-hidden: true`).
+  - Desktop: `inset: 0`, `width/height: 100%`, `object-fit: cover`, `object-position: center`[cite: 16].
+  - Mobile (<=920px): Ancorado na base (`bottom`), `width: auto`, `object-fit: contain`, `object-position: center bottom`, deslocado para a esquerda via `transform: translateX(-68%)`. Altura cai para 74% (ou 58% em <=560px)[cite: 16].
+- Conteúdo (`.hero__content`): Width controlado (min 560px, max 820px no desktop), centralizado flex. Text-wrap balance no H1. Eyebrow, H1 (com span de acento `white-space: nowrap`), Subtítulo e Componente "Gold CTA Button"[cite: 16].
+- Animação Scroll-Scrub (GSAP): Amarrada ao scroll da *próxima* seção (Philosophy). O Hero sofre scrubbed linear tween mudando para `filter: blur(14px)`, `opacity: 0.58` e `scale: 1.025` conforme a próxima seção rola de `top bottom` para `top top`[cite: 16].

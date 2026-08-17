@@ -1,0 +1,6 @@
+COMPONENTE: Action CTA Pill
+- Uso: Botão principal de conversão (ex: Hero, Bônus, Oferta).
+- Estilo Base: inline-flex center; gap: 14px; min-width: 350px; min-height: 82px; padding: 16px 28px 16px 30px; border-radius: 999px; border: 2px solid var(--outline-border); font-size: 1.34rem; font-weight: 700.
+- Fundo e Sombra: Gradiente linear usando a cor de acento. box-shadow com efeito de glow/brilho.
+- Ícone Interno: "Chip" circular de 28x28px alinhado internamente, contendo SVG inline (14x14px).
+- Regra Responsiva: Em telas <= 720px, o botão deve assumir min-width: 100%, min-height: 76px, font-size: 1.16rem e padding: 16px 22px.

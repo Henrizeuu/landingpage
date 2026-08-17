@@ -1,0 +1,14 @@
+BLOCO: Target Audience Grid (Para quem é)
+- Layout da Seção: overflow hidden, border-top 1px solid translúcida, padding 5vw[cite: 22]. Fundo baseado no token base.
+- Container Interno: width min(100%, 1320px), margin 0 auto[cite: 22].
+- Header: width min(100%, 620px), margin -20px auto 25px, text-align center[cite: 22]. Injetar Componente "Directional Scroll Reveal" (animação de baixo para cima).
+- Título (H1): font-size dinâmico clamp(2.3rem, 4vw, 3rem), weight 600, letter-spacing -0.052em[cite: 22]. Utilizar Componente "Highlight Gradient Text" no trecho de destaque[cite: 22].
+- Grid Desktop: display grid, grid-template-columns: repeat(4, minmax(0, 1fr)), gap 1.5rem, justify-content center[cite: 22].
+- Cards (4 Itens): Injetar Componente "Interactive Hover Card" nos elementos da grade[cite: 22]. Importante: O card NÃO recebe a animação de reveal individual neste bloco.
+  - Ícone: Container com margin-bottom 15px. Injetar SVG inline (width 84px, renderizado com fundos/acabamentos combinando com a cor de destaque)[cite: 22].
+  - Textos Internos: H3 (clamp 1.6rem a 1.75rem, weight 500, line-height 1.3), Parágrafo (1rem, line-height 1.5)[cite: 22].
+- CTA Wrapper: width min(100%, 520px), margin 20px auto 0, text-align center[cite: 22]. Injetar Componente "Directional Scroll Reveal" (de baixo para cima).
+- Ação: Renderizar Componente "Animated Gradient CTA".
+- Regras Responsivas: 
+  - Em <= 1200px: A grade de cards quebra de 4 colunas para 2 colunas (`repeat(2, minmax(0, 1fr))`)[cite: 22].
+  - Em <= 767px: Padding da seção cai para 56px 20px[cite: 22]. A grade de cards empilha para 1 coluna[cite: 22]. O Header assume width 100%[cite: 22]. Os cards reduzem padding interno para 28px 24px[cite: 22]. O ícone encolhe para 74px de largura[cite: 22]. O Botão CTA ajusta padding (22px 24px) e fonte (1rem) para evitar quebra no mobile[cite: 22].

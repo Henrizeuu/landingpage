@@ -1,0 +1,5 @@
+BLOCO: Minimal Footer
+- Layout: Altamente compacto. Padding vertical reduzido (ex: 22px topo, 30px base).
+- Fundo: Cor sólida de base profunda (ex: Preto absoluto).
+- Tipografia: Fonte UI minúscula, letter-spacing exagerado (uppercase), centralizada, cor altamente semitransparente.
+- Regra de Arquitetura: Apenas texto de direitos reservados. Não adicionar logos gigantes, formulários ou links não requisitados, a não ser que previstos via injeção dinâmica.

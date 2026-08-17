@@ -1,0 +1,6 @@
+BLOCO: Video CTA Banner
+- Layout da Seção: Shell interno com max-width 1536px, margin auto, overflow hidden, isolation isolate, display flex, align-items center.
+- Background Media: Vídeo de fundo (`object-fit: cover`, `object-position: center`, absoluto, z-index -3).
+- Overlay: Layer de gradientes escuros mesclados por cima do vídeo (z-index -2) para permitir legibilidade perfeita do texto.
+- Conteúdo: Z-index 1. Header quebrando linha no `<br>`. Parágrafo e Grupo de Botões (Primary e Secondary Pill).
+- Regra Responsiva: Em mobile, shell tem min-height de 11rem, border-radius 1.6rem e flex-direction column. Em >=900px, conteúdo muda para flex-direction row (Texto na esquerda, Ações na direita) e min-height expande para ~13.6rem.

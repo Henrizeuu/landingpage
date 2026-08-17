@@ -1,0 +1,5 @@
+COMPONENTE: Scroll-fade Journey Steps
+- Uso: Nas etapas/articles da seção Journey.
+- Lógica JS: Elementos com `data-scroll-fade`. O script adiciona `.scroll-fade-ready`. A diferença para o Reveal genérico é que este observer PODE ativar e desativar o elemento (toggle off/on) se ele sair da tela. (Ratio > .22 para disparar).
+- Escalonamento: Cada elemento tem uma variável inline `--journey-delay` (0ms, 120ms, 240ms) aplicada no seu transition-delay.
+- Animação: Inicia com opacity 0, blur 12px, translateY 54px e scale .975. Finaliza zerado/escala 1.

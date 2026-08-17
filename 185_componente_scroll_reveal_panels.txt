@@ -1,0 +1,6 @@
+COMPONENTE: Reveal-on-scroll Panels
+- Uso: Aplicado em painéis (Results, About, Offer, FAQ).
+- Lógica JS: Elementos com atributo `data-reveal`. O script adiciona a classe `.reveal-ready` no load (estado inicial) e `.is-visible` quando o IntersectionObserver dispara. (threshold de ~20%, root margin de `0px 0px -40px 0px`).
+- Estado Oculto (.reveal-ready): opacity 0, translateY entre 40px a 54px. Pode incluir scale .985 e blur 10px a 12px.
+- Estado Visível (.is-visible): Restaura opacity 1, translateY 0, scale 1 e blur 0.
+- Transição CSS: Duração entre 700ms e 820ms usando `cubic-bezier(0.22, 1, 0.36, 1)`.

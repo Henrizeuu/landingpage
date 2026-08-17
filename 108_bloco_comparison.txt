@@ -1,0 +1,7 @@
+BLOCO: Comparison
+- Layout: Header centralizado. Título uppercase. Fundo escuro.
+- Grid Desktop: 2 colunas iguais, gap 28px.
+- Cards (O Macete Visual): Oposição de estilos. Card Negativo = Fundo translúcido do background escuro. Card Positivo = Fundo sólido invertido (claro/sucesso) com texto contrastante. Radius de 24px em ambos.
+- Listas: Itens com min-height 72px, border-bottom. Itens negativos têm "X" pseudo-elemento. Itens positivos têm "Check". Itens aplicam Componente "Scroll Reveal" individualmente na rolagem.
+- Ação: Botão secundário ou invertido centralizado abaixo do grid.
+- Regra Responsiva: Em <= 1100px, grid cai para 1 coluna (Card negativo em cima, positivo embaixo).

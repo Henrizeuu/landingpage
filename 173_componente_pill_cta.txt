@@ -1,0 +1,7 @@
+COMPONENTE: Pill CTA Buttons
+- Estrutura Base: Elemento `<a>` inline-flex centralizado, fundo escuro de gradiente vertical (rgba(27,35,40,.98) para rgba(16,20,24,.98)), texto claro, borda fina, raio arredondado em pílula (999px)[cite: 19].
+- Estilos por Variação:
+  - Hero / Impacto: min-height 52px, padding `0 28px`, texto 14px bold com sombra e destaque interno top[cite: 19].
+  - Oferta: min-height 54px, padding `0 24px`, background sólido `#23313a`[cite: 19].
+- Interação (Hover): Translação de `translateY(-2px)`, fortalecimento da sombra e escurecimento do fundo (ex: rgba(10,12,15,1)) por 180ms ease[cite: 19].
+- Regra Responsiva: Em telas <= 560px, o botão do hero assume largura `min(100%, 300px)` com altura mínima de 48px e fonte de 13px[cite: 19].

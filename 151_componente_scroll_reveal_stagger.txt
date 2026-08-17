@@ -1,0 +1,6 @@
+COMPONENTE: Scroll Reveal Staggered
+- Estado Oculto: opacity: 0; transform: translateY(3.2rem).
+- Estado Visível: opacity: 1; transform: translateY(0).
+- Transição: 700ms ease.
+- Lógica JS: IntersectionObserver com threshold aproximado de 0.15. Adicionar a classe visível e aplicar unobserve (dispara apenas uma vez). 
+- Escalamento (Stagger): O delay de entrada deve ser calculado de forma progressiva por índice no DOM (ex: `transition-delay: calc(var(--index) * 90ms)`).

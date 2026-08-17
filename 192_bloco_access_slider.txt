@@ -1,0 +1,10 @@
+BLOCO: Access Slider (Carrossel Horizontal)
+- Layout: Seção escura com brilho radial. Cabeçalho centralizado. Carrossel customizado central contendo 2 botões setas de controle e uma "janela/viewport".
+- Track do Slider: Contém 6 Cards construídos com cantos quadrados. O background de cada card deve ser a Imagem (Assets 2 a 7) setada como fundo (ou tag IMG `object-fit: cover` + lazy), recebendo o mesmo filtro de desaturação e sobreposição de gradiente escuro da imagem About.
+- Textos do Card (O Macete Tipográfico): Alinhados no bottom-left. Label ("Módulo X"), Título renderizado com a fonte "Bebas Neue" (line-height exprimido 0.9, uppercase), e Subtítulo descritivo.
+- Motor JavaScript do Slider:
+  - Não utilizar lib externa.
+  - O JS deve calcular dinamicamente (baseado na largura da tela) a quantidade de itens visíveis (`slides per view`): 4 em telas >1100px, 2 até 1100px, 1 em telas <=720px.
+  - A navegação move o CSS `transform: translateX(-index * stepSize)` da div track (onde stepSize = largura do slide + gap de 20px). Transição CSS de 320ms ease.
+  - Controles (Prev/Next) desabilitam quando não há mais itens.
+  - O JS gera dinamicamente os "dots" (bolinhas de paginação na base do carrossel), gerando apenas 1 dot por índice *válido* e gerenciando seu estado ativo (`aria-current`).

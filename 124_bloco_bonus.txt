@@ -1,0 +1,5 @@
+BLOCO: Bonus Section
+- Layout: Padding 92px 24px 108px. Fundo claro com glows radiais volumosos. Grid `minmax(320px, 0.85fr) minmax(360px, 1.15fr)`, gap 28px, align center, max-width 1200px.
+- Conteúdo Esquerdo: Eyebrow, Título com span. Parágrafo. Estrutura de ancoragem de preço: Texto antigo (ex: "De R$29,90") com line-through; Preço final (R$0,00) em negrito e cor de acento. Injetar "Action CTA Pill".
+- Visual Direito (O Macete): Imagem de produto isolada, aplicada a rotação (transform: rotate(-5deg)) e drop-shadow forte. Fundo visual preenchido com um gigantesco Halo (glow radial) branco/claro.
+- Regra Responsiva: Em <= 1100px, grid vira 1 coluna. O visual DEVE subir e renderizar ANTES da cópia de texto. Em <= 720px, a altura visual contrai para min-height 360px e a largura da imagem trava em max 320px.

@@ -1,0 +1,6 @@
+BLOCO: About / Chaos Block
+- Layout: Fundo escuro (contraste). Padding 88px 48px. 
+- Grid Desktop: 2 colunas assimétricas (minmax 1fr e minmax 360px). Max-width 1240px.
+- Media (Imagem flutuante): Imagem width 100% object-fit cover. Executa CSS keyframe de flutuação (8s ease-in-out, subindo -10px e escalando sutilmente). Overlay de fade inferior com gradiente linear na própria imagem para mesclar com o fundo.
+- Textos: Título em fonte Display. Tags decorativas (pills de radius 999px) em flex-wrap. Parágrafo descritivo.
+- Regra Responsiva: Em <= 1100px, grid cai para 1 coluna e a imagem se readapta. Em <= 720px, a imagem DEVE renderizar abaixo do texto, e o título reduz para ~4.2rem.

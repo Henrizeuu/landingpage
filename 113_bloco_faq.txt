@@ -1,0 +1,7 @@
+BLOCO: FAQ Accordion
+- Layout: Inner max-width 980px. Fundo de contraste escuro.
+- FAQ List: Elementos verticais separados por border-bottom.
+- Itens do Acordeão: Aplicar "FAQ Accordion Component" (JS Single-open mode).
+- Triggers (Perguntas): Padding vertical simétrico (ex: 24px 0), botão transparente, text-align left.
+- Respostas: Parágrafo com cor muted (translúcida), max-width controlado para evitar linhas longas ruins de ler.
+- Regra Responsiva: Em <= 720px, fontes reduzem (pergunta para ~16px, resposta para ~15px) e o padding do botão cai para equilibrar o toque mobile.

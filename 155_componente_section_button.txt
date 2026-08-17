@@ -1,0 +1,5 @@
+COMPONENTE: Section Button (Pill CTA)
+- Estrutura Base: inline-flex centered, min-width 240px, padding 15px 24px, border-radius 999px.
+- Tipografia: Text-transform uppercase, letter-spacing largo, font-weight 600, line-height 1.
+- Efeitos: Background gradient (injetável), borda de 1px e box-shadow dupla (sombra de elevação + inset shadow claro para volume).
+- Regra Responsiva: Em <= 520px, min-width vira 100%, padding cai para 12px 18px e fonte reduz levemente.

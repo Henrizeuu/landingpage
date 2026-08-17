@@ -1,0 +1,7 @@
+BLOCO: Quote Method Block
+- Layout: Inner width 980px.
+- Panel (Painel Central): Fundo com gradiente translúcido hiper-sutil, border fina. Padding 44px 56px 40px, overflow hidden.
+- Corner Marks (O Macete): Pseudo-elementos ::before e ::after desenham quinas/bordas angulares de 120px nos cantos top-left e bottom-right.
+- Texto Principal: Injetar Componente "Word Reveal Text". Frase curta, fonte enorme (clamp 4rem), line-height apertado.
+- Texto Secundário (Meta text): Atraso na revelação de palavras. Parágrafo explicativo menor logo abaixo da quote.
+- Regra Responsiva: Em <= 720px, corner marks diminuem para 72px, e o título principal adequa o clamp ratio para não estourar a tela.

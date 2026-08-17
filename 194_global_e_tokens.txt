@@ -1,0 +1,13 @@
+GLOBAL STYLES & TOKENS
+- Resets: `box-sizing: border-box`; `html { min-width: 320px; scroll-behavior: smooth; }` `body { margin: 0; overflow-x: hidden; -webkit-font-smoothing: antialiased; }`[cite: 16].
+- Regra de Tipografia (O Macete): Utilizar a Fonte Sans Primária. É ESTRITAMENTE PROIBIDO o uso de letter-spacing negativo em toda a página; utilizar `letter-spacing: 0` onde especificado[cite: 16].
+- Tokens Estruturais e de Cores (Injeção Dinâmica):
+  --color-paper-bg (Fundo quente principal, simula papel claro)[cite: 16]
+  --color-surface-warm (Fundo quente secundário de seções)[cite: 16]
+  --color-surface-light (Fundo claro para cards)[cite: 16]
+  --color-ink (Cor de texto escura principal)[cite: 16]
+  --color-muted (Cor de texto secundária acinzentada)[cite: 16]
+  --color-accent-gold (Cor de acento primária/Dourado)[cite: 16]
+  --color-accent-light (Variação clara do acento)[cite: 16]
+- Acessibilidade: OBRIGATÓRIO respeitar `prefers-reduced-motion: reduce` abortando animações de scrub/reveal, desativando blur e exibindo elementos com opacidade total imediatamente[cite: 16].
+- Dependências Críticas: GSAP 3.13.0, ScrollTrigger 3.13.0 e SplitText 3.13.0[cite: 16].

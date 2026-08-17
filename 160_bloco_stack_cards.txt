@@ -1,0 +1,10 @@
+BLOCO: Sticky Stack Section
+- Layout Desktop: Altura gigantesca ativada no wrapper (ex: 360vh). Elemento interno com `position: sticky; top: 0; height: 100vh; overflow: hidden;`.
+- Background Ticker: Ticker flutuante absoluto posicionado no meio (`top: 50%`, `translateY(-50%)`), z-index 0, Cor de Acento clara.
+- Header: Absoluto no top-center, pointer-events none, z-index 2.
+- Container de Cards: Grid com `place-items: center` ocupando todo o espaço. 4 Cards de Imagem empilhados em `absolute` no centro da tela.
+- Animação de Scroll-Linked Stacking (O Macete JS):
+  - O JS mapeia o scroll dentro dos 360vh. Cada card recebe 1/4 da "fatia" do scroll.
+  - Cards em "repouso" possuem rotação e offsetY leves (variáveis CSS: `--stack-offset`, `--stack-rotate`, `--stack-scale`).
+  - Conforme a fatia do card é percorrida, ele se move para cima (`translateY` forte), escala diminui, e a opacidade cai gradativamente para 0.
+- Regra Responsiva ESTRITA: Em <= 920px, a altura absurda da seção é desativada (`height: auto`). O Sticky cai. O layout muda para um grid vertical normal. Os cards perdem a mecânica de scroll e ganham uma animação de entrada de offset lateral (ímpares de -42px, pares de 42px) com opacity via IntersectionObserver.

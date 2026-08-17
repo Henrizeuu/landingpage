@@ -1,0 +1,7 @@
+COMPONENTE: Scroll & Load Reveal Animations
+- Lógica de Disparo: Via IntersectionObserver (threshold 0.2, rootMargin 0px 0px -8% 0px). Se o Observer não for suportado, exibir imediatamente.
+- Elementos "On Load" (.animate-on-load): Iniciam com opacity 0 e revelam após o tempo definido em `data-delay`.
+- Elementos "On Scroll" (.animate-on-scroll): Iniciam com opacity 0, translateY(44px) e scale(0.985). Opcionalmente com filter: blur(16px).
+- Variações Direcionais: `.scroll-from-left` (translateX -52px) e `.scroll-from-right` (translateX 52px).
+- Transição (O Macete): Duração ~750ms com curva cubic-bezier(0.2, 0.75, 0.25, 1). Se houver blur, a transição do filter dura ~800ms.
+- Regra de Acessibilidade: OBRIGATÓRIO respeitar `prefers-reduced-motion: reduce`, desativando as transições e mostrando todos os elementos animados imediatamente em seu estado final.

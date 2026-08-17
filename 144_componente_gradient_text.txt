@@ -1,0 +1,3 @@
+COMPONENTE: Highlight Gradient Text
+- Estrutura: span ou elemento inline.
+- Efeito (O Macete): Aplicar o gradiente via background-image, combinando com `background-clip: text` (e o prefixo webkit) e `-webkit-text-fill-color: transparent` para que o gradiente preencha apenas as letras[cite: 22].

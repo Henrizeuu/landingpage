@@ -1,0 +1,6 @@
+BLOCO: Results Panel
+- Layout: Fundo transparente para a Section. O conteúdo fica numa sub-camada `.content-surface` (superfície profunda gradient black/red com glow radial).
+- Painel Central (O Macete Visual): Usa um separador no topo: um quadrado (14px) rotacionado 45deg formando uma seta de direção (opacidade branca).
+- Card Gigante: max-width 1040px, border de baixa opacidade, background `rgba(18,8,8,.9)` + gradiente, forte sombra e blur 10px.
+- Grade de Itens: Display grid de 5 colunas no desktop. Título com texto Accent. Ícones (SVG) envoltos por círculos vermelhos (46px).
+- Regra Responsiva: Em <=960px, o grid vira 3 colunas. Em <=640px, o grid DEVE forçar uma queda para 1 coluna. Aplicar "Reveal-on-scroll Panels" na montagem.

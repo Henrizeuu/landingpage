@@ -1,0 +1,8 @@
+BLOCO: Hero Section
+- Layout: min-height: 84vh; position: relative; overflow: hidden. Content-wrapper com largura min(100%, 1380px), margin auto, padding 40px 72px 48px, flex column, justify-content: center. Z-index 1.
+- Background: Imagem principal usada via CSS (background-image) mesclada com linear-gradient horizontal e posicionada centralmente.
+- Efeitos Absolutos (Círculos): Injetar dois pseudo-elementos (::before e ::after) desenhando grandes círculos vazados (42vw e 44vw, min 320px) com bordas de 1px super sutis flutuando atrás do texto.
+- Conteúdo: Marca (Selo Decorativo). H1 com max-width 620px (clamp tipográfico gigante e line-height 1.02), trecho de destaque envelopado em <span> com cor de acento. Parágrafo max-width 520px. Injetar Componente "Action CTA Pill".
+- Regra Responsiva: 
+  - Em <= 1100px: Injetar gradientes escuros extras verticalmente sobre a imagem de fundo para dar leitura; background-position desloca para 68% center; texto expande para max-width 740px. 
+  - Em <= 720px: min-height cai para auto; padding 24px 20px 32px; background-position 74% top.

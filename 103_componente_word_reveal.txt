@@ -1,0 +1,5 @@
+COMPONENTE: Word Reveal Text (O Macete Tipográfico)
+- Lógica JS: O script busca o container (ex: .reveal-write) e envelopa cada palavra (text node) recursivamente em um `<span class="reveal-word">`, preservando espaços em branco e formatações como `<em>`.
+- Variável CSS Dinâmica: O JS injeta uma variável `--word-index` em cada span.
+- CSS do Span (.reveal-word): inline-block, opacity 0, translateY 12px, blur 8px.
+- Transição e Delay: opacity 500ms, transform/filter 700ms. O pulo do gato é o delay calculado: `transition-delay: calc(var(--word-index) * 45ms);`.

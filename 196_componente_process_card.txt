@@ -1,0 +1,5 @@
+COMPONENTE: Process Card (Square)
+- Estrutura: Elemento `<article>` englobando um header flex (H3 + Número), réguas horizontais (`<hr>`) e dois parágrafos (o primeiro em bold)[cite: 16].
+- Visual Rigoroso: CANTOS QUADRADOS (0px radius). Sem box-shadow[cite: 16]. Fundo claro (`--color-surface-light`), borda rígida de `1px solid` na Cor de Acento (opacidade 0.8)[cite: 16]. Transform-origin no centro e `will-change: transform` para otimizar animação do GSAP[cite: 16].
+- Réguas Internas: Os `<hr>` possuem borda top na Cor de Acento (opacidade 0.75) com margens específicas de separação de conteúdo[cite: 16].
+- Regra Responsiva: Padding base de `0.625rem 1rem 1.25rem` no mobile. Em >=1024px (desktop), expandir para `0.625rem 1.375rem 1.375rem` e aumentar padding-right dos parágrafos para 3.75rem[cite: 16].

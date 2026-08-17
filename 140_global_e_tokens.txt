@@ -1,0 +1,14 @@
+GLOBAL STYLES & TOKENS
+- Resets: box-sizing: border-box; remover margem e padding de html e body[cite: 22].
+- Body: background e color baseados nos tokens globais[cite: 22].
+- Tokens de Tipografia: Definir Fonte Principal (títulos) e Fonte Secundária (cards e botões)[cite: 22].
+- Tokens Estruturais (Injeção Dinâmica):
+  --bloco-bg
+  --bloco-text
+  --bloco-card-text
+  --bloco-card-copy
+  --bloco-card-border
+  --bloco-card-gradient (Fundo do card)
+  --bloco-highlight (Gradiente de destaque para textos)
+  --bloco-button-gradient (Gradiente animado do botão)
+  --bloco-shadow (Sombra principal)

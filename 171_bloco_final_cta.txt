@@ -1,0 +1,8 @@
+BLOCO: Final CTA & Scroll Word Reveal
+- Layout: Fundo escuro. Padding profundo no bottom[cite: 16]. Grid centralizando os itens.
+- Título (O Macete JS de Scroll-Linked): O título principal será quebrado em palavras.
+  - O JS salva a frase, limpa o nó, e injeta `<span class="cta-title-word">` para cada palavra, e um span `cta-title-space` de largura fixa para o espaço[cite: 16].
+  - Elemento inicial: opacity 0.12, translateY(0.24em) e blur(8px). Usar `will-change`.
+  - A Função: Utilizando `requestAnimationFrame`, calcular o progresso da seção (`rect.top`) no viewport. Calcular o progresso INDIVIDUAL de cada palavra (fórmula usando índice da palavra e um span de animação, ex: 1.25)[cite: 16].
+  - Resultado: As palavras mudam opacity, translateY e blur dinamicamente conforme o usuário rola a página, criando uma revelação em tempo real não ligada a tempo, e sim a distância de rolagem[cite: 16].
+- Ação: Injetar "Pill CTA Button (Final CTA variant)"[cite: 16].

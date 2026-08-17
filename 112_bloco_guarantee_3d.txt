@@ -1,0 +1,8 @@
+BLOCO: Guarantee (3D Animated Seal)
+- Layout: Grid 2 colunas (Selo + Conteúdo), radius 28px, border fina translúcida. Gap 42px.
+- 3D Seal (O Macete Extremo): Wrapper do selo requer `perspective: 1200px`. O anel externo é um círculo de borda com ring interno translúcido e `transform-style: preserve-3d`.
+- Animated Number: A fonte (ex: número "7") flutua 3D (Animação de 5.5s, translando em Y e rotacionando nos eixos X/Y entre 4deg e -6deg). O número é duplicado:
+  - "Costas" (Back): Com blur, transladado para trás no eixo Z (-50px) e opacidade reduzida.
+  - "Frente" (Front): Opaco, com text-shadow, projetado para frente no eixo Z (40px) e rotacionado.
+- Glow: Pill radial borrada por baixo do número para dar sensação de fonte de luz.
+- Regra Responsiva: Em <= 1100px, o grid vira 1 coluna com justify-items start. Em <= 720px, tudo é centralizado (Selo + Texto) e a dimensão total do selo cai (ex: 142px) para não quebrar a proporção mobile.

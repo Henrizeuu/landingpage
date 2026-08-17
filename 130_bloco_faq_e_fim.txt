@@ -1,0 +1,7 @@
+BLOCO: FAQ & CTA Final
+- Layout: Padding 88px 24px 104px. Fundo claro com glow radial central. Inner width restrito (ex: 760px), centralizado.
+- Lista FAQ: Grid com gap de 14px. Cada item deve OBRIGATORIAMENTE ser construído utilizando as tags HTML nativas `<details>` e `<summary>`.
+- Estilo dos Itens: Fundo claro (gradient), radius 12px. O `<summary>` deve remover os marcadores nativos do browser e ter um layout `flex space-between` com um ícone de chevron injetado à direita.
+- Interação: Via CSS, rotacionar o chevron 180deg utilizando o pseudo seletor `details[open]`. Sem restrições de "apenas uma aba aberta".
+- Ação Final: Renderizar botão de suporte secundário ou CTA menor logo abaixo das perguntas (ex: "Ainda tenho dúvidas").
+- Regra Responsiva: Em <= 720px, o CTA do rodapé assume largura 100% da tela. A página deve encerrar exatamente após este bloco, sem renderizar um "footer tradicional".

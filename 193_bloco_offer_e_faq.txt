@@ -1,0 +1,15 @@
+BLOCO: Offer Section
+- Layout: Background de gradientes radiais profundos vermelhos + gradiente linear.
+- Título Geral da Seção: Centralizado, weight 800, line-height 1.04. Subtítulo intro alinhado.
+- Card da Oferta: Box com cantos quadrados, padding reforçado (ex: 34px), borda branca de baixa opacidade, dark translucent background e shadow preta (`0 28px 56px`).
+- Elementos do Card: Badge "Condição de entrada hoje". "De R$ 497 por". Bloco de parcelamento Gigante com letter-spacing negativo. Preço à vista.
+- Divisória interna construída com `1px horizontal red gradient`.
+- Benefícios Listados: Os bullet points ("checks") devem ser gerados EXCLUSIVAMENTE construindo uma forma em CSS (marcador de check usando bordas rotacionadas).
+- Ação: "Red Pill CTA" com nota de rodapé de segurança.
+- Animação: Header e Card revelados via "Reveal-on-scroll Panels". Os itens dentro do card surgem escalonados (stagger) após o card estar visível com delays de 170ms a 450ms.
+- Regra Responsiva Específica (<=640px): Texto do parcelamento e títulos diminuem para os limites da tela (clamp).
+
+BLOCO: FAQ Section
+- Layout Final: Continuação do background dark. Max-width restrito (ex: 860px). Título principal H2 e lista de perguntas abaixo.
+- Comportamento: Renderizar usando o "Dark FAQ Accordion (Nativo)".
+- Animação: Mesma arquitetura de Reveal-on-scroll do Header.

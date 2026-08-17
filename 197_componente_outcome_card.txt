@@ -1,0 +1,5 @@
+COMPONENTE: Outcome Card (Resultados)
+- Estrutura: Grid interno centralizado (`text-align: center`), contendo um número gigante e um parágrafo[cite: 16].
+- Visual Rigoroso: CANTOS QUADRADOS[cite: 16]. Borda na Cor de Acento (opacidade 0.42), fundo translúcido claro, e box-shadow de INSET highlight (borda interna branca clara de 1px)[cite: 16].
+- O Macete Decorativo: Abaixo do número gigante, injetar uma barra via CSS (width 64px, height 4px, gradient na Cor de Acento, radius 999px, margin-top 16px) totalmente centralizada[cite: 16].
+- Parágrafo: Max-width 18ch para forçar quebra de linha harmoniosa[cite: 16].

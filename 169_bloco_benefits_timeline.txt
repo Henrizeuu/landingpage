@@ -1,0 +1,7 @@
+BLOCO: Benefits Timeline
+- Layout: Fundo escuro. Container contido e centralizado[cite: 16]. Título central com text-shadow forte.
+- Timeline Horizontal: Grid com 5 colunas[cite: 16]. 
+- Linha Divisória (O Macete): Criada usando um `::before` absoluto no grid. Height 1px, `top: 29px`. Background é um `linear-gradient` horizontal indo do transparente nas pontas para a Cor de Acento no centro[cite: 16].
+- Itens da Timeline: Grid centrado, gap, text-align center[cite: 16]. Ponto (Dot) circular com background da Cor de Acento e box-shadow volumosa dupla (halo escuro e glow acentuado)[cite: 16]. Textos curtos com font-weight 600[cite: 16].
+- Animações: Aplicar "Scroll Reveal" com delay escalonado nos itens[cite: 16].
+- Regra Responsiva ESTRITA: Em <= 760px, o layout quebra para 1 coluna vertical. O Grid muda. A Linha Divisória abandona o topo e passa a ser uma linha VERTICAL à esquerda, cruzando os pontos. Os itens mudam alinhamento de centralizado para esquerda[cite: 16].

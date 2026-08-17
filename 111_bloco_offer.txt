@@ -1,0 +1,7 @@
+BLOCO: Offer / Pricing
+- Layout: Card de destaque com max-width 680px, centralizado. Fundo translúcido com backdrop-filter pesado (10px). Radius 28px.
+- Top Highlight Line: Pseudo ::before renderiza um gradient linear horizontal (fade in, solid center, fade out) com height de 1px agindo como um brilho de topo na borda do card.
+- Componentes Internos: Eyebrow (Oferta), Título em Display font. Lista de benefícios com ícones dot-glow.
+- Bloco de Preço: Layout horizontal flex (Investimento x Valor). Valor em fonte gigante (ex: 3.4rem).
+- Ação: Renderizar CTA Button modificado (Full width ou tamanho substancial).
+- Regra Responsiva: Em <= 720px, o card preenche 100% da largura, perde padding horizontal massivo (cai para 20px) e o botão vira 100%.

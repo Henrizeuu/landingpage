@@ -1,0 +1,5 @@
+BLOCO: FAQ Section
+- Layout: Fundo aquecido (`var(--section-warm-bg)`). Largura máxima do conteúdo restrita a 920px. Espaçamento inferior profundo[cite: 19].
+- Elementos: Título H2 ("Perguntas frequentes") e uma lista baseada no Componente "FAQ Accordion (Nativo)"[cite: 19].
+- Comportamento: Utiliza a tag `<details>` do HTML5, garantindo que o acionamento de abertura seja fluido e dispensa o controle de estado complexo em Javascript[cite: 19].
+- Regra Responsiva: Em <= 560px, a seção usa `padding 0 18px 56px` e os resumos (summary) da FAQ encurtam seu padding para `18px 48px 18px 18px`[cite: 19].

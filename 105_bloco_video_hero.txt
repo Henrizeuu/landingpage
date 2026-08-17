@@ -1,0 +1,8 @@
+BLOCO: Video Hero Section
+- Layout: min-height 100vh. position relative, padding-top generoso (ex: 56px 48px 0), overflow hidden, isolation isolate.
+- Media (O Macete do Vídeo): Dois vídeos injetados como `absolute inset 0`. Desktop é visível por padrão, Mobile recebe `display: none` no desktop. Ambos com `object-fit: cover`, `pointer-events: none`.
+- JS Autoplay Resilience: O JS deve forçar a reprodução em loop. Adicionar ouvintes para `loadeddata`, `ended`, `visibilitychange`, `touchstart`, `click` para contornar bloqueios de autoplay dos navegadores. Tentar play() a cada 1200ms até garantir a execução.
+- Conteúdo: Grid de 1 coluna, z-index 1. H1 com tamanho extremo (clamp gigante), uppercase, letter-spacing negativo. Subheadline restrita a max-width 560px.
+- Ação: Renderizar Componente "Primary CTA Button".
+- Decorative Line (Clip-path): Linha no rodapé do hero com `height: 64px`. Pseudo-elemento com background translúcido usando `clip-path: polygon(0 62%, 39% 62%, 48% 0, 100% 0, 100% 25%, 52% 25%, 43% 98%, 0 98%)`.
+- Regra Responsiva: Em <= 1100px, padding horizontal cai para 24px. Em <= 720px, o Vídeo Desktop ganha `display: none` e o Vídeo Mobile fica ativo com `transform: scale(1.08)`. O H1 reduz para ~3rem, as ações centralizam e o clip-path da linha ajusta a angulação para caber na tela móvel.

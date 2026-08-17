@@ -1,0 +1,10 @@
+BLOCO: Futuristic Services Grid Section
+- Layout da Seção: position: relative; overflow-x: clip; padding vertical de 10rem e horizontal de 10%.
+- Fundo Decorativo Absoluto: Injetar o Componente "Section Background Glow" na base da seção.
+- Cabeçalho (Header): Centralizado. Layout em coluna. Espaço entre eyebrow e título: 4rem. O cabeçalho deve estar totalmente "limpo", sem glow forte por trás.
+- Eyebrow: text-transform: uppercase, font-size 1.2rem, letter-spacing 0.05em, Cor de Acento Principal, peso 500. Adicionar colchetes brancos/claros via pseudo-elementos (`[` e `]`). Texto interno usa palavra genérica (ex: SERVICES).
+- Título Principal: max-width 88rem, tamanho clamp(4.4rem, 4.8vw, 6rem), line-height 1, letter-spacing -0.03em, peso 400. O título deve quebrar em 2 linhas de forma elegante.
+- Ícone do Título (O Macete): Inserir um ícone SVG inline no meio do título (em linha). Símbolo tecnológico abstrato formado por pequenos círculos (contorno/orgânica com 4 pontos internos em diagonal). Altura ~5rem.
+- Grid de Cards: display: flex; flex-wrap: wrap; justify-content: center; gap: 3.2rem; margin-top: 4.8rem. Largura base dos cards: `calc((100% - 6.4rem) / 3)` (max-width 48rem), forçando 3 cards na 1ª linha e 2 cards centralizados na 2ª linha. Total: 5 cards. Injetar o "Featured Card Aura" no 2º card e o "Mouse Tracking Glow" nos demais.
+- Regra Responsiva:
+  - Em <= 834px: Padding da seção cai drasticamente para 5.6rem (vertical) e 1.6rem (horizontal). A altura do Ícone inline no Título cai para ~4rem.

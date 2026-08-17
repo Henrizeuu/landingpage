@@ -1,0 +1,8 @@
+BLOCO: Pricing Comparison
+- Layout: Padding 102px 24px 54px. Fundo escuro radial. "Top Notch" (meia pílula) no centro-topo invertendo a cor do background anterior.
+- Título: Duas linhas, primeira linha em cor de acento.
+- Grid Desktop: 2 colunas iguais, gap 14px.
+- Cards de Preço (O Macete): Fundos claros. A área superior do card é preenchida por cor escura com cortes ("corner shapes" SVG ou clip-path). Injetar renderização de mockups CSS de capas rotacionadas no centro.
+- Estrutura de Preço: Tag identificadora, Nome do produto, Preço antigo com line-through. 
+- Footer da Seção: Um texto de gancho isolado (ex: "Mas calma...") em clamp gigante (até 4rem) e bold, posicionado abaixo dos cards.
+- Regra Responsiva: Em <= 1100px, as 2 colunas empilham estritamente para 1 coluna vertical.

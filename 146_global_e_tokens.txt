@@ -1,0 +1,11 @@
+GLOBAL STYLES & TOKENS
+- Resets Obrigatórios: box-sizing: border-box; html { font-size: 62.5%; }
+- Regra Responsiva Global: Em telas <= 834px, aplicar html { font-size: 56.25%; } para reduzir proporcionalmente toda a interface baseada em rem.
+- Tipografia: Usar uma "Fonte UI Elegante" (sem serifa, estreita, limpa e moderna, com bastante respiro visual). Pesos principais: 300, 400, 500.
+- Tokens Estruturais (Para injeção dinâmica):
+  --fundo-base-escuro (Fundo principal da página/seção)
+  --texto-principal (Claro/Branco)
+  --texto-secundario (Translúcido)
+  --borda-card-suave (Borda translúcida de baixa opacidade)
+  --acento-principal (Cor vibrante para destaques, ícones e glows)
+  --titulo-card-cor (Tom levemente acinzentado/claro para os H3 dos cards)

@@ -1,0 +1,6 @@
+BLOCO: Services / Benefits
+- Layout: Fundo escuro. Padding inferior pesado (108px). Título imenso (max-width 980px).
+- Grid Desktop: 3 colunas, gap 28px, margin-top 64px.
+- Cards: Radius 24px, padding 36px 34px 30px, borda sutil, texto centralizado. Injetar Componente "Scroll Reveal" (reveal-up) com stagger de 180ms. Hover com translateY(-8px) e aprofundamento de sombra.
+- Ícones (CSS): Injetar ícones dentro de holders circulares de 54px translúcidos.
+- Regra Responsiva: Em <= 1100px, grid vira 1 coluna. Cards perdem a altura mínima e se abraçam ao conteúdo no mobile (<= 720px).

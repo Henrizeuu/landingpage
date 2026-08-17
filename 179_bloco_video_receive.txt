@@ -1,0 +1,6 @@
+BLOCO: Video Receive Section
+- Layout: Seção de fundo totalmente escuro/preto com vídeo full-bleed absoluto de fundo (Asset 4)[cite: 19]. Altura estendida massiva (420vh desktop / 430vh mobile)[cite: 19].
+- Painel Sticky & Pin: `.video-section__sticky` fixado (`height 100vh`, `overflow hidden`). O GSAP pina essa seção no desktop. No mobile usa CSS `position: sticky` sem pin no ScrollTrigger[cite: 19].
+- Cards Flutuantes (O Macete): 4 cards de vidro líquido (`width: min(400px, 36vw)`) posicionados em coordenadas absolutas. Os da esquerda em `left clamp(20px, 7vw, 110px)`, os da direita em `right clamp(...)`. As posições verticais (top) são escalonadas: 24%, 32%, 52%, 60%[cite: 19].
+- Animação Timeline GSAP: Um ScrollTrigger percorre a seção de topo a fundo (`scrub: .25`)[cite: 19]. O Heading entra de opacity 0 e blur 14px (aparece em 4% da timeline e some em 78%)[cite: 19]. Cada card anima de `x ±90`, `y 70`, `blur 16px`, `scale .94` entrando escalonadamente (`.14 + index*.16`)[cite: 19].
+- Regra Responsiva: Em <= 900px, os cards perdem o cruzamento esquerda/direita, ocupam `left/right 18px` (largura auto), e os topos reajustam para 25%, 40%, 55%, 70%[cite: 19]. As transições X originais do GSAP devem cair para `±38` no mobile[cite: 19].

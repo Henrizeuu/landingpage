@@ -1,0 +1,6 @@
+BLOCO: Care Method / Future Cards
+- Layout da Seção: Shell interno de bordas arredondadas, padding interno, fundo levemente destacado do body.
+- Header: Kicker / Eyebrow e H2 imenso.
+- Grid: Gap de 1rem. Cards compartilham min-height (ex: 220px mob / 300px desk), radius 1.45rem, borda fina, fundos em gradiente sutil. Transição no hover com translateY(-6px) e aumento da sombra.
+- Lógica JS (O Macete de Override): O PRIMEIRO card deve vir no HTML limpo, mas na injeção via `DOMContentLoaded`, o JavaScript DEVE sobrescrever o título e o parágrafo desse card específico para demonstrar o efeito do layout original.
+- Regra Responsiva: 1 coluna no mobile; 3 colunas em telas >= 768px.

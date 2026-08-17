@@ -1,0 +1,7 @@
+BLOCO: Profile / Protocol Section
+- Layout da Seção: Shell max-width 1536px, fundo claro, overflow hidden.
+- Grid: Display grid com `gap: 0`. Desktop divide em 2 colunas (`minmax(0, 1.05fr)` e `minmax(0, 0.95fr)`).
+- Janela Visual (Esquerda - O Macete): Wrapper de janela imitando UI de sistema operacional (min-height 420px, radius 1.35rem, box-shadow marcante). Barra superior com "3 pontinhos/dots" translúcidos. O fundo da janela é preenchido pela Imagem da Psicóloga via `background-image` (cover, position center top). A DIV de overlay original deve ser ocultada (`display: none`).
+- Lado do Texto (Direita): Flex column, justify-content center.
+- Lógica JS (Override Obrigatório): No `DOMContentLoaded`, o JavaScript deve localizar o `<h2>` e o `<p>` desta seção e sobrescrever os textos para os conteúdos finais designados (ex: "Quem sou eu" e o parágrafo da biografia), e remover a classe `.protocol-link` do DOM caso exista.
+- Regra Responsiva: Mobile usa 1 coluna com text-align center; Desktop (>=768px) usa 2 colunas com text-align left, e padding massivo no lado do texto (ex: `clamp(3rem, 5vw, 5rem)`).

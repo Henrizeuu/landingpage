@@ -1,0 +1,9 @@
+BLOCO: About Section
+- Layout: Fundo `#040404`. Um painel gigante construído com CSS Grid 2 colunas assimétricas (Esquerda: Conteúdo, Direita: Visual). Min-height 620px, borda fina, background vermelho profundo (linear `#c00d0d` a `#660606`) e glow radial.
+- Decoração: 
+  - Topo do painel: uma "aba/notch" preta de 78x34px com seta.
+  - Palavras de Background: "ATLAS" e "MARCA" geradas com Bebas Neue em opacity hiper baixa `rgba(18,4,4,.48)` e letter-spacing nulo, no fundo do painel.
+- Arte Esquerda: O Asset 1 entra de novo. Renderizado em background-image dentro de uma DIV (`.about__portrait`). Filtros de saturação e contraste aplicados, e overlay translúcido.
+- Textos Direita: Eyebrow e H2 com weight 800. Múltiplos parágrafos detalhando a mentoria. Injetar "Red Pill CTA".
+- Animação: Todo o painel revelado com o "Reveal-on-scroll Panels".
+- Regras Responsivas: Em <=960px, vira grid de 1 coluna. O visual do retrato perde altura e muda de lado. Em <=640px, a imagem assume `background-position: center top` para não distorcer o rosto.

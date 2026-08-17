@@ -1,0 +1,4 @@
+COMPONENTE: FAQ Accordion
+- Comportamento JS Estrito: Clicar em um item (.faq-item__trigger) abre a respectiva resposta e FECHA todos os outros itens automaticamente (Single-open mode).
+- Acessibilidade: Atualizar aria-expanded (true/false) e alternar o atributo 'hidden' no wrapper da resposta.
+- Ícone: Criado puramente em CSS (pseudo-elementos). Barra vertical do "plus" sofre fade para opacity 0 quando o item é aberto, formando um "minus".

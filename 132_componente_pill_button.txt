@@ -1,0 +1,5 @@
+COMPONENTE: Pill Button (Primary & CTA)
+- Estrutura Base: inline-flex, align-items: center, justify-content: center, gap: 0.65rem, border: none, border-radius: 999px.
+- Estilo "Glass": Background translúcido claro, borda fina translúcida, backdrop-filter: blur(18px), box-shadow suave para elevação.
+- Interação: Hover com translateY(-1px), fundo sutilmente mais forte, sombra aprofundada. Transições de 180ms ease.
+- Ícone: Seta (arrow-up-right) SVG inline inserida dentro de um holder circular translúcido na lateral do texto.

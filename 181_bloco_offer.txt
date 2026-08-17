@@ -1,0 +1,5 @@
+BLOCO: Offer Section
+- Layout: Fundo aquecido (`var(--section-warm-bg)`). Conteúdo contido e centralizado (`width min(100%, 560px)`)[cite: 19].
+- Card de Oferta: Estrutura em coluna, padding `clamp(24px, 3vw, 36px)`, border de `1px solid rgba(255,255,255,.62)`, radius 8px, background de gradiente translúcido aquecido, sombra de `0 26px 64px rgba(42,42,38,.14)`, blur pesado de 18px[cite: 19].
+- Elementos do Card: Tag superior identificadora ("Acesso imediato"), Título principal (weight 800), Lista detalhada, Rótulo indicativo ("Por apenas"), Preço gigante (ex: "R$ 00,00" com font-size clamp(44px, 7vw, 72px)) e Componente "Pill CTA Button"[cite: 19].
+- Regra Responsiva: Em <= 560px, o padding da seção cai para 52px 18px, padding do card cai para 22px, título para 32px e o preço para 46px[cite: 19].

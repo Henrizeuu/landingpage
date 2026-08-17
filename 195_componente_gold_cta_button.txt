@@ -1,0 +1,7 @@
+COMPONENTE: Gold CTA Button
+- Estrutura Base: Elemento `<a>` renderizado como `inline-flex` centralizado[cite: 16].
+- Tipografia: Texto em bold, usando a Cor Tinta Escura (`#21170b`), sem ícones[cite: 16].
+- Visual: Fundo em gradiente diagonal combinando a Cor de Acento e sua variação clara. Borda fina translúcida na cor de acento (`1px solid rgba(..., 0.2)`). Box-shadow de elevação[cite: 16].
+- Cantos (Radius): No Hero, o desktop usa `border-radius: 14px`; no mobile, vira pílula (`999px`)[cite: 16]. Nas demais seções, sempre usa pílula (`999px`)[cite: 16].
+- Interação (Hover/Focus): Hover engatilha `translateY(-2px)`, fortalece a sombra e aplica um filtro de saturação (`filter: saturate(1.04)`)[cite: 16]. O Focus deve exibir um outline rígido de 3px com offset de 4px na Cor de Acento[cite: 16].
+- Regra Responsiva: Em <=560px, força `width: 100%` e altura fixa (ex: 52px)[cite: 16].

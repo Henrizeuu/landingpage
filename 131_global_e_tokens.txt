@@ -1,0 +1,13 @@
+GLOBAL STYLES & TOKENS
+- Resets: box-sizing: border-box; html { scroll-behavior: smooth; }
+- Body: margin: 0; min-height: 100vh; overflow-x: hidden; text-rendering: optimizeLegibility; antialiased;
+- Comportamento de Links e Botões: Herdam a fonte, links removem underline por padrão. Media elements (vídeos/imagens) usam display: block.
+- Tokens Estruturais (Para injeção dinâmica):
+  --page-bg (Fundo geral claro/suave)
+  --text-main (Cor de texto escura/tinta)
+  --text-muted (Cor de texto suave/secundária)
+  --accent-deep (Acento forte para overlays)
+  --accent-soft (Acento translúcido)
+  --border-soft (Bordas claras para efeito glass)
+  --font-primary (Fonte base da página)
+- Regra de Arquitetura Visual (O Macete): A página inteira é baseada em "Shells" (Cascos). Em vez de seções de ponta a ponta retas, o conteúdo fica dentro de grandes blocos contêineres (`max-width: 1536px`) com bordas altamente arredondadas e margin auto.

@@ -1,0 +1,9 @@
+BLOCO: Journey Section (O Plano Prático)
+- Layout: Padding espesso. Grid max-width 944px.
+- Heading: Título com negritos (weight 800) e trecho itálico ("jogo com posicionamento real") usando a Cor de Acento Soft.
+- Estrutura dos Passos: Grid de 3 colunas (`220px minmax(280px, 420px) 220px`), centralizado. Passos ímpares alinham o visual na dir. e o card na esq. Passos pares invertem a ordem.
+- Arte Decorativa (Visual): Box quadrada de 190px. Dentro tem um losango (rotated 45deg) construído puramente em CSS (bordas brancas/vermelhas, red gradient dark interno, glow, rose shape). Os elementos internos de ilustração (relógio, telefone, casaco) são gerados em puro CSS.
+- Conectores: Segmentos vermelhos de linha (`border`) absolutos atrás dos passos ligando a jornada.
+- Ação: "Red Pill CTA".
+- Animação: Aplicação de "Scroll-fade Journey Steps" nos articles.
+- Regra Responsiva: Em <=960px, as linhas conectoras desaparecem, os steps viram coluna única empilhada, ordem de renderização alterada (visual sempre acima do card).

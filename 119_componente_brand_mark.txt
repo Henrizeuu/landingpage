@@ -1,0 +1,4 @@
+COMPONENTE: Brand Mark (Selo Decorativo)
+- Uso: Logo no hero e separador decorativo em cards de conteúdo.
+- Estrutura: Elemento inline contendo um SVG de marca simétrica (floral/orgânico) acompanhado de texto.
+- Dimensões: SVG de 38x38px no desktop (28x28px no mobile). Texto em Fonte Display grande (ex: 3rem), letter-spacing negativo.

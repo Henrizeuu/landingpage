@@ -1,0 +1,4 @@
+COMPONENTE: Dark FAQ Accordion (Nativo)
+- Estrutura: HTML nativo `<details class="faq__item">`, contendo `<summary class="faq__question">` e um elemento para resposta `.faq__answer`. A PRIMEIRA pergunta deve vir com o atributo `open` por padrão no HTML.
+- Visual: Painel retangular escuro. O ícone de + e - (Coral) é construído via pseudo-elementos (`::before`/`::after`) ancorados na direita do `<summary>`.
+- Estado Aberto: Quando `[open]` estiver ativo no details, a borda do painel muda a cor para `rgba(239,109,91,.28)` e a barra vertical do ícone '+' desvanece/rotaciona virando um '-'.

@@ -1,0 +1,12 @@
+BLOCO: Rounded Video Hero
+- Wrapper Base: min-height 100vh, display flex, align-items stretch, justify-content center. Padding nas bordas (0.75rem mobile).
+- Shell (Painel Principal - O Macete): position relative, width 100%, max-width 1536px, overflow hidden, isolation isolate. Border-radius massivo (escala responsivamente de 1.5rem para 3rem).
+- Background Media: Vídeo absoluto (z-index -3) cobrindo o shell. `object-fit: cover`. O `object-position` é vital: 65% center no mobile, center center no desktop >=1024px.
+- Glass Overlay: Absoluto (z-index -2), combinando 3 camadas CSS:
+  1. Gradiente vertical de luz suave.
+  2. Glow radial no centro-topo (fading out até 68%).
+  3. Gradiente horizontal de luz lateral (mais forte na esquerda).
+- Header/Nav Integrado: Topo do hero, logo (mobile) ou menu centralizado (desktop) com backdrop-filter (glass).
+- Centro do Hero: Textos centralizados com um Pseudo-elemento de brilho/blur radial gigantesco posicionado atrás do copy (z-index -1) para garantir leitura contra o vídeo. H1 gigante com text-shadow. Badge superior "Glass".
+- Metric Card: Card de "Anos de Experiência" flutuante (position absolute) estilo Glassmorphism, fixado na parte inferior.
+- Regra Responsiva: Em mobile, ocultar menu central, manter CTA no Header e Metric card no canto inferior direito. Em >=768px, Metric card vai para o canto inferior esquerdo. Em >=1024px, radius do shell atinge 3rem.

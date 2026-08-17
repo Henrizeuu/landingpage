@@ -1,0 +1,7 @@
+BLOCO: Audience Pain Points
+- Layout: Fundo escuro. Padding inferior pesado. Card flutuante central com max-width 1080px e borda arredondada imensa (28px desktop)[cite: 16].
+- Efeito do Card: Aplicar "Scroll Reveal System (Audience Card)" e "White/Accent Card Surface"[cite: 16].
+- Título: Alinhamento e grid voltados para a direita, text-wrap balance[cite: 16].
+- Grid de Dores: 2 colunas. Cada item formado por um grid auto/1fr (Número + Texto)[cite: 16].
+- Estilo dos Itens: Border-top, padding-top. Número GIGANTE (ex: 4.5rem), peso 300, letter-spacing negativo, cor baseada em border. Texto adjacente em peso 700 e max-width apertado[cite: 16].
+- Regra Responsiva: Em <= 760px, o cabeçalho fica alinhado à esquerda. O grid de dores vira 1 coluna. Remover o max-width apertado dos labels. Raio do card reduz para 24px[cite: 16].

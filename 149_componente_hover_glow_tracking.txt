@@ -1,0 +1,5 @@
+COMPONENTE: Mouse Tracking Glow (Apenas Cards Comuns)
+- Mecânica Visual: Uma camada circular/oval difusa absoluta, nascendo do ponto exato do cursor do mouse, atrás do texto do card (z-index negativo interno).
+- CSS do Glow: opacity: 0 por padrão. Fundo com gradiente radial (centro claro, bordas na Cor de Acento Principal). Tamanho ~10vw (max-width/height 10rem). filter: blur(5rem).
+- Lógica JS (O Macete): Escutar o evento `mousemove` em cima do card. Calcular a posição do cursor relativa aos limites do card e atualizar dinamicamente as variáveis CSS `--hover-x` e `--hover-y` aplicadas na camada difusa.
+- Hover: A opacidade do glow sobe suavemente (transição elegante, não explosiva).

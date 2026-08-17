@@ -1,0 +1,6 @@
+BLOCO: Feedbacks Carousel
+- Layout: Padding 70px 0 80px. Background claro/suave. 
+- Header Decorativo: 4 pequenos círculos coloridos (38x38px) sobrepostos uns aos outros lateralmente antes do texto introdutório do título.
+- Track de Rolagem: Injetar Componente "Draggable Horizontal Carousel". grid-auto-columns: 420px; gap 8px. Botão circular grande flutuante na direita para avançar. Fading Overlay ativado.
+- Cards: min-height 372px, radius 22px, padding 28px 34px 26px. Marca d'água de aspas gigantesca (font 5rem) dentro do card. No rodapé, foto circular da autora (44px) + Nome/Cargo.
+- Regra Responsiva: Em Mobile (<= 720px), redimensionar grid-auto-columns para 310px. A funcionalidade de toque (grab/swipe) nativa do carrossel deve prevalecer.

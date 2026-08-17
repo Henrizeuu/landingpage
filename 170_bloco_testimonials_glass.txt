@@ -1,0 +1,8 @@
+BLOCO: Testimonials
+- Layout: Fundo escuro. Título com span na Cor de Acento-clara, weight 800[cite: 16].
+- Grid: 3 colunas[cite: 16]. Alinhamento ao topo.
+- Efeito dos Cards (O Macete): Offset Vertical entre as colunas via CSS margin (ex: Card 1 e 3 têm margin-top, Card 2 sobe com margin-top negativo)[cite: 16].
+- Estilo dos Cards: Translucidez fortíssima. Background com baixíssima opacidade, border translúcida fina, `backdrop-filter: blur(18px)`. Possui um highlight superior (inset white top line via box-shadow)[cite: 16]. ::after adiciona fade highlight branco[cite: 16].
+- Conteúdo do Card: Grid gap. Testemunho em cima. Autor no rodapé (layout auto/1fr). Avatar (círculo) com gradiente translúcido, shadow e initial centralizado.
+- Animações: Aplicar "Scroll Reveal" com stagger indexado e desfoque inicial (blur) que zera na entrada[cite: 16].
+- Regra Responsiva: Em <= 760px, grid cai para 1 coluna e TODO o offset vertical via margin-top é ZERADO[cite: 16].

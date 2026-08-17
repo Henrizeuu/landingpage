@@ -1,0 +1,6 @@
+COMPONENTE: Red Pill CTA
+- Estrutura Base: Elemento `<a>` (ex: `.hero__button`), inline-flex centralizado, border-radius em pílula.
+- Tipografia: Text-transform uppercase, font-size 0.64rem, weight 700, letter-spacing .02em, cor branca.
+- Visual: Gradiente vertical vermelho intenso (`#f7342f` para `#cb1919`). Borda translúcida de `1px solid rgba(255,196,181,.34)`.
+- Interação (Hover/Focus): Translação para cima (`translateY(-2px)`). O aumento do brilho é feito via `filter: brightness(1.05)`. Sombra intensa gerada (`0 22px 36px rgba(179,14,14,.42)`). Transição de 160ms ease.
+- Regra Responsiva: Em <=640px, força width 100% (min-width zera) e ajusta padding. Se o texto for longo, pode haver quebra de linha (line-height 1.25).

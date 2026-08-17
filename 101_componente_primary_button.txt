@@ -1,0 +1,5 @@
+COMPONENTE: Primary CTA Button
+- Estrutura Base: inline-flex centered, min-height 60px, padding 0 38px, border-radius 12px.
+- Tipografia: Fonte base, font-weight 600, letter-spacing leve (ex: 0.01em).
+- Visual: Fundo com gradiente vertical profundo (injetado via token), texto em alto contraste, border de 1px translúcida e box-shadow de alta elevação.
+- Interaction: Hover/focus translateY(-1px) suave (180ms).

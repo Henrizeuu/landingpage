@@ -1,0 +1,8 @@
+BLOCO: About Section & 3D CSS Mockup
+- Layout: Padding 74px 24px 86px. Inner width min(100%, 1200px), centralizado. Background combinando glow radial no topo com gradiente linear.
+- Eyebrow: Pílula (badge) contendo ícone e texto da seção.
+- H2: Centralizado, line-height 0.95.
+- Card Principal: Grid columns minmax(360px, 1.1fr) minmax(320px, 1fr), gap 34px, padding 52px 54px, radius 22px, box-shadow e border.
+- Visual Esquerdo (O Macete 3D CSS): Renderizar dois elementos HTML em forma de livro simulando 3D puramente via CSS (sem imagem final renderizada). Livro traseiro (205x328) com perspective e rotateY(8deg). Livro dianteiro (300x384) com rotate(5deg) e overlay translúcido simulando reflexo (gloss). Elementos gráficos de "quina" colorida via bordas CSS.
+- Conteúdo Direito: Parágrafos empilhados. Ação via "Action CTA Pill".
+- Regra Responsiva: Em <= 1100px, o Grid do Card vira 1 coluna. Em <= 720px, padding da seção cai, padding interno do card cai para 22px 16px, e o mockup 3D CSS DEVE sofrer scale() para caber no mobile sem vazar.

@@ -1,0 +1,6 @@
+BLOCO: Benefits / Impact Section
+- Layout: Fundo base claro (`#eef0ef`) sobreposto por uma camada `::before` de desfoque pesada (usando a mesma imagem base do hero) controlada por `--impact-blur` e opacity .72[cite: 19]. `::after` cria um overlay radial/linear branco[cite: 19].
+- Grade de Cards: 3 colunas (`repeat(3, minmax(180px, 1fr))`) com largura máxima de 980px[cite: 19]. O card central (min-height `clamp(310px, 34vw, 400px)`) é mais alto que os das pontas (`clamp(270px, 28vw, 340px)`)[cite: 19].
+- Elementos: Título principal H2 centralizado, seguido por 3 cards utilizando o Componente "Liquid Glass Card" e um CTA secundário na base[cite: 19].
+- Animação (GSAP): No desktop, a revelação é controlada pela timeline pinada do Hero. No mobile, os elementos (título, cards, cta) surgem individualmente via IntersectionObserver ou ScrollTrigger com deslocamento Y, desfoque, opacidade 0 e scale .96[cite: 19].
+- Regra Responsiva: Em <= 900px, os cartões empilham em coluna única com largura máxima de 420px. Padding da seção vai para 64px 24px[cite: 19].

@@ -1,0 +1,19 @@
+GLOBAL STYLES & TOKENS
+- Resets: box-sizing: border-box; html { scroll-behavior: smooth; }
+- Body: margin: 0; min-height: 100vh; overflow-x: hidden; text-rendering: optimizeLegibility; antialiased;
+- Layout Base: max-width do conteúdo central em 1240px. Elementos principais e grids usam min(100%, 1240px).
+- Tokens de Tipografia:
+  --font-primary (Para textos e leitura)
+  --font-display (Para os H1, títulos imensos e caixa alta)
+  --font-serif-fallback (Opcional, usado apenas para gerar o número 3D da garantia caso necessário)
+- Tokens de Cores e Superfícies (Injeção Dinâmica):
+  --bg-page (Fundo global fluido)
+  --bg-section-dark (Para blocos de contraste)
+  --bg-section-light (Para blocos de respiro)
+  --text-main 
+  --text-muted
+  --card-surface
+  --line-strong (Bordas de 1px)
+  --shadow-base: 0 20px 80px rgba(0,0,0,0.08)
+- Card Radii: Padrão entre 18px a 28px.
+- Regra de Arquitetura: Plain HTML, CSS e Vanilla JS. O uso de IntersectionObserver para animações de entrada é obrigatório.

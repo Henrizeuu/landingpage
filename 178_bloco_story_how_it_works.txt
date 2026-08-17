@@ -1,0 +1,6 @@
+BLOCO: Story / How It Works
+- Layout: Fundo aquecido (`var(--section-warm-bg)`). Altura estendida fortemente (min-height 220vh desktop, 190vh mobile)[cite: 19].
+- Painel Sticky: Viewport fixo `.story-sticky` (`top: 0`, `min-height: 100vh`, `centered flex`) ancorando o texto central[cite: 19].
+- Elementos: Eyebrow em uppercase com linha divisória de 28px, e um bloco de declaração/statement grande e equilibrado text-balanced[cite: 19].
+- Animação Word-by-Word (O Macete GSAP): O script divide o texto do statement em spans `.word`. Uma timeline com `scrub` vinculada ao scroll da seção altera a opacidade de cada palavra de um estado esmaecido (`var(--story-word-dim)` = .12) até a opacidade 1, com `stagger: 0.5`[cite: 19]. O Eyebrow entra com um keyframe CSS `story-eyebrow-in` (opacity 0, y 12px) de .8s ease[cite: 19].
+- Regra Responsiva: Redução proporcional do tamanho da fonte da declaração (de clamp(30px, 4.1vw, 58px) no desktop para 34px em <=900px e 28px em <=560px)[cite: 19].

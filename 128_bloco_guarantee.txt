@@ -1,0 +1,9 @@
+BLOCO: Guarantee (Animated 3D Seal)
+- Layout: Padding 84px 24px 96px. Fundo escuro. Grid max-width 980px, colunas assimétricas `minmax(280px, 0.9fr) minmax(320px, 1.1fr)`, gap 34px.
+- Animação do Selo 3D (O Macete Extremo): Composição CSS avançada na coluna da esquerda.
+  - Anel Externo: Elemento 320x320px com animação CSS rotate infinito em sentido horário (duração longa, ex: 16s).
+  - Anel Tracejado Interno: Rotaciona no sentido anti-horário (duração 22s).
+  - Núcleo Brilhante: Elemento 210x210 com radial gradient aplicando uma animação `pulse` (scale in/out sutil) de ~4.8s.
+  - Centro Estático: Texto/Número fixo não animado (ex: "7 DIAS" em tipografia bold 6rem).
+- Textos (Direita): Eyebrow, Título com trechos acentuados, Cópia descritiva.
+- Regra Responsiva: Em <= 1100px, o grid vira 1 coluna e todo o layout se centraliza. Em <= 720px, as dimensões da composição do selo animado devem ser reescaladas pelo CSS (anel externo 248px, núcleo 164px, número 4.5rem).

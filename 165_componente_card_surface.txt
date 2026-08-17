@@ -1,0 +1,6 @@
+COMPONENTE: White/Accent Card Surface
+- Uso: Em cards da seção Showcase[cite: 16].
+- Estrutura: overflow: hidden, border fina na Cor de Acento translúcida, background gradient vertical sutil (quase branco para leve tom da Cor de Acento), box-shadow marcante de elevação[cite: 16].
+- Efeitos Decorativos Internos (O Macete):
+  - `::before`: Mix de `radial-gradient` no top-right e `linear-gradient` diagonal invisível aplicando sutil tonalidade da Cor de Acento[cite: 16].
+  - `::after`: Inset 1px com border-radius herdado. Aplica um `radial-gradient` de brilho branco no top-left, somado a um highlight linear superior (opacity 0.7)[cite: 16].

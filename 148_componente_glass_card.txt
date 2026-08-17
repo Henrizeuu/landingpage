@@ -1,0 +1,12 @@
+COMPONENTE: Glass Card (Tech)
+- Base Visual: position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 10.8rem; padding: 3.2rem; overflow: hidden; border-radius: 2.4rem; border: 0.2rem solid var(--borda-card-suave);
+- Aspect Ratio: Visualmente quadrado no desktop (aspect-ratio: 1 / 1).
+- Fundo: Gradiente linear translúcido muito sutil (ex: 2% a 1.5% de opacidade), combinado com backdrop-filter: blur(5px). O card não pode parecer chapado.
+- Topo do Card: Layout horizontal (justify-content: space-between).
+  - Esquerda: Índice técnico (ex: [ 1.0 ]), font-size 1.2rem, weight 500, uppercase, na Cor de Acento Principal.
+  - Direita (Ícone Decorativo): Selo circular (3.6rem, padding 1rem, radius 50%). Fundo na Cor de Acento Principal. Dentro, um glifo pontilhado abstrato e tecnológico (linhas/círculos diagonais). PROIBIDO usar tag <a>, <button> ou cursor: pointer. É apenas decorativo.
+- Textos Internos: Título do card (clamp 3.2rem a 3.6rem, line-height 1, letter-spacing -0.04em, weight 400). Texto descritivo curto/médio (1.4rem, line-height 2rem, weight 300, opacidade 80%).
+- Textos Genéricos (Injeção): Usar títulos como "Adaptive Visual System", "Expandable Systems" e parágrafos de 3 a 5 linhas.
+- Regras Responsivas:
+  - Em <= 1260px: Reduzir gap interno para 1.6rem, padding para 2.4rem, aspect-ratio muda para 1 / 0.8.
+  - Em <= 1060px: O card perde a largura fracionada e assume width 100% (max 48rem), empilhando-se. Backdrop blur aumenta para 1rem (10px).

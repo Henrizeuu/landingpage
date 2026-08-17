@@ -1,0 +1,8 @@
+BLOCO: Hero Section
+- Layout: min-height 100vh no desktop. Flex verticalmente centralizado. `.hero__content` possui z-index 1 e alinhamento à esquerda.
+- Fundo & Mídia: O background da seção OBRIGATORIAMENTE renderiza a imagem principal (Asset 1 - homem de terno em luz vermelha). Em desktop, `background-position: center right`, `background-size: cover`. Em mobile, o posicionamento muda para `74% center` e ganha um overlay massivo (ex: `linear-gradient` escuro e um gradiente vertical) para dar leitura.
+- Textos Pessoais: 
+  - Eyebrow em duas camadas ("Comunidade" pequena, "ATLAS" gigante usando Bebas Neue).
+  - H1 com quebras de linha em `<br>`. Utiliza display grid com gap 2px (O Macete para manter tipografia travada nas quebras de linha). As duas primeiras linhas peso 800, a terceira peso 600, o acento no final (italic, peso 500, cor Soft Accent).
+- Ação: "Red Pill CTA". Não possui animação de reveal load, carrega direto.
+- Regras Responsivas ESTRITAS: Em <=640px, conteúdo centralizado, font-size travado no viewport (`clamp()`), e o `white-space: nowrap` deve garantir que as linhas do título quebrem nos `<br>` idêntico ao desktop.
