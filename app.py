@@ -256,7 +256,7 @@ NUNCA invente códigos CSS ou HTML nesta etapa. Gere APENAS o documento Markdown
 """
                 conteudo_completo = [prompt] + imagens_para_ia
                 resposta_blueprint = client_gemini.models.generate_content(
-                    model='gemini-3-flash',
+                    model='gemini-3.5-flash',
                     contents=conteudo_completo,
                     config=types.GenerateContentConfig(system_instruction=instrucoes_epiverso, temperature=0.3)
                 )
@@ -317,7 +317,7 @@ Você é um compilador de código rigoroso.
 Não converse, não explique. Apenas receba os blocos de código, mude as variáveis de cor para o Tema Claro, injete os textos do Blueprint e devolva os arquivos index.html, style.css e script.js prontos.
 """
                 resposta_codigo = client_gemini.models.generate_content(
-                    model='gemini-3-flash',
+                    model='gemini-3.6-flash',
                     contents=prompt_programador,
                     config=types.GenerateContentConfig(system_instruction=instrucoes_dev, temperature=0.1)
                 )
