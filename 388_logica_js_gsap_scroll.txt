@@ -1,0 +1,10 @@
+LÓGICA JAVASCRIPT: Scrub de Vídeo Cinético e GSAP Timelines
+- O Motor do Vídeo ("Scroll-Scrubbing"):
+  - Imediatamente após a leitura dos metadados, o JS engatilha `video.pause()` — o vídeo NUNCA deve tocar sozinho[cite: 19].
+  - O `ScrollTrigger` lê o progresso absoluto do documento (de 0 a 1) e converte isso baseando-se na `duration` total do arquivo MP4, descobrindo o `targetTime` (tempo alvo)[cite: 19].
+  - A Suavização Matemática: Dentro de um `requestAnimationFrame`, o JS atualiza o `currentTime` do vídeo interpolando o valor progressivamente (`currentTime += (targetTime - currentTime) * 0.08`)[cite: 19]. Isso gera o movimento liso sem precisar de smooth-scroll no CSS.
+- Timeline Híbrida de Sobreposição:
+  - Baseada no progresso, uma sequência GSAP desativa primeiro os textos da hero (`autoAlpha: 0`, movendo `y: -22`)[cite: 19].
+  - Em seguida, torna a seção de Soluções visível, fazendo os cartões aparecerem progressivamente (`stagger: .24`) também movendo-os em Y[cite: 19].
+  - Efeito de Saída (Desfoque/Scroll): Ao se aproximar do final dos 420svh no desktop, os cartões saem de cena usando desfoque (`filter: blur(14px)`) para simular velocidade de movimento[cite: 19]. Já no mobile, para lidar com as telas curtas, o contêiner dos cartões inteiro sofre uma translação para cima (baseada na fórmula matemática da altura excedente) para que o usuário leia tudo sem que o painel precise "desaparecer" abruptamente[cite: 19].
+- Preloader Real: O evento JavaScript lê o carregamento de buffer (0 a 100) do vídeo de fundo. O letreiro de `Loading...` só some quando o evento `canplay` dispara nativamente pelo navegador[cite: 19].

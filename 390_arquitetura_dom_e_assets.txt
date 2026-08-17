@@ -1,0 +1,8 @@
+COMPONENTE: Estrutura Base e Controle de Fundo
+- O Fundo Principal (`main#inicio`):
+  - A tag `<main>` engloba tudo, recebe a classe ou estilo do hero e as seguintes propriedades: `position: relative`, `isolation: isolate`, `overflow: hidden`, `display: flex`, `flex-direction: column` e `min-height: 100svh`[cite: 20].
+  - Nenhuma camada de overlay preta ou pseudo-elemento de escurecimento deve ser renderizada; o fundo depende 100% da fotografia natural[cite: 20].
+- Controle de Imagens (Selector ON/OFF):
+  - O estado "ON" carrega a imagem da casa com as luzes acesas[cite: 20].
+  - O estado "OFF" carrega a imagem escurecida com luzes discretas[cite: 20].
+  - Regra de Mídia: O CSS aplica a imagem inicial através de `background-image`, forçando `background-size: cover`, `background-position: center center` e sem repetição. Em mobile (<=640px), o enquadramento muda para `61% center`[cite: 20].

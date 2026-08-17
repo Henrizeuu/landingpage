@@ -1,0 +1,6 @@
+COMPONENTE: Elipse Decorativa de Rodapé
+- Estrutura Visual (`.bgf-radial-accent`): Injetada de forma absoluta na base do container[cite: 19]. É transformada num formato oval cortado ao meio e delineado por `border: 1px solid var(--bgf-accent-border)` com `border-radius: 50%`[cite: 19]. O fundo recebe um preenchimento gradiente radial interpolando a cor de topo com transparência (`radial-gradient(closest-side, var(--bgf-bg-top) 82%, transparent)`)[cite: 19].
+- Posicionamento Base: Centralizada via `left: 50%` combinado com `transform: translateX(-50%)`[cite: 19].
+- Responsividade Extrema: 
+  - Mobile: Assume uma postura contida, com altura de `500px`, largura calculada dinamicamente com `width: min(700px, 95vw)` e deslocamento base de `bottom: -60px`[cite: 19].
+  - Desktop (`min-width: 1024px`): Amplia as dimensões de forma massiva para vazar as laterais do viewport. Puxa a altura para `750px`, a largura excede a tela indo a `140%` e empurra o eixo Y para o fundo estourando em `bottom: -200px`[cite: 19].

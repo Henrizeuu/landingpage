@@ -1,0 +1,12 @@
+COMPONENTE: Estrutura Base e Seletores de Animação
+- Atributos de Controle HTML: Utiliza o seletor `data-anim` acoplado aos elementos alvo. Aceita parâmetros customizados opcionais como `data-anim-delay` (atraso em segundos) e `data-anim-duration` (duração em segundos)[cite: 24].
+- Classes de Controle CSS:
+  - `[data-anim]`: Deixa o elemento com opacidade zero de antemão[cite: 24].
+  - `[data-anim].sr-visible`: Adicionada dinamicamente pelo JS ao disparar a animação, fixando a opacidade final em `1`[cite: 24].
+- Tipos de Animação Mapeados no JS:
+  - `fade-up`: Opacidade de 0 a 1, eixo Y de 30px para 0[cite: 24].
+  - `fade-left`: Opacidade de 0 a 1, eixo X de -40px para 0[cite: 24].
+  - `fade-right`: Opacidade de 0 a 1, eixo X de 40px para 0[cite: 24].
+  - `fade-in`: Transição pura de opacidade (0 a 1)[cite: 24].
+  - `zoom-in`: Opacidade de 0 a 1, escala (scale) de 0.9 a 1[cite: 24].
+  - `slide-up`: Opacidade de 0 a 1, eixo Y de 50px para 0 usando curva `power3.out`[cite: 24].

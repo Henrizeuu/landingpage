@@ -1,0 +1,4 @@
+LÓGICA JAVASCRIPT: Carregamento Dinâmico e Inicialização
+- Injeção e Orquestração: O código Vanilla JS isola o carregamento para prevenir falhas de concorrência. Primeiro, verifica se `window.UnicornStudio` já existe na memória[cite: 20].
+- Carregamento Dinâmico (Fallback): Se a biblioteca não estiver presente, o JS cria programaticamente uma tag `<script>`, adiciona o atributo `async = true`, injeta a URL do CDN do Unicorn Studio, adiciona o script ao `document.head` e delega a função de inicialização ao evento `onload`[cite: 20].
+- Inicialização da Cena: Quando a dependência está garantida, a função `window.UnicornStudio.init()` é disparada[cite: 20]. A biblioteca varre o DOM automaticamente buscando elementos com o atributo `data-us-project` para injetar o canvas WebGL correspondente ao ID do projeto[cite: 20].

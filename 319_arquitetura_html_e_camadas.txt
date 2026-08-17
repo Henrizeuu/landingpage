@@ -1,0 +1,4 @@
+COMPONENTE: Section Wrapper e Distribuição Inline
+- Container Principal: A seção pai OBRIGATORIAMENTE precisa receber `position: relative` e `overflow: hidden` para confinar as esferas luminosas que invadem as extremidades da tela[cite: 17].
+- Posicionamento Espacial In-line: Ao invés de travar a posição das esferas no CSS global, as coordenadas de cada luz (ex: `top: -80px; left: 10%;` ou `bottom: -60px; right: 15%;`) devem ser injetadas diretamente via atributo `style` no HTML, permitindo manipulação livre do layout[cite: 17].
+- Camada de Conteúdo: A tag que agrupa o texto e os botões DEVE possuir `position: relative` e `z-index: 1` para garantir que o conteúdo fique flutuando acima da névoa do glow ambiente[cite: 17].

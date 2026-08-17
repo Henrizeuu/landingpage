@@ -1,0 +1,8 @@
+GLOBAL STYLES & TOKENS (BLOCO 22 - GRADIENT BARS BACKGROUND)
+- Efeito Visual: Barras coloridas verticais alinhadas como um equalizador de áudio que pulsam em escala, com extremidades mais altas e centro rebaixado[cite: 22].
+- Dependências: NENHUMA. Construído usando CSS Keyframes (`@keyframes`) e injeção controlada de divs via Vanilla JS[cite: 22].
+- Tokens Base (Parametrizáveis no HTML):
+  - `data-gbg-bars`: Quantidade de colunas (default: 7)[cite: 22].
+  - `data-gbg-from`: Cor base inferior do gradiente (ex: `rgb(255, 60, 0)`)[cite: 22].
+  - `data-gbg-duration`: Duração em segundos da pulsação de cada barra (default: 2)[cite: 22].
+- Regra de Injeção: O CSS não introduz fundos paralelos que estraguem a leitura; as barras agem como um *wrapper absoluto* no fundo da tag `.gbg` (fundo preto `#0a0a0a`)[cite: 22].

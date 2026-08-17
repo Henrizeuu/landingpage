@@ -1,0 +1,3 @@
+COMPONENTE: Estrutura Base e Semântica do DOM
+- Wrapper Global (`.hero02-page`): Todo o conteúdo semântico da página deve estar obrigatoriamente encapsulado dentro de uma tag `<main>` carregando esta classe[cite: 24].
+- O Palco Principal (`.hero02-stage`): A seção primária (`<section>`) do hero deve residir imediatamente dentro do wrapper principal e receber o atributo de acessibilidade `aria-label="hero02"`[cite: 24].

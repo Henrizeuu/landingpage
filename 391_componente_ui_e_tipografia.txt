@@ -1,0 +1,10 @@
+COMPONENTE: Header, Brand e Textos
+- Header (`<header>`): Fica no topo da dobra com padding responsivo (`clamp(24px, 5vw, 78px)`).
+  - Brand Lockup (Esquerda): Um monograma com a letra "A" em Playfair Display dentro de um círculo traçado (`rgba(246,245,241,.85)`), seguido pela tipografia em Manrope, em duas linhas ("AUREA" em uppercase e "Residences" menor e esmaecido abaixo)[cite: 20].
+  - Navegação (Direita): Dois links estáticos ("O PROJETO" e "CONTATO") que ficam invisíveis no mobile, acompanhados de um botão circular estilo hambúrguer transparente, que controla o atributo `aria-expanded` (sem menu visual associado)[cite: 20].
+- Headline Central:
+  - Fixo a `13%` do topo.
+  - O texto "Seu espaço para" utiliza Manrope, tamanho maciço (`clamp(44px, 6.5vw, 96px)`), weight 500, uppercase, alinhado ao centro.
+  - O texto da linha inferior "viver o essencial." usa a tag `<em>` aplicando a fonte Playfair Display Italic, sem uppercase, em proporção `.83em` do texto anterior[cite: 20].
+- Subheadline: Alocado no canto inferior esquerdo (`left: clamp(24px, 5vw, 78px)` e `bottom: clamp(64px, 9vh, 92px)`). Usa o Playfair Display Italic em branco absoluto, descrevendo as virtudes do espaço[cite: 20].
+- Seletor de Fundo (Selector Toggle): Fica no canto inferior direito. Formato pílula glassmórfica (`backdrop-filter: blur(5px)` e fundo `rgba(15,20,18,.18)`), possuindo dois botões in-line ("ON" e "OFF") que alternam a cor e atualizam o estado ARIA ao clique[cite: 20].

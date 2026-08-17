@@ -1,0 +1,6 @@
+COMPONENTE: Seção de Rolagem e Container Sticky
+- A Pista de Scroll (`.sts-section`): Atua como o trilho da animação. OBRIGATORIAMENTE recebe a altura massiva da variável `--sts-section-height` (250vh) e `position: relative` para permitir que o usuário role a página enquanto o efeito acontece[cite: 25].
+- O Palco Fixo (`.sts-sticky`): 
+  - Trancado no topo da tela com `position: sticky; top: 0;` e `height: 100vh`[cite: 25].
+  - Funciona prendendo a visão do usuário numa "janela" que engole o fundo base e exibe as frases enquanto a pista (os 250vh) é consumida[cite: 25].
+- Foco Radial (`.sts-glow`): Injetado em `position: absolute; inset: 0`, desenha uma elipse no fundo via `radial-gradient` centralizado em 50% 50%. Bloqueado com `pointer-events: none`[cite: 25].

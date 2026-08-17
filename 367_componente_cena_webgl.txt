@@ -1,0 +1,4 @@
+COMPONENTE: Ponto de Montagem Visual (Mount Point)
+- O Alvo de Renderização (`#hero02-scene`): 
+  - Uma `<div>` injetada diretamente dentro do palco principal (`.hero02-stage`), possuindo o ID `#hero02-scene`, a classe `.hero02-scene` e oculta para leitores de tela com `aria-hidden="true"`[cite: 24].
+  - Regra de Ouro (O Macete de Injeção): Este contêiner OBRIGATORIAMENTE deve permanecer vazio no código HTML fonte[cite: 24]. Ele atua estritamente como o "Mount Point" (ponto de montagem) dedicado para que os scripts externos possam apensar elementos `<canvas>` ou nós virtuais gerados de forma programática sem quebrar o DOM[cite: 24].

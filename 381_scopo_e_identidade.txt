@@ -1,0 +1,5 @@
+GLOBAL STYLES & IDENTITY (LUMERA SERUM)
+- Escopo Visual: Uma página de vendas (landing page) ocupando exatamente uma única tela (100svh) focada em um produto de skincare[cite: 18]. O estilo visual é de uma campanha de beleza editorial com paleta verde-acinzentada pálida, tipografia de luxo e um efeito sofisticado de vidro fosco[cite: 18].
+- Identidade da Página: O título é "Lumera Serum" e o idioma deve ser configurado como "pt-BR"[cite: 18].
+- Tipografia: Utiliza a fonte "Instrument Serif" do Google Fonts para o título principal e os benefícios, enquanto a família de sistema (`system-ui`) é reservada para textos de apoio (eyebrow) e o botão CTA[cite: 18].
+- Dependências: Desenvolvimento restrito a HTML estático, CSS e Vanilla JavaScript, sem uso de frameworks, Tailwind, Canvas ou WebGL[cite: 18].

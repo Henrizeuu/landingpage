@@ -1,0 +1,9 @@
+GLOBAL STYLES & TOKENS (BLOCO 24 - AMBIENT GLOW)
+- Efeito Visual: Luzes coloridas suaves e desfocadas aplicadas ao fundo da seção[cite: 17]. O efeito é 100% estático (sem animação), focado em proporcionar um visual sofisticado e profissional sem chamar muita atenção[cite: 17].
+- Dependências: NENHUMA. Construído puramente via CSS[cite: 17].
+- Regra de Injeção: O efeito atua estritamente como background, não se deve adicionar fundos extras que quebrem a leitura da página[cite: 17].
+- Tokens Base (Variáveis CSS Injetadas):
+  - Cores: `--glo-color-1` (Roxo, ex: `#C0ADFF`), `--glo-color-2` (Azul, ex: `#4A90D9`), `--glo-color-3` (Lima, ex: `#D9FF5C`)[cite: 17].
+  - Tamanhos: `--glo-size-lg` (ex: `400px`), `--glo-size-md` (ex: `300px`)[cite: 17].
+  - Níveis de Desfoque: `--glo-blur-lg` (ex: `120px`), `--glo-blur-md` (ex: `100px`)[cite: 17].
+  - Opacidades: `--glo-opacity-lg` (ex: `0.3`), `--glo-opacity-md` (ex: `0.2`)[cite: 17].

@@ -1,0 +1,10 @@
+LÓGICA JAVASCRIPT: Janela Retangular de Revelação e Automação
+- A Mecânica do Efeito: Em vez de uma máscara radial suave (como no projeto anterior), este design usa a propriedade CSS `clip-path: inset(...)` atrelada à camada `.hero__reveal` para criar uma janela retangular afiada que simula um scanner ou "limpador" de vidro[cite: 18].
+- Interação Desktop:
+  - O cursor nativo do mouse é removido (`cursor: none`)[cite: 18].
+  - O JS mapeia o ponteiro em tempo real e calcula limites matemáticos (clamp) para garantir que o retângulo não ultrapasse as bordas da tela[cite: 18].
+  - As coordenadas injetam valores diretamente nas variáveis `--reveal-x` e `--reveal-y` do CSS[cite: 18].
+  - Uma moldura virtual translúcida com brilho nos quatro cantos (`.hero__corner`) persegue as mesmas coordenadas via `mix-blend-mode: screen`[cite: 18].
+- Automação Mobile e Acessibilidade:
+  - Em telas <= 760px, a interação contínua via toque é ineficiente[cite: 18]. O JS engatilha um `requestAnimationFrame` que move o quadro de revelação automaticamente usando fórmulas de seno e cosseno (criando um passeio flutuante pela tela)[cite: 18].
+  - Se a preferência de sistema `prefers-reduced-motion: reduce` for detectada, as animações matemáticas são paralisadas e a janela revela-se estaticamente travada no centro da tela[cite: 18].

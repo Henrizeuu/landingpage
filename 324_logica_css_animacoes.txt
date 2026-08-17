@@ -1,0 +1,9 @@
+LÓGICA CSS: Animação de Entrada em Cascata (Staggered Fade)
+- Keyframes de Base: O sistema utiliza duas animações principais: `hgf-fade-in` (desliza 20px no eixo Y enquanto aumenta opacidade) e `hgf-fade-up` (desliza 40px no eixo Y)[cite: 18].
+- O Macete Temporal (Delays Cascata): Para criar o efeito de surgimento organizado, os elementos dentro do `.hgf-inner` possuem `animation-delay` escalonados no CSS:
+  1. Eyebrow: Delay de `0.1s`[cite: 18].
+  2. Título (`.hgf-title`): Delay de `0.25s`[cite: 18].
+  3. Subtítulo (`.hgf-subtitle`): Delay de `0.4s`[cite: 18].
+  4. Container do Botão (`.hgf-cta-wrapper`): Delay de `0.55s`[cite: 18].
+  5. Bottom Fade: Delay de `0.7s`[cite: 18].
+- Prevenção de Piscar: Todas as animações usam o preenchimento `both` (`animation-fill-mode: both`), garantindo que os elementos fiquem com `opacity: 0` travada antes de seu delay específico começar a rodar[cite: 18].

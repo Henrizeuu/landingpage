@@ -1,0 +1,8 @@
+COMPONENTE: Textos e Call To Action
+- Contêiner de Texto (`.hero01-copy`): Fica ao lado do ponto de montagem visual, atuando como irmão direto (sibling) da div `.hero01-scene` dentro da moldura[cite: 23]. Regra estrita: Não altere esta ordem de aninhamento[cite: 23]. Recebe `aria-label="hero01 text"`[cite: 23].
+- Tipografia do Título (`.hero01-title`): 
+  - Estruturado em um `<h1>` que contém exatamente dois elementos `<span>` com a classe `.hero01-line`[cite: 23].
+  - O primeiro span carrega "Lorem ipsum dolor sit amet"[cite: 23].
+  - O segundo span carrega "consectetur adipiscing elit"[cite: 23].
+- O Subtítulo (`.hero01-subtitle`): Uma tag `<p>` descritiva institucional posicionando a "Asterisk Digital" como uma comunidade de aprendizado para profissionais de venture capital[cite: 23].
+- Interação (Botão): Um contêiner agendador de ações (`.hero01-actions`) que abraça um `<button>` (tipo "button") com a classe `.hero01-button` contendo o texto estrito "Saiba mais"[cite: 23].

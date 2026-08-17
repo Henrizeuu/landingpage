@@ -1,0 +1,8 @@
+LÓGICA JAVASCRIPT: Swiper Autoplay Linear
+- Validação: O script Vanilla JS inicia verificando se a dependência global `Swiper` existe, logando um aviso no console caso falhe[cite: 23].
+- Configuração do Objeto Swiper: Localiza os elementos com `[data-scf-carousel]` e instancia o carrossel com os seguintes parâmetros para o "movimento perpétuo":
+  - `loop: true` (reinicia os slides infinitamente)[cite: 23].
+  - `speed: 3000` (define o tempo arrastado e demorado da transição do eixo X)[cite: 23].
+  - `allowTouchMove: false` (desabilita que o usuário puxe com o mouse ou dedo, mantendo o controle puramente com o autoplay)[cite: 23].
+  - Autoplay: O `delay` é cravado em `0` (não há tempo de espera) e `disableOnInteraction: false` para não interromper a engine[cite: 23].
+- Breakpoints: O responsivo é tratado diretamente no JS do Swiper, determinando `1` slide para mobile, `2` para tablets (`768px`) e `3` para desktops (`1024px`)[cite: 23].

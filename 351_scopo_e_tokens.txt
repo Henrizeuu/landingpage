@@ -1,0 +1,9 @@
+GLOBAL STYLES & TOKENS (STEPS BG MORPH)
+- Efeito Visual: O fundo da seção muda suavemente de cor (transitando do claro para o escuro) conforme o usuário realiza o scroll e visualiza cada etapa/passo, fazendo com que os cards se adaptem organicamente ao novo tom[cite: 20].
+- Dependências: NENHUMA. A transição é orquestrada puramente via CSS e Vanilla JS através de IntersectionObserver[cite: 20].
+- Regra de Injeção: O CSS base lida tanto com a versão clara quanto escura, portanto as cores adaptadas devem abranger ambas as paletas perfeitamente[cite: 20].
+- Tokens Base (Variáveis CSS Injetadas):
+  - Fases do Fundo: `--sbm-bg-phase-1` (ex: `linear-gradient` claro), `--sbm-bg-phase-2` (médio escuro) e `--sbm-bg-phase-3` (totalmente escuro)[cite: 20].
+  - Cores dos Painéis: `--sbm-panel-bg-light` e `--sbm-panel-bg-dark` para os fundos do card, acompanhados de `--sbm-panel-border-light` e `--sbm-panel-border-dark` para as bordas[cite: 20].
+  - Tipografia: `--sbm-text-dark` (para o modo claro) e `--sbm-text-light` (branco para os fundos escuros), além de versões silenciadas (muted) para os textos de apoio[cite: 20].
+  - Timing: A variável `--sbm-transition` (cravada em `0.7s ease`) dita o tempo de transmutação de todas as cores do bloco[cite: 20].

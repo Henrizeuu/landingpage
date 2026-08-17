@@ -1,0 +1,6 @@
+LÓGICA JAVASCRIPT: IntersectionObserver + GSAP FromTo
+- Verificação de Dependência: O script checa a existência global do objeto `gsap`. Caso esteja ausente, emite um aviso no console e restaura a opacidade de todos os elementos para 1, prevenindo travamentos visuais[cite: 24].
+- Mecânica de Disparo (IntersectionObserver):
+  - Varre todos os nós com `[data-anim]` e os cadastra no observador[cite: 24].
+  - Configura o limiar (`threshold`) em `0.15` e margem de raiz (`rootMargin`) em `0px 0px -50px 0px` para antecipar sutilmente a revelação antes de o elemento estourar no fundo da tela[cite: 24].
+- Execução da Animação: Ao cruzar o limiar de visibilidade (`entry.isIntersecting`), o script extrai os atributos customizados de atraso e duração, monta o objeto de transição do GSAP (`gsap.fromTo`) usando a ease padrão `power2.out`, adiciona a classe `.sr-visible` e encerra a observação do elemento (`observer.unobserve(el)`), otimizando a performance da página[cite: 24].

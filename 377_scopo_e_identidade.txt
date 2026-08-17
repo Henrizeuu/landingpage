@@ -1,0 +1,5 @@
+GLOBAL STYLES & IDENTITY (FUTURE AUGMENTATION - HERO 4)
+- Escopo Visual: Landing page focada em treinamento de Inteligência Artificial, ocupando tela cheia (100svh)[cite: 27]. O visual é futurista, com sobreposições quentes e escuras, e fotografia vívida em tons de laranja e vermelho intenso[cite: 27].
+- Identidade da Página: Título "Future Augmentation" no idioma "pt-BR"[cite: 27]. Utiliza exclusivamente a família tipográfica "Space Grotesk" em toda a interface[cite: 27].
+- Regra Visual Central (Reveal Interativo): O efeito principal foge de uma simples troca de imagem no hover[cite: 27]. O estado normal exibe uma mulher humana; um holofote radial circular, gerado dinamicamente e que segue o cursor, atua como um "raio-x", revelando a versão ciborgue/robótica da mesma personagem[cite: 27].
+- Dependências: Restrito ao uso de HTML, CSS e Vanilla JS[cite: 27]. É proibido o uso de WebGL ou bibliotecas de animação[cite: 27]. A API Canvas 2D é usada estritamente nos bastidores para gerar a imagem que servirá de máscara CSS[cite: 27].

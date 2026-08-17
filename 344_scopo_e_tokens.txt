@@ -1,0 +1,8 @@
+GLOBAL STYLES & TOKENS (BLOCO 24 - SCROLL REVEAL GSAP)
+- Efeito Visual: Anima elementos da página para aparecerem suavemente conforme rolam para dentro da viewport, variando tipos de entrada (subindo, vindo dos lados, zoom, fade puro)[cite: 24].
+- Dependências Críticas: OBRIGATÓRIO carregar a biblioteca GSAP (`gsap.min.js`) antes do script de execução[cite: 24].
+- Regra de Injeção: O efeito deve ser inserido estritamente dentro da seção ou bloco indicado, sem gerar seções extras isoladas[cite: 24].
+- Tokens Base (Cores e Estrutura):
+  - Estado Inicial: Os elementos marcados com `[data-anim]` iniciam invisíveis (`opacity: 0`) para evitar saltos visuais antes do cálculo do IntersectionObserver[cite: 24].
+  - Fallback: Se o JavaScript falhar em carregar, a classe `.no-js [data-anim]` força a exibição completa de tudo imediatamente (`opacity: 1 !important`)[cite: 24].
+- Acessibilidade: O CSS provém uma regra `@media (prefers-reduced-motion: reduce)` que reseta a opacidade para 1 instantaneamente, desativando as animações direcionadas para usuários com restrições de movimento[cite: 24].

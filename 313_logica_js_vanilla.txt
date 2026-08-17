@@ -1,0 +1,9 @@
+LÓGICA JAVASCRIPT: Geração e Aleatoriedade (O Macete Matemático)
+- Inicialização: O script escuta o evento `DOMContentLoaded` e mapeia todos os elementos `.bkh-container[data-bokeh-count]`[cite: 23].
+- Laço de Injeção: O JS captura o número de partículas estipulado no dataset (fallback para 15) e cria programaticamente tags `<span>` com a classe `.bkh-particle`, inserindo-as no DOM[cite: 23].
+- Cálculos de Aleatoriedade Dinâmica (Física in-line):
+  - Escala: Define largura e altura aleatórias entre `2px` (MIN_SIZE) e `8px` (MAX_SIZE)[cite: 23].
+  - Posicionamento Base: Define `left` e `top` aleatórios multiplicando `Math.random()` por 100 para espalhar pela porcentagem da tela[cite: 23].
+  - Velocidade Orbital (Drift): Define um `animationDuration` sorteado entre 10s e 30s[cite: 23].
+  - Atraso de Partida: Define um `animationDelay` aleatório de até 5s para que as luzes não se movam sincronizadas[cite: 23].
+- A Loteria do Flash: Existe 30% de chance (`FLASH_CHANCE = 0.3`) de o JS aplicar a classe extra `.bkh-particle--flash` a uma partícula. Se sorteada, a duração da pulsação também é aleatorizada entre 4s e 10s para um efeito mais orgânico[cite: 23].

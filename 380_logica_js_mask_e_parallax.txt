@@ -1,0 +1,8 @@
+LÓGICA JAVASCRIPT: Motor do Holofote e Paralaxe Multicamadas
+- Filtro de Interação e Acessibilidade: O script valida a capacidade do dispositivo usando `window.matchMedia("(pointer:fine)").matches`, ativando a máscara apenas para usuários com precisão de ponteiro (mouse/trackpad)[cite: 27].
+- Geração da Máscara (O Macete Gráfico via Canvas):
+  - Um `<canvas>` oculto atua como renderizador[cite: 27].
+  - Em um loop contínuo amarrado ao `requestAnimationFrame`, o Canvas limpa seu contexto e desenha um `radial-gradient` exato nas coordenadas suavizadas do cursor, com raio limite de 260px e um degradê de transparência projetado para um "falloff" suave[cite: 27].
+  - O resultado desse desenho é convertido em uma Data URL e assinado dinamicamente nas propriedades CSS `mask-image` e `-webkit-mask-image` da camada ciborgue (`.hero__reveal`)[cite: 27].
+- Paralaxe do Grid: Capturando a movimentação do cursor, o JS manipula diretamente as coordenadas `x` e `y` da tag `<pattern>` dentro do SVG, fazendo a grade técnica deslizar sutilmente em oposição ao movimento[cite: 27].
+- Paralaxe Dimensional das Imagens: Tanto a camada base (humana) quanto a revelada (ciborgue) são submetidas à mesma fórmula matemática no JS[cite: 27]. Elas recebem `transform: scale(1.03) translate(...)`, garantindo que, mesmo movendo o fundo em paralaxe, os rostos das duas versões permaneçam perfeitamente sobrepostos durante toda a interação[cite: 27].

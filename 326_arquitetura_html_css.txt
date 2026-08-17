@@ -1,0 +1,4 @@
+COMPONENTE: Section, Background e Overlay
+- Seção Principal (`.rhb-section`): Ocupa toda a tela limitando sua área visível (`min-height: 100svh`, `overflow: hidden`) e forçando contexto de empilhamento isolado (`isolation: isolate`)[cite: 19].
+- A Imagem de Fundo (`.rhb-bg`): Fixada em posição absoluta (`inset: 0`) utilizando `object-fit: cover` para não distorcer. Possui `pointer-events: none` e `user-select: none` para não interferir na navegação[cite: 19].
+- O Anel de Overlay (`.rhb-overlay`): Uma div sobreposta com um `box-shadow` interno em tom escuro translúcido para escurecer as bordas da tela e criar um anel sutil sobre a imagem[cite: 19].

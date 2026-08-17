@@ -1,0 +1,8 @@
+GLOBAL STYLES & TOKENS (TESTIMONIALS COLUMNS)
+- Efeito Visual: Três colunas de depoimentos rolando automaticamente na vertical em velocidades diferentes, criando um "mural vivo" de avaliações[cite: 20].
+- Dependências: NENHUMA. Controlado puramente via CSS Keyframes e um leve Vanilla JS para duplicar os nós[cite: 20].
+- Tokens Base (Variáveis CSS Injetadas):
+  - Cores: `--tc-bg`, `--tc-card-bg`, `--tc-card-border`, `--tc-avatar-bg`, `--tc-mask-color`[cite: 20].
+  - Tipografia: `--tc-title-color`, `--tc-name-color`, `--tc-quote-color`[cite: 20].
+  - Layout e Velocidades: `--tc-gap` (1rem), `--tc-speed-col1` (30s), `--tc-speed-col2` (38s), `--tc-speed-col3` (34s)[cite: 20].
+- Acessibilidade: O CSS provê `@media (prefers-reduced-motion: reduce)`, que obrigatoriamente força `animation: none`, remove a `max-height` (expondo todos os cards parados para rolagem nativa) e oculta as máscaras de fade (`.tc-mask`)[cite: 20].

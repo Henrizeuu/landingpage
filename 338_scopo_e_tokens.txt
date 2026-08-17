@@ -1,0 +1,8 @@
+GLOBAL STYLES & TOKENS (BLOCO 22 - HORIZONTAL SCROLLING GALLERY)
+- Efeito Visual: Galeria de itens dispostos horizontalmente. Quando o usuário rola a página para baixo, a seção é fixada na tela e o conteúdo move-se lateralmente (scroll-jacking/pinning)[cite: 22].
+- Dependências Críticas: OBRIGATÓRIO o carregamento das bibliotecas GSAP (`gsap.min.js`) e ScrollTrigger (`ScrollTrigger.min.js`) no head ou antes do script principal. O uso de `ScrollSmoother` é opcional e requer licença específica do GSAP[cite: 22].
+- Regra de Injeção: O container não deve receber estilos paralelos. As imagens dos itens OBRIGATORIAMENTE devem ser aplicadas via CSS inline no HTML usando `background-image: url(...)`[cite: 22].
+- Tokens Base (Variáveis CSS Injetadas):
+  - Cores: `--hsg-bg` (fundo principal, ex: `#0a0a0a`), `--hsg-title-color`, `--hsg-intro-color`, `--hsg-tag-color`[cite: 22].
+  - Layout: `--hsg-item-width` (480px), `--hsg-item-height` (340px), `--hsg-gap` (2rem), `--hsg-card-radius` (1rem)[cite: 22].
+- Acessibilidade: Utiliza `@media (prefers-reduced-motion: reduce)` para anular a animação em JS[cite: 22]. O CSS então assume forçando a div da galeria a se comportar como um overflow de rolagem horizontal nativo e tátil (`overflow-x: auto`, `-webkit-overflow-scrolling: touch`)[cite: 22].

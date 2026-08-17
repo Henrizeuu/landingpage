@@ -1,0 +1,8 @@
+GLOBAL STYLES & TOKENS (BLOCO 25 - STORY TEXT SWAP)
+- Efeito Visual: Duas frases textuais que se alternam na tela conforme o usuário realiza o scroll, utilizando transições de desfoque (blur) e deslocamento vertical para gerar impacto emocional[cite: 25].
+- Dependências: NENHUMA. Todo o efeito é orquestrado via CSS puro e matemática de rolagem em Vanilla JS[cite: 25].
+- Regra de Injeção: O componente atua como uma "seção estendida" e precisa de espaço de rolagem; não adicione fundos ou estilos fora do estipulado que quebrem a mecânica de sticky[cite: 25].
+- Tokens Base (Variáveis CSS Injetadas):
+  - Cores: `--sts-bg` (gradiente de fundo escuro, ex: `#242426` para `#1a1a1c`), `--sts-glow-color` (luz radial, ex: `rgba(192, 173, 255, 0.18)`), `--sts-text-color-1` e `--sts-text-color-2`[cite: 25].
+  - Dimensionamento: `--sts-font-size` (tipografia fluida com `clamp`), `--sts-section-height` (cravado em `250vh` para criar uma longa pista de scroll)[cite: 25].
+  - Tempos de Animação: `--sts-transition-duration` (`0.85s`), `--sts-exit-duration` (`0.65s`)[cite: 25].

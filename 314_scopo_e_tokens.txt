@@ -1,0 +1,8 @@
+GLOBAL STYLES & TOKENS (EFEITO FUNDO 6 - HERO ORBS)
+- Efeito Visual: Três grandes esferas gradientes que flutuam e desfocam no fundo, acompanhadas por uma grade geométrica sutil e um gradiente pulsante[cite: 16].
+- Dependências: NENHUMA. Construído puramente com CSS e animações de keyframes[cite: 16].
+- Regra de Injeção: O HTML do fundo deve ser o primeiro filho dentro da seção Hero, e a seção pai precisa suportar o empilhamento para não engolir o conteúdo[cite: 16].
+- Tokens Base (Variáveis CSS Injetadas):
+  - Orbs (1, 2 e 3): Controle individual de cor (ex: `#C0ADFF`, `#4A90D9`, `#D9FF5C`), tamanho (ex: `640px`), desfoque (ex: `90px`) e opacidade[cite: 16].
+  - Grade (`--bho-grid-color`, `--bho-grid-size`): Cor fina das linhas (ex: `rgba(36, 36, 38, 0.035)`) e espaçamento das células (ex: `64px`)[cite: 16].
+  - Fundo Geral (`--bho-gradient-color`): Cor do gradiente base pulsante[cite: 16].

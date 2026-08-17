@@ -1,0 +1,6 @@
+COMPONENTE: Conteúdo Textual, CTA e Indicadores
+- Layout Desktop: O conteúdo é estruturado em duas colunas através de CSS Grid (`grid-template-columns: minmax(440px, 640px) auto`)[cite: 27]. Os textos e o CTA alinham-se à esquerda, enquanto os indicadores ficam na direita[cite: 27].
+- Textos (Copy): Inicia com um Eyebrow em uppercase e espaçado ("TREINAMENTO IA NA PRÁTICA"), seguido por um H1 gigante controlado por fluid typography (`text-wrap: pretty`) e um parágrafo descritivo de apoio[cite: 27].
+- Botão Principal (CTA): Formatado como uma pílula com um gradiente quente (de `#ffe4bf` para `#ffb65d`), texto em vermelho escuro (`#9f3300`) e uma sombra dupla dramática[cite: 27]. No hover, o botão recebe um filtro leve de brilho (`filter: brightness(1.03)`)[cite: 27].
+- Indicadores (`.hero__stats`): Três blocos de estatísticas (12 aulas, 50+ prompts, 1h poupada) posicionados à direita, separados por linhas finas no topo de cada item[cite: 27].
+- Responsividade (Mobile): Em telas menores (<= 680px), o layout colapsa para uma coluna centralizada[cite: 27]. O bloco de texto ganha um fundo escuro translúcido com Glassmorphism (`blur(6px)`) para garantir legibilidade, e os indicadores são reorganizados em uma grade horizontal de 3 colunas na base da tela[cite: 27].

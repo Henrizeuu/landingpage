@@ -1,0 +1,10 @@
+LÓGICA JAVASCRIPT: Fixação Híbrida e Matemática de Translação
+- Tratamento de Acessibilidade (JS): O script bloqueia sua própria execução se a media query de `prefers-reduced-motion` for verdadeira, entregando o controle de volta ao CSS nativo[cite: 22].
+- A Matemática do Scroll (O Macete Físico):
+  - A função `refresh()` lê a largura real da tira contendo todos os cards (`pinWrapWidth = strip.scrollWidth`)[cite: 22].
+  - Ela calcula a área invisível que precisa ser revelada subtraindo o tamanho do monitor (`horizontalScrollLength = pinWrapWidth - window.innerWidth`)[cite: 22].
+- O Motor do GSAP: 
+  - Cria um gatilho que ancora a seção `.hsg-gallery-wrapper` quando o topo dela chega ao centro da tela (`start: 'center center'` e `pin: sec`)[cite: 22].
+  - O gatilho permanece ativo ("preso") pelo tempo exato que equivale à largura dos itens (`end: '+=' + pinWrapWidth`)[cite: 22].
+  - Sincroniza o movimento do mouse (`scrub: true`) para deslocar a div interna `.hsg-gallery-strip` negativamente no eixo X até atingir `-horizontalScrollLength`[cite: 22].
+- Resiliência de Layout: Amarramos a função de recálculo matemático (`refresh()`) ao evento interno `refreshInit` do ScrollTrigger para lidar com casos em que o usuário redimensiona a janela do navegador no meio da animação[cite: 22].

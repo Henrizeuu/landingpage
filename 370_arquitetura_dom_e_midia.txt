@@ -1,0 +1,9 @@
+COMPONENTE: Contêiner Travado e Mídia de Fundo
+- Layout Bloqueado (Locked Composition): As tags `html` e `body` recebem OBRIGATORIAMENTE `overflow: hidden`, com a `.page-shell` e a `.hero` dimensionadas exatamente para `100vh` e `100svh`. O usuário não rola esta página[cite: 25].
+- Camada de Vídeo (`.hero-media`): 
+  - Fica no fundo (`position: absolute; inset: 0`) e é ocultada de leitores de tela (`aria-hidden="true"`)[cite: 25].
+  - Asset de Vídeo: Utiliza estritamente um MP4 hospedado via Cloudinary (1280x720, abstrato/corporativo)[cite: 25]. A tag `<video>` OBRIGATORIAMENTE recebe `autoplay`, `muted`, `loop`, `playsinline`, `object-fit: cover` e `opacity: 0.6`[cite: 25].
+  - Poster Fallback: O JPG do Cloudinary deve ser injetado *apenas* no atributo `poster` da tag de vídeo. Nunca renderizado como uma tag `<img>` visível[cite: 25].
+- Máscaras e Efeitos (Overlay + Orbs):
+  - `.video-overlay`: Uma camada escura sobre o vídeo (`rgba(0,0,0,.6)`) com um leve desfoque (`backdrop-filter: blur(2px)`)[cite: 25].
+  - Orbs: Duas esferas radiais (esquerda e direita) com cores azul/roxo translúcidas, gigantes (`~37rem`), altamente borradas (`blur: 120px`) e com blend mode de tela (`mix-blend-mode: screen`), que se posicionam atrás do texto, mas à frente do vídeo[cite: 25].

@@ -1,0 +1,6 @@
+GLOBAL STYLES & IDENTITY (HERO 01)
+- Escopo Visual: Construção de uma seção hero focada em alta interatividade, guiada por dados ou baseada em arquitetura de cena visual WebGL (renderização 3D/Canvas)[cite: 23]. O objetivo é máxima fidelidade visual baseada na estrutura do DOM fornecida[cite: 23].
+- Identidade da Página: O título do documento deve ser "hero01" e o idioma base obrigatoriamente "pt-BR"[cite: 23].
+- Dependências Externas (Separação de Responsabilidades): 
+  - CSS: Apenas um arquivo externo linkado estritamente em `assets/css/style.css`[cite: 23].
+  - JS (Ordem Crítica): Três arquivos carregados no final do documento, OBRIGATORIAMENTE nesta sequência para separar as lógicas: `hero01-studio.js` (motor do estúdio), `hero01-scene-data.js` (configuração e dados da cena) e `main.js` (inicialização principal)[cite: 23].

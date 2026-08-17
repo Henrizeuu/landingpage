@@ -1,0 +1,5 @@
+GLOBAL STYLES & IDENTITY (AUREA RESIDENCES)
+- Escopo Visual: Landing page de um empreendimento imobiliário de alto padrão, contida estritamente em uma única dobra (100svh)[cite: 20]. O estilo é de luxo minimalista, focado na arquitetura contemporânea e imersão na natureza.
+- Identidade da Página: Título "Aurea Residences | Viver é escolher o extraordinário" no idioma "pt-BR"[cite: 20].
+- Tipografia: "Manrope" é a fonte padrão da interface. "Playfair Display" é usada para toques editoriais, como no monograma da marca e em trechos itálicos do título e subtítulo[cite: 20]. A família "DM Sans" deve ser importada no `<link>`, mas não é atribuída a nenhum elemento.
+- Dependências: OBRIGATÓRIO o uso estrito de HTML5, CSS3 e Vanilla JavaScript. Sem uso de bibliotecas de terceiros ou frameworks[cite: 20].

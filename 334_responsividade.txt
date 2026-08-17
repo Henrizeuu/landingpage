@@ -1,0 +1,3 @@
+REGRAS RESPONSIVAS
+- Breakpoint Tablet (`max-width: 768px`): A grade converte para 2 colunas (`repeat(2, 1fr)`). Para economizar espaço visual, a coluna 3 inteira (`[data-tc-col="3"]`) recebe `display: none`[cite: 20].
+- Breakpoint Mobile (`max-width: 480px`): A grade encolhe para 1 coluna (`1fr`) e a janela reduz para `max-height: 480px`. A coluna 2 (`[data-tc-col="2"]`) também desaparece, deixando o usuário focado apenas em um mural deslizante de feedbacks[cite: 20].

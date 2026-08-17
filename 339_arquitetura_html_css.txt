@@ -1,0 +1,6 @@
+COMPONENTE: Estrutura, Reset e Galeria
+- Reset Estrutural: É injetado `margin: 0`, `padding: 0` e, essencialmente, `overflow-x: hidden` em `html` e `body` para garantir que a técnica de pinning do GSAP não quebre o layout com barras de rolagem fantasmas[cite: 22].
+- O Gatilho (`.hsg-gallery-wrapper`): É o palco principal onde o ScrollTrigger atua. Possui `overflow: hidden`, fundo atrelado à variável `--hsg-bg` e age como container âncora para travar a tela[cite: 22].
+- A Tira Deslizante (`.hsg-gallery-strip`): É uma linha flexível (`display: flex`, `flex-direction: row`) que abriga todos os cards[cite: 22]. Otimizada para animação com `will-change: transform`. Sua largura não é fixada no CSS, pois é determinada somando a largura dos itens internos[cite: 22].
+- Item da Galeria (`.hsg-item`): Largura e altura travadas pelas variáveis CSS, com `flex-shrink: 0` para impedir que esmaguem uns aos outros[cite: 22].
+- Interação Hover: A imagem de fundo (`.hsg-item-img`) possui `transition: transform 0.4s ease` e, ao sofrer hover no card pai, escala levemente para `1.02`[cite: 22].

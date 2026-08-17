@@ -1,0 +1,7 @@
+COMPONENTE: Construção das Esferas (O Macete Físico)
+- Base Estrutural (`.glo-sphere`): As luzes são divs vazias com `position: absolute`, formatadas como círculos perfeitos através de `border-radius: 50%`[cite: 17].
+- Proteção de Clique: Recebem `z-index: 0` e a propriedade crítica `pointer-events: none` para impedir que os círculos invisíveis capturem cliques ou atrapalhem a seleção de textos pelo usuário[cite: 17].
+- O Efeito "Glow" Difuso:
+  - Não utiliza gradientes ou box-shadows complexos. A luz é gerada pintando a div com uma cor sólida de fundo (`background: var(--glo-color-...)`)[cite: 17].
+  - A névoa luminosa é fabricada submetendo essa cor sólida a um filtro de blur extremo (`filter: blur(var(--glo-blur-...))`) — variando entre 100px e 120px — dissolvendo as bordas do círculo até que ele vire um borrão[cite: 17].
+  - A sutileza é garantida derrubando a opacidade da div inteira para níveis baixos, entre 0.2 e 0.3[cite: 17].

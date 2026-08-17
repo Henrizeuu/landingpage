@@ -1,0 +1,6 @@
+COMPONENTE: Arquitetura do Container e Máscara CSS
+- Estrutura Base: Utiliza a organização padrão do Swiper (`.scf-carousel.swiper`, `.swiper-wrapper`, e `.swiper-slide`)[cite: 23]. 
+- O Efeito Fade (O Macete Físico): Aplicado diretamente no container `.scf-carousel`. Utiliza `mask-image` (e `-webkit-mask-image`) com um `linear-gradient` para a direita, indo de `transparent` para `black` na variável `--scf-fade-start`, e de `black` para `transparent` a partir da variável `--scf-fade-end`[cite: 23].
+- Movimento Contínuo (Override CSS): Para que o Swiper não dê os "soquinhos" de aceleração e desaceleração entre as trocas de slides, o `.swiper-wrapper` recebe a propriedade OBRIGATÓRIA `transition-timing-function: linear !important`[cite: 23].
+- Layout dos Cards (`.scf-card`): Alinhamento em altura uniforme (`align-self: stretch`). As imagens (`.scf-image`) possuem aspecto controlado via `aspect-ratio: 4/3` com `object-fit: cover`[cite: 23].
+- Ocultação de UI: As setas de navegação e as bolinhas de paginação originais do Swiper recebem `display: none` para um visual limpo[cite: 23].

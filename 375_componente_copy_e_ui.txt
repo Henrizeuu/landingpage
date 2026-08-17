@@ -1,0 +1,8 @@
+COMPONENTE: Textos e Autoridade
+- Layout Híbrido: 
+  - Desktop: O texto principal encosta à esquerda, enquanto os números de autoridade (módulos, casos, aprovação) ficam alinhados à direita, fixos verticalmente ao centro[cite: 26].
+  - Mobile (<= 768px): O conteúdo textual desce para o centro inferior da tela para dar espaço visual à personagem[cite: 26]. A autoridade vira uma linha formatada em 3 colunas (CSS Grid) cravada na base da página[cite: 26].
+- Elementos Tipográficos: 
+  - O H1 ("Mais segurança para decidir no plantão.") utiliza `text-wrap: balance` e escala tipográfica dinâmica fluida[cite: 26].
+  - O texto superior (Eyebrow) ganha ar premium com `text-transform: uppercase` e `letter-spacing: .24em`[cite: 26].
+- Call to Action: Composto por um botão principal escuro (`#141414`) com sombra pesada, e um botão "fantasma" que utiliza um ícone de aro circular[cite: 26]. Ambos sobem 1px com transição rápida no hover[cite: 26].

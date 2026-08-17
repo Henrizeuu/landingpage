@@ -1,0 +1,5 @@
+GLOBAL STYLES & IDENTITY (CLEAN AIR HERO)
+- Escopo Visual: Landing page editorial/médica focada em produto, desenhada para ocupar exatamente uma tela inteira (100svh)[cite: 26]. O documento "hero 3 prompt.txt" detalha um design "clean" com fundo bege-acinzentado silenciado[cite: 26].
+- Identidade da Página: Título cravado como "Clean Air Hero" no idioma "pt-BR", utilizando exclusivamente a tipografia de sistema (system sans stack: "Segoe UI", "Helvetica Neue", Arial, sans-serif)[cite: 26].
+- Regra Visual Central (Cursor Reveal): O efeito principal não é uma simples troca de opacidade no hover[cite: 26]. Trata-se de uma máscara radial circular, gerada dinamicamente, que segue o cursor do mouse e revela suavemente uma imagem alternativa (mulher sem máscara) sobre a imagem de fundo (mulher com máscara)[cite: 26].
+- Dependências: Restrito ao uso de HTML, CSS e Vanilla JS[cite: 26]. Não utiliza WebGL ou bibliotecas de animação; a API Canvas 2D é usada unicamente nos bastidores para desenhar a imagem da máscara CSS[cite: 26].

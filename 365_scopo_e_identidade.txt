@@ -1,0 +1,6 @@
+GLOBAL STYLES & IDENTITY (HERO 02)
+- Escopo Visual: Construção de uma seção hero focada na arquitetura visual de uma ferramenta SaaS ou de produtividade, exigindo alta interatividade ou uma cena guiada por dados[cite: 24]. O objetivo central é manter a máxima fidelidade visual baseada na estrutura do DOM fornecida[cite: 24].
+- Identidade da Página: O título do documento deve ser cravado como "hero02" e o idioma base obrigatoriamente definido como "pt-BR"[cite: 24].
+- Dependências Externas (Separação de Responsabilidades): 
+  - CSS: Apenas um único arquivo externo, linkado estritamente no caminho `assets/css/style.css`[cite: 24].
+  - JS (Ordem Crítica): Três arquivos carregados no final do documento, OBRIGATORIAMENTE na seguinte sequência para isolar as lógicas: `assets/js/hero02-studio.js` (motor do estúdio), `assets/js/hero02-scene-data.js` (dados de configuração da cena) e `assets/js/main.js` (lógica de inicialização principal)[cite: 24].

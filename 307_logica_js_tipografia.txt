@@ -1,0 +1,5 @@
+COMPONENTE: Interatividade Tipográfica (Vanilla JS)
+- A Injeção de Spans: O script vasculha por elementos com `data-norb-text`. Ele divide (split) a string vazia original em um array de letras. Espaços são preservados como `\u00A0`[cite: 21].
+- O Atraso Cascata: Cada `span` de letra é criado dinamicamente, e o JS injeta inline `style.animationDelay` estipulando um base delay (ex: 800ms) somado ao índice multiplicado pelo perLetter (ex: 50ms)[cite: 21].
+- A Animação (`norb-letter-in`): Dispara pelo CSS consumindo os delays do JS, puxando as letras em eixo Y com `filter: blur()` inicial para 0[cite: 21].
+- O Acessível (Reduced Motion): Em `prefers-reduced-motion: reduce`, todas as animações (spins, delays de entrada, blurs, e letras da timeline JS) têm os transforms forçados para none, o blur e opacity cravados como 1, estagnando o visual numa composição limpa[cite: 21].

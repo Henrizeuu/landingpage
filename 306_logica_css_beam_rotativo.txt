@@ -1,0 +1,4 @@
+COMPONENTE: Feixe Rotativo e Animações
+- O Motor Giratório (`.norb-beam`): Envelopa exatamente a dimensão do círculo. Ele é quem efetivamente rotaciona via CSS keyframes (`transform: rotate(360deg)`)[cite: 21].
+- O Ponto de Luz (`.norb-beam-light`): Uma barra miúda posicionada em absoluto no `top: 0` do círculo centralizada via `left: 50%`. Através do fundo `linear-gradient` horizontal (90deg) e sombras intensas, forja a impressão de um laser ou ponteiro de relógio varrendo as beiradas da tela[cite: 21].
+- Multi-velocidades: Foram criadas classes utilitárias de spin variando de 6 a 10 segundos, com direções lineares normais (`norb-spin`) e reversas (`norb-spin-reverse`)[cite: 21].

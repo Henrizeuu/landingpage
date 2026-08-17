@@ -1,0 +1,11 @@
+COMPONENTE: O Truque da Altura Virtual e Fixação do Vídeo
+- A Pista de Scroll (`.hero`): A seção pai OBRIGATORIAMENTE recebe `min-height: 420svh`[cite: 19]. Esta dimensão gigantesca não serve para expandir conteúdo, mas sim para "enganar" o navegador e gerar uma barra de rolagem nativa que ditará a duração de toda a animação[cite: 19].
+- A Janela do Vídeo (`.hero__video-wrapper`): 
+  - Fica presa à tela com `position: fixed`, `inset: 0` e exatos `100vw` de largura por `100svh` de altura[cite: 19]. 
+  - Regra de Ouro: Enquanto o usuário rola os 420svh da pista, o vídeo permanece estático no fundo, configurado com `object-fit: cover` sem sofrer qualquer tipo de distorção de `scale` ou perspectiva de layout[cite: 19].
+- Camadas de Empilhamento (Z-Index):
+  - `z-index: 0`: O wrapper ancorado do vídeo[cite: 19].
+  - `z-index: 1`: Máscara escurecedora (`.hero__overlay`) pintada com `rgba(0, 0, 0, .28)` para garantir a leitura dos textos[cite: 19].
+  - `z-index: 2`: O conteúdo textual fixo inicial da Hero (`.hero__content`)[cite: 19].
+  - `z-index: 3`: O overlay das Soluções (`.projects-section`), também travado com position fixed[cite: 19].
+  - `z-index: 50`: A tela de carregamento (`.hero__loading`), que sequestra a visão até a mídia estar processada[cite: 19].

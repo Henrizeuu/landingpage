@@ -1,0 +1,7 @@
+COMPONENTE: Section, Grid e Máscaras
+- Grade Principal (`.tc-grid`): Emprega `display: grid` com `grid-template-columns: repeat(3, 1fr)`[cite: 20]. Possui uma restrição fundamental de `max-height: 600px` combinada com `overflow: hidden` para criar uma janela de visibilidade onde as colunas serão cortadas[cite: 20].
+- Máscaras de Fade (`.tc-mask-top`, `.tc-mask-bottom`):
+  - Injetadas de forma absoluta no topo e na base do container do grid com altura de `120px` e `z-index: 2`[cite: 20].
+  - Utilizam um `linear-gradient` partindo da `--tc-mask-color` para transparente, esfumaçando as bordas dos cards que entram e saem da janela[cite: 20].
+  - Possuem `pointer-events: none` para não bloquear os depoimentos[cite: 20].
+- Estrutura do Depoimento (`.tc-card`): Caixas fixas (`flex-shrink: 0`) com borda arredondada, sombra suave, que abrigam um avatar (`.tc-avatar`), título, subtítulo e citação[cite: 20].

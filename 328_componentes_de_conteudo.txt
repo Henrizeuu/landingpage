@@ -1,0 +1,7 @@
+COMPONENTE: Conteúdo Principal e Parceiros
+- Wrapper Central (`.rhb-content-inner`): Restrito a um `max-width: 48rem`, centralizado e com margens internas (`padding-top`) que crescem gradativamente via media queries desde o mobile até o desktop (`10rem` a partir de `1024px`)[cite: 19].
+- Badge Animado (`.rhb-badge`): Segue o estilo de pílula glassmórfica, abrigando um rótulo claro e um texto de destaque[cite: 19].
+- Grupo de CTAs (`.rhb-cta-group`): Em mobile ficam um sobre o outro (coluna), a partir de `640px` assumem o display em linha (`flex-direction: row`). Possui um botão primário com borda glassmórfica e um secundário apenas em texto transparente com hover[cite: 19].
+- Seção de Parceiros (`.rhb-partners` e `.rhb-partners-grid`): 
+  - Ficam contidos no final do conteúdo. O CSS grid garante as colunas responsivas, começando com 2 colunas, 3 colunas em tablets e fechando com 5 colunas em desktops maiores[cite: 19].
+  - As logos (`.rhb-partner-logo`) usam a estratégia de links em bloco vazio com a imagem acoplada diretamente via `style="background-image:..."` in-line no HTML[cite: 19].

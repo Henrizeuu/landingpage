@@ -1,0 +1,9 @@
+GLOBAL STYLES & TOKENS (SCROLL REVEAL VANILLA)
+- Efeito Visual: Versão leve do Scroll Reveal na qual os elementos da página aparecem suavemente conforme o usuário realiza o scroll[cite: 21].
+- Dependências: NENHUMA. Funciona de forma totalmente autônoma sem bibliotecas externas (Vanilla JS)[cite: 21].
+- Regra de Injeção: O efeito deve ser estritamente contido dentro do bloco indicado, sem criar seções extras, e todas as cores/sombras devem ser adaptadas à paleta da página atual[cite: 21].
+- Tokens Base (Variáveis CSS Injetadas):
+  - `--srv-duration`: Duração padrão da transição da animação (ex: `0.6s`)[cite: 21].
+  - `--srv-easing`: Curva de aceleração do movimento (ex: `ease-out`)[cite: 21].
+  - `--srv-translate-y` e `--srv-translate-x`: Distâncias físicas do deslocamento inicial (ex: `24px` e `30px`)[cite: 21].
+  - `--srv-scale`: Escala inicial para efeitos de zoom (ex: `0.95`)[cite: 21].

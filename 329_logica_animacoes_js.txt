@@ -1,0 +1,7 @@
+LÓGICA CSS: Animações de Entrada (Staggered Delays) e JS Menu
+- Keyframe Base (`rhb-slide-in`): Movimento limpo da opacidade `0` e `transform: translateY(20px)` até a opacidade `1`[cite: 19].
+- Efeito Cascata: As classes `.rhb-anim-1` até `.rhb-anim-4` recebem a mesma duração (`0.6s ease-out both`) mas atrasos crescentes (`0.10s`, `0.30s`, `0.50s`, `0.70s`), gerando o efeito de surgimento organizado dos blocos do hero[cite: 19].
+- Interação JS Vanilla: 
+  - Um script simples isolado procura pelo botão `.rhb-hamburger` e a div `#rhb-mobile-menu`[cite: 19].
+  - O clique inverte o status de exibição manipulando a propriedade `.hidden` do menu e ajustando o atributo de acessibilidade `aria-expanded` para o leitor de telas[cite: 19].
+  - Um segundo listener garante que ao clicar em qualquer link interno, o menu mobile seja fechado automaticamente[cite: 19].

@@ -1,0 +1,4 @@
+COMPONENTE: Atributos HTML e Estados Base
+- Gatilhos HTML: O sistema opera inserindo o atributo `data-anim` (que define o tipo da animação) diretamente na tag alvo, com suporte ao atributo opcional `data-anim-delay` para gerar efeito cascata[cite: 21].
+- Estado Inicial (Oculto): Todo elemento com o atributo `[data-anim]` recebe por padrão `opacity: 0` e um deslocamento pré-definido no eixo Y via `transform: translateY(var(--srv-translate-y))`[cite: 21]. O CSS atrela a `transition` consumindo as variáveis de duração e easing global[cite: 21].
+- Estado Visível (`.srv-visible`): É a classe CSS engatilhada pelo script. Quando injetada, altera a opacidade do elemento para `1` e zera o deslocamento vertical (`transform: translateY(0)`), finalizando a revelação na tela[cite: 21].

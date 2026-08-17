@@ -1,0 +1,11 @@
+GLOBAL STYLES & TOKENS (NEON ORBS)
+- Efeito Visual: Quatro grandes orbes com feixes de luz rotativos simulando ponteiros luminosos, centralizados num layout tipográfico que entra de forma sequencial[cite: 21].
+- Dependências: NENHUMA. A rotação e fades ocorrem via CSS keyframes; o JS injeta spans para a animação das letras do título[cite: 21].
+- Variáveis CSS (Tokens Base):
+  --norb-bg: Fundo geral (ex: `#f8f9ff`)[cite: 21].
+  --norb-orb-core: Núcleo do orbe (ex: `#f0f4ff`)[cite: 21].
+  --norb-glow-a, --norb-glow-b, --norb-glow-in: Sombras externas e internas do orbe[cite: 21].
+  --norb-beam-mid, --norb-beam-hi, --norb-beam-end: Cores do feixe de luz rotativo (de transparente para brilhante opaco)[cite: 21].
+  --norb-beam-glow-a, --norb-beam-glow-b: Sombras/glow do feixe de luz[cite: 21].
+  --norb-title-color, --norb-sub-color: Tipografia[cite: 21].
+- Dark Mode Nativizado: O bloco `@media (prefers-color-scheme: dark)` redefine todas as variáveis do `:root` automaticamente para uma paleta noturna (fundos escuros, glows azuis elétricos). Além disso, as mesmas regras constam atreladas a `.dark` ou `.norb-wrapper.dark` para alternância manual[cite: 21].

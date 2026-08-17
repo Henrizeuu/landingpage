@@ -1,0 +1,8 @@
+LÓGICA JAVASCRIPT: Motor de Máscara em Tempo Real e Paralaxe
+- Filtro de Interação: O JS avalia a capacidade do dispositivo[cite: 26]. O efeito da máscara radial só entra em ação se o usuário tiver um ponteiro fino (mouse via `pointer: fine`) e não tiver ativado a preferência de redução de movimento do sistema operacional[cite: 26].
+- O Motor do Canvas Reveal (O Macete Gráfico):
+  - Um `<canvas>` oculto espelha o tamanho do monitor do usuário[cite: 26].
+  - Em um loop contínuo de animação (`requestAnimationFrame`), desenha-se um `radial-gradient` focado no cursor, com um raio limite de 260px[cite: 26]. A pintura desse gradiente decai a opacidade de 100% no núcleo para 0% nas bordas, garantindo uma transição esfumaçada[cite: 26].
+  - Esse desenho é convertido em uma "Data URL" e injetado diretamente nas regras CSS `mask-image` e `-webkit-mask-image` da camada de revelação (`.hero__reveal`), criando o "furo" na imagem original[cite: 26].
+- Efeito de Paralaxe no Grid: Utilizando o mesmo cálculo suavizado das coordenadas do mouse, o JS ataca diretamente as propriedades `x` e `y` da tag `<pattern>` nativa do SVG, fazendo a grade flutuar ligeiramente em resposta ao pulso do usuário[cite: 26].
+- Animação de Surgimento: O carregamento aciona a classe `.is-ready` no `body`[cite: 26]. Isso faz o CSS elevar opacidades e deslizar o conteúdo de baixo para cima (`translateY(18px)` para `0`), dando um peso dramático de entrada com um atraso de 80ms no segundo botão[cite: 26].

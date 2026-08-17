@@ -1,0 +1,6 @@
+COMPONENTE: Wrapper e Geometria dos Orbes (O Macete Matemático)
+- Container Principal (`.norb-wrapper`): Restrito à tela cheia com `height: 100vh`, `overflow: hidden`, usando flexbox para centralizar o conteúdo tipográfico e comportando os orbes em position absoluta[cite: 21].
+- O Posicionamento dos Orbes (`.norb-orb`):
+  - São caixas invisíveis gigantes injetadas fora dos limites visíveis (usando valores negativos como `top: -40%`, `left: -20%`), com larguras/alturas atreladas a `min(80vw, 800px)`[cite: 21].
+  - Isso garante que apenas as beiradas circulares vazem para a tela, sugerindo esferas massivas[cite: 21]. OBRIGATÓRIO ter `pointer-events: none` e `user-select: none`.
+- A Geometria Circular (`.norb-circle`): Atinge `border-radius: 50%`, com fundo degradê e box-shadow tripla que gera o anel brilhante com profundidade[cite: 21].

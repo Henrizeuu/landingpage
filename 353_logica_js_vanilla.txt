@@ -1,0 +1,7 @@
+LÓGICA JAVASCRIPT: IntersectionObserver e Troca de Fases
+- Observador de Interseção: O script inicializa varrendo os nós em busca dos elementos `.sbm-panel` e acopla a eles um `IntersectionObserver`[cite: 20].
+- O Gatilho Espacial: O observador possui um parâmetro crucial `threshold: 0.5`. Isso garante que a cor do fundo e o estilo da seção só iniciem a mutação quando exatamente 50% ou mais do painel alvo estiver perfeitamente visível dentro do viewport[cite: 20].
+- A Troca de Estado (State Machine): 
+  - Assim que o gatilho cruza a tela (`entry.isIntersecting`), o script extrai o número alocado no atributo `data-phase` do card[cite: 20].
+  - O código então remove manualmente todas as potenciais classes antigas do container principal (`sbm--phase-1`, `sbm--phase-2`, `sbm--phase-3`) e injeta exclusivamente a nova classe correspondente (`'sbm--phase-' + phase`)[cite: 20].
+  - Feito isso, o JavaScript cessa a sua função e o CSS assume a responsabilidade de executar a transição pesada de cores em `0.7s` sem engasgar o navegador[cite: 20].

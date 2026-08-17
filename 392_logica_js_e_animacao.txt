@@ -1,0 +1,6 @@
+LÓGICA JAVASCRIPT: Interação e Animações Base
+- Seletor de Tema (JS Vanilla): O JavaScript deve escutar o clique nos botões "ON" e "OFF". O clique aciona a troca imediata do `style.backgroundImage` do container principal, e atualiza o estilo ativo/inativo nos botões correspondentes usando o atributo nativo `aria-pressed`[cite: 20].
+- Animações de Entrada (CSS Keyframes):
+  - `headline-rise`: O título principal entra em transição saindo de `opacity: 0` e `translate(-50%, 28px)` para o eixo inicial 0. Ocorre num timing de `.85s ease-out` e atraso de `.15s`[cite: 20].
+  - `text-rise`: O subtítulo executa o mesmo movimento de opacidade e translação Y, mas com atraso de `.45s` para criar efeito cascata[cite: 20].
+- Acessibilidade: O CSS deve encapsular as animações de entrada dentro de `@media (prefers-reduced-motion: reduce)`, desativando o deslize e carregando o texto estático caso a preferência seja acionada[cite: 20].

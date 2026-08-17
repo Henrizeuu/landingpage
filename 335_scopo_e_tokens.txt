@@ -1,0 +1,9 @@
+GLOBAL STYLES & TOKENS (BLOCO 21 - INFINITE LOOPED PANELS)
+- Efeito Visual: Painéis em tela cheia que se empilham conforme o usuário rola a página, onde cada um fica fixo enquanto o próximo sobe e o cobre. Ao final, ocorre um loop infinito retornando instantaneamente ao início[cite: 21].
+- Dependências Críticas: É OBRIGATÓRIO carregar as bibliotecas GSAP (`gsap.min.js`) e ScrollTrigger (`ScrollTrigger.min.js`) via tag `<script>` no head ou antes do script do efeito[cite: 21].
+- Regra de Injeção: O container não deve receber bordas, fundos ou sombras externas além das estabelecidas no CSS. O design é modificado ajustando propriedades in-line[cite: 21].
+- Tokens Base (Injetados via atributo style no HTML):
+  --ilp-bg: Cor de fundo sólida do painel (ex: `#0f0f1a`)[cite: 21].
+  --ilp-accent: Cor de destaque utilizada para acentos, números pequenos e botões (ex: `#7c3aed`)[cite: 21].
+  --ilp-num-color: Cor translúcida projetada para o número gigante decorativo ao fundo (ex: `rgba(124,58,237,0.15)`)[cite: 21].
+- Acessibilidade: O CSS fornece `@media (prefers-reduced-motion: reduce)`, que obrigatoriamente desativa as transformações (`transform: none`), anula o script de empilhamento forçando um layout flexível em coluna (`flex-direction: column`) e oculta a barra de progresso lateral[cite: 21].

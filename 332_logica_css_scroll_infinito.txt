@@ -1,0 +1,7 @@
+LÓGICA CSS: Animação e Fluxo (O Macete Físico)
+- Motor Base (`@keyframes tc-scroll-up`): A animação move o bloco inteiro de `transform: translateY(0)` para `transform: translateY(-50%)`[cite: 20].
+- Variações por Coluna (Naturalidade):
+  - O seletor `[data-tc-col="1"]` roda a animação em 30s de forma `linear infinite`[cite: 20].
+  - O seletor `[data-tc-col="2"]` roda a animação em 38s com o parâmetro extra `reverse`, fazendo com que a coluna central deslize na direção oposta (para baixo)[cite: 20].
+  - O seletor `[data-tc-col="3"]` roda a animação em 34s de forma `linear infinite`[cite: 20].
+- Interatividade de Leitura: Ao passar o mouse sobre a coluna (`.tc-col:hover .tc-track`), a propriedade `animation-play-state` muda para `paused`, congelando a tela para que o usuário consiga ler a avaliação[cite: 20].

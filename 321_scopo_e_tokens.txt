@@ -1,0 +1,10 @@
+GLOBAL STYLES & TOKENS (GRID FADE HERO)
+- Efeito Visual: Seção hero de abertura completa com gradiente de fundo, grade sutil mascarada, badge animado (eyebrow), título gigante com gradiente de texto e botões, todos revelados por uma animação de entrada em cascata[cite: 18].
+- Dependências: NENHUMA. Todo o visual e animação são resolvidos via CSS puro[cite: 18].
+- Regra de Injeção: O CSS deve ser adaptado à paleta da página; o efeito deve ser colocado dentro da seção desejada sem criar novos wrappers desnecessários que quebrem o layout existente[cite: 18].
+- Tokens Base (Injetados via Variáveis CSS):
+  - Fundo Geral: `--hgf-bg-top`, `--hgf-bg-mid`, `--hgf-bg-bottom` (controlam o gradiente vertical principal)[cite: 18].
+  - Grade e Detalhes: `--hgf-grid-color` (linhas da grade), `--hgf-accent-border` (borda da elipse base)[cite: 18].
+  - Tipografia: `--hgf-title-from`, `--hgf-title-to` (gradiente do texto do título), `--hgf-subtitle-color` (texto de apoio)[cite: 18].
+  - UI Elements: `--hgf-eyebrow-color`, `--hgf-eyebrow-border`, `--hgf-cta-bg`, `--hgf-cta-color`[cite: 18].
+- Acessibilidade: O CSS provê obrigatoriamente um `@media (prefers-reduced-motion: reduce)` que zera as animações (`animation: none`), trava a opacidade em `1` e anula os transforms (`transform: none`)[cite: 18].

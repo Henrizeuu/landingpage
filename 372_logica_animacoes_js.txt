@@ -1,0 +1,10 @@
+LÓGICA JAVASCRIPT: Reveal em Cascata e Autoplay Recovery
+- Animações de Entrada (Staged Reveal):
+  - Resolvido via CSS Classes (`.reveal`, `.reveal-up`, `.reveal-scale`, `.reveal-fade`)[cite: 25].
+  - Inicia com opacidade zero. O JS injeta a classe `.is-visible` ao carregar a página[cite: 25].
+  - Delays matemáticos para efeito cascata: Badge (0s), H1 (0.2s), Subtítulo (0.4s) e Botão CTA (0.6s). O CSS gerencia a transição via `cubic-bezier(0.22, 1, 0.36, 1)`[cite: 25].
+- Motor de Autoplay do Vídeo (Recovery Script):
+  - Navegadores costumam pausar vídeos de fundo. O JS possui uma rotina bruta de recuperação de autoplay[cite: 25].
+  - A função `attemptPlay(video)` força o volume para zero, liga o `playsinline` e captura silenciosamente rejeições de Promises[cite: 25].
+  - Gatilhos de Recuperação: O JS tenta dar o play imediatamente, repete no `loadedmetadata`, repete no `canplay` e, crucialmente, ouve eventos do usuário como `visibilitychange`, `focus`, `touchstart` e `click` para reativar o vídeo caso o navegador o suspenda[cite: 25].
+- Acessibilidade: Sob a regra de redução de movimento (`prefers-reduced-motion: reduce`), o CSS obriga a `opacity: 1`, zera as transformações, paralisa o vídeo e libera o scroll nativo (caso exista), devolvendo uma tela instantaneamente estática[cite: 25].

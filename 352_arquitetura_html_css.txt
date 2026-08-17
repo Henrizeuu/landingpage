@@ -1,0 +1,8 @@
+COMPONENTE: Seção Mutável e Painéis Glassmorphism
+- A Seção Pai (`.sbm-section`): Atua como o ambiente metamorfo da página, recebendo a transição do `background` baseada na fase atual. Possui `position: relative` e `overflow: hidden`[cite: 20].
+- Os Cards/Passos (`.sbm-panel`): 
+  - OBRIGATORIAMENTE precisam portar o atributo HTML `data-phase="N"` (ex: 1, 2, 3), que servirá como identificador e gatilho para o JavaScript[cite: 20].
+  - Possuem um efeito de Glassmorphism utilizando `backdrop-filter: blur(8px)` acoplado a fundos translúcidos e bordas sutis[cite: 20].
+- Substituição em Cascata (O Macete de CSS): 
+  - O estado "fase 1" é o padrão[cite: 20]. 
+  - As classes modificadoras `.sbm--phase-2` e `.sbm--phase-3`, quando injetadas na seção pai, forçam todos os filhos a trocarem de cores através de seletores encadeados no CSS (ex: `.sbm-section.sbm--phase-2 .sbm-title` força o texto a ficar branco)[cite: 20]. Isso engloba o fundo, bordas dos cards, os números decorativos (que ganham `text-shadow`) e os badges[cite: 20].

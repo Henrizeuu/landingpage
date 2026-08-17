@@ -1,0 +1,9 @@
+GLOBAL STYLES & TOKENS (BOKEH PARTICLES)
+- Efeito Visual: Pequenas bolinhas flutuantes simulando luzes fora de foco (bokeh) que piscam suavemente no fundo da seção[cite: 23].
+- Dependências: NENHUMA. Construído puramente com CSS e Vanilla JS[cite: 23].
+- Regra de Injeção: O efeito deve atuar como background, mantendo o conteúdo da seção totalmente legível e clicável[cite: 23].
+- Tokens Base (Variáveis CSS Injetadas):
+  --bkh-color-1: Cor das partículas pares (ex: `rgba(188, 207, 255, 0.1)`)[cite: 23].
+  --bkh-color-2: Cor das partículas ímpares (ex: `rgba(10, 116, 255, 0.08)`)[cite: 23].
+  --bkh-flash-color: Cor intensa do brilho (flash) emitido pelas partículas (ex: `#BCCFFF`)[cite: 23].
+- Acessibilidade: OBRIGATÓRIO incluir `@media (prefers-reduced-motion: reduce)` para aplicar `animation: none` nas partículas e flashes, desativando o movimento para usuários sensíveis[cite: 23].

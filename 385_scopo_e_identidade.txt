@@ -1,0 +1,5 @@
+GLOBAL STYLES & IDENTITY (CANALPRO)
+- Escopo Visual: Landing page de marketing focada em performance, de alto contraste e ambientação escura[cite: 19]. A estética central apoia-se em um vídeo cinematográfico de tela cheia que é manipulado fisicamente pelo scroll da página, coberto por tipografia editorial fixa e uma tela de soluções secundária[cite: 19].
+- Identidade da Página: Título "CanalPro" com o idioma "pt-BR" e fundo global estritamente definido como `#050505`[cite: 19].
+- Tipografia: Utiliza exclusivamente a fonte "Montserrat" (nos pesos 700, 800 e 900) via Google Fonts, garantindo um visual forte e em letras maiúsculas para as mensagens principais[cite: 19].
+- Dependências Críticas: OBRIGATÓRIO o uso de GSAP 3 e ScrollTrigger 3 (via CDN) para orquestrar as timelines de transição e o sincronismo do scroll[cite: 19]. A biblioteca Hls.js atua apenas como precaução (fallback) se a URL do vídeo mudar no futuro[cite: 19]. É expressamente proibido o uso de bibliotecas de scroll suave externo (como Lenis ou Locomotive), devendo operar na barra de rolagem nativa do navegador[cite: 19].

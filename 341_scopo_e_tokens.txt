@@ -1,0 +1,8 @@
+GLOBAL STYLES & TOKENS (CAROUSEL FADE INFINITO)
+- Efeito Visual: Carrossel horizontal de loop infinito e contínuo (sem pausas) com as bordas laterais desbotando suavemente para dar a impressão de profundidade[cite: 23].
+- Dependências Críticas: OBRIGATÓRIO o carregamento do CSS e do JS do Swiper 11+ via CDN antes do script de inicialização[cite: 23].
+- Regra de Injeção: O CSS fornecido atua unicamente no container do carrossel, e a paleta deve ser adequada à seção em que for injetado[cite: 23].
+- Tokens Base (Variáveis CSS Injetadas):
+  - --scf-fade-start: Define a porcentagem inicial de onde o desbotamento esquerdo acaba e o conteúdo fica 100% visível (ex: `10%`)[cite: 23].
+  - --scf-fade-end: Define a porcentagem final de onde o desbotamento direito começa (ex: `90%`)[cite: 23].
+- Acessibilidade: Em `prefers-reduced-motion: reduce`, o CSS injeta `animation-play-state: paused` no wrapper do Swiper para interromper o movimento autônomo e contínuo[cite: 23].

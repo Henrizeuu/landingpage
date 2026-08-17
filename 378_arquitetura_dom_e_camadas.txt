@@ -1,0 +1,9 @@
+COMPONENTE: Estrutura Base e Ordem de Empilhamento (Z-Index)
+- O contêiner principal `.hero` possui posicionamento relativo, `overflow: hidden` e `isolation: isolate` para trancar o contexto[cite: 27]. A ordem das camadas absolutas (todas com `inset: 0`) é rigorosamente definida para o sucesso do efeito óptico:
+  1. Fundo Base (`.hero__background` - z-index 0): Agrupa a imagem da mulher humana combinada com dois gradientes lineares escurecedores aplicados via `background-image` múltiplo[cite: 27].
+  2. Glows Quentes (`.hero::before` - z-index 0): Efeitos radiais decorativos gerados por gradientes em laranja e vermelho escuro[cite: 27].
+  3. Camada de Revelação (`.hero__reveal` - z-index 1): Carrega a imagem da ciborgue. Inicia invisível (`opacity: 0`) e é revelada através da máscara gerada via Canvas[cite: 27].
+  4. Grade Técnica (`.hero__grid` - z-index 2): Um SVG in-line projetando um padrão quadriculado (`#64748b`) de traço fino[cite: 27].
+  5. Ruído Visual (`.hero__noise` - z-index 3): Textura de granulação (grain) construída com pontos radiais CSS, mesclada ao fundo usando `mix-blend-mode: soft-light`[cite: 27].
+  6. Brilho Superior (`.hero::after` - z-index 4): Um gradiente branco muito sutil no topo simulando um reflexo de tela (`mix-blend-mode: screen`)[cite: 27].
+  7. Conteúdo (`.hero__shell` - z-index 5): A camada frontal superior onde residem todos os textos, botões e estatísticas[cite: 27].

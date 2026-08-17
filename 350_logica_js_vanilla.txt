@@ -1,0 +1,9 @@
+LÓGICA JAVASCRIPT: Scroll Tracker e Troca de Frases
+- Mecânica de Cálculo: 
+  - A função `onScroll()` lê a posição da seção relativa ao topo do viewport (`scrolled = -rect.top`) e subtrai a altura da tela da altura total da seção (`range = section.offsetHeight - window.innerHeight`) para descobrir o espaço exato navegável[cite: 25].
+  - Isso gera um valor de progresso (`progress = scrolled / range`) que vai estritamente de `0` a `1`[cite: 25].
+- Máquina de Estados (State Machine):
+  - Estado `0` (Progresso Negativo): Nenhuma frase ativa, o usuário não chegou na seção[cite: 25].
+  - Estado `1` (Progresso `< 0.45`): O JS injeta `.sts-phrase--active` na primeira frase e reseta a segunda[cite: 25].
+  - Estado `2` (Progresso `>= 0.45`): O gatilho de troca é acionado. A frase 1 recebe a classe de saída `.sts-phrase--exit` enquanto a frase 2 assume a tela com `.sts-phrase--active`[cite: 25].
+- Desempenho: O listener de evento window `scroll` é atrelado com `{ passive: true }` para não bloquear a thread principal de rolagem do navegador[cite: 25].

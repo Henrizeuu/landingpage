@@ -1,0 +1,7 @@
+COMPONENTE: Tipografia Fixa e Tela de Soluções
+- Textos da Hero: Permanecem flutuando intactos acima do vídeo no início[cite: 19]. O H1 agressivo alinha-se à esquerda inferior, utilizando uma sombra óptica em duas camadas (`0 2px 0 rgba(0, 0, 0, .52)` e `0 0 10px rgba(255, 255, 255, .08)`), enquanto um microtexto explicativo descansa à direita[cite: 19].
+- Overlay de Soluções (`.projects-section`):
+  - Um container fixo invisível por padrão. Ele ganha uma atmosfera única usando um pseudo-elemento `::before` que injeta gradientes radiais, lineares e um filtro denso (`backdrop-filter: grayscale(.65) contrast(1.05)`)[cite: 19].
+  - Os três cartões de serviço são dispostos em CSS Grid perfeito (3 colunas iguais)[cite: 19].
+  - Design dos Cartões: Fundo esmerilhado (`rgba(13, 20, 27, .92)`), totalmente sem bordas arredondadas (0 radius) e com uma marcação brilhante (`.project-card__dot`) acoplada no canto superior esquerdo para reforçar a estética técnica[cite: 19].
+- Adaptação Mobile (<= 640px): A estrutura desmonta o grid de 3 colunas para empilhar os cartões individualmente[cite: 19]. A tipografia encolhe severamente e os textos fixos são forçados contra a parte inferior da tela, respeitando as áreas seguras dos smartphones (`env(safe-area-inset-bottom)`)[cite: 19].

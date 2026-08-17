@@ -1,0 +1,12 @@
+COMPONENTE: Section Wrapper e Camadas
+- Seção Pai (`.bkh-section`): Requer OBRIGATORIAMENTE `position: relative` e `overflow: hidden` para conter as partículas geradas e impedir barra de rolagem indesejada[cite: 23].
+- Container de Partículas (`.bkh-container`):
+  - Fica trancado no fundo com `position: absolute`, `inset: 0` e `z-index: 0`[cite: 23].
+  - Possui o atributo de controle `data-bokeh-count` para definir a quantidade de luzes (ex: 15)[cite: 23].
+  - Proteção de Clique: Recebe `pointer-events: none` para garantir que o usuário consiga interagir com o conteúdo da frente[cite: 23].
+- Camada de Conteúdo (`.bkh-content`): Isolada com `position: relative` e `z-index: 2` para sobrepor o container de partículas[cite: 23].
+
+COMPONENTE: Física das Partículas e Animações CSS
+- Base da Partícula (`.bkh-particle`): Formato circular garantido via `border-radius: 50%` e posição `absolute`[cite: 23]. Recebe a animação `bkh-drift` (rotação 360deg infinita e linear)[cite: 23].
+- Variação de Cores: O CSS utiliza o pseudo-seletor `:nth-child(odd)` para aplicar a variável `--bkh-color-2` nas partículas ímpares, quebrando a padronização visual[cite: 23].
+- O Efeito de Brilho (`.bkh-particle--flash`): Classe injetada via JS que aciona o keyframe `bkh-flash`. Essa animação oscila a `opacity` (de 0 para 0.8) e acende um `box-shadow` difuso usando o token da cor de flash[cite: 23].

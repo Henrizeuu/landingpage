@@ -1,0 +1,10 @@
+COMPONENTE: Arquitetura CSS das Barras e Conteúdo
+- Seção Principal (`.gbg`): Requer `position: relative`, `overflow: hidden`, e `min-height: 100vh`. Ele abraça e esconde qualquer vazamento das barras gigantes no fundo[cite: 22].
+- O Container das Barras (`.gbg__bars`): Fica em `position: absolute` trancado no `.gbg` (com `inset: 0` e `z-index: 0`)[cite: 22]. A div interior (`.gbg__bars-inner`) é um display `flex` horizontal ativado com hardware acceleration (`transform: translateZ(0)`)[cite: 22].
+- A Barra Individual (`.gbg__bar`):
+  - É flexível (`flex: 1 0 0%`) com `height: 100%`[cite: 22].
+  - Possui `transform-origin: bottom center` (O Macete Físico), que obriga o crescimento a partir da base e não do centro[cite: 22].
+  - O visual é um gradiente ascendente: `background: linear-gradient(to top, var(--gbg-from), transparent)`[cite: 22].
+  - OBRIGATÓRIO o contorno anti-aliasing invisível: `outline: 1px solid rgba(0,0,0,0)` para suavizar os frisos entre as barras[cite: 22].
+- A Animação (`gbg-pulse`): A barra alterna seu transform base (`scaleY(var(--gbg-scale))`) encolhendo-se ao final de cada pulso para `calc(var(--gbg-scale) * 0.7)`[cite: 22].
+- A Camada de Conteúdo (`.gbg__content`): Funciona obrigatoriamente com `position: relative` e `z-index: 10` sobreposta à camada equalizadora[cite: 22].

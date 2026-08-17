@@ -1,0 +1,7 @@
+COMPONENTE: Section e Camadas de Background
+- Seção Principal (`.hero-grid-fade`): Atua como contêiner base com `position: relative`, `overflow: hidden`, e `min-height: calc(100vh - 40px)`[cite: 18]. O fundo recebe um `linear-gradient` transitando entre as 3 variáveis de cor[cite: 18].
+- Grade Sutil (`.hgf-grid-bg`):
+  - Fixada ao fundo (`position: absolute`, `z-index: 0`) com `pointer-events: none`[cite: 18].
+  - Construída fisicamente pelo cruzamento de dois `linear-gradient` (to right e to bottom) usando a variável `--hgf-grid-color` em repetição via `background-size: 6rem 5rem`[cite: 18].
+  - Máscara CSS: Utiliza `mask-image` com um `radial-gradient` no formato `ellipse` no topo central, forçando a grade a evaporar gradualmente nas bordas e na parte inferior[cite: 18].
+- Elipse Decorativa (`.hgf-radial-accent`): Posicionada em absoluto no rodapé do container (`bottom: -60px`). No desktop (`min-width: 1024px`), ela sofre uma expansão massiva para `width: 140%` e `height: 750px`, criando um efeito de piso curvo[cite: 18].

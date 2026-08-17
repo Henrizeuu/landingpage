@@ -1,0 +1,5 @@
+LÓGICA CSS: Variações de Movimento e Atrasos (Stagger)
+- Efeito Scale-In (`[data-anim="scale-in"]`): Sobrescreve o transform padrão, iniciando o elemento com `transform: scale(var(--srv-scale))` e restaurando para `scale(1)` quando a classe de visibilidade é adicionada[cite: 21].
+- Efeito Slide-Left (`[data-anim="slide-left"]`): O elemento inicia com um deslocamento negativo no eixo X invertendo a variável matemática (`translateX(calc(var(--srv-translate-x) * -1))`) e move-se para `0`[cite: 21].
+- Efeito Slide-Right (`[data-anim="slide-right"]`): O elemento inicia com um deslocamento positivo no eixo X (`translateX(var(--srv-translate-x))`) e move-se para `0`[cite: 21].
+- Efeito Cascata (Stagger Delays): O atributo `data-anim-delay` suporta numeração de `1` a `6`. O CSS lê esses números e aplica os atrasos proporcionais em segundos na transição (ex: `[data-anim-delay="1"]` ativa `transition-delay: 0.1s`, enquanto o valor `"6"` ativa `0.6s`)[cite: 21].

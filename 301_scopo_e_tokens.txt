@@ -1,0 +1,7 @@
+GLOBAL STYLES & TOKENS (BLOCO 20 - ENERGY BEAM)
+- Efeito Visual: Fundo de tela cheia (fullscreen) que exibe um feixe de luz e energia animado via WebGL, criando uma atmosfera tecnológica e futurista pesada[cite: 20].
+- Dependência Crítica: OBRIGATÓRIO o carregamento do `unicorn-studio-sdk` via CDN (`unicornStudio.umd.js`)[cite: 20].
+- Regra de Injeção: O efeito deve atuar primariamente como background; não se deve adicionar fundos, bordas ou sombras extras no container além das especificadas no CSS[cite: 20].
+- Tokens Base (Injetados via CSS):
+  - Fundo Geral: Preto sólido (`#000`)[cite: 20].
+  - Tipografia: Texto principal em branco (`#fff`) e subtítulos/apoio em branco translúcido (`rgba(255,255,255,.65)`)[cite: 20].

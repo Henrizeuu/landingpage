@@ -1,0 +1,8 @@
+COMPONENTE: Estrutura Base e Z-Index
+- Ordem de Empilhamento Estrita: Para a ilusão óptica funcionar corretamente, o DOM exige camadas absolutas nesta exata ordem:
+  1. O Fundo Base (`.hero`): Imagem da personagem usando máscara cirúrgica, aplicada como `background-image` preenchendo a tela via `cover`[cite: 26].
+  2. Grade Técnica (`.hero__grid`): Um SVG in-line injetando um grid de precisão médica com traços muito finos, posicionado no `z-index: 0` com opacidade reduzida a `0.1`[cite: 26].
+  3. Camada de Revelação (`.hero__reveal`): A imagem da modelo sem máscara (z-index 1). Inicia invisível (`opacity: 0`) e só ganha opacidade e recorte quando mascarada via CSS atrelado ao JS[cite: 26].
+  4. Textos e Conteúdo (`.hero__content` e `.hero__authority`): Ficam acima das imagens (z-index 2 no desktop, 3 no mobile) para permanecerem sempre legíveis[cite: 26].
+  5. Overlay Mobile (`.hero::after`): Um gradiente escurecedor injetado no z-index 1 exclusivamente para resoluções de telas menores (<= 768px)[cite: 26].
+- Regra de Mídia: Ambas as imagens devem ser pré-carregadas no `<head>`, e possuem o mesmo enquadramento cravado em `50% 48%` no desktop para evitar desalinhamento visual durante a passagem do cursor[cite: 26].

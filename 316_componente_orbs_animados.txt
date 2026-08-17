@@ -1,0 +1,7 @@
+COMPONENTE: Esferas (Orbs) e Movimentação
+- Base da Esfera (`.bho-orb`): Absoluta, formato perfeitamente circular (`border-radius: 50%`) e otimizada com `will-change: transform` para renderização fluida pelo navegador[cite: 16].
+- O Macete Visual do Desfoque: A cor da esfera é um `radial-gradient` que se dissolve em transparente aos 70%. O visual macio de "luz" é forjado com um intenso `filter: blur()` (variando de 70px a 90px de acordo com o token)[cite: 16].
+- Distribuição e Órbitas (Keyframes):
+  - Orb 1 (Topo-Esquerda): O maior. Animação `bho-orb-1` de 20s (translada entre X/Y e aumenta a escala para 1.12)[cite: 16].
+  - Orb 2 (Topo-Direita): Médio. Animação `bho-orb-2` de 25s (translada cruzado e aumenta a escala para 1.18)[cite: 16].
+  - Orb 3 (Base-Centro): Menor. Animação `bho-orb-3` de 17s (orbita a parte inferior e aumenta escala para 1.15)[cite: 16].

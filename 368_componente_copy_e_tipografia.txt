@@ -1,0 +1,9 @@
+COMPONENTE: Textos e Call To Action
+- Contêiner de Texto (`.hero02-copy`): Fica posicionado dentro do palco (`.hero02-stage`) e possui o atributo `aria-label="hero02 text"`[cite: 24]. Regra estrita de Aninhamento: Esta div DEVE atuar como irmã direta (sibling) do contêiner de renderização da cena (`.hero02-scene`); a ordem de aninhamento não pode ser alterada[cite: 24].
+- Kicker/Eyebrow (`.hero02-kicker`): Uma tag `<p>` inicial contendo o texto exato "Produtividade com IA"[cite: 24].
+- Tipografia do Título (`.hero02-title`): 
+  - Estruturado em uma tag `<h1>` que OBRIGATORIAMENTE abriga exatamente dois elementos `<span>` independentes[cite: 24].
+  - O primeiro span recebe a string: "Organize ideias, tarefas"[cite: 24].
+  - O segundo span recebe a string: "e foco em um so lugar"[cite: 24].
+- O Subtítulo (`.hero02-subtitle`): Uma tag `<p>` contendo estritamente o texto: "Transforme sua rotina com um espaco inteligente para planejar, priorizar e executar com mais clareza todos os dias."[cite: 24].
+- Interação e Botão (`.hero02-actions`): Um contêiner agendador de ações em div que abraça um botão (`<button>`) tipado como `type="button"`, contendo a classe `.hero02-button` e recebendo exatamente a copy "Quero conhecer"[cite: 24].

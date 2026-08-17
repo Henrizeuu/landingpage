@@ -1,0 +1,6 @@
+GLOBAL STYLES & IDENTITY (HERO 3 - PREMIUM CONSULTING)
+- Escopo Visual: Uma página única de seção Hero focada em consultoria premium para transmitir alta autoridade. Visual cinematográfico escuro, vídeo de fundo desfocado em tela cheia, brilhos ambientes (orbs) e foco central na conversão[cite: 25].
+- Identidade da Página: Título "Hero 3", idioma "pt-BR", estilo rigorosamente "dark mode" retido na primeira dobra da tela[cite: 25].
+- Dependências: NENHUMA. Construído puramente com HTML, CSS e Vanilla JS. É estritamente proibido o uso de frameworks, bibliotecas de animação, WebGL ou imagens estáticas no lugar do vídeo[cite: 25].
+- Tipografia (Core): Requer o carregamento da família "Instrument Sans" (pesos 400, 600, 700) para toda a interface e "Instrument Serif Italic" (peso 400) como suporte decorativo, usando `font-display: swap`[cite: 25].
+- Tokens Base: Fundo (`#000000`), Texto principal (`#ffffff`), Texto silenciado (`rgba(255,255,255,.7)`), Destaque CTA (`#3054ff`)[cite: 25].

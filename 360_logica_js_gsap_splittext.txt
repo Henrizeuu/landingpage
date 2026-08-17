@@ -1,0 +1,12 @@
+LÓGICA JAVASCRIPT: Motor de Fatiamento (SplitText)
+- Registro e Sincronização Tipográfica: 
+  - O script inicia registrando o plugin via `gsap.registerPlugin(SplitText)`[cite: 22].
+  - OBRIGATORIAMENTE aguarda a engine do navegador desenhar as fontes (`document.fonts.ready.then`) antes de agir; isso previne que o cálculo de quebra de linhas falhe se a tipografia carregar depois do script[cite: 22].
+- Criação e Auto-reparo do Split:
+  - O JS fatia todos os `.tm-split` dividindo em "palavras" e "linhas" (`type: "words,lines"`)[cite: 22].
+  - Aplica o parâmetro `autoSplit: true` para que a engine desmonte e refaça as quebras caso o usuário gire o celular ou redimensione a janela do navegador[cite: 22].
+- A Animação em Cascata (`onSplit` callback):
+  - Ao concluir a divisão, a opacidade do pai é restaurada instantaneamente (`gsap.set(self.elements, { opacity: 1 })`)[cite: 22].
+  - Em seguida, dispara uma animação `gsap.from()` nas linhas geradas (`self.lines`), empurrando-as em 100% no eixo Y e sumindo com a opacidade[cite: 22].
+  - O efeito luxuoso vem da ease `expo.out` atrelada a uma duração de `0.6s` e um `stagger: 0.1` (atraso de 0.1s entre cada linha)[cite: 22].
+- Expansão (ScrollTrigger): O arquivo provê um trecho comentado que, ao ser ativado, injeta o ScrollTrigger na mecânica, engatilhando o fade do texto somente quando a base do elemento raspar os `85%` do topo da tela (`start: "top 85%"`)[cite: 22].

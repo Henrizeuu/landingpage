@@ -1,0 +1,10 @@
+COMPONENTE: Conteúdo Textual e Call to Action
+- Wrapper Central (`.hero-content`): Uma `<section>` aninhada, centralizada vertical e horizontalmente, com z-index isolado e `aria-labelledby="hero-title"`[cite: 25].
+- Availability Badge: Uma pílula superior simulando urgência/escassez. Usa Glassmorphism (fundo `rgba(255,255,255,.06)`, borda translúcida, `blur(10px)`). Texto cravado: "Agenda com poucas vagas para novos projetos neste mês"[cite: 25].
+- Tipografia do Título (H1): 
+  - Usa a fonte Instrument Sans (peso 600) e um cálculo responsivo agressivo (`clamp(2.5rem, 4.6vw, 4.35rem)`)[cite: 25].
+  - A cor do texto não é sólida: usa um `linear-gradient` vertical (de `#ffffff` para `#b4c0ff`) recortado no formato do texto via `-webkit-background-clip: text` e `color: transparent`[cite: 25].
+- Call To Action (`.primary-cta`):
+  - Botão principal direcionando para `#ofertas`[cite: 25].
+  - Visual: Pílula branca, texto preto ("Quero apresentar meu serviço melhor"). Possui um ícone de seta SVG abrigado dentro de um círculo azul (`#3054ff`)[cite: 25].
+  - Interação: Ao sofrer hover, o botão inteiro escala para `1.05` e emite uma sombra brilhante (glow) branca, enquanto o círculo azul da seta escurece para `#2040e0`[cite: 25].

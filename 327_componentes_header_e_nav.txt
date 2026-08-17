@@ -1,0 +1,5 @@
+COMPONENTE: Header e Navegação (Glassmorphism)
+- O Header (`.rhb-header`): Protegido no `z-index: 10` com espaçamento de segurança superior[cite: 19].
+- Navegação Desktop (`.rhb-nav-pill`): Elemento de menu em formato de pílula (`border-radius: 9999px`) usando forte Glassmorphism através da mescla de fundo `rgba(255, 255, 255, 0.05)`, borda iluminada via `box-shadow` e desfoque no fundo via `backdrop-filter: blur(12px)`[cite: 19].
+- Botão CTA da Nav (`.rhb-nav-cta`): Botão compacto branco com texto escuro que ganha transparência invertida no hover[cite: 19].
+- Navegação Mobile (`.rhb-hamburger` e `.rhb-mobile-menu`): O menu hambúrguer é exibido exclusivamente em telas `< 768px`[cite: 19]. O menu dropdown utiliza o atributo nativo HTML `hidden` para se esconder, sendo controlado via JS[cite: 19].

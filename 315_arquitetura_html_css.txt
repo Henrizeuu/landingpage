@@ -1,0 +1,7 @@
+COMPONENTE: Section Wrapper e Camadas de Z-Index
+- Seção Pai (`.bho-hero`): Requer OBRIGATORIAMENTE `position: relative` e `overflow: hidden` para conter as esferas que vazam pelas bordas da tela[cite: 16].
+- Fundo Animado (`.bho-bg`):
+  - É trancado no fundo com `position: absolute`, `inset: 0` e `z-index: 0`[cite: 16].
+  - Proteção de Clique: Recebe `pointer-events: none` para que o fundo não bloqueie as interações do usuário com a interface[cite: 16].
+- Gradiente Pulsante (`.bho-bg::before`): Um pseudo-elemento cria um `radial-gradient` elíptico ancorado no topo centro (`50% -5%`) que oscila sua opacidade (0.6 para 1) através da animação `bho-gradient-shift` de 8 segundos[cite: 16].
+- Camada de Conteúdo: O conteúdo textual do Hero DEVE possuir `position: relative` e `z-index: 1` para garantir que fique flutuando acima da arte animada[cite: 16].

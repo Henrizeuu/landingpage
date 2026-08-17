@@ -1,0 +1,9 @@
+LÓGICA JAVASCRIPT: Geração e Cálculos da Grade
+- Captura de Atributos: O script rastreia `[data-gbg]` em seções e extrai a cor, quantidade e duração a partir de datasets do HTML injetados pelo usuário[cite: 22].
+- Geração Dinâmica de Divs: Com um loop, ele fabrica as tags `<div class="gbg__bar">` que não existem no código HTML de base[cite: 22].
+- O Algoritmo da Altura em V:
+  - A função `calcScale(index, total)` distribui a altura da barra via matemática. O máximo e o mínimo são fixados em 100% e 30%[cite: 22].
+  - Calcula-se o quão distante a barra atual está do centro: `Math.abs(position - 0.5)`[cite: 22].
+  - A curva final de "V / W Invertido" do equalizador surge ao exponenciar essa distância (`Math.pow(..., 1.2)`)[cite: 22].
+- Injeção das Variáveis CSS: Ao final da conta, o JS espalha propriedades *inline css variable* para cada div instanciada (`--gbg-scale`, `--gbg-from`, `--gbg-duration`).
+- O Efeito "Wave" Temporal: Cada barra nova ganha um `animationDelay` fixo sequencial (`(i * 0.1).toFixed(1) + 's'`), causando a impressão de uma onda que atravessa os equalizadores no eixo X[cite: 22].

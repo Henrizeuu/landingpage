@@ -1,0 +1,8 @@
+COMPONENTE: Inner Content e Tipografia
+- Wrapper de Conteúdo (`.hgf-inner`): Envelopa todos os textos e botões, recebendo `position: relative` e `z-index: 1` para flutuar acima dos efeitos de fundo da grade e da elipse[cite: 18].
+- Eyebrow Badge (`.hgf-eyebrow`): Uma etiqueta no formato "pílula" (`border-radius: 9999px`) com borda suave, fundo em gradiente translúcido e texto uppercase. O SVG interno translada `4px` no eixo X ao sofrer hover[cite: 18].
+- Título Gigante (`.hgf-title`): 
+  - Usa `clamp(2.5rem, 8vw, 5rem)` para garantir responsividade fluida[cite: 18].
+  - Efeito de Cor: O texto é preenchido por um gradiente em diagonal (`to bottom right`) através do uso de `-webkit-background-clip: text` e `color: transparent`[cite: 18].
+- Call To Action (`.hgf-cta`): Botão de ação base com transição suave (`transition: opacity 0.2s ease, transform 0.2s ease`) que perde um pouco de opacidade e sobe `1px` (`translateY(-1px)`) no hover[cite: 18].
+- Bottom Fade (`.hgf-bottom-fade`): Uma div posicionada após o botão que utiliza um pseudo-elemento `::after` com gradiente de baixo para cima para gerar um sombreamento de fim de seção[cite: 18].

@@ -1,0 +1,8 @@
+COMPONENTE: Estrutura Base e Ordem de Empilhamento (Z-Index)
+- Regra de Ouro (Trava de Layout): O layout é estritamente limitado a uma única dobra da tela[cite: 18]. É explicitamente proibida a adição de navegação, rodapé, seções de rolagem, cards extras ou depoimentos[cite: 18].
+- Camadas de Fundo (Imagens):
+  1. O Fundo Base (`.hero__base` - z-index -3): Preenche a tela inteira com a imagem da modelo vista através de um vidro texturizado/molhado[cite: 18]. Recebe um pseudo-elemento `::after` com gradientes lineares para escurecer sutilmente e garantir o contraste[cite: 18].
+  2. A Camada Revelada (`.hero__reveal` - z-index -2): Carrega a imagem nítida da modelo[cite: 18]. Inicia invisível e é recortada dinamicamente pelo CSS[cite: 18].
+- Componentes de UI:
+  3. O Quadro do Cursor (`.hero__cursor` - z-index 2): Uma moldura visual que segue a posição de interação[cite: 18].
+  4. Conteúdo Flutuante (`.hero__copy` e `.hero__benefits` - z-index 3): Os textos não seguem o fluxo normal do documento, sendo sobreposições absolutas alocadas acima das imagens[cite: 18].

@@ -1,0 +1,9 @@
+COMPONENTE: Core Tipográfico e Transições (O Macete Físico)
+- Configuração da Frase (`.sts-phrase`): Centralizada, utiliza `text-wrap: balance`, espaçamento negativo de letras (`letter-spacing`) e é otimizada para o navegador com `will-change: opacity, transform, filter`[cite: 25].
+- Estado 1: Inicial/Oculto:
+  - A frase começa empurrada para baixo (`transform: translateY(36px)`), invisível (`opacity: 0`) e fortemente borrada (`filter: blur(14px)`)[cite: 25].
+  - As transições são guiadas por uma curva `cubic-bezier(0.25, 0.46, 0.45, 0.94)` sofisticada[cite: 25].
+- Estado 2: Ativo (`.sts-phrase--active`):
+  - A frase sobe para a posição original (`translateY(0)`), a opacidade vai a `1` e o desfoque zera (`blur(0)`). Um `text-shadow` pesado é ativado para profundidade[cite: 25].
+- Estado 3: Saída (`.sts-phrase--exit`):
+  - Quando a rolagem avança, a frase apaga (`opacity: 0`), sobe saindo de cena (`translateY(-36px)`) e borra novamente, mas de forma mais contida (`blur(10px)`)[cite: 25].

@@ -1,0 +1,4 @@
+COMPONENTE: Estrutura Base e Semântica do DOM
+- Wrapper Global (`.page-shell`): Todo o conteúdo da página deve estar envelopado dentro de uma tag semântica `<main>` com esta classe[cite: 23].
+- O Palco Principal (`.hero01-stage`): A seção primária (`<section>`) do hero. Recebe atributo de acessibilidade `aria-label="hero01"`[cite: 23].
+- Âncora de Navegação (`#hero01-more`): Imediatamente abaixo do palco principal, deve existir uma seção vazia com a classe `.hero01-anchor` e `aria-hidden="true"`, servindo como âncora de rolagem/destino[cite: 23].

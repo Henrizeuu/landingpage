@@ -1,0 +1,6 @@
+GLOBAL STYLES & TOKENS (BLOCO 19 - RESPONSIVE HERO BANNER)
+- Efeito Visual: Seção hero de abertura fullscreen e responsiva com imagem de fundo, menu de navegação estilo glassmorphism, badge animado, título elegante com fonte serifada, grupo de botões de ação e grade de logos de parceiros[cite: 19]. Tudo é revelado através de uma animação suave em cascata[cite: 19].
+- Dependências: NENHUMA. Todo o layout e animação são construídos com CSS puro, acompanhado de um leve script Vanilla JS apenas para o menu mobile[cite: 19].
+- Regra de Tipografia: O código recomenda a importação da fonte "Instrument Serif" do Google Fonts para o título principal (`.rhb-title`), e utiliza a família "Inter" (ou system-ui) como padrão primário do corpo do texto[cite: 19].
+- Tokens Base de UI: A paleta se aproveita do contraste sobre imagens, utilizando brancos absolutos (`#fff`), textos escuros nas badges (`#171717`) e múltiplas variações translúcidas (`rgba(255, 255, 255, 0.10)` até `0.90`) para construir a interface "glass"[cite: 19].
+- Acessibilidade: Obriga o uso de `@media (prefers-reduced-motion: reduce)` para zerar todas as classes de animação (`.rhb-anim-*`), fixando a visibilidade no carregamento para quem possui sensibilidade a movimento[cite: 19].

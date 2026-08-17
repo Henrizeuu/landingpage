@@ -1,0 +1,4 @@
+LÓGICA JAVASCRIPT: Duplicação de Nós para Loop Contínuo
+- O Truque do Loop Sem Pulo: Como a animação CSS translada exatamente 50% do tamanho total do contêiner, a lista de cards deve ser espelhada[cite: 20].
+- Clonagem Dinâmica: O script JavaScript percorre cada `.tc-track`, coleta todos os `article.tc-card` originais e usa `cloneNode(true)` para duplicá-los[cite: 20].
+- Injeção e Acessibilidade: Estes clones recebem `setAttribute('aria-hidden', 'true')` para não serem lidos duplamente pelos leitores de tela e, em seguida, são apendados (`appendChild`) ao final da trilha (`.tc-track`), dobrando sua altura real e fechando o círculo da ilusão 2D[cite: 20].

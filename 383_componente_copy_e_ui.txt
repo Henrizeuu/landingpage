@@ -1,0 +1,9 @@
+COMPONENTE: Posicionamento Assimétrico e Legibilidade
+- Layout Desktop: 
+  - O bloco de texto principal (Copy) é posicionado à esquerda e perfeitamente centralizado no eixo Y (`top: 50%` e `transform: translateY(-50%)`)[cite: 18].
+  - O bloco de benefícios é afixado separadamente no canto inferior direito do monitor[cite: 18].
+- Layout Mobile (<= 760px): 
+  - A assimetria é desativada e o conteúdo passa a ser totalmente centralizado[cite: 18].
+  - O texto principal sobe para a marca de 40% da tela e os benefícios alinham-se na base central[cite: 18].
+- Legibilidade e Glows: Para garantir que o texto escuro (`#0c1211`) seja lido perfeitamente sobre a fotografia, ambos os blocos de conteúdo utilizam pseudo-elementos OBRIGATÓRIOS desenhando manchas de desfoque (glows) por trás das letras, misturando `radial-gradient`, `linear-gradient` e `filter: blur(16px)` / `blur(9px)`[cite: 18].
+- Tipografia Premium: O H1 e os benefícios ganham peso visual adicional através do uso de `-webkit-text-stroke` combinados com uma tripla camada de `text-shadow` brilhante[cite: 18].

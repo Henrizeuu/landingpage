@@ -1,0 +1,5 @@
+COMPONENTE: Ponto de Montagem Visual (Mount Point)
+- A Moldura (`.hero01-scene-frame`): Um contêiner que mora dentro do palco principal (`.hero01-stage`) e serve para enquadrar a arte visual e os textos[cite: 23].
+- O Alvo de Renderização (`#hero01-scene`): 
+  - Uma div contida dentro da moldura, também possuindo a classe `.hero01-scene` e oculta para leitores de tela (`aria-hidden="true"`)[cite: 23].
+  - Regra de Ouro (O Macete de Injeção): Esta div OBRIGATORIAMENTE deve permanecer vazia no código HTML fonte[cite: 23]. Ela atua exclusivamente como o "Mount Point" (ponto de injeção) para que o script do estúdio (`hero01-studio.js`) possa injetar e renderizar programaticamente o elemento `<canvas>` do WebGL ou outros nós do DOM sem corromper a estrutura[cite: 23].

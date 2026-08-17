@@ -1,0 +1,3 @@
+COMPONENTE: Grade Sutil e Máscara
+- Estrutura da Grade (`.bho-grid`): Preenche o fundo (`inset: 0`). É desenhada cruzando dois `linear-gradient` (um vertical e um horizontal a 90deg) formados pela cor do token contra um fundo transparente, dimensionados pelo `--bho-grid-size`[cite: 16].
+- O Efeito de Apagamento (Máscara CSS): Para que a grade não pareça um caderno infinito e duro, aplica-se `mask-image` (e o prefixo `-webkit-mask-image`)[cite: 16]. A máscara usa um `radial-gradient` no formato de elipse centralizado, forçando a grade a ser 100% visível no meio da tela (10% black) e sumir suavemente nas bordas (100% transparent)[cite: 16].

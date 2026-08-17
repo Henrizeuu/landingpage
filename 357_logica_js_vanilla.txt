@@ -1,0 +1,4 @@
+LÓGICA JAVASCRIPT: IntersectionObserver Nativo
+- Mapeamento do DOM: O script inicia rastreando o documento (`querySelectorAll`) à procura de todos os nós que possuam o seletor `[data-anim]`[cite: 21].
+- Parâmetros do Observador: Instancia um objeto `IntersectionObserver` puro com regras físicas estritas. Utiliza um `threshold: 0.1` (o gatilho aciona quando 10% do elemento se torna visível) e aplica um `rootMargin: '0px 0px -60px 0px'`, antecipando o disparo 60px antes da margem inferior real do viewport[cite: 21].
+- Ciclo de Vida: Assim que a interseção acusa verdadeiro (`entry.isIntersecting`), o JS insere a classe `srv-visible` na tag alvo e, imediatamente a seguir, encerra a observação daquele nó específico (`observer.unobserve(entry.target)`), impedindo que a animação repita e economizando memória do navegador[cite: 21].

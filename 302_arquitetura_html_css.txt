@@ -1,0 +1,11 @@
+COMPONENTE: Wrapper, WebGL Canvas e Content Layer
+- Wrapper Principal (`.eb-wrapper`): Define o limite do efeito e atua como uma janela ocupando 100% da tela. Utiliza `position: relative`, `width: 100%`, `height: 100vh`, fundo escuro e `overflow: hidden`[cite: 20].
+- O Contêiner WebGL (`.eb-canvas`): 
+  - Elemento alvo onde a biblioteca injetará a cena 3D. Fica esmagado no fundo com `position: absolute` e `inset: 0`[cite: 20].
+  - OBRIGATÓRIO possuir o atributo `data-us-project` recebendo o ID do projeto do Unicorn Studio (ex: `hRFfUymDGOHwtFe7evR2`)[cite: 20].
+- Camada de Conteúdo (`.eb-content`): 
+  - Elemento opcional que flutua acima do raio de energia. Recebe `position: relative` e `z-index: 10`[cite: 20].
+  - Proteção de Clique: OBRIGATÓRIO o uso de `pointer-events: none` nesta div para que os eventos do mouse vazem e atinjam o canvas WebGL, permitindo interatividade na cena 3D caso exista[cite: 20].
+- Tipografia do Título (`.eb-headline`): 
+  - Utiliza `clamp` para escala responsiva e `letter-spacing: -0.03em`[cite: 20].
+  - Efeito de Texto Vazado (Mask): Aplica um `linear-gradient` (de branco para branco translúcido 50%) em conjunto com `-webkit-background-clip: text` e `-webkit-text-fill-color: transparent` para estilizar a tipografia[cite: 20].

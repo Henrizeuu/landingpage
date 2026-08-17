@@ -1,0 +1,6 @@
+COMPONENTE: Prevenção de "FOUC" e Estrutura de Máscaras
+- Elementos Alvo (`.tm-split`): O título (`.tm-title`) e o parágrafo secundário (`.tm-body`) recebem a classe curinga do efeito. OBRIGATORIAMENTE, eles iniciam no CSS com `opacity: 0` para evitar que o texto estático "pisque" na tela (FOUC) antes do plugin fatiar as strings[cite: 22].
+- O Macete da Máscara (Overflow Inline):
+  - O CSS *não* precisa estipular `overflow: hidden` manualmente para a classe `.line`[cite: 22].
+  - O parâmetro `mask: "lines"` do SplitText automaticamente "embrulha" cada linha criada num container invisível bloqueado, garantindo que o texto pareça surgir do nada (e não voar do parágrafo de baixo)[cite: 22].
+- Controle Manual Opcional (`.tm-replay`): Um botão de interface configurado para recalcular e refazer a animação, provido de estilização in-line flexível e efeito hover alterando a opacidade[cite: 22].

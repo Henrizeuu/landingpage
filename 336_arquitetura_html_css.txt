@@ -1,0 +1,7 @@
+COMPONENTE: Estrutura dos Painéis e Camadas Visuais
+- Reset Global Estrito: O CSS aplica `margin: 0` e `padding: 0` no `html` e `body`, além do OBRIGATÓRIO `overflow-x: hidden` para prevenir que o "pinning" da biblioteca GSAP cause scroll horizontal indesejado[cite: 21].
+- Os Painéis (`.ilp-panel`): Cada painel assume 100% da viewport (`height: 100vh`, `width: 100%`), utiliza `overflow: hidden` e adota fundo oriundo da variável `--ilp-bg`[cite: 21]. O `z-index` é injetado posteriormente via JS[cite: 21].
+- Decorações de Fundo (Pseudo-elementos):
+  - Número Tipográfico Gigante (`::before`): Baseado na lateral direita (`right: 5vw`) com tamanho massivo de `30vw`, consome a numeração através do atributo virtual `data-ilp-num` injetado pelo código JavaScript[cite: 21]. É intocável (`pointer-events: none`)[cite: 21].
+  - Borda de Destaque (`::after`): Desenha uma discreta linha vertical de `3px` opaca na margem esquerda do painel centralizada em Y, usando a cor do token `--ilp-accent`[cite: 21].
+- Camada de Conteúdo (`.ilp-content`): Posicionada em `z-index: 1`, abraça a tipografia principal (título responsivo usando `clamp(2rem, 5vw, 3.5rem)`) e o Call to Action (`.ilp-cta`)[cite: 21].

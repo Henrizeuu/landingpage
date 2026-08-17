@@ -1,0 +1,9 @@
+GLOBAL STYLES & TOKENS (MASKED LINES REVEAL)
+- Efeito Visual: O texto aparece progressivamente, linha por linha, deslizando de baixo para cima. O movimento é oculto por uma máscara invisível, criando uma animação de "revelação" elegante e premium[cite: 22].
+- Dependências Críticas: OBRIGATÓRIO o carregamento da biblioteca GSAP (`gsap.min.js`) em conjunto com o plugin SplitText (`SplitText.min.js`) via tag de script antes do código local[cite: 22].
+- Regra de Injeção: O efeito deve ser isolado dentro do bloco designado. O CSS é limpo e não introduz bordas ou backgrounds intrusivos, baseando seu estilo totalmente nas variáveis customizáveis[cite: 22].
+- Tokens Base (Variáveis CSS Injetadas):
+  - Fundo Geral: `--tm-bg` (ex: `#ffffff`)[cite: 22].
+  - Tipografia: `--tm-title-color` (título principal), `--tm-body-color` (texto de apoio), `--tm-eyebrow-color` (texto superior/badge)[cite: 22].
+  - Botão de Ação: `--tm-btn-bg` e `--tm-btn-color` controlam o botão de replay de animação[cite: 22].
+- Acessibilidade: Totalmente blindado. Um bloco `@media (prefers-reduced-motion: reduce)` impõe `opacity: 1 !important` nas tags de texto e o JavaScript bloqueia a renderização do GSAP caso a preferência do sistema operacional acuse restrições a movimento[cite: 22].
