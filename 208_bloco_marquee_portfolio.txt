@@ -1,0 +1,9 @@
+BLOCO: Trabalhos Realizados Marquee
+- Layout Base: Flex column com gap `0.75rem`. Fundo híbrido usando a base da seção e gradientes verticais (`linear-gradient` até `#0C0C0C`)[cite: 17]. Padding-top `clamp(7rem, 13vw, 10rem)`[cite: 17]. Top fade no `::before` protegendo o texto de sobreposição agressiva[cite: 17].
+- Heading: "Trabalhos realizados" formatado com "Gradient Heading" centralizado, tamanho `clamp(2.4rem, 7vw, 6rem)`, uppercase[cite: 17].
+- Container Marquee (O Macete do Width): `width: 100vw`. É O ÚNICO LUGAR DA PÁGINA ONDE ISSO DEVE ACONTECER. Usa `pointer-events: none` e `user-select: none` para não gerar travamentos de arrasto[cite: 17].
+- Trilhas (Tracks): 2 linhas de rolagem separadas. O layout interno (Tiles) tem `420x270px` no desktop ou `280x180px` na versão mobile (`<=640px`)[cite: 17]. Bordas de 1rem, sombras sutis[cite: 17].
+- Imagens do Grid:
+  - Row 1: Seqüência repetida (Assets 2 a 7)[cite: 17].
+  - Row 2: Seqüência repetida com offset invertido (Assets 8 a 10 seguidos de 2 a 4)[cite: 17]. Todos `loading="lazy"` com `object-fit: cover` e cortes definidos (ex: corte horizontal para preservar área com neon)[cite: 17].
+- Ação Scrub JS: Diferente de Marquees de tempo contínuo (CSS), este Marquee é puramente lincado ao `window.scrollY`. Calcular `offset` atrelado ao `boundingClientRect` da section. Primeira linha move para a direita e segunda linha move para a esquerda. `requestAnimationFrame` mantém 60fps constantes na alteração de `transform: translate3d()`[cite: 17].

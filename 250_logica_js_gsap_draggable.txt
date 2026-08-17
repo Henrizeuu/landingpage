@@ -1,0 +1,17 @@
+COMPONENTE: JS Split Reveal & Stacked Draggable
+- OBRIGATÓRIO: Iniciar com as funções `initLineReveal()` e `initFlickCardsStack()`[cite: 23].
+- Text Reveal (Linha a Linha):
+  - Vasculha `[data-split="heading"]` que não tenham `dataset.revealReady="true"`[cite: 23].
+  - Divide o texto por espaço em branco e isola cada palavra num span com `[data-reveal-inner]` (display inline-block, `transform: translateY(110%)`), todas embaladas por um span externo `[data-reveal-line]` (display block, `overflow: hidden`)[cite: 23]. Aplica `margin-right` para espaçamento entre palavras.
+  - Animação: Entram em Y=0 com GSAP, durando 0.9s, `power3.out`, stagger de 0.025. Trigger de start no `top 86%` e gatilho único (`once: true`)[cite: 23].
+- Card Stacking Engine (O Macete Físico):
+  - A pilha é construída numa lógica circular (array shift) suportando os 8 cards[cite: 23]. O script lê a diferença do índice em relação ao `activeIndex` e distribui no eixo Z, na Rotação, no Transform X/Y e Scale[cite: 23]:
+    - `diff === 0` (Centro): Z=5, Escala 1.0.
+    - `diff === 1` e `-1` (Esquerda/Direita imediatos): Z=4, Escala 0.9, Tilt +-10 deg, Shift X +-25%.
+    - `diff === 2` e `-2` (Fundo lateral): Z=3, Escala 0.8, Tilt +-15 deg, Shift X +-45%.
+    - Demais: Ficam nas extremidades, opacidade nula.
+  - Animação Renderizada: Usa GSAP `.to` com `duration: 0.6`, curva esticada `elastic.out(1.2, 1)` alterando as props dos cards[cite: 23].
+- Interação (Draggable):
+  - Plugin instancia arrasto horizontal nas camadas invisíveis com `bounds` dinâmicos[cite: 23].
+  - `onDrag`: Interpolação manual entre as configurações dos índices dependendo da porcentagem do arrasto (`rawProgress`).
+  - `onRelease`: Dispara o salto ('snap') do index pra esquerda ou direita se o threshold (>0.1) for ultrapassado[cite: 23].

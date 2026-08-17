@@ -1,0 +1,10 @@
+GLOBAL STYLES & TOKENS (ESCOPO LOCAL)
+- Regra de Arquitetura: Este bloco será injetado em uma página existente[cite: 22]. É PROIBIDO aplicar estilos no `html`, `body` ou `:root` global para não quebrar a página pai[cite: 22].
+- Reset e Base Local: Aplicar `box-sizing: border-box` exclusivamente em `.hx-clinic, .hx-clinic *`[cite: 22]. A seção controla sua própria fonte (`Manrope`) e cor base[cite: 22].
+- Tokens Estruturais (Definidos localmente na classe `.hx-clinic`):
+  --bg: #eceae4[cite: 22]
+  --ink: #1a1c1b[cite: 22]
+  --ink-soft: #6f726e[cite: 22]
+  --line: #d6d3cb[cite: 22]
+  --radius: 26px[cite: 22]
+- Acessibilidade: Em `prefers-reduced-motion: reduce`, as transições de entrada são removidas, e o frame do vídeo se torna relativo (`position: relative`, `top: auto`, `width: 100vw`, `height: 100vh`, `border-radius: 0`), ignorando o efeito de scroll[cite: 22].

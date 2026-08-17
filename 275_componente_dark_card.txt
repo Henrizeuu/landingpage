@@ -1,0 +1,6 @@
+COMPONENTE: Dark Card Structure
+- O Card Base (`.dg-card`): Fundo definido por um gradiente linear muito sutil no eixo vertical (de `rgba(9,9,11,.6)` para `rgba(9,9,11,.3)`). Possui border-radius de `0.75rem`[cite: 20]. OBRIGATÓRIO manter `overflow: visible` para permitir que os detalhes visuais dos cantos (que ficam fisicamente fora do card) não sejam cortados[cite: 20].
+- Card Header (`.dg-card-header`): Layout flexível alinhado ao topo, garantindo que o ícone fique lado a lado com o título[cite: 20].
+  - Wrapper do Ícone: Caixa fixa de `2.5rem` por `2.5rem`, com borda própria e fundo semi-transparente para abrigar um SVG inline nativo[cite: 20].
+  - Wrapper do Título e Badge: Organiza o título (peso 500) e suporta um `.dg-badge` opcional (uma "pílula" com borda totalmente arredondada, texto miúdo e line-height travado em 1)[cite: 20].
+- Card Body (`.dg-body`): Contém o texto descritivo. Usa `z-index: 2` para não ser engolido pelos efeitos de fundo e `line-height: 1.6` para facilitar a leitura[cite: 20].

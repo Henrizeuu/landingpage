@@ -1,0 +1,15 @@
+BLOCO: Video Expand Scroll (HX Clinic)
+- Layout da Seção: Padding superior profundo (`clamp(56px,8vh,120px)`), `overflow-x: clip`[cite: 22].
+- Título: Centralizado, `text-wrap: balance`, com a primeira parte em font-weight 300 e a ênfase no `<strong>` em font-weight 600[cite: 22].
+- Área do Vídeo (O Macete de Pista de Scroll): O container `.hx-clinic__media` tem `width: 100vw`, alinhamento absoluto/centralizado via translateX(-50%) e uma altura massiva de `220vh` para atuar como pista de rolagem[cite: 22].
+- A Matemática do Scroll (CSS Variables):
+  - A seção injeta e atualiza uma variável `--p` (variando de 0 a 1)[cite: 22].
+  - Variáveis secundárias calculam o tamanho em tempo real interpolando o estado de "Card Menor" para "Full-bleed"[cite: 22]:
+    `--card-width`: `clamp(260px,36vw,620px)`[cite: 22]
+    `--frame-width`: `calc(var(--card-width) + (100vw - var(--card-width)) * var(--p))`[cite: 22]
+    `--frame-height`: `calc(...)` seguindo a proporção 16:9 base[cite: 22].
+- Frame Sticky: O `.hx-clinic__frame` fica `position: sticky` no topo, ajustando dinamicamente sua `width`, `height`, `border-radius` (zera no final) e `box-shadow` multiplicando pela inversa do progresso `(1 - var(--p))`[cite: 22]. `will-change: width,height,top,border-radius`[cite: 22].
+- Conteúdo do Frame:
+  - `<video>`: `object-fit: cover`. Sofre um de-scale conforme expande: `transform: scale(calc(1.08 - .08 * var(--p)))`[cite: 22].
+  - Overlay: Pseudo-elemento `::after` escurecendo levemente o vídeo no estado de card, que desaparece gradualmente (`opacity: calc(.6 * (1 - var(--p)))`)[cite: 22].
+- Regras Responsivas: Em <=720px, a altura da pista (`220vh`) cai para `180vh`. O `--card-width` original cresce para `72vw` na proporção inicial, mantendo o aspecto 16:9 do cálculo do frame[cite: 22]. Não verticalizar nem "quadrar" o vídeo[cite: 22].

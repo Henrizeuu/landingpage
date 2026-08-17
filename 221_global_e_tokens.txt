@@ -1,0 +1,13 @@
+GLOBAL STYLES & TOKENS
+- Dependências Críticas: OBRIGATÓRIO o uso de GSAP 3.12.5 e ScrollTrigger 3.12.5. Sem frameworks ou bibliotecas adicionais[cite: 20].
+- Tipografia (Injeção Dinâmica): 
+  --serif (Fonte Editorial/Serifada, ex: Instrument Serif). Usada no Heading principal e nos números sobrepostos[cite: 20].
+  --grotesk (Fonte Sans-Serif limpa, ex: Hanken Grotesk). Usada nos textos auxiliares, meta e body[cite: 20].
+- Tokens Estruturais e de Cores (Definidos no `:root`):
+  --bg (Fundo escuro profundo, ex: #0a0a0a)[cite: 20]
+  --ink (Texto claro principal, ex: #ece9e2)[cite: 20]
+  --muted (Texto claro com opacidade, ex: rgba(236,233,226,.46))[cite: 20]
+  --line (Linhas divisórias sutis, ex: rgba(236,233,226,.14))[cite: 20]
+  --pad (Padding lateral responsivo, ex: clamp(20px,4.5vw,72px))[cite: 20]
+  --maxw (Max-width do grid, ex: 1680px)[cite: 20]
+- Acessibilidade: Em `prefers-reduced-motion: reduce`, o JS de animação do GSAP NÃO deve rodar. O CSS deve forçar `transform: none !important`, `opacity: 1 !important` nas palavras e textos, e `clip-path: none !important` na mídia[cite: 20].

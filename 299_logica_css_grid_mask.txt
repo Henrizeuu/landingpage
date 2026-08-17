@@ -1,0 +1,6 @@
+LÓGICA CSS: Construção da Grade (O Macete Físico)
+- Geometria da Grade (`.bgf-grid`):
+  - É criada usando dois `linear-gradient` cruzados no `background-image`: um traçando linhas para a direita e outro traçando linhas para baixo, desenhados sobre espaço transparente[cite: 19].
+  - A proporção de cada "quadrado" da grade é dimensionada estritamente via `background-size: 6rem 5rem`[cite: 19].
+- O Efeito Fade (Máscara CSS): Para a grade não ser infinita, aplica-se a propriedade `mask-image` (e `-webkit-mask-image`) com um `radial-gradient` no formato elíptico (`ellipse 80% 50% at 50% 0%`)[cite: 19]. Isso cria uma máscara preta intensa no topo que dissipa para transparente, fazendo a grade "evaporar" no centro/baixo da tela[cite: 19].
+- Proteção Interativa: Tem `position: absolute` trancado no topo/base (`inset: 0`) com altura cravada em `600px` e recebe `pointer-events: none` para não engolir o mouse/toque do usuário[cite: 19].

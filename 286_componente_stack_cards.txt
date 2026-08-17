@@ -1,0 +1,7 @@
+COMPONENTE: Container e Cards Base
+- O Container (`.cos-stack`): Exige `display: flex` em formato de coluna (`flex-direction: column`) e com `gap: 0` cravado, permitindo que a margem negativa dos itens internos dite o espaçamento[cite: 15]. Possui limite de largura e alinhamento central[cite: 15].
+- O Card (`.cos-card`): Layout interno em flexbox alinhado ao topo (`flex-start`) com `24px` de distância entre o ícone e o texto[cite: 15].
+- A Matemática do Empilhamento (O Macete Físico):
+  - Margem Negativa: Todos os cards sofrem `margin-top` com o valor da variável de overlap (ex: `-12px`), forçando-os a invadir o espaço do card de cima[cite: 15].
+  - Reset no Topo: O primeiro filho (`first-child`) da pilha OBRIGATORIAMENTE tem sua margem resetada para 0 para não bugar o alinhamento do bloco[cite: 15].
+- Hierarquia Estática de Eixos (Z-Index): Para que o card de cima cubra o de baixo simulando a gravidade correta, o CSS aplica z-index de forma decrescente[cite: 15]. O primeiro card ganha `z-index: 4`, o segundo `3`, o terceiro `2` e o último `1`[cite: 15].

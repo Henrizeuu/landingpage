@@ -1,0 +1,15 @@
+GLOBAL STYLES & TOKENS (BLOCO 19 - CARDS EMPILHADOS STACK HOVER)
+- Efeito Visual: Baralho de cards dispostos lado a lado com margem negativa. O Hover faz o card subir e os subsequentes correrem para a direita, revelando o deck inteiro[cite: 19].
+- Dependências: NENHUMA. O efeito é 100% resolvido em CSS (via seletores de sibling `~` e pseudo-classes `:hover` / `:focus-within`)[cite: 19].
+- Regra de Injeção: O CSS deve ser adaptado OBRIGATORIAMENTE para a paleta da página e injetado *sem* criar seções adicionais de escape[cite: 19].
+- Tokens Estruturais CSS Base:
+  --csh-card-w: 280px (Largura do card)[cite: 19]
+  --csh-card-h: 340px (Altura do card)[cite: 19]
+  --csh-overlap: -130px (Nível de sobreposição. Ex: Margem negativa do empilhamento)[cite: 19]
+  --csh-spread: 145px (Distância de abertura dos cards subsequentes durante o Hover)[cite: 19]
+  --csh-bg: #0a031e (Fundo base sólido do card)[cite: 19]
+  --csh-border-top: #333381 (Cor superior da borda gradiente)[cite: 19]
+  --csh-border-bottom: #05051c (Cor inferior da borda gradiente)[cite: 19]
+  --csh-bar-from: #2155ef (Início da barra de glow superior)[cite: 19]
+  --csh-bar-to: #36b6f4 (Fim da barra de glow superior)[cite: 19]
+- Acessibilidade: O CSS deve incluir `tabindex="0"` no HTML e utilizar `:focus-within` para navegação por teclado[cite: 19]. Em `prefers-reduced-motion: reduce`, remover as propriedades de `transition`[cite: 19].

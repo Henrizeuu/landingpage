@@ -1,0 +1,11 @@
+BLOCO: Stacked Cards Section (Flick Group)
+- Container Principal da Seção: Usa `[data-effect="flick-cards-stack"]`, com padding vertical simétrico (`7.5rem`)[cite: 23]. O interior é formatado em `.effect-container` (centralizado via max-width) e `.effect-flex` (coluna vertical alinhada ao centro)[cite: 23].
+- Estrutura da Stage de Cards (`.flick-group`): O container que comporta a pilha de cartas. Controla o espaço no eixo Z e no topo[cite: 23].
+  - Relative Object: Uma div invisível (`.flick-group__relative-object`) que atua como balão de volume invisível ditando a altura. Largura de `0.5` da `--size-container` e padding-top interno injetado de `75%` via pseudo-classe `::before`[cite: 23].
+  - Card Collection (`.flick-group__collection`): Posicionada `absolute inset 0` em relação ao grupo, suportando a `.flick-group__list` (flex centrado)[cite: 23].
+- Itens dos Cards (`.flick-group__item`): São exatamente 8 containers paralelos e absolutos contendo a montagem do card em si[cite: 23].
+- O Card Base (`.flick-card`):
+  - Fundo preto, bordas arredondadas (1em), largura baseada na metade do objeto relativo (`0.25` da `--size-container`), centralização via flex[cite: 23]. Aspect-ratio estabelecido por padding-top `150%` no `::before`[cite: 23].
+  - Mídia: `.cover-image` tem posição absoluta, `object-fit: cover` preenchendo 100%[cite: 23].
+  - Rótulo (Label): `.flick-card__h3`, Fonte Display em Itálico (Pangaia), font-size de `4em`. Cor clara e sombra densa no texto para sobressair da imagem[cite: 23].
+  - Camada do Dragger: Div injetada exclusivamente via JS em cada `.flick-group__item`, com `z-index: 8`, `cursor: grab` e `touch-action: pan-y`[cite: 23].

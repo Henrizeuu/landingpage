@@ -1,0 +1,7 @@
+COMPONENTE: Lógica JS e ScrollTrigger
+- Setup de Pinning: O `.team-content` é pinado com `scrub: 0.65`, `anticipatePin: 1`, `pinSpacing: true`[cite: 16]. A distância que o usuário deve rolar (`end`) é calculada dinamicamente com a altura da janela (ex: `window.innerHeight * 3.6` no desktop)[cite: 16].
+- Core da Timeline de Animação: 
+  - Iterar de 0 até penúltimo card. No momento `index`, o card atual move-se para fora em direção à diagonal superior/esquerda (`x: -stepX`, `y: -enterY`) e cai a opacidade para 0.3. Simultaneamente, o próximo card vem para o centro (`x: 0, y: 0, opacity: 1`)[cite: 16].
+  - O último card recebe um pequeno intervalo extra de timeline vazio (`0.15s`) para o usuário ter tempo de leitura[cite: 16].
+- Lógica de Estado (`setActive`): É calculada interpolando o progresso do ScrollTrigger x Total de Cards[cite: 16]. Ela troca as classes ativas das imagens, revela a descrição correta e também anima a entrada/saída do Contador (fade-out para -8% em Y, fade-in de 8% em Y)[cite: 16].
+- Parallax Tátil via JS (O Macete da Velocidade): O código RODA um `requestAnimationFrame` que escuta `window.scrollY`. Ele calcula a diferença da rolagem (velocidade), aplica um smoothing (`smoothedVelocity += (velocity - smoothedVelocity) * 0.12`) e injeta no CSS como variável `--scroll-velocity`. O CSS usa essa variável no `transform` das imagens dentro dos cards, dando peso ao movimento sem mexer na estrutura física das divs[cite: 16].

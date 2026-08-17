@@ -1,0 +1,7 @@
+COMPONENTE: Section, WebGL Canvas e Content
+- A Seção Base (`.ct-section`): O container principal precisa ter `position: relative`, `min-height: 100vh`, `overflow: hidden` e fundo sólido escuro para servir de tela[cite: 16].
+- A Camada do WebGL (`.ct-canvas`):
+  - É o elemento onde a mágica acontece. Tem `position: absolute`, `inset: 0` (ocupando 100% da área)[cite: 16].
+  - Hierarquia e Interação: Fica no fundo (`z-index: 0`) e OBRIGATORIAMENTE ganha `pointer-events: none` para garantir que botões e links abaixo/acima dele continuem clicáveis[cite: 16].
+- A Camada de Conteúdo (`.ct-content`): Os textos, títulos e botões devem ficar embalados nesta div que recebe `position: relative` e `z-index: 2` (sobrepondo a camada de luz)[cite: 16].
+- Responsividade Touch (Mobile): O efeito só faz sentido com cursor de mouse. A media query `@media (hover: none) and (pointer: coarse)` aplica `display: none` no canvas em dispositivos móveis/touch[cite: 16].

@@ -1,0 +1,5 @@
+BLOCO: Pinned Method Stack (A Estrutura do Efeito)
+- Arquitetura de Pinning (O Macete Físico): A seção pai `.team-scroll` ocupa `100svh`. O conteúdo visual real vive no `.team-content` que age como um "palco" de largura total e altura fixa (100vw, 100svh) isolado por `isolation: isolate`. O ScrollTrigger fixará esse palco enquanto a página nativa é rolada[cite: 16].
+- Indicador Superior (Section Label): Posição absoluta superior, centralizado horizontalmente. Usa `mix-blend-mode: difference` e `z-index: 8` para interagir visualmente caso algo passe por baixo. O número do indicador ganha opacidade `0.62`[cite: 16].
+- Contador Gigante (`.team-counter`): Posição absoluta. Fonte gigante (`clamp`), `line-height: 0.9` e OBRIGATORIAMENTE usando `font-variant-numeric: tabular-nums` no número (ex: "01") para não dar solavancos na largura durante a troca do texto[cite: 16].
+- Descrições Ativas (`.team-info`): As descrições sobem via GSAP (`transform: translateY(18px)` e opacidade 0 para `translateY(0)` e opacidade 1)[cite: 16]. Uso crucial de `text-wrap: balance` e `overflow-wrap: normal`[cite: 16].

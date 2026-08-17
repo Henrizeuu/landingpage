@@ -1,0 +1,7 @@
+COMPONENTE: Grid e Base do Card
+- Container do Grid (`.cgh-grid`): Utiliza CSS Grid padrão. Estabelece 2 colunas com `repeat(2, 1fr)` e espaçamento (gap) de `1.5rem`. Limitado a uma largura máxima de `900px` e centralizado[cite: 14].
+- Card Base (`.cgh-card`):
+  - Estrutura: Trabalha com `position: relative` e layout interno em `flex-direction: column` com gap de `1rem`[cite: 14].
+  - Visual: Possui borda sutil, cantos arredondados definidos por variável e `overflow: hidden` para conter o vazamento do glow[cite: 14].
+  - Interação: No estado de hover, o card sobe ligeiramente (`translateY(-2px)`) e ganha uma sombra inferior branda (`box-shadow`)[cite: 14].
+- Cabeçalho do Card (Ícone): Área de 48x48 pixels (`.cgh-icon`) com fundo e cor baseados no tom principal do glow, cantos arredondados, projetada para conter SVGs alinhados ao centro[cite: 14].

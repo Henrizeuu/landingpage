@@ -1,0 +1,3 @@
+COMPONENTE: Heading e Intro (.sfloat__intro)
+- Título (`.sfloat__title`): Typography escalável usando `clamp(2rem, 4.5vw, 3.2rem)`. Peso 600, com `line-height: 1.15`. O texto é quebrado e finalizado com a classe de acento (`.sfloat__accent`)[cite: 21].
+- Parágrafo de Apoio (`.sfloat__desc`): Texto de cor secundária, centralizado com `margin: 0 auto`, `max-width: 580px`, `font-size: 1.05rem` e um line-height folgado (`1.65`)[cite: 21].

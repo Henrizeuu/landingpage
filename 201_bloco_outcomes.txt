@@ -1,0 +1,6 @@
+BLOCO: Outcomes / Resultados
+- Fundo Complexo (O Macete Z-Index): A seção ganha a imagem de fundo via pseudo-elemento `::before` posicionado sobre toda a área com `center/cover`, `filter: blur(8px) saturate(0.96)`, `transform: scale(1.06)` e opacity reduzida. O `::after` cria o overlay gradiente[cite: 16].
+- Header: Eyebrow text, H2 gigante. Injetar sublinhado via `::after` no H2 (width 180px, background na Cor de Acento)[cite: 16].
+- Grid: Renderiza 4 Componentes "Outcome Card"[cite: 16].
+- Animação (Staggered Reveal): Disparada quando o topo da lista atinge 78% da viewport. Cards animam de `y: 36` e opacity 0 com `power3.out` e stagger de 0.14[cite: 16].
+- Regra Responsiva: Desktop: 4 colunas. <=1024px: 2 colunas. <=560px: 1 coluna, reajustando padding da section para `72px 20px` e encolhendo o H2[cite: 16].

@@ -1,0 +1,18 @@
+COMPONENTE: Lógica de Animação GSAP + ScrollTrigger (O Macete Físico 3D)
+- Setup:
+  - ScrollTrigger é linkado EXCLUSIVAMENTE ao `.scroll-shell` com `start: "top top"`, `end: "bottom bottom"`, `scrub: 1`, `pin: false`[cite: 17].
+  - Foreground Headline é explodido (split text manual no JS) preservando os espaços em branco como `&nbsp;` (`\u00a0`)[cite: 17].
+- Set Inicial do GSAP (O Estado Escondido):
+  - Card 1: `x: window.innerWidth * 0.6` (Fora pela Direita)[cite: 17].
+  - Card 2: `x: window.innerWidth * -0.6` (Fora pela Esquerda)[cite: 17].
+  - Card 3: `x: window.innerWidth * 0.6` (Fora pela Direita)[cite: 17].
+  - Rotações estáticas no eixo Z: `[-3.5, 9.5, -9.6]`. Opacidade `0`[cite: 17].
+  - Rotações da Face 3D (`rotationY`): `[90, -90, 90]` (Virados de Lado)[cite: 17].
+- A Timeline (`masterTimeline`): 
+  - São seis tweens explícitos (Containers e Faces não usam stagger)[cite: 17].
+  - Card 1 entra em time `0`. Container ganha `x: 0, autoAlpha: 1`, Face ganha `rotationY: 0, z: 0`. Duration `1.35`, `power2.inOut`[cite: 17].
+  - Card 2 entra em time `0.85` com as mesmas propriedades[cite: 17].
+  - Card 3 entra em time `1.70` com as mesmas propriedades[cite: 17].
+  - Em time `0.30`, os spans do Foreground Headline desaparecem em stagger (`opacity: 0, duration: 1.6, stagger: .05`)[cite: 17].
+- UI Progress (O Controlador Visual de Progresso): Atualizado manualmente no `onUpdate` do ScrollTrigger. Lê o `x` de cada card e clampa o crescimento da barrinha de progresso entre 0 e 12 pixels[cite: 17].
+- Prevenção de Bug: Debounce no resize para matar o ScrollTrigger antigo e recriar o novo e garantir que não crie timelines duplicadas[cite: 17].

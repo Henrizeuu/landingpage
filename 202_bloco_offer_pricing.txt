@@ -1,0 +1,7 @@
+BLOCO: Offer / Pricing Section
+- Layout: Fundo mesclando gradiente linear quente com a Cor Base Papel[cite: 16]. Padding espesso (`clamp(78px, 10vw, 150px)` no top). Layout flex centralizado com `min(1180px, 100%)`[cite: 16].
+- Offer Card: Elemento `<aside>`. Largura máxima de 430px, borda sólida na Cor de Acento, background claro, sombra, CANTOS QUADRADOS[cite: 16].
+- Bloco de Preço: Display grid, gap 6px. Prefixo mutado ("12x de"), Preço H1 gigante ("R$ 19,70"), Sufixo mutado ("ou à vista")[cite: 16].
+- Custom List (O Macete CSS): Lista sem bullets nativos. O `<li>` ganha padding-left 20px. O "dot" dourado é criado em CSS absoluto (`7px square`, border-radius 999px, top alinhado à primeira linha do texto via `em` unit)[cite: 16].
+- Ação e Nota: Componente "Gold CTA Button" em versão Full Width (100%), seguido por um parágrafo mutado e centralizado indicando segurança[cite: 16].
+- Regra Responsiva: Em <=920px, a largura do container interno vai para 100% (embora o card ainda tenha seu limite). Em <=560px, padding vertical da seção reduz para `72px 20px`[cite: 16].

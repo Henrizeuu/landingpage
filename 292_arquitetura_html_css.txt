@@ -1,0 +1,6 @@
+COMPONENTE: Section, Canvas Wrapper e Content
+- A Seção Hero (`.hero-dotted-surface`): É o palco principal. Usa `position: relative`, `min-height: 70vh`, `overflow: hidden`, e `isolation: isolate` para trancar o z-index internamente[cite: 17].
+- A Div do Canvas (`.dotted-surface`): Atua como contêiner direto para o `<canvas>` injetado pelo Three.js. Possui `position: absolute`, `inset: 0` e OBRIGATORIAMENTE `pointer-events: none` e `z-index: 0` para não bloquear os botões abaixo[cite: 17].
+- A Div de Conteúdo (`.hero-content`): Envelopa o texto e botões, elevando-os para `z-index: 1`, com `max-width: 760px`, centrado (`margin: 0 auto`), e usando paddings dinâmicos (`clamp(3rem, 10vw, 8rem)`)[cite: 17].
+- Elementos Tipográficos: Kicker (uppercase com `letter-spacing: 0.1em`), Título (escala de tamanho baseada em viewport com `line-height` apertado em 1.05) e Descrição.
+- O CTA (`.hero-cta`): Botão limpo com `border-radius: 0.65rem` que inverte suas cores baseando-se no esquema de tema (Light/Dark)[cite: 17].

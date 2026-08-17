@@ -1,0 +1,19 @@
+GLOBAL STYLES & TOKENS
+- Reset e Base: Aplicar `box-sizing: border-box` a todos os elementos[cite: 23]. Reset em html e body (`margin: 0`, `min-height: 100%`, `overflow-x: hidden`)[cite: 23]. Fundo principal e da seção é `#f0eee9` (warm off-white), cor de texto principal é `#1a1816`[cite: 23]. Fonte-base: `"PP Neue Montreal", Arial, sans-serif` (peso 500, line-height 1)[cite: 23].
+- Tipografia Importada (Fonts): Necessário importar as fontes personalizadas via `@font-face`: PP Neue Montreal (Regular 400 e SemiBold 600) e Pangaia Medium Italic (500, para display/títulos)[cite: 23].
+- Tokens Estruturais e de Cores (Injeção via `:root`):
+  --color-neutral-100: #f0eee9[cite: 23]
+  --color-neutral-200: #e5e1da[cite: 23]
+  --color-neutral-800: #2c2622[cite: 23]
+  --color-neutral-900: #1a1816[cite: 23]
+  --color-primary: #f19035[cite: 23]
+  --color-light: var(--color-neutral-200)[cite: 23]
+  --color-dark: var(--color-neutral-800)[cite: 23]
+  --size-container: 100rem[cite: 23]
+  --container-padding: 2em[cite: 23]
+  --gap: 2em[cite: 23]
+  --heading-size: 3.5em[cite: 23]
+  --heading-line: 1.15em[cite: 23]
+  --heading-spacing: -0.015em[cite: 23]
+- Acessibilidade e Imagens: Nenhuma sombra global, gradiente de fundo ou barra de rolagem customizada pode ser injetada. As imagens devem possuir `max-width: 100%`, `vertical-align: middle`, `display: inline-block`[cite: 23].
+- Dependências Rigorosas: HTML, CSS, e JS Vanilla + GSAP 3.13.0, ScrollTrigger 3.13.0, e Draggable 3.13.0[cite: 23].

@@ -1,0 +1,6 @@
+BLOCO: Confessions Drag Slider Section
+- Atributo e Classe Base: O container principal usa `[data-effect="client-confessions-drag-slider"]` com a classe `.confessions-effect`[cite: 20].
+- Interação Nativa: Aplica `touch-action: pan-y` para permitir rolagem vertical da página, mas `cursor: grab` (e `.is-dragging` com `cursor: grabbing` ativado via JS) para indicar o arrasto horizontal[cite: 20]. O `user-select: none` previne seleção de texto durante o drag[cite: 20].
+- Container Interno (`.confessions-container`): Centralizado, `max-width: 180rem`, com padding lateral (2rem mobile, 5.5rem desktop)[cite: 20].
+- Título Gigante: H2 centralizado (`.confessions-title`) com fonte Serifada. Texto: `Vozes<br><em>do Projeto</em>`[cite: 20]. A linha 2 em itálico. Tamanho vai de 4.15rem (mobile) a 9.5rem (desktop)[cite: 20].
+- Track do Slider: Uma linha flex (`.confessions-track`) com `margin-top: 5.5rem`, onde os cards correm horizontalmente[cite: 20].

@@ -1,0 +1,11 @@
+GLOBAL STYLES & TOKENS (NEON LIGHT TUBES)
+- Efeito Visual: Canvas WebGL que renderiza trilhas fluidas e brilhantes de luz neon que seguem o cursor do mouse[cite: 16].
+- Dependências Críticas: É OBRIGATÓRIO ter o arquivo `tubes1.min.js` (um módulo ES6 de ~774KB) hospedado na mesma pasta do projeto e importado no JavaScript[cite: 16].
+- Regra de Injeção: O efeito deve ser restrito ao bloco designado e as cores precisam ser 100% harmonizadas com a paleta da página[cite: 16].
+- Tokens Base (Injetados via JS e CSS):
+  - Fundo Geral: Escuro para garantir contraste (`#000000`)[cite: 16].
+  - Paleta dos Tubos (TUBE_COLORS): Arrays de cores hexadecimais configuráveis no JS (ex: `#0A74FF`, `#0C9BFF`, `#69C3FF`)[cite: 16].
+  - Paleta das Luzes (LIGHT_COLORS): Arrays de cores para o brilho e pontos de luz (ex: `#4FC3FF`, `#A8E4FF`, etc)[cite: 16].
+  - Intensidade da Luz (LIGHT_INTENSITY): Controlada no JS, valor padrão `280`[cite: 16].
+  - Filtro do Canvas (CANVAS_FILTER): `blur(0.5px) brightness(1.1)` para suavizar o traçado 3D[cite: 16].
+- Acessibilidade: OBRIGATÓRIO utilizar a media query `prefers-reduced-motion: reduce` aplicando `display: none` no canvas para desativar o efeito em aparelhos de usuários com sensibilidade a movimentos[cite: 16].

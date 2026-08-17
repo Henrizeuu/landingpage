@@ -1,0 +1,7 @@
+BLOCO: Sticky Horizontal Scroll Stage
+- Layout Core (Múltiplos Stickies): O efeito ocorre por um duplo-sticky. A seção inteira tem `height: 400vh` e `position: sticky`. Dentro dela, um "palco" visual (`.recent-sticky`) também usa `position: sticky` e trava em `90vh` de altura (min-height 620px)[cite: 24]. O overflow DEVE ser hidden no palco para engolir os cards[cite: 24].
+- Título Base (`.recent-title-wrap`): Texto "trabalhos recentes". Totalmente minúsculo. Fica centralizado no background, COM `pointer-events: none` e `z-index: 1` para permitir que os cards flutuem por CIMA[cite: 24].
+- Trilha de Scroll (`.recent-track`): É uma linha flex com `position: absolute`. Ganha `z-index: 2` (para ficar acima do título). Inicia violentamente fora da tela no desktop: `right: -4000px`, eixo Y centralizado via `top: 55%` e translação natural inicial de `translate3d(0, -50%, 0)`[cite: 24]. Gap entre imagens: `28px`[cite: 24].
+- Regra Responsiva:
+  - Em `<= 1199px`: O título cai de 72px para `56px`[cite: 24].
+  - Em `<= 809px`: A altura da seção (`400vh`) cai para `360vh`. O palco diminui para `88vh`. O título assume a cor verde primária (`--color-page`) e cai para `45px`. O Topo da trilha de cards desce para `58%` e o gap diminui para `18px`[cite: 24].

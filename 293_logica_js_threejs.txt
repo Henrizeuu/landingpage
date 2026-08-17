@@ -1,0 +1,10 @@
+LÓGICA JAVASCRIPT: Three.js Engine e Instanciação
+- Importação: O código atua em uma Classe JS moderna ES6 (`class DottedSurface`) e importa as classes base do ThreeJS via CDN[cite: 17].
+- Lógica Geométrica (O Macete Físico 3D):
+  - É criado um `BufferGeometry` povoado por matrizes de X, Y e Z.
+  - A varredura de `amountX` (ex: 40) e `amountY` (ex: 60) cria uma grade baseada numa distância física (`separation: 150`)[cite: 17].
+  - Os materiais das partículas (`PointsMaterial`) recebem `sizeAttenuation: true` para simular distância, com opacidade de 0.8 e tamanho de 8[cite: 17].
+- A Física das Ondas (Animação Matemática):
+  - No loop `updateWave()`, a altura em Y (`positions[index + 1]`) de cada ponto é atualizada baseada em funções trigonométricas (`Math.sin`)[cite: 17].
+  - Ele cruza as velocidades X e Y atreladas a um contador `count` que se incrementa infinitamente e é multiplicado por valores de amplitude (`waveAmpX`, `waveAmpY`)[cite: 17].
+- Controle de Instância: O listener do DOM no final do arquivo garante que o Three.js só será inicializado e montado após o `DOMContentLoaded` ter disparado e a div base (`.dotted-surface`) existir no HTML[cite: 17].

@@ -1,0 +1,5 @@
+COMPONENTE: Primary Contact Button (Green Neon CTA)
+- Estrutura Base: Tag `<a>` com classe `.btn-contact`, `inline-flex center`, `border-radius: 9999px`, sem sublinhado[cite: 17].
+- Tipografia: Maiúsculas, letter-spacing longo (0.15em), texto em branco, Kanit peso 500, `white-space: nowrap`[cite: 17].
+- Dimensões Responsivas: Padding `0.75rem 2rem` com font `0.75rem` no mobile; sobe pra `0.875rem 2.5rem / 0.875rem` em >=640px; atinge `1rem 3rem / 1rem` em >=768px[cite: 17].
+- Hover Effects: O background usa o token `--cta-gradient` com as sombras customizadas de CTA. No hover, aplica `translateY(-2px)`, `scale(1.03)`, `brightness(1.1)` e fortalece a sombra verde. No active, `translateY(1px)`, `scale(0.98)`[cite: 17]. Transição em `0.2s cubic-bezier(0.25,0.1,0.25,1)`[cite: 17].

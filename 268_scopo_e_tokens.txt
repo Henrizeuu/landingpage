@@ -1,0 +1,11 @@
+GLOBAL STYLES & TOKENS (BLOCO 18 - GRADIENT BUTTON)
+- Efeito Visual: CTA animado com gradiente em rotação contínua e glow dinâmico[cite: 18].
+- Dependências: NENHUMA. Tudo feito via CSS Nativo (@property, conic-gradient) e sem necessidade de JavaScript[cite: 18].
+- Regra de Injeção: O CSS fornecido deve ser injetado *sem* criar sections adicionais[cite: 18]. As cores base devem OBRIGATORIAMENTE ser alteradas para harmonizar com a paleta local[cite: 18].
+- Tokens Estruturais CSS Base:
+  --gb-angle (Propriedade Houdini sintaxe angle, default 0deg)[cite: 18]
+  --gb-color-a (Cor 1 - ex: #6d28d9)[cite: 18]
+  --gb-color-b (Cor 2 - ex: #2563eb)[cite: 18]
+  --gb-color-c (Cor 3 - ex: #06b6d4)[cite: 18]
+  --gb-glow (Cor do Glow/Shadow - ex: rgba(109, 40, 217, 0.5))[cite: 18]
+- Acessibilidade: OBRIGATÓRIO utilizar `prefers-reduced-motion: reduce` desativando a rotação de `gb-rotate` e trocando `conic-gradient` por um fallback estático de `linear-gradient` (ex: 135deg)[cite: 18].

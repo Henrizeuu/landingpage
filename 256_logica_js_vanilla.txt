@@ -1,0 +1,8 @@
+COMPONENTE: Lógica JS Vanilla Horizontal
+- Gatilho e Orquestração: Rodar as inicializações apenas via evento nativo de load e listeners (scroll e resize com debounce de 150ms)[cite: 24].
+- Matemática do Efeito (O Macete do Scroll):
+  - Em cada render, o JS detecta a proporção global cruzada: `rawProgress = (scrollY - sectionStart) / maxScroll`[cite: 24].
+  - A faixa de ação ("janela") do efeito NÂO COMEÇA IMEDIATAMENTE. Tem `startOffset = 0.12` e durabilidade visual `activeRange = 0.8`[cite: 24].
+  - Assim, o `progress` isolado para o movimento da tela será: clamp `(rawProgress - startOffset) / activeRange`[cite: 24].
+  - CÁLCULO MÁGICO DE TRILHA: A translação efetiva X recebe `-getTravel() * progress`. Aonde `getTravel()` = `track.scrollWidth + window.innerWidth * 0.62`[cite: 24]. O uso do `0.62` da tela, junto do right `-4000px` garantem que o card chegue do nada, cruze e morra na mesma velocidade na outra ponta.
+- Renderização do Frame: Aplicar os resultados obtidos injetando puramente CSS inline `transform: translate3d(${x}px, -50%, 0)`. Toda essa etapa deve ocorrer engarrafada por `window.requestAnimationFrame` passivo para performance extrema[cite: 24].

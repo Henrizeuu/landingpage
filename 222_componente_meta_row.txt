@@ -1,0 +1,5 @@
+COMPONENTE: Meta Row (Top Label)
+- Estrutura: Elemento `.team__meta` no topo da seção, contendo dois `<span>` (Rótulo à esquerda e Índice à direita)[cite: 20].
+- Visual: `display: flex`, `justify-content: space-between`, `align-items: baseline`. Borda superior fina (`border-top: 1px solid var(--line)`)[cite: 20].
+- Tipografia: Textos em 13px, uppercase, `letter-spacing: .06em`, cor `--muted`. O índice (ex: `(04)`) deve obrigatoriamente usar `font-variant-numeric: tabular-nums` para alinhamento perfeito[cite: 20].
+- Animação (GSAP): Entrada via ScrollTrigger (`start: 'top 78%'`). Elementos animam com `yPercent: 120`, `opacity: 0`, duraçao 0.9s, `power3.out` e stagger de 0.08[cite: 20].

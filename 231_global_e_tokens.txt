@@ -1,0 +1,9 @@
+GLOBAL STYLES & TOKENS
+- Reset e Tipografia: `box-sizing: border-box`, `margin: 0`, `min-height: 100vh`, `overflow-x: hidden`. Fonte base `Arial, Helvetica, sans-serif` e suporte `Courier New, monospace`[cite: 17]. OBRIGATÓRIO `letter-spacing: 0` para todo o layout, sem espaçamento negativo[cite: 17].
+- Dependências Críticas: GSAP 3.13.0, ScrollTrigger 3.13.0 e SplitText 3.13.0[cite: 17].
+- Tokens Estruturais e de Cores (Injeção Dinâmica no `:root`):
+  --blue: #1925aa (Cor principal da tinta e bordas)[cite: 17]
+  --mercury: #e8e6e0 (Cor de fundo geral / warm gray)[cite: 17]
+  --white: #ffffff (Cor de fundo dos cards)[cite: 17]
+  --effect-gap: 2.5rem no mobile, redefinido para 3.75rem em >= 1024px (desktop breakpoint)[cite: 17]
+- Regra Visual Estrita: Cantos OBRIGATORIAMENTE quadrados. Sem box-shadows, sem suavização de bordas, sem imagens ou vídeos (ausência total de mídia)[cite: 17].

@@ -1,0 +1,8 @@
+COMPONENTE: Card e Efeito Parallax
+- Layout da Grade (`.sfloat__grid`): CSS Grid. No Desktop exibe os cards em três colunas (`grid-template-columns: repeat(3, 1fr)`) com gap de `24px`[cite: 21]. No mobile, vai para uma coluna centralizada com `max-width: 420px`[cite: 21].
+- Atributos de Lógica (O Macete Físico): O HTML injeta atributos de velocidade para o JS interceptar e realizar o cálculo de paralaxe nos cards 1 e 3.
+  - `data-sfloat-tx` = Velocidade de translação (ex: 4 e 1.4)[cite: 21].
+  - `data-sfloat-rz` = Velocidade de rotação (ex: 0.3 e 0.5)[cite: 21].
+  - `data-sfloat-dir` = Vetor de direção (1 para Direita, -1 para Esquerda)[cite: 21].
+- O Card Central (`.sfloat__card--center`): Diferencia-se visualmente descendo sua posição (`margin-top: 48px`). O atributo HTML base dele é o `data-sfloat-fadein` para ativar o IntersectionObserver do JS[cite: 21].
+- Elemento Interno de Ícone (`.sfloat__icon`): Uma área fixa de 56x56 pixels que recebe um SVG nativo, com margem inferior, pintado automaticamente com o valor do token de Accent Color[cite: 21].

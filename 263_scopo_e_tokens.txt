@@ -1,0 +1,14 @@
+GLOBAL STYLES & TOKENS (BLOCO 17 - COLEÇÃO ATELIER NORTE)
+- Page Title: Bloco de Destaques em Camadas[cite: 17].
+- Language: Portuguese (Brazil)[cite: 17].
+- Visual Style: Editorial print design, fundo "warm paper" (`#f4eddd`), tipografia verde escuro (`#344128`), headline serifada gigante, três cards rotacionados[cite: 17]. Sem sombras, sem gradientes, sem custom cursor[cite: 17].
+- Tipografia: 
+  - Fonte Display (Headlines/Card Titles): `Cormorant Garamond` (pesos 300, 400)[cite: 17].
+  - Fonte Interface (Header/Card Descriptions): `Inter` (pesos 400, 500, 700)[cite: 17].
+- Tokens de Cores (Injeção via Variáveis Locais ou Estáticos):
+  - Fundo/Paper: `#f4eddd`[cite: 17].
+  - Verde Principal (Ink): `#344128`[cite: 17].
+  - Ghost Headline (Texto de Fundo): `#cfd0c0`[cite: 17].
+  - Fundo do Card (Face): `#fffefa`[cite: 17].
+- Dependências Críticas: Vanilla JS, GSAP 3.12.5, ScrollTrigger 3.12.5. ESTRITAMENTE PROIBIDO o uso de React, Lenis, locomotive-scroll, CSS scroll timelines, wrappers de smooth-scroll ou GSAP `pin: true`[cite: 17]. O Stage DEVE usar `position: sticky` nativo[cite: 17].
+- Ausência de Mídia Extras: Exatamente 3 cards e 3 imagens via tag `<img>`. Nenhuma imagem extra, background-image ou tag de vídeo de fundo[cite: 17].

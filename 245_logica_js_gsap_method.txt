@@ -1,0 +1,14 @@
+COMPONENTE: JS Method Accordion Logic (GSAP)
+- Estrutura de Pinning: ScrollTrigger com `pin: .method-wrapper`, `pinSpacing: true`, `anticipatePin: 1` e `scrub: true`. A área de scroll total calculada dinamicamente com base na quantidade de itens (ex: `window.innerHeight * items.length`)[cite: 22].
+- Cálculo de Altura Dinâmica (O Macete da Animação de Altura): 
+  - Antes de inicializar a timeline, o JS itera sobre os corpos dos cards (`.method-body`), forçando `height: auto`, salvando a `scrollHeight` em memória e restaurando para `height: 0`[cite: 22].
+  - A animação do GSAP tweens a altura de 0 para a altura gravada, usando `immediateRender: false` para não piscar no load[cite: 22].
+- Orquestração de Tempo da Timeline: Cada card obedece a um fluxo: Abre (`0.4s`), Segura o estado (`0.6s`), Fecha (`0.4s`)[cite: 22]. O último card NÃO fecha imediatamente, recebe uma pausa final extra (`0.3s`)[cite: 22].
+- Efeitos Atrelados ao Progresso Base do Scroll (onUpdate):
+  - Barra de Progresso inteira: Scale aumenta no início do scroll[cite: 22].
+  - Preenchimento do Progresso: `scaleX` idêntico ao progresso geral (`0..1`)[cite: 22].
+  - Glow de Fundo: Desloca o Y (de -12vh a 16vh), cresce a escala (0.8 a 1.2) e ajusta a opacidade (0.55 a 1)[cite: 22].
+- Interpolação Visual dos Itens Abertos:
+  - Cada item tem uma proporção (`openRatio`) atrelada ao tempo de abertura da Timeline principal[cite: 22].
+  - Opacidade de gradiente e fundo branco, junto com o Translate Y das citações e assinaturas, são baseados no clamp desta proporção[cite: 22].
+- Prevenção no Resize: O evento de `resize` deve ter debounce (`gsap.delayedCall(0.15, setup)`). Nele, recriar os triggers e timelines, zerando props via `clearProps: "all"`[cite: 22].

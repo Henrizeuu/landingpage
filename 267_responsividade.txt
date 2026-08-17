@@ -1,0 +1,5 @@
+REGRAS RESPONSIVAS
+- Breakpoint 1024px (Tablet/Desktop Menor): Adicionar `transform: translateX(5%)` EXCLUSIVAMENTE ao contêiner `.cards`[cite: 17]. Proibido mover o wrapper ou stage inteiro[cite: 17].
+- Breakpoint 868px: O Header desce para `top: 40px`[cite: 17].
+- Breakpoint 767px (Mobile): Cards diminuem via px e vh estáticos. Altura vira `78vh`, largura atinge clamp máximo menor. A Headline cai para `clamp(3.6rem, 18vw, 7rem)`[cite: 17]. A Pilha de Cards deve continuar centrada[cite: 17].
+- Breakpoint 568px (Mobile Pequeno): Sumir o Header text (`.header-text` `display: none`)[cite: 17]. Adicionar padding lateral de 12px na Headline[cite: 17]. Cards redimensionam consideravelmente de proporção para continuar cabendo de frente para a câmera (`width: min(78vw, 350px)`, `height: min(70vh, 580px)`)[cite: 17].

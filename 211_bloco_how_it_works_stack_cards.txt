@@ -1,0 +1,13 @@
+BLOCO: Como Funciona (Sticky Stack Cards)
+- Layout Base: Fundo Escuro padrão. Continua a quebra arredondada (`radius` 60px max) da seção de Serviços. Padding imenso (ex: margin-top negativa para colar no bloco anterior)[cite: 17].
+- Heading Principal: Componente Huge "COMO FUNCIONA", estritamente centralizado.
+- O Container do Efeito (Trava 1424px): A "Bandeja" dos cards TEM `max-width: 1200px` em `margin: 4rem auto 0`[cite: 17]. Com os recuos laterais (2.5rem desktop), a borda do card deve distanciar da beira da tela (~100px) quando visualizado em 1424px. Não faça cards em `100vw`[cite: 17].
+- Configuração CSS do Sticky (A Lógica Core): 
+  - Existem 3 cards (`height: 85vh`, englobados, com `z-index` de 1, 2, 3)[cite: 17].
+  - Os cards estão setados com CSS puro `position: sticky; top: calc(clamp(...) + var(--stack-offset))`[cite: 17]. Offset cresce para 0, 28px e 56px consecutivamente para simular a pilha no final[cite: 17].
+- Layout do Card Interno: Borda dupla branca (2px), fundo escuro, sombra inferior profunda simulando a base do próximo cartão. Top-row contém o Número (Enorme, à esquerda, NÃO FORA DA DIV)[cite: 17], a Categoria "Etapa" e o Título do card. Abaixo, e separados visualmente, as seções Intro e Body do método não tocam a borda superior de forma alguma (respeitam paddings internos agressivos de 2.5rem no desktop)[cite: 17].
+- Animação Matemática de Escalamento (O Macete JS Sticky):
+  - Utilizar requestAnimationFrame.
+  - Para cada carta (1, 2, 3), inspecionar a colisão vertical do topo do card em relação ao viewport[cite: 17]. 
+  - Variáveis de escala sofrem atenuação (influence) dependendo da ordem do stack.
+  - Transform do CSS ganha modificadores dinâmicos (`scale()`, `translateY()`) achatando o card que ficou pra cima do bloco (ex: de 1.0 para 0.89 de scale base)[cite: 17]. Uma pseudocamada `::after` do card é acionada obscurecendo-o com um layer preto (`opacity` variando pra 0.28) e reduzindo o `brightness`[cite: 17].

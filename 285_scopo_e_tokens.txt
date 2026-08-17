@@ -1,0 +1,10 @@
+GLOBAL STYLES & TOKENS (CARDS OVERLAP STACK)
+- Efeito Visual: Cards organizados em uma lista vertical que se sobrepõem como cartas de baralho. Ao sofrerem hover, o card destacado salta para o topo da pilha e se eleva fisicamente[cite: 15].
+- Dependências: NENHUMA. Toda a mecânica de elevação e ordenação é controlada exclusivamente por CSS[cite: 15].
+- Regra de Injeção: Todo o CSS deve ser adaptado à paleta original da página, preservando a ausência de javascript[cite: 15].
+- Tokens Base (Injetados via Variáveis Locais):
+  --cos-overlap: Define a agressividade da margem negativa de sobreposição (ex: -12px)[cite: 15].
+  --cos-bg, --cos-border: Controle de fundo e borda dos cards[cite: 15].
+  --cos-shadow, --cos-shadow-hover: Sombras para profundidade em repouso e ativação[cite: 15].
+  --cos-hover-lift: Distância do salto vertical no hover (ex: -6px)[cite: 15].
+  --cos-max-width: Largura limite da pilha (ex: 760px)[cite: 15].

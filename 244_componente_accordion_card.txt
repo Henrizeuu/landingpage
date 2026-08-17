@@ -1,0 +1,11 @@
+COMPONENTE: Accordion Card (Glass & Layers)
+- Estrutura: Elemento `article.method-item` (`border-radius: calc(13 * var(--vr))`). Contém camadas de fundo, botão superior e área de corpo (`.method-body`)[cite: 22].
+- Camadas de Fundo (O Macete Visual): A composição é empilhada com múltiplos z-index[cite: 22]:
+  1. Blur Layer: `backdrop-filter: blur(38px)` e background sutil de branco translúcido. No mobile, o blur deve ser desativado via `backdrop-filter: unset`[cite: 22].
+  2. Gradient Layer: `height: 300%`, animado via GSAP (sobe/desce)[cite: 22].
+  3. White Layer: Background sólido `#fff`, com opacity animado[cite: 22].
+- Step Label Button: Flex row, `min-height: calc(24 * var(--vr))`. Contém o `.method-logo` (rótulo em monospace ex: "Etapa 01"). A classe `.is-active` altera a cor para `#080808` quando aberto[cite: 22].
+- Corpo do Acordeão (`.method-body`):
+  - Inicia com `height: 0` e `overflow: hidden`[cite: 22].
+  - Contém o texto da Citação (Quote), que translada do eixo Y (28px) para 0[cite: 22].
+  - Contém a Tag de Assinatura (ex: "Diagnostico inicial"): Tag cinza com texto monospace que também sobe (de `yPercent: 100` a 0)[cite: 22].

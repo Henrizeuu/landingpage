@@ -1,0 +1,7 @@
+INTERAÇÕES E RESPONSIVIDADE
+- Interação do Card Focado (`.csh-card:hover`, `.csh-card:focus-within`): O card sobre o qual a ação incide desloca-se para cima (`translateY(-1rem)`) e rotaciona suavemente (`rotate(3deg)`)[cite: 19].
+- Interação dos Cards Sucedentes (O Efeito Cascade): O uso do seletor Tilde CSS (`~`) faz com que TODOS os elementos `.csh-card` que vêm *depois* do card focado apliquem um transform lateral em conjunto: `transform: translateX(var(--csh-spread))`[cite: 19].
+- Regra de Mobile (`<= 767px`):
+  - A pilha DEIXA de existir em baralho horizontal e converte para fluxo em coluna: `.csh-stack` ganha `flex-direction: column` e um `gap: 1rem`[cite: 19].
+  - Os cards anulam a margem negativa (`margin-left: 0`), recebem `width: 100%`, max-width de 360px e perdem a drop-shadow do hover[cite: 19].
+  - As interações de hover de translação e cascata (`translateY`, `translateX`, `rotate`) são brutalmente anuladas para não danificar a usabilidade de toque (`transform: translateY(0) rotate(0deg)`)[cite: 19].

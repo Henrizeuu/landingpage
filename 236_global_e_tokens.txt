@@ -1,0 +1,13 @@
+GLOBAL STYLES & TOKENS
+- Regra de Mídia: Ausência TOTAL de imagens, vídeos, gradientes decorativos, box-shadows e bordas[cite: 20]. Todo o visual deve se basear puramente em tipografia, cores sólidas e formas limpas[cite: 20].
+- Dependências Críticas: OBRIGATÓRIO o uso do GSAP 3.12.5 e ScrollTrigger 3.12.5 carregados via CDN[cite: 20].
+- Controle Responsivo Raiz: O `font-size` do `:root` usa `clamp` para escalar tudo dinamicamente:
+  - Mobile: `clamp(7px, 2.666vw, 10px)`[cite: 20]
+  - Desktop (>= 650px): `clamp(8px, 0.555vw, 10px)`[cite: 20]
+- Tipografia: 
+  - Display (Títulos): `Georgia, "Times New Roman", serif`[cite: 20].
+  - Body/Metadata: `Arial, Helvetica, sans-serif`[cite: 20].
+- Tokens de Cores (Injeção Dinâmica):
+  --bg-dark: Fundo quase preto `rgb(24 22 22)`[cite: 20].
+  --text-ivory: Texto claro e superfície quente `rgb(255 253 219)`[cite: 20].
+  --accent-red: Superfície dos cards vermelhos `rgb(255 56 49)`[cite: 20].

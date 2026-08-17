@@ -1,0 +1,7 @@
+LÓGICA CSS: Hover Reveal Effects (O Macete Físico)
+- Mecânica Principal: Todos os efeitos reativos estão amarrados à pseudo-classe `:hover` ativada diretamente no contêiner `.dg-card`. Os elementos reativos são divs vazias posicionadas em formato `absolute` com opacidades variando de 0 a 1[cite: 20].
+- Efeito dos Cantos (`.dg-corners` e `.dg-corner`): 
+  - São injetados 4 spans simulando quadrados de `12px` por `12px` com fundo branco[cite: 20].
+  - Eles são cravados FISICAMENTE FORA dos limites da caixa usando coordenadas negativas (`-8px`) nos cantos exatos (top-left, top-right, bottom-left, bottom-right)[cite: 20].
+- Efeito Hover Gradient (`.dg-hover-gradient`): Cria a ilusão de uma borda iluminada via um pseudo-elemento `::before` configurado com `inset: -1px`[cite: 20]. Aplica um gradiente linear a 135 graus misturando branco transparente (0.10 e 0.05) com totalmente transparente[cite: 20].
+- Efeito Inner Glow (`.dg-inner-glow`): Posicionado sobre o card (`inset: 0`), o fundo sofre uma transição de um gradiente invisível para um gradiente diagonal iluminando o conteúdo interno de forma leve (branco com opacidade entre 0.03 e 0.06)[cite: 20]. Todos esses overlays utilizam `pointer-events: none` para não bloquearem o clique do mouse[cite: 20].

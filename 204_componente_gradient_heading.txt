@@ -1,0 +1,5 @@
+COMPONENTE: Gradient Heading
+- Uso: Hero H1, cabeçalhos do Marquee, Sobre, Como funciona e Footer[cite: 17].
+- Estrutura Base: Text element isolado com classe `.hero-heading`[cite: 17].
+- Estilo Textual: Usar `--text-heading-gradient` em `background`, aplicar `background-clip: text;` e `-webkit-text-fill-color: transparent;`[cite: 17]. Maiúsculo dependendo do container.
+- Alinhamento de Trava (O Macete): TODO heading que usar este componente DEVE preservar `text-align: center`, `width: 100%`, `margin-left: auto`, e `margin-right: auto`[cite: 17]. Em resoluções extremas (ex: 1424px viewport), eles JAMAIS podem começar encostados no limite esquerdo (x=0) da janela ou sofrer "crop" de texto[cite: 17].

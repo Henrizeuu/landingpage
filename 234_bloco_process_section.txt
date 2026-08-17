@@ -1,0 +1,13 @@
+BLOCO: Animated Process Section
+- Layout Base: Wrapper `[data-effect="processo-cards-scroll-reveal"]`. Fundo mercury, texto azul, overflow hidden, `z-index: 1`. Padding-bottom atinge 10rem no desktop[cite: 17].
+- Process Kicker: Topo com meta-row (`div.process-effect-kicker`). Texto "etapas" à esq. e "04 blocos" à dir. Fonte monospace 0.75rem, uppercase[cite: 17].
+- Grid System (O Macete Arquitetural):
+  - Base: `.process-effect-grid` com CSS Grid[cite: 17].
+  - Mobile: 6 colunas, gap de 2.5rem[cite: 17].
+  - Desktop (>=1024px): 12 colunas, gap de 3.75rem[cite: 17].
+- Decorador de Fundo (Grid Rails): Em mobile, oculto. Em desktop, absolute inset 0, z-index -1, pointer-events none, 12 colunas[cite: 17]. O elemento central `.process-effect-center-rails` ocupa `grid-column: 5 / span 4` com `border-inline: 1px solid var(--blue)`[cite: 17].
+- Copy Column (Esquerda):
+  - Ocupa tudo no mobile; `grid-column: span 6` no desktop[cite: 17].
+  - Large Reveal Title: H2 gigante ("Em cada <br>fase do <br>projeto") usando clamp(`4.5rem, 17vw, 10rem`). Background strip `.process-effect-title-bg` fica por trás cortando na metade (`top: 50%, translateY(-50%), height: 50%`)[cite: 17].
+  - Subtitle: Fica na `grid-column: 2 / -1` (mobile) e `2 / span 3` (desktop)[cite: 17].
+- Cards Column (Direita): Usa CSS Subgrid. No mobile, desce pro final da coluna de texto (`margin-top: 4.125rem`)[cite: 17]. No desktop, assume a lateral direita (`grid-column: 7 / span 6`, sem margin-top, alinhado em start com row-gap 2em)[cite: 17]. Cada card ocupa `span 4` no subgrid desktop[cite: 17].

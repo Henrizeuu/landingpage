@@ -1,0 +1,5 @@
+COMPONENTE: Preview Spacers (Espaçadores de Teste)
+- Estrutura: Blocos `div.preview-spacer` no topo e no final da página para simular área de rolagem[cite: 17].
+- Visual Base: Fundo herdado `#e8e6e0`, display `grid`, padding `1rem`. Texto em `Courier New`, `0.75rem`, uppercase, azul[cite: 17].
+- Top Spacer: `min-height: 80vh`, alinhamento `place-items: end start`. Texto: "Role a pagina para ver a animacao"[cite: 17].
+- Bottom Spacer: `min-height: 70vh`, alinhamento `place-items: start end`. Texto: "Fim da visualizacao"[cite: 17].

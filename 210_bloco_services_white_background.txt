@@ -1,0 +1,7 @@
+BLOCO: Serviços (White High Contrast)
+- Layout Base: Fundo invertido (Tokens `services-bg` em Branco, `services-text` em Preto). Possui quebra visual arredondada no topo da seção (usar variação `border-top-left-radius` baseado em breakpoint, chegando a 60px no desktop)[cite: 17]. Padding agressivo (ex: `8rem 2.5rem` desktop)[cite: 17].
+- Headings Override (Trava Estrutural): "SERVIÇOS" renderiza usando as regras do H1 mas OBRIGATÓRIAMENTE com limite interno centralizado e sem "crop" no final do breakpoint de 1424px. Não usar CSS de Position Absolute no heading ou lista[cite: 17].
+- Lista de Serviços: Fica encapsulada num `.services-list` de max-width `1024px`, alinhado `margin: 0 auto`. `display: flex; flex-direction: column`[cite: 17].
+- Estrutura da Linha (Service Item): Cada item é separado por um `border-top` (último item com `border-bottom`). A linha tem padding `2rem 0` e transição horizontal configurada para HOVER (`translate` X em 5px, e cor do título para Accent Green)[cite: 17].
+- Distribuição Interna (Desktop): Em telas maiores (ex: >=768px), o layout é DIVIDIDO. Número gigante (`font-weight 900`, 140px, cor escura, `width: 25%`) fica à esquerda e centralizado com o texto; o grupo Título + Descrição ganha `width: 75%` e fica alinhado com o Número (sem dar stack manual como ocorre na versão Mobile)[cite: 17].
+- Animação de Entrada: Adicionar "Componente Scroll Fade In" com staggers manuais via `--delay` no HTML[cite: 17].

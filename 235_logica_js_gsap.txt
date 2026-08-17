@@ -1,0 +1,13 @@
+COMPONENTE: JS Anim Logic (GSAP + SplitText)
+- Estrutura: Encapsulado na função `initProcessoCardsScrollReveal()`. Aguarda o carregamento das fontes via `document.fonts.ready` para não quebrar os cálculos de altura[cite: 17].
+- Title Reveal (SplitText): 
+  - Alvo: `.effect-title`[cite: 17]. 
+  - Config: `type: "lines, words, chars"`, `mask: "lines"`, `linesClass: "line-split"`, `wordDelimiter: "\u200D"`[cite: 17].
+  - CSS do Split: `.split-text` ganha `font-kerning: none`. A classe mascarada `.line-split` ganha `margin-bottom: -0.1em; padding-bottom: 0.1em;` para o texto não ser cortado[cite: 17].
+  - Animação: `chars` vêm de `yPercent: 100`, `opacity: 0` com duração 0.8, stagger 0.2, `power4.out`. Trigger no `top 80%` com `once: true`[cite: 17]. O subtítulo sofre o mesmo, mas atinge apenas `lines` (stagger 0.1)[cite: 17].
+- Card Scroll Scrub (O Macete Físico):
+  - Detecção Desktop/Mobile: Usar `window.matchMedia("(min-width: 1024px)")`[cite: 17].
+  - Offsets Dinâmicos: Mobile (`xStep = 75`, `yStep = 100`). Desktop (`xStep = 150`, `yStep = 200`)[cite: 17].
+  - Posição Inicial de Cada Card: Eixo X = `(index + 1) * xStep`. Eixo Y = `(index + 1) * yStep`. Rotação recebe valor aleatório entre 10 e 25 graus, alternando positivo e negativo via `wrap([-1, 1], index)`[cite: 17].
+  - Gatilho Scrub: Anima de volta à posição 0 natural. Ocorre do `top bottom` da seção até `bottom 50%` (desktop) ou `bottom bottom` (mobile). `scrub: true`[cite: 17].
+- Resize Handler: Aplicar debounce de 200ms. No resize, OBRIGATÓRIO dar `revert()` no contexto do GSAP e nas instâncias do SplitText antes de recriar a timeline[cite: 17].

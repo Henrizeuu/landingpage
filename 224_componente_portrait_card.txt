@@ -1,0 +1,8 @@
+COMPONENTE: Portrait Image Card
+- Estrutura: Elemento `<figure class="portrait">` contendo `.portrait__media` (Imagem + Número) e `.portrait__copy-mobile` (Texto, visível apenas em mobile)[cite: 20].
+- Mídia: Aspect-ratio OBRIGATÓRIO de `3/4`. Fundo escuro. A tag `<img>` preenche o espaço via `absolute inset 0` e `object-fit: cover`[cite: 20].
+- Interação de Hover (O Macete):
+  - Estado Normal: A imagem recebe `filter: grayscale(100%) brightness(.92)` e `transform: scale(1.02)`[cite: 20].
+  - Estado Hover: A imagem transita para `grayscale(0%) brightness(1)` e `scale(1.06)` (duração de ~0.8s a 0.9s cubic-bezier). Um `::after` (overlay com gradiente) e o Número sobreposto ganham `opacity: 1`[cite: 20].
+- Número Sobreposto (`.portrait__num`): Fonte Serifada, posicionado no canto inferior esquerdo. OBRIGATÓRIO o uso de `mix-blend-mode: difference` para contraste. No hover, ele desliza de `translateY(8px)` para `0`[cite: 20].
+- Animação de Entrada (GSAP Cortina): O container `.portrait__media` inicia com `clip-path: inset(100% 0 0 0)`. No scroll, anima para `inset(0% 0 0 0)` (1.1s, expo.out), revelando a imagem de baixo para cima como uma cortina. Em paralelo, a própria imagem sofre um leve de-scale (de 1.35 para 1.02)[cite: 20].

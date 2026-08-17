@@ -1,0 +1,8 @@
+COMPONENTE: Process Card (Cartão de Etapa)
+- Estrutura: Elemento `article.effect-card` contendo um flex heading (H3 + Número), linha divisória `<hr>`, descrição `<p>` e linha divisória final `<hr>`[cite: 17].
+- Estilo: Fundo `--white`, texto `--blue`, cantos absolutos retos, sem sombra[cite: 17]. Aplicar `will-change: transform` e `transform-origin: center center` para otimização da animação de offset[cite: 17].
+- Dimensões Responsivas: Padding mobile de `0.625rem 1rem 1.25rem`. Padding desktop (>=1024px) de `0.625rem 1.375rem 1.375rem`[cite: 17].
+- Tipografia Interna: 
+  - Heading Row (Título e Número): 1.5rem (mobile) para 1.875rem (desktop), line-height 1[cite: 17]. O `h3` usa font-weight 400[cite: 17].
+  - Parágrafo: max-width 22rem, padding-right 3.75rem, font-size 0.875rem, line-height 1.33[cite: 17].
+- Linhas (HR): Borda superior `1px solid var(--blue)`. Margem do primeiro hr `0.5rem 1.25rem`. Margem do último hr `1.75rem 0`[cite: 17].

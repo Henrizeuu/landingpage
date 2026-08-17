@@ -1,0 +1,6 @@
+COMPONENTE: Scroll Fade In (Reveal Modular)
+- Uso: Seções, about CTA, service rows, projetos, conteúdo de footer[cite: 17].
+- Lógica JS: IntersectionObserver acionado uma vez (`rootMargin: 50px`, `threshold: 0`). Adiciona a classe de estado visível ao elemento[cite: 17].
+- Estado Oculto Base (`.scroll-fade-in`): `opacity: 0`, `transform: translate(var(--x, 0px), var(--y, 30px))`[cite: 17].
+- Estado Visível: `opacity: 1`, `transform: translate(0,0)`[cite: 17].
+- Animação CSS: `transition: opacity var(--duration, 0.7s), transform var(--duration, 0.7s);` combinada ao `cubic-bezier(0.25,0.1,0.25,1)`[cite: 17]. Utiliza inline variable `--delay` para orquestração[cite: 17].

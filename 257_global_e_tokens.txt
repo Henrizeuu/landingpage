@@ -1,0 +1,10 @@
+GLOBAL STYLES & TOKENS
+- Reset Estrito: `box-sizing: border-box` em todos os elementos[cite: 16]. `html { font-size: 62.5%; }` e `body { font-size: 1.6rem; }` para padronização de rems[cite: 16].
+- Tipografia: Fonte primária "Inter" (pesos 400, 500, 600) carregada do Google Fonts. Aplicada em labels, descrições, e contador[cite: 16].
+- Tokens Estruturais e de Cores:
+  --bg-page: #0a0a0a (Fundo geral e das seções)[cite: 16]
+  --text-ink: #fffde2 (Texto claro principal)[cite: 16]
+  --text-muted: rgba(255, 253, 226, 0.68)[cite: 16]
+  --card-fallback: #171717[cite: 16]
+- Camada de Grão (O Macete Atmosférico): Adicionar `body::before` fixo cobrindo a tela inteira (`z-index: 50`), com `pointer-events: none`, `opacity: 0.16` e `mix-blend-mode: soft-light`[cite: 16]. Ele deve gerar textura através de dois radial-dots em `background-size: 3px 3px` e `4px 4px`[cite: 16].
+- Dependências Críticas: Vanilla JS, GSAP 3.12.5 e ScrollTrigger 3.12.5[cite: 16]. ESTRITAMENTE PROIBIDO o uso de Lenis, Locomotive Scroll ou bibliotecas externas de carrossel[cite: 16].

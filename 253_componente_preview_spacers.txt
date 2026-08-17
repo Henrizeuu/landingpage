@@ -1,0 +1,6 @@
+COMPONENTE: Preview Spacers
+- Função: Validar a área de rolagem antes/depois do bloco principal[cite: 24].
+- Estrutura: Blocos com a classe `.preview-spacer`. Texto helper diminuto em `12px` (uppercase)[cite: 24].
+- Top Spacer: Fundo verde da página pai (`--color-page`), alinhamento na base (`flex-end`), `min-height: 82vh` no desktop[cite: 24].
+- Bottom Spacer: Sobrescreve as configurações iniciais para fundo claro (`--color-paper`), alinhamento no topo (`flex-start`) e `min-height: 64vh` no desktop[cite: 24].
+- Regra Responsiva: Em `<= 809px`, todos os spacers recuam seu `min-height` para `62vh`[cite: 24].

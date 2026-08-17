@@ -1,0 +1,6 @@
+COMPONENTE: Procedural CSS Dot Textures
+- Regra de Mídia: Proibido uso de assets de imagem/svg externos. Tudo via código[cite: 18].
+- Fundo Geral da Seção: Aplicar uma textura pontilhada no background simulando uma grade de pontos muito suave, com baixo contraste e quase imperceptível, feita por `radial-gradient`[cite: 18].
+- Textura Interna dos Cards: Uma camada interna decorativa (inset pequeno, bordas arredondadas suavemente, opacidade baixa) feita com grid pontilhado, rodando atrás dos textos para dar sensação premium[cite: 18].
+- Ícone dos Cards: Renderizar um ícone abstrato e tecnológico de matriz de pontos puramente em CSS (ou SVG inline gerado). Proporção ~31x42, renderizado com ~48px de altura. A maioria dos pontos na cor `--accent-neon`, e alguns centrais na cor branca[cite: 18].
+- Ícone de Hint (Intro): Um pequeno indicador estilo matriz de pontos ao lado da frase "Continue descendo"[cite: 18].

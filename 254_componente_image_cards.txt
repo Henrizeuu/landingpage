@@ -1,0 +1,9 @@
+COMPONENTE: Image Cards (Media Tiles)
+- Estrutura: Tags `<figure class="recent-card">` englobando `<img>` (sempre 100% cobrindo o box). É obrigatório o reset de `margin: 0` na tag figure[cite: 24].
+- Base Styling: Radius local de `12px`, background de escape em `#c2c2c2`, `overflow: hidden`, fixação em `translateZ(0)` e otimização `will-change: transform`[cite: 24].
+- Proporções Fixas (O Macete Físico): OS CARDS NÃO DIMINUEM NO MOBILE. Eles mantêm sempre seu tamanho original absoluto em px[cite: 24].
+  - `.is-portrait`: 249px de largura por 332px de altura[cite: 24].
+  - `.is-landscape`: 332px de largura por 249px de altura[cite: 24].
+- Crops Especiais Customizados (Modificadores Adicionais):
+  - `.is-crop-tall`: Força a imagem a ultrapassar o container com `width: calc(100% + 44px)`, `height: 390px` e translado negativo em XY (`translate(-22px, -18px)`)[cite: 24].
+  - `.is-crop-wide`: Força a imagem horizontal a `width: calc(100% + 42px)` e deslocamento de `-21px` no X[cite: 24].

@@ -1,0 +1,6 @@
+LÓGICA JAVASCRIPT: Engine ThreeJS e Interatividade
+- Carregamento Assíncrono: O script funciona através de uma classe `NeonFlowEffect` que faz um import dinâmico (`await import(...)`) do pacote `tubes1.min.js` do CDN da `threejs-components` apenas se o usuário não tiver preferência por redução de movimento[cite: 18].
+- Injeção de Estados no DOM: O script injeta `data-motion="active"`, `"reduced"` ou `"failed"` na div do canvas. O CSS escuta isso e aplica `display: none` se o carregamento falhar ou for bloqueado por acessibilidade[cite: 18].
+- Configuração de Cores: O efeito consome arrays de cores para os tubos (`tubeColors`) e para os reflexos de luz (`lightColors`), que devem ser harmonizados com a paleta da página[cite: 18].
+- Interatividade de Clique (O Macete Dinâmico): O script aplica um Event Listener na área geral do container. Se o usuário clica num espaço vazio, uma função `randomColors` gera cores hexadecimais aleatórias on-the-fly e troca as cores dos tubos e luzes em tempo real[cite: 18]. O clique é ignorado se atingir o CTA (usando `closest`).
+- Gestão de Memória: A classe possui método de `destroy` para remover adequadamente os listeners e descarregar a aplicação 3D caso o bloco seja desmontado em arquiteturas reativas[cite: 18].

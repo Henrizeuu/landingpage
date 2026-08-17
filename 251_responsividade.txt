@@ -1,0 +1,4 @@
+REGRAS RESPONSIVAS
+- Ponto de Quebra `991px` (Tablet Maior): Redução sensível da tipografia (`--heading-size` cai para 3em). O objeto relativo e a coleção vazam as dimensões rígidas, assumindo 100vw e card de 50vw. Max-width do grupo de texto encolhe[cite: 23].
+- Ponto de Quebra `767px` (Tablet/Mobile): Padding vertical diminui. O Card passa de absolute dinâmico para fluxo estático caso acionado, ou ajusta larguras forçando 50vw constantes. O Label Font Size converte-se para viewport-based `10vw`[cite: 23].
+- Ponto de Quebra `479px` (Mobile Pequeno): Paddings de container espremem para 1.25em. Tipografia contrai ainda mais (2.5em para títulos). Textos e Paragraphs abraçam largura integral da tela (max-width do `--size-container` * 1)[cite: 23].

@@ -1,0 +1,10 @@
+BLOCO: Horizontal Scroll Sync Section
+- Mecânica Estrutural Padrão (O Macete): Seção com altura massiva (ex: `300vh`) para capturar scroll. Dentro dela, uma camada `position: sticky; top: 0;` com altura de `100vh` e `overflow-x: clip` para gerenciar a visão da câmera[cite: 18].
+- Layout Desktop (> 1024px): 
+  - Intro (Fixa à esquerda): Largura ~450px, alinhada à esquerda com padding generoso (~10%). Eyebrow, Título Editorial grande, Bloco de Dica[cite: 18]. 
+  - Viewport de Cards (Direita): A trilha dos 4 cards. Entram "cortados" pela borda da tela. O espaço vazio à direita é mínimo, dando tom de showcase[cite: 18].
+  - Lógica JS (Desktop): Acompanhar `getBoundingClientRect` do elemento pai de 300vh. Mapear o progresso (0 a 1) para transladar a `.track` dos cards via `transform: translateX` (com valor negativo). A Intro não se move no X. Sincronizar o estado da "Floating Pagination" com o progresso[cite: 18].
+- Regra Responsiva Estrita (Mobile/Tablet <= 1024px):
+  - NÃO empilhar os cards de forma estática. A seção continua especial[cite: 18].
+  - A Intro vai para o TOPO (título cai para ~4.4rem) e os Cards ficam logo ABAIXO em uma linha horizontal dedicada[cite: 18].
+  - Lógica JS Híbrida (O Macete Mobile): O scroll vertical contínuo da página ainda é interceptado para empurrar o track de cards para a esquerda, garantindo que o usuário só passe da seção quando virar tudo[cite: 18]. ALÉM DISSO, o script DEVE suportar `touchstart/touchmove/touchend` (swipe lateral) para permitir o avanço através do arrasto nativo na viewport dedicada aos cards, traduzindo o gesto horizontal no avanço virtual da seção[cite: 18].

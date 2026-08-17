@@ -1,0 +1,6 @@
+COMPONENTE: Preview Spacers
+- Função: Criar distância vertical para testes de animações no scroll[cite: 23].
+- Estrutura: Bloco `div.preview-spacer` no início e fim do documento[cite: 23].
+- Estilos Compartilhados: `display: flex`, `justify-content: center`, padding de `4rem 2rem`, cor `rgba(44, 38, 34, 0.48)`, uppercase, font-size `0.75rem`, letter-spacing zero[cite: 23].
+- Top Spacer: `min-height: 70vh`, `align-items: flex-end`. Texto: "Arraste os cards para testar o efeito"[cite: 23].
+- Bottom Spacer: `min-height: 56vh`, `align-items: flex-start`. Texto: "Fim da visualizacao"[cite: 23].

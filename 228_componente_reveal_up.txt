@@ -1,0 +1,4 @@
+COMPONENTE: Reveal Up (Entrada Simples)
+- Lógica JS: IntersectionObserver simples (threshold 0.25). Adiciona a classe `.is-in` e dá unobserve[cite: 22].
+- Estado Oculto (`.reveal-up`): `opacity: 0`, `transform: translateY(28px)`[cite: 22]. Transição de 0.9s com `cubic-bezier(.22,.61,.36,1)`[cite: 22].
+- Exceção de Posicionamento (O Macete): Se a classe `.reveal-up` for aplicada no container da mídia (`.hx-clinic__media`), que já usa `left: 50%` e `transform: translateX(-50%)` para centralização full-bleed, o estado oculto DEVE combinar os transforms: `transform: translateX(-50%) translateY(28px)`[cite: 22]. O estado visível será `translateX(-50%) translateY(0)`[cite: 22].

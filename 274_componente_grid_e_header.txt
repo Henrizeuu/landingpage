@@ -1,0 +1,10 @@
+COMPONENTE: Section, Header & CSS Grid
+- Estrutura da Seção: A `.dg-section` tem `min-height: 60vh`, ocupando 100% da largura. O conteúdo é limitado pelo `.dg-container` com `max-width: 72rem`, centralizado e com padding vertical denso (`4rem 1rem`)[cite: 20].
+- Text Header:
+  - Rótulo (Eyebrow): Utiliza fonte `monospace`, tamanho 0.75rem, totalmente em maiúsculas com espaçamento de letras esticado (`0.15em`)[cite: 20].
+  - Título Principal: Fonte responsiva usando `clamp(1.75rem, 4vw, 3rem)`, peso 600, com `letter-spacing: -0.03em` para uma aparência mais unida[cite: 20].
+- Grid Responsivo (`.dg-grid`):
+  - OBRIGATÓRIO o uso de CSS Grid com gap de `1rem`[cite: 20].
+  - Mobile: Exibe os cards em 1 coluna (`1fr`)[cite: 20].
+  - Tablet (`min-width: 640px`): Altera para 2 colunas[cite: 20].
+  - Desktop (`min-width: 1024px`): Altera para 3 colunas[cite: 20].

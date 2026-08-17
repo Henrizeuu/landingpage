@@ -1,0 +1,11 @@
+GLOBAL STYLES & TOKENS
+- Dependências Críticas: OBRIGATÓRIO o uso do GSAP 3.13.0 e ScrollTrigger 3.13.0[cite: 22].
+- Ausência de Mídia: Nenhuma imagem, vídeo ou logo externo é permitido. Apenas o SVG inline da seta pode ser usado[cite: 22].
+- Reset e Base: Aplicar `box-sizing: border-box` globalmente[cite: 22]. O `body` possui `min-height: 100vh`, `background: var(--color-black)` e `overflow-x: hidden`[cite: 22]. Resets de botão obrigatórios (`border: 0`, `background: transparent`, etc.)[cite: 22].
+- Variáveis Calculadas (O Macete Responsivo): O CSS utiliza a variável `--vr` (`clamp(0.7px, 0.06945vw, 1px)`) como multiplicador mestre para espaçamentos, permitindo escala fluida no desktop[cite: 22]. No mobile (<= 768px), `--vr` muda para `clamp(0.78px, 0.254vw, 1px)`[cite: 22].
+- Tipografia: Fonte principal `Arial, Helvetica, sans-serif` e suporte/labels em `"Courier New", monospace`[cite: 22]. `letter-spacing: 0` padrão, exceto rótulos monospace com tracking positivo[cite: 22].
+- Tokens de Cor (Injeção Dinâmica):
+  --color-black: #080808[cite: 22]
+  --color-white: #f8f8f8[cite: 22]
+  --color-light-blue: #cfd9e0[cite: 22]
+  --color-black-2: #1c1c1c[cite: 22]

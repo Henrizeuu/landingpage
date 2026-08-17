@@ -1,0 +1,5 @@
+BLOCO: Contact Footer
+- Layout Base: Fundo Escuro. Limitação com linha superior (`border-top`). Padding massivo `6rem 1.25rem` e centralizado (`text-align: center`)[cite: 17].
+- Conteúdo Vertical: Englobado no "Componente Scroll Fade In" inteiro[cite: 17].
+- Textos: Título agressivo (uppercase, weight 900) "PRONTO PARA VENDER MAIS?". Parágrafo mutado de persuasão limitando max-width em 500px[cite: 17].
+- CTA e Informações Jurídicas: Componente "Primary Contact Button" (Entrar em Contato). Adicionar marca temporal Copyright lá embaixo, `opacity 0.3`, tamanho da fonte minúsculo (0.8rem) em caixa alta[cite: 17].

@@ -1,0 +1,7 @@
+LÓGICA JAVASCRIPT: Injeção Dinâmica e WebGL Engine
+- Importação de Módulo: O script opera usando ES6 modules (`import TubesCursor from "./tubes1.min.js"`), precisando da tag `<script type="module">`[cite: 16].
+- Injeção via DOM: O JS localiza a seção `.ct-section`, cria a tag `<canvas>` programaticamente na memória e injeta via `prepend` no topo do container[cite: 16].
+- Redimensionamento e Alta Definição (O Macete Físico): 
+  - A função `sizeCanvas()` pega o tamanho exato da seção via `getBoundingClientRect()` e multiplica pela resolução nativa do monitor (`devicePixelRatio`), prevenindo que o efeito 3D fique pixelado ou borrado em telas Retina[cite: 16].
+  - Um listener escuta o evento `resize` da janela para recalcular essa área dinamicamente[cite: 16].
+- Inicialização da Engine: O objeto `TubesCursor` é instanciado recebendo o canvas, um objeto de configuração passando as cores dos tubos, intensidade e cores das luzes[cite: 16]. O filtro CSS de blur/brightness é aplicado diretamente no `canvas.style` via JS[cite: 16].

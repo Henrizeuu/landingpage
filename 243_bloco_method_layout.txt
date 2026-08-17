@@ -1,0 +1,9 @@
+BLOCO: Method Pinned Layout
+- Container Principal (`.method-scroll-accordion`): `min-height: 100vh`, `overflow: hidden`, `z-index: 1`, atrelado a `[data-effect="method-scroll-accordion"]`[cite: 22].
+- Pinned Wrapper (`.method-wrapper`): É o elemento que será fixado pelo ScrollTrigger. Ele possui `height: 100vh` e atua em `display: flex` horizontal no desktop[cite: 22].
+- Fundo & Glow Radial:
+  - Fundo sólido near-black[cite: 22].
+  - Elemento `.method-glow` (absoluto, `aspect-ratio: 1`, `width: min(96vw, 1040px)`) renderiza um gradiente radial mixando azul e branco, com `filter: blur(2px)` e opacidade 0.95[cite: 22].
+- Barra de Progresso (`.method-progress`): Linha horizontal `top: calc(70 * var(--vr))`. Inicia com `transform: scaleX(0.5)`. O elemento interno (`.method-progress-fill`) é a barra preenchida que aumenta sua escala baseada no scroll[cite: 22].
+- Título à Esquerda (`.method-left`): Ocupa flex 1, título gigante azul-claro. No desktop, ele se translada verticalmente de `50%` a `-50%` durante o scroll[cite: 22]. No mobile, o transform deve ser desativado (`transform: none !important`) e fica fixo no topo com `width: 100%`[cite: 22].
+- Acordeão à Direita (`.method-right`): Coluna com largura dinâmica (ex: `min(..., 34vw)`), centralizada verticalmente[cite: 22]. Possui o Kicker Row (texto "Etapas do processo" com seta rotacionada em SVG) acima dos cards[cite: 22].

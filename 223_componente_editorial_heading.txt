@@ -1,0 +1,5 @@
+COMPONENTE: Editorial Masked Heading
+- Estrutura: Heading H2 (`.team__head`) dividido em duas linhas (`.line`). Dentro de cada linha, as palavras são isoladas em `span.word`[cite: 20].
+- Visual: Fonte Serifada gigante (`clamp(54px, 11.5vw, 210px)`), `line-height: .9`, `letter-spacing: -.01em`[cite: 20].
+- Layout (O Macete de Indentação): A segunda linha (`.line--2`) recebe um recuo `padding-left: clamp(0px, 8vw, 180px)` para criar um aspecto de escada editorial[cite: 20]. Ênfase itálica aplicada via tag `<em>` na palavra "Creative"[cite: 20].
+- Efeito de Máscara (O Macete CSS/GSAP): Cada `.line` deve ter `display: flex`, `overflow: hidden` e `padding-bottom: .06em`[cite: 20]. Os spans `.word` internos iniciam setados via GSAP com `yPercent: 115` (escondidos abaixo da "máscara" do overflow). No trigger (`start: 'top 82%'`), animam para `yPercent: 0` com duração 1.15s, `expo.out` e stagger 0.09[cite: 20].

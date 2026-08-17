@@ -1,0 +1,7 @@
+BLOCO: Process Section (Três Passos)
+- Layout e Grids: Fundo aquecido. Sistema de Grid CSS agressivo: 12 colunas no desktop, 6 colunas no mobile[cite: 16].
+- Grid Rails (O Macete Decorativo Visual): Em >=1024px, injetar uma div absoluta `z-index: -1` imitando a grade. As colunas centrais (5 a 8) recebem bordas laterais translúcidas na Cor de Acento para simular "trilhos" (rails) descendo pela seção[cite: 16].
+- Header & Copy: Título gigante no topo, subtítulo deslocado para a direita na grade (ex: grid-column 2 / span 3 no desktop)[cite: 16]. O fundo do título possui uma faixa `.process-effect-title-bg` ancorada exatamente no centro Y (top 50%, translateY -50%) escondendo o grid traseiro[cite: 16].
+- Animação SplitText: Título mascarado via GSAP SplitText (lines/words/chars). Anima as letras/linhas de `yPercent: 100` e opacidade 0 para o estado normal. Disparo único (once: true)[cite: 16].
+- Grade de Cards: 3 Componentes "Process Card" ancorados na direita do grid desktop (`grid-column: 7 / span 6`)[cite: 16].
+- Animação Scrub de Cards (O Macete Físico): As cartas vêm voando. Usando ScrollTrigger Scrub, as cartas iniciam fora do lugar. O JS calcula as coordenadas iniciais com passos (`xStep: 150`, `yStep: 200` desktop | `75`/`100` mobile). A rotação também é aleatória (entre 10 a 25 graus) para cada card. Conforme o usuário faz scroll, as cartas "pousam" na posição nativa com `power2.out`[cite: 16].

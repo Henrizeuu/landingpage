@@ -1,0 +1,7 @@
+COMPONENTE: Horizontal Glass Card
+- Formato e Dimensão: Retangular, largura visual fixa no desktop (~575px), altura mínima ~380px, border-radius ~24px, padding interno ~28px[cite: 18].
+- Superfície: Glassmorphism sutil. Fundo misturando gradient translúcido e background escuro. Backdrop blur leve, aparência tecnológica sem sombras exageradas[cite: 18].
+- Distribuição Interna (Coluna):
+  - Topo: Flex horizontal com Ícone Dot Matrix à esquerda e Índice (ex: 1.0) pequeno, caixa alta, à direita[cite: 18].
+  - Conteúdo (Base): Título na Fonte Condensed (~3.2rem no desktop, tracking levemente negativo, peso leve). Em linha separada, um Subtítulo destacado na cor `--accent-neon`. E um texto descritivo curto, com respiro e legibilidade excelente[cite: 18].
+- Regra Responsiva: Em <= 1024px, reduzir os gaps e encolher o título do card para cerca de ~2.8rem para caber elegantemente[cite: 18].

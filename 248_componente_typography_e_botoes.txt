@@ -1,0 +1,12 @@
+COMPONENTES TIPOGRÁFICOS E BOTÃO (CTA)
+- Text Header (Kicker e Heading):
+  - Wrapper: `.effect-text`, em layout flex-column, largura máxima restrita a `calc(var(--size-container) * 0.6)`, cor `--color-dark`, padding-bottom `4rem`[cite: 23].
+  - Kicker: `div.effect-kicker`, uppercase, font-weight 500. Texto: "Como funciona"[cite: 23]. Atributos essenciais: `data-split-reveal="lines" data-split="heading"`[cite: 23].
+  - Heading Principal: `h2.effect-heading`, usa fonte "Pangaia Medium Italic". Centralizado, texto: "Um processo simples para transformar ideias em pratica."[cite: 23] Com atributos de split-reveal análogos. Variáveis CSS locais parametrizam seu tamanho, line-height e spacing[cite: 23].
+- Supporting Paragraph:
+  - Wrapper: `.effect-copy-wrap`, largura fluida, max-width igual ao header (`0.6` da container size)[cite: 23].
+  - Parágrafo: `p.effect-copy`, centralizado, texto explicando o funcionamento do bloco. Deve utilizar o sistema split-reveal (`data-split-reveal="lines"`)[cite: 23].
+- Primary CTA (Botão):
+  - Wrapper: `.effect-actions` (marginTop `2.25em`, display flex centrado)[cite: 23].
+  - Botão: `<a class="effect-button">`, cor de fundo Laranja (`--color-primary`), texto preto escuro (`#1a1816`), uppercase, weight 700. Padding `1.05em 1.35em`, radius de `0.5em`[cite: 23].
+  - Interação (Active): Escala afunda (`scale(0.93)`) e ativa shadow inset profunda (`0 0 6em 2em rgba(0, 0, 0, 0.2)`)[cite: 23].

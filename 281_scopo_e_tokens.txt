@@ -1,0 +1,13 @@
+GLOBAL STYLES & TOKENS (BLOCO 14 - CARDS GLOW HOVER)
+- Efeito Visual: Cards escuros que revelam um brilho radial difuso vindo do topo ao passar o mouse, criando um aspecto premium de "iluminação"[cite: 14].
+- Dependências: NENHUMA. Efeito 100% CSS[cite: 14].
+- Regra de Injeção: O CSS deve ser adaptado à paleta da página atual sem injetar fundos ou seções indesejadas, aplicando-se de forma limpa ao container alvo[cite: 14].
+- Tokens Base (Variáveis CSS Injetadas):
+  --cgh-glow-color: Cor principal da luz (ex: #0A74FF)[cite: 14]
+  --cgh-glow-size: Raio de propagação do gradiente (ex: 300px)[cite: 14]
+  --cgh-glow-opacity: Intensidade do brilho no hover (ex: 0.15)[cite: 14]
+  --cgh-glow-blur: Nível de desfoque (ex: 15px)[cite: 14]
+  --cgh-glow-y: Eixo Y do centro da luz (ex: -20% para nascer do topo)[cite: 14]
+  --cgh-bg: Cor de fundo sólida do card[cite: 14]
+  --cgh-border: Cor da borda estática[cite: 14]
+- Acessibilidade: OBRIGATÓRIO o uso de `prefers-reduced-motion: reduce` para anular as transições de `.cgh-card` e `.cgh-glow`[cite: 14].

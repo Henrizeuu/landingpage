@@ -1,0 +1,8 @@
+INTERAÇÕES, ÍCONES E RESPONSIVIDADE
+- Interação de Hover (Reveal Lift): Ao receber o hover do mouse, o card engatilha um salto para o topo do eixo Z absoluto (`z-index: 10`), flutua para cima via `translateY` com o valor do lift (ex: `-6px`) e troca a sombra por uma variante maior[cite: 15].
+- Ícones Visuais (`.cos-icon`): Blocos restritos em 48x48 pixels (`flex-shrink: 0`), centralizados. Podem receber modificadores de cor de fundo injetados via classes extras (ex: `--green`, `--purple`, `--blue` com texto branco, e `--pink`)[cite: 15].
+- Breakpoint Tablet (`max-width: 768px`): 
+  - O layout do card deixa de ser lado-a-lado e cai para coluna (`flex-direction: column`)[cite: 15].
+  - O gap interno diminui para `16px` e a sobreposição (overlap) é levemente reduzida para `-8px`[cite: 15].
+- Breakpoint Mobile (`max-width: 480px`):
+  - A sobreposição (overlap) reduz drasticamente para `-4px`, e o padding geral do card encolhe para `24px`, garantindo usabilidade em telas estreitas e leitura limpa das fontes[cite: 15].

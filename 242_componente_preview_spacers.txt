@@ -1,0 +1,5 @@
+COMPONENTE: Preview Spacers
+- Objetivo: Prover espaço de rolagem para testar o pinning da seção no ambiente standalone[cite: 22].
+- Top Spacer: `min-height: 80vh`, flex com alinhamento `flex-end`, texto pedindo para rolar a página[cite: 22].
+- Bottom Spacer: `min-height: 70vh`, alinhamento `flex-start`, texto indicando o fim[cite: 22].
+- Visual: Texto em Courier New, 0.75rem, uppercase, com cor transparente `rgba(207, 217, 224, 0.55)`[cite: 22].

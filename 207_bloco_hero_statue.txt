@@ -1,0 +1,10 @@
+BLOCO: Hero Section
+- Layout Base: `min-height: 100vh`, `position: relative`, `overflow: hidden`, `isolation: isolate`[cite: 17]. Direção Flex column, alinhado ao topo[cite: 17]. Padding topo `clamp(2.5rem,6vw,4rem)`, direita e esquerda fixos em `2rem`[cite: 17].
+- Background (O Macete Luminoso): Cor base Hero (`#020405`). Pseudoelemento `::before` injeta um brilho: `radial-gradient(circle at 50% 46%, ...)` + `linear-gradient` ao fundo[cite: 17]. O `::after` injeta um fade escuro na base (height clamp)[cite: 17].
+- Headings & Container (Trava): `.hero-heading-text` com `max-width: 1200px` rigorosamente centralizado no viewport. Se a tela encolher, aplicar `max-width: min(1200px, calc(100vw - 2rem))` para não cortar as bordas laterais. Usar `padding: 0 1rem (base)` para recuo[cite: 17].
+- Mídia Principal (Asset 1 - Estátua da Justiça Vingada): 
+  - Renderizado como `img`, `width: 100%`, `height: auto` em container absoluto[cite: 17]. 
+  - Centralizado `left: 50%`, `translateZ(28px)`. Top dinâmico (54% mobile a 56% desktop). Largura responsiva rígida (ex: `min(31vw, 420px)` em tablet)[cite: 17].
+  - Sombra forte (`drop-shadow`) na estátua e uma elipse de sombra gerada pelo `::after` (blur 22px) na base[cite: 17].
+- Animações Load: Componente Fade-in é executado (`.fade-in-load`) orquestrando a subida e opacidade do H1, da Bio e do Botão (delays sucessivos 0.15s, 0.35s, 0.5s)[cite: 17]. A estátua surge (`opacity 0 -> 1`) em animação CSS `heroPortraitReveal` de 0.75s com delay de 0.25s[cite: 17].
+- Interação de Mouse Parallax (O Macete de Posição JS): Capturar coordenadas brutas do mouse (X e Y limitados a +-150px e +-64px). Usar `requestAnimationFrame` para calcular `lerp` 0.18. Transmitir variáveis via CSS (`--hero-shift-x/y`, `--hero-rotate-x/y`) alterando os eixos da estátua[cite: 17]. Reseta no `pointerleave`. Ignorar interfaces touch[cite: 17].

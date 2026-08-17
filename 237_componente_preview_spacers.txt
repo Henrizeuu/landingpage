@@ -1,0 +1,5 @@
+COMPONENTE: Preview Spacers
+- Objetivo: Criar distância vertical para testar o ScrollTrigger do slider[cite: 20].
+- Top Spacer: `min-height: 54vh`, display flex centralizado, alinhamento ao fundo (`flex-end`)[cite: 20].
+- Bottom Spacer: `min-height: 48vh`, alinhamento ao topo (`flex-start`)[cite: 20].
+- Tipografia (Helper Text): Uppercase sans-serif `1.2rem`, color `rgb(255 253 219 / 0.62)`[cite: 20].

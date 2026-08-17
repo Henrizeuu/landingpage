@@ -1,0 +1,4 @@
+BLOCO: Hero Title Viewport
+- Layout Base: Seção inicial `.curiosity-reel`, ocupando exatamente `100svh` e com `overflow: hidden`[cite: 16].
+- Fundo: Background preto (`#0a0a0a`) com um Highlight Radial subtil atrás do texto (`radial-gradient` centralizado em 50% 40%, opacidade 0.08)[cite: 16].
+- Título Centralizado (`h1`): Posição absoluta (`left: 50%, top: 50%, transform: translate(-50%, -50%)`). Cor `#fffde2`, tamanho escalável via `clamp`, letter-spacing `-0.03em`, e com a quebra de linha forçada no HTML: "Metodo em<br>Quatro Etapas"[cite: 16].

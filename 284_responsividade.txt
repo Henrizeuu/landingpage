@@ -1,0 +1,2 @@
+REGRAS RESPONSIVAS
+- Breakpoint Mobile (`max-width: 767px`): O grid colapsa obrigatoriamente para uma única coluna (`grid-template-columns: 1fr`), garantindo leitura em dispositivos menores sem esmagar o conteúdo do card ou o efeito do brilho radial[cite: 14].

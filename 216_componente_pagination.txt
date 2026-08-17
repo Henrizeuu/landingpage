@@ -1,0 +1,9 @@
+COMPONENTE: Floating Pagination
+- Layout (Apenas Desktop): Cápsula arredondada posicionada em aproximadamente `bottom: 80vh`, alinhada ao centro da viewport. Borda sutil e fundo escuro com leve gradiente[cite: 18].
+- Estrutura: Elementos `<button>` nativos clicáveis para cada card.
+- Estilos de Estado:
+  - Inativo: Pequeno círculo usando a cor `--bullet-inactive`[cite: 18].
+  - Ativo: Alongado horizontalmente, utilizando `--accent-neon` com um brilho/glow suave[cite: 18].
+  - Transição: Suavizada ao mudar a classe de estado[cite: 18].
+- Interação: O clique força o scroll da página diretamente para a faixa vertical mapeada daquele card[cite: 18].
+- Regra Responsiva: OBRIGATÓRIO ocultar (`display: none`) toda a paginação em telas <= 1024px[cite: 18].

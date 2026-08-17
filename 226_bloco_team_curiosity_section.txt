@@ -1,0 +1,9 @@
+BLOCO: "Driven by Creative Curiosity" Section
+- Layout Base: Fundo quase preto uniforme (`--bg`). Padding agressivo no bottom (`clamp(60px, 10vh, 160px)`)[cite: 20].
+- Integração de Grids: 
+  - O Grid de Imagens (`.team__grid`) usa 4 colunas com gap estreito no desktop[cite: 20].
+  - O Grid de Textos (`.team__copy`) é perfeitamente alinhado abaixo das imagens usando as mesmas 4 colunas[cite: 20].
+- Regra de Troca de Copy (Desktop vs Mobile): Em telas > 900px, os textos descritivos ficam no `.team__copy` inferior. Em <= 900px, o `.team__copy` inteiro ganha `display: none` e o `.portrait__copy-mobile` (que estava oculto) assume `display: block` embaixo de cada imagem dentro do `figure`, mantendo a consistência do fluxo[cite: 20].
+- Regras Responsivas Estritas:
+  - Em <= 900px: A grade de imagens passa para 2 colunas (`repeat(2, 1fr)`) com gap de 10px[cite: 20]. O recuo do heading (linha 2) diminui para `padding-left: 6vw`[cite: 20].
+  - Em <= 560px: A grade de imagens passa para 1 coluna[cite: 20], o gap sobe para 24px, e o font-size do Heading gigante encolhe dinamicamente via `clamp(46px, 16vw, 90px)`[cite: 20].

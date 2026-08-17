@@ -1,0 +1,7 @@
+BLOCO: Sobre (About Section)
+- Layout Base: `min-height: 100vh`, `text-align: center`, `flex column center`[cite: 17]. Z-index alto[cite: 17].
+- Heading Principal ("SOBRE"): Classe `.section-heading-huge`, peso 900, uppercase, font-size massivo (ex: `clamp(3rem, 12vw, 160px)`)[cite: 17].
+- Parágrafo de Apresentação (O Macete JS Char Reveal): Texto com weight 500, font-size responsivo `clamp(1rem, 2vw, 1.35rem)`, max-width 560px[cite: 17].
+  - Ação JS: O texto é interceptado. O JS o limpa e empacota caractere por caractere (com `span.char`). Todos iniciam em `opacity 0.2`[cite: 17].
+  - Tracking JS: Mapeia o progresso do viewport da altura 80% até 20%. Cada caractere do array vai desvanecendo sua opacidade de `0.2` para `1.0` de forma sequencial com base num spread matemático de progresso `(idx / numChars) * 0.85`[cite: 17].
+- CTA Interno: Ação primária englobada pelo componente Fade In de scroll ("Quero escalar")[cite: 17].

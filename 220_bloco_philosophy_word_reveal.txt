@@ -1,0 +1,15 @@
+BLOCO: Philosophy Statement (Word Reveal via GSAP)
+- Arquitetura da Seção (O Macete Físico): A `<section class="philosophy">` precisa de uma altura absurdamente longa para gerar pista de scroll (`min-height: 220vh`, `position: relative`)[cite: 19].
+- Container Sticky: Dentro da seção, um elemento `div.philosophy__sticky` fixado (`position: sticky; top: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;`). Isso manterá o texto travado no meio da tela enquanto o bloco de 220vh é rodado[cite: 19].
+- Área de Leitura: Dentro do sticky, o container de texto `.philosophy__inner` deve ter max-width controlado (`width: min(72ch, 100%)`). O texto interno NÃO é centralizado, mantém alinhamento nativo à esquerda[cite: 19].
+- A Frase (Heading): Tag `<h2>` ou equivalente com atributo obrigatório `data-split="words"`. Utiliza a fonte Serifada (Newsreader), `font-weight: 400`, font-size fluído `clamp(28px, 4.4vw, 60px)`, e `text-wrap: balance`[cite: 19]. Sem negritos e sem gradientes[cite: 19].
+- Lógica JS (Split Manual Obrigatório): 
+  1. O JS busca o elemento `[data-split='words']`. 
+  2. Ele captura o texto bruto (`textContent`), divide usando Regex por espaços (`split(/\s+/)`).
+  3. Reconstrói o HTML substituindo cada palavra por um `<span class="word">palavra</span>` separada por espaços nativos[cite: 19].
+  4. NENHUMA lib externa (SplitText/SplitType) pode ser usada para isso[cite: 19].
+- Lógica GSAP (Scroll Scrub): 
+  1. Estilo inicial dos spans: `display: inline-block; margin-right: 0.26em; opacity: var(--word-dim); will-change: opacity;`[cite: 19].
+  2. O script seleciona todos os `.word` gerados.
+  3. Aplica `gsap.to(wordEls, { opacity: 1, ease: "none", stagger: 0.5 })`[cite: 19].
+  4. O gatilho do ScrollTrigger é amarrado à seção pai: `trigger: section`, `start: "top top"`, `end: "bottom bottom"`, `scrub: true`[cite: 19]. Isso garante a revelação lenta das palavras, uma de cada vez, dependendo exata e unicamente da posição da barra de rolagem[cite: 19].

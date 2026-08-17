@@ -1,0 +1,9 @@
+REGRAS RESPONSIVAS
+- Breakpoint Tablet (768px a 1199px):
+  - Título principal da página diminui drasticamente de tamanho/largura máxima[cite: 16].
+  - Contador gigante é ejetado do canto inferior esquerdo para o topo-esquerdo, com opacidade 0.42[cite: 16].
+  - Descrição `.team-description` abandona a direita e desce para base-centro (`bottom-center`), mantendo alinhamento centralizado e larguras controladas[cite: 16].
+- Breakpoint Mobile (Abaixo de 768px):
+  - Cards ajustados pelas variáveis customizadas: `--width: min(82vw, 25.5rem, 38vh)` e altura calculada a 1.09x da largura[cite: 16].
+  - Offsets de entrada reduzidos: o movimento de "vôo" dos cards cai para `82%` do Step X e `72%` do Step Y[cite: 16].
+  - Descrições e Contadores mantêm o layout do tablet, ajustados apenas para não causarem overflow de tela na leitura[cite: 16].

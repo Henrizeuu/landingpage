@@ -1,0 +1,10 @@
+GLOBAL STYLES & TOKENS (BLOCO 21 - SCROLL FLOAT CARDS)
+- Efeito Visual: Três cards em grade. O card central surge com fade-in. Os cards laterais flutuam horizontalmente e rotacionam com o scroll (efeito parallax amarrado à viewport)[cite: 21].
+- Dependências: NENHUMA. Scroll parallax e Fade-in feitos em Vanilla JS (IntersectionObserver e Window Scroll Event)[cite: 21].
+- Regra de Injeção: O CSS e o HTML não devem criar containers desnecessários além da própria classe base `.sfloat`[cite: 21].
+- Tokens Base (Injetados via CSS):
+  - Fundo Geral: Escuro sólido (`#0b0e0f`)[cite: 21].
+  - Fundo dos Cards: Cinza muito escuro (`#141618`) com bordas (`#2a2d30`)[cite: 21].
+  - Tipografia: Texto principal (`#ffffff`), subtextos (`#b9b9b9`)[cite: 21].
+  - Accent Color (Destaque/Glow): Verde lima (`#b2fe02`), aplicado nos SVGs e em palavras do título[cite: 21].
+- Acessibilidade e Responsividade: O parallax de flutuação via JS OBRIGATORIAMENTE deve ser desativado em mobile (telas `<= 768px`) devolvendo o `transform` para vazio para não atrapalhar a leitura ou scroll nativo de toque[cite: 21].

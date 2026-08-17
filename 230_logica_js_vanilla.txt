@@ -1,0 +1,14 @@
+COMPONENTE: JS Expand & Autoplay Logic
+- Estrutura: Isolado em uma IIFE `(function () { 'use strict'; ... })();` para não poluir o escopo global[cite: 22].
+- Não utilizar bibliotecas externas (Sem GSAP). Tudo no braço[cite: 22].
+- Cálculo do Progresso (--p):
+  - Ler o `getBoundingClientRect()` do `.hx-clinic__media`[cite: 22].
+  - Start do efeito começa quando o elemento atinge `vh * 0.85` (entrando na tela)[cite: 22].
+  - O progresso é calculado e clampado entre 0 e 1, então injetado diretamente no `style.setProperty('--p', value)` da div de mídia[cite: 22].
+  - O loop utiliza `requestAnimationFrame` em um evento de scroll passive com flag de `ticking` para performance[cite: 22].
+- Fallback Redução de Movimento: Se `prefers-reduced-motion` for true no carregamento do JS, o script aborta os listeners e simplesmente chumba `media.style.setProperty('--p', 1)`[cite: 22].
+- Reforço de Autoplay Silencioso: Dispositivos iOS/Safari costumam pausar vídeos ou falhar no autoplay.
+  - Selecionar a tag `<video>`[cite: 22].
+  - Envolver o `.play()` em um bloco de Promise. Se falhar, ignorar silenciosamente no `.catch()`[cite: 22].
+  - Checar a flag `readyState`. Se menor que 2, ouvir evento `canplay` antes de dar play[cite: 22].
+  - Ouvir `visibilitychange` no document: Se a aba voltar ao foco (`visibilityState === 'visible'`), forçar o `.play()` novamente[cite: 22].

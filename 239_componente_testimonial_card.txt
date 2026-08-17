@@ -1,0 +1,12 @@
+COMPONENTE: Testimonial Card
+- Variações de Cor: 
+  - `.is-red`: Fundo vermelho (`rgb(255 56 49)`), texto ivory[cite: 20].
+  - `.is-light`: Fundo ivory (`rgb(255 253 219)`), texto vermelho[cite: 20].
+- Estrutura Visual: Border-radius de `1rem`, `text-align: center`, sem sombras[cite: 20]. Aplicar `will-change: transform` e `backface-visibility: hidden` para performance[cite: 20].
+- Conteúdo do Card: 
+  - Ícones de Aspas (Topo Direito e Base Esquerda invertido a 180deg). OBRIGATÓRIO usar SVG inline com `fill="currentColor"` para puxar a cor correta da inversão do card[cite: 20].
+  - Bloco de Citação (`blockquote`).
+  - Autor (`.confession-author`) com Nome em `<strong>` e Cargo em `<span>`[cite: 20].
+- O Macete do Layout (Overlap & Stagger):
+  - Em Mobile: Largura do card de `85%`, `margin-left: 3rem`[cite: 20].
+  - Em Desktop (>= 650px): Largura física travada em `52.5rem`[cite: 20]. Os cards sobrepõem-se sutilmente com `margin-left: calc(var(--slide-size) * -0.25)`[cite: 20]. Além disso, sofrem um brutal desnível vertical: os ímpares recebem `margin-top: -30rem` e os pares `margin-top: 30rem`[cite: 20].

@@ -1,0 +1,14 @@
+GLOBAL STYLES & TOKENS
+- Resets: box-sizing: border-box; html { scroll-behavior: smooth; }[cite: 18]
+- Dependências Críticas: OBRIGATÓRIO uso exclusivo de Vanilla JS, CSS e HTML. É ESTRITAMENTE PROIBIDO o uso de GSAP, Swiper, bibliotecas de scroll ou frameworks externos para construir este componente[cite: 18].
+- Tipografia (Injeção Dinâmica): 
+  --font-serif-editorial (Fonte Serif elegante, peso leve. Usada no Título Intro)[cite: 18]
+  --font-sans-condensed (Fonte Sans condensada/moderna. Usada nos Títulos dos Cards)[cite: 18]
+  --font-sans-clean (Fonte Sans limpa. Usada em labels, índices e corpo)[cite: 18]
+- Tokens de Cor (Injeção Dinâmica):
+  --bg-dark-deep (Fundo tecnológico escuro e principal)[cite: 18]
+  --text-main (Claro absoluto)[cite: 18]
+  --text-sec (Translúcido leve)[cite: 18]
+  --text-muted (Translúcido forte/apagado)[cite: 18]
+  --accent-neon (Acento vibrante tecnológico)[cite: 18]
+  --bullet-inactive (Cinza muito escuro para inativos)[cite: 18]

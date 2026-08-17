@@ -1,0 +1,8 @@
+GLOBAL STYLES & TOKENS (BLOCO 20 - DARK GRID)
+- Efeito Visual: Grade de cards escuros e minimalistas[cite: 20]. O estado de "hover" revela um brilho sutil interno, um overlay gradiente e pequenos quadrados brancos saltando nos cantos[cite: 20].
+- Dependências: NENHUMA. A animação é 100% controlada por CSS[cite: 20].
+- Tokens Base (Injetados via CSS):
+  - Fundo Geral: Preto sólido (`#000`)[cite: 20].
+  - Cores de Texto: Off-white para títulos (`#fafafa`, `#f4f4f5`), cinza mutado para descrições (`#a1a1aa`), e cinza específico para rótulos/badges (`#71717a`, `#d4d4d8`)[cite: 20].
+  - Bordas dos Cards: Zinco escuro (`#27272a`), clareando sutilmente no hover (`#3f3f46`)[cite: 20].
+- Acessibilidade (Reduced Motion): É OBRIGATÓRIO utilizar a media query `prefers-reduced-motion: reduce` para forçar `transition: none` nos cards, no gradiente de hover, no inner glow e nos quadrados dos cantos, desativando as animações[cite: 20].

@@ -1,0 +1,6 @@
+COMPONENTE: 3D Product Cards
+- Formatação `.card-container`: Baseado em tamanho relativo à tela, com `left: 50%, top: 50%` e `position: absolute`. GSAP aplicará `xPercent: -50, yPercent: -50`[cite: 17]. OCSS obrigatório: `perspective: 1000px`, `transform-style: preserve-3d`[cite: 17].
+- Elemento `.card-3d`: `width/height: 100%`, `transform-style: preserve-3d`, `backface-visibility: hidden`[cite: 17].
+- Elemento `.card-frame`: O cartão físico de fato. Fundo `#fffefa`, borda `3px solid #344128`, `border-radius: 8px`[cite: 17]. Um pseudo-elemento `::after` cria a moldura interna vazada[cite: 17].
+- Imagem do Card (`.card-image`): OBRIGATÓRIO não preencher o card. Imagem tem `width/height: 46%`, absolutizada no centro (`translate(-50%, -50%)`), com `object-fit: contain`[cite: 17].
+- Textos do Card (`.card-copy`): Ficam nas extremidades verticais, com padding interno, sobrepostos à imagem[cite: 17]. Título em Cormorant, Descrição em Inter[cite: 17].

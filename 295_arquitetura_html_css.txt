@@ -1,0 +1,7 @@
+COMPONENTE: Section, WebGL Canvas e Camada de Conteúdo
+- Seção Pai (`.hero-neon-flow`): Controla o escopo com `min-height: 78vh` (70vh no mobile), `overflow: hidden`, e OBRIGATORIAMENTE `isolation: isolate` para trancar a pilha de z-index[cite: 18].
+- O Palco WebGL (`.neon-flow` e `.neon-flow-canvas`): 
+  - Ficam contidos no fundo com `position: absolute`, `inset: 0` e `z-index: 0`[cite: 18].
+  - O canvas recebe `touch-action: none` para não engasgar o scroll no mobile por conta da captura de gestos 3D[cite: 18].
+- Conteúdo Frontal (`.hero-content`): Elevado via `z-index: 1`, com `max-width: 860px` centralizado. Contém o kicker, o h1 (com `text-wrap: balance` e uma sútil sombra no texto), a descrição, e o botão CTA[cite: 18].
+- Proteção de Clique no Botão: O botão OBRIGATORIAMENTE recebe o atributo `data-neon-flow-ignore-click="true"` para prevenir que o script acione eventos globais ao clicar nele[cite: 18].

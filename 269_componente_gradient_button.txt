@@ -1,0 +1,8 @@
+COMPONENTE: Gradient Button
+- Estrutura: Renderizado como um botão (`button` ou tag correspondente da ação) com classe `.gradient-button`[cite: 18].
+- Variantes Existentes: Possibilidade de uso do `.gradient-button-variant` que sobrescreve os tokens CSS com uma paleta de fogo/laranja[cite: 18].
+- Base Styling: Display `inline-flex`, centralizado, padding `1rem 2.25rem`, `border-radius: 11px`, sem bordas (`border: none`), cor do texto branca com `font-weight: 700`[cite: 18].
+- Gradiente Nativo CSS Houdini (O Macete Físico): Utiliza `background: conic-gradient(from var(--gb-angle), a, b, c, b, a)`[cite: 18]. A animação keyframe (`@keyframes gb-rotate`) engatilha `to { --gb-angle: 360deg }` num loop linear de 4s infinito[cite: 18].
+- Sombras: Box-shadow combinando uma cor sólida (o "glow") via var(--gb-glow) e uma sombra dura preta[cite: 18].
+- Hover States: No Hover, aumenta a `filter: brightness(1.15)`, expande o shadow/glow (20px para 32px), e sobe verticalmente `-1px`[cite: 18].
+- Focus States: Usa `outline: 2px solid var(--gb-color-b)` com `outline-offset: 4px` no `:focus-visible`[cite: 18].

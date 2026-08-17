@@ -1,0 +1,9 @@
+COMPONENTE: Vanilla JS Scroll Tracker
+- Intersection Observer (Fade-In): Procura todos os elementos com `data-sfloat-fadein` (Threshold de `0.2`). Ao entrar na tela, adiciona a classe CSS `.sfloat--visible`. A classe ativa a mudança de `opacity: 1` e restabelece a posição no offset decorativo de `transform: translateY(48px)`[cite: 21].
+- Scroll Tracker Parallax (Translação/Rotação):
+  - Inspeciona os `.sfloat__card[data-sfloat-tx]` em tempo real usando um listener `passive: true`[cite: 21].
+  - Calcula a proporção matemática do card cruzando a tela em Y (`progress = (vh / 2 - center) / vh`)[cite: 21].
+  - Aplica as fórmulas mágicas usando as propriedades injetadas pelo HTML:
+    - X (px): `direction * tx * progress * 80`[cite: 21].
+    - RotationZ (deg): `direction * rz * progress * 10`[cite: 21].
+  - Injeta o transform dinamicamente de forma inline, com `toFixed` reduzido para melhor renderização do browser[cite: 21].

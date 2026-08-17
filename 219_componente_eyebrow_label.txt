@@ -1,0 +1,5 @@
+COMPONENTE: Eyebrow Label (Acento Superior)
+- Estrutura: Uma tag `<p class="philosophy__eyebrow">` contendo o texto (ex: `HX's philosophy`)[cite: 19].
+- Visual: `display: flex`, alinhamento centralizado, `font-size: 13px`, `font-weight: 500`, uppercase, `letter-spacing: 0.16em`[cite: 19]. Cor do texto obrigatoriamente vinculada a `--accent-color`[cite: 19].
+- Decoração (A Linha - O Macete): Criar uma linha contínua à esquerda do texto utilizando um pseudoelemento `::before` (`width: 28px`, `height: 1px`, `background` na Cor de Acento e `opacity: 0.7`). Usar `gap: 0.9rem` para espaçar do texto[cite: 19].
+- Animação CSS: O elemento entra em cena assim que carrega usando um `@keyframes eyebrow-in` (de `opacity 0, translateY 12px` para `opacity 1, translateY 0`), disparado em `0.8s ease` com delay de `0.15s`[cite: 19].

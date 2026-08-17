@@ -1,0 +1,4 @@
+COMPONENTE: Four-Card Stack
+- A Grade de Célula Única (O Macete CSS Grid): A div `.team-cards` usa CSS grid de 1 coluna por 1 linha. TODOS os 4 `.team-card` internos são forçados a ficar na MESMA célula (`grid-column: 1 / -1`, `grid-row: 1 / -1`) com posição absoluta, um empilhado sobre o outro[cite: 16]. O z-index é configurado como `cards.length - index` para o primeiro ficar no topo[cite: 16].
+- Elementos do Card: `.team-card-scene` (usado para clip e fallback de cor/bg) e a mídia interna `.team-card-image`[cite: 16].
+- Tratamento de Mídia: EXATAMENTE uma imagem `<img>` por card[cite: 16]. Elas têm `object-fit: cover`[cite: 16]. O estado normal é fortemente alterado via CSS: `filter: grayscale(100%)` e `opacity: 0.3`[cite: 16]. Apenas o card marcado com `.is-active` acende (`grayscale(0%)`, `opacity: 1`)[cite: 16].

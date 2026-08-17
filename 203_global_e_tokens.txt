@@ -1,0 +1,21 @@
+GLOBAL STYLES & TOKENS
+- Resets: Aplicar reset universal `*`, `::before`, `::after` com `box-sizing: border-box`, `margin: 0`, `padding: 0`[cite: 17]. 
+- Body & Root: `background-color: #0C0C0C;`, `color: #D7E2EA;`, `overflow-x: hidden;`, `scroll-behavior: smooth;`[cite: 17]. Wrapper principal `.main-wrapper` com `width: 100%`, `overflow-x: clip;`[cite: 17].
+- Tipografia: Fonte Primária "Kanit" (pesos 300, 400, 500, 700, 900) carregada via `@import url(...)` do Google Fonts[cite: 17].
+- H1 / Headings Override (Trava de Segurança): EM HIPÓTESE ALGUMA defina `line-height` menor que os especificados[cite: 17]. PROIBIDO usar `100vw` para alinhar Headings, About, Service Lists ou Process Cards; isso quebra o grid[cite: 17].
+- Tokens de Cores e Sombras (Injeção Dinâmica):
+  --page-bg: #0C0C0C[cite: 17]
+  --hero-bg: #020405[cite: 17]
+  --text-main: #D7E2EA[cite: 17]
+  --text-heading-gradient: linear-gradient(180deg, #646973 0%, #BBCCD7 100%)[cite: 17]
+  --services-bg: #FFFFFF[cite: 17]
+  --services-text: #0C0C0C[cite: 17]
+  --cta-gradient: linear-gradient(123deg, #04160C 7%, #0A8F45 37%, #22C55E 72%, #8BFFB8 100%)[cite: 17]
+  --cta-shadow-base: 0px 4px 12px rgba(10,143,69,0.3), inset 4px 4px 12px #14984F[cite: 17]
+  --cta-shadow-hover: 0px 8px 18px rgba(10,143,69,0.42), inset 4px 4px 12px #14984F[cite: 17]
+  --accent-green: #0A8F45[cite: 17]
+  --accent-neon: #67F39B[cite: 17]
+- Tokens Dimensionais:
+  Top Radii Sections: 40px base, 50px >=640px, 60px >=768px[cite: 17].
+  Motion Easing: `cubic-bezier(0.25, 0.1, 0.25, 1)`[cite: 17].
+- Acessibilidade: OBRIGATÓRIO não renderizar interações baseadas em movimento do mouse (`pointermove`) nem scale nos Sticky Cards se `prefers-reduced-motion` for acionado[cite: 17].

@@ -1,0 +1,11 @@
+GLOBAL STYLES & TOKENS (GRID FADE BACKGROUND)
+- Efeito Visual: Fundo limpo e moderno composto por uma grade de linhas finas no topo que desaparece suavemente (fade) e uma elipse decorativa na base[cite: 19]. O efeito é 100% estático, sem animações[cite: 19].
+- Dependências: NENHUMA. Não requer JavaScript[cite: 19].
+- Regra de Injeção: O conteúdo real da página deve ser inserido exclusivamente dentro do wrapper `.bgf-content` para evitar ser coberto pelos elementos de fundo[cite: 19].
+- Tokens Base (Injetados via Variáveis CSS):
+  --bgf-bg-top: Cor inicial do fundo (ex: branco)[cite: 19]
+  --bgf-bg-mid: Cor intermediária aos 50% (ex: branco)[cite: 19]
+  --bgf-bg-bottom: Cor de base aos 88% (ex: cinza claro)[cite: 19]
+  --bgf-grid-color: Cor da linha da grade geométrica[cite: 19]
+  --bgf-accent-border: Cor da linha que delineia a elipse de base[cite: 19]
+- Acessibilidade: O CSS provê um bloco `@media (prefers-reduced-motion: reduce)`, porém, como não há animação de origem, permanece como garantia de fallback estático[cite: 19].

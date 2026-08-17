@@ -1,0 +1,9 @@
+GLOBAL STYLES & TOKENS (BLOCO 22 - DOTTED SURFACE)
+- Efeito Visual: Fundo animado 3D composto por pontos que se movem em loop simulando a física de ondas, proporcionando uma sensação de superfície aquática/tecnológica[cite: 17].
+- Dependências Críticas: É OBRIGATÓRIO o carregamento da biblioteca `three.js` antes de qualquer outro script (no formato `three.module.js` na versão 0.165.0 via import de módulo ES6 ou `three.min.js` via `<script>`)[cite: 17].
+- Regra de Injeção: O CSS base deve ser moldado à paleta original da página sem criar fundos secundários que entrem em conflito.
+- Tokens Base (Injetados via CSS):
+  - Fundo Geral (Light): `linear-gradient(180deg, #f7f9fc 0%, #eef3f9 100%)`[cite: 17].
+  - Fundo Geral (Dark Theme): `linear-gradient(180deg, #0f1116 0%, #0a0c10 100%)`[cite: 17].
+  - Cores de Texto: Escuro no Light (`#111827`) e Claro no Dark (`#f3f4f6`)[cite: 17].
+- Acessibilidade e Responsividade: O JS deve obrigatoriamente detectar a preferência `prefers-reduced-motion: reduce`. Caso ativado, o script renderiza apenas o primeiro frame e *não* engatilha o loop do `requestAnimationFrame`, pausando as ondas[cite: 17]. O JS também detecta mutações de tema (dark mode nativo ou via classe)[cite: 17].

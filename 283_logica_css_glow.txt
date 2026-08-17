@@ -1,0 +1,7 @@
+LÓGICA CSS: Efeito Hover Glow (O Macete Físico)
+- O Elemento Glow (`.cgh-glow`): É a primeira div dentro do card. É injetada em posição absoluta cobrindo todo o espaço (`inset: 0`)[cite: 14].
+- A Iluminação Radial: O fundo recebe um `radial-gradient` em formato de círculo. O centro do círculo é manipulado pela variável `--cgh-glow-y` (geralmente negativo) para que a luz "vaze" de fora da borda superior do card para dentro[cite: 14].
+- Suavização (Blur): Um `filter: blur()` é aplicado sobre a div do glow para dissipar a dureza do gradiente, criando um aspecto de névoa luminosa[cite: 14].
+- Z-Index e Pointer Events: O glow é rebaixado para `z-index: 0` e tem `pointer-events: none` para não bloquear interações[cite: 14].
+- Proteção de Conteúdo: Os demais elementos (ícone, título e descrição) OBRIGATORIAMENTE recebem `position: relative` e `z-index: 2` para flutuarem acima da névoa de luz[cite: 14].
+- Gatilho do Hover: A opacidade do glow inicia em 0. Quando o mouse entra no elemento PAI (`.cgh-card:hover`), a opacidade da div filha (`.cgh-glow`) é engatilhada para o valor definido no token[cite: 14].

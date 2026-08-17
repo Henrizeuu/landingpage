@@ -1,0 +1,12 @@
+GLOBAL STYLES & TOKENS
+- Dependências Críticas: OBRIGATÓRIO incluir o `gsap.min.js` (GSAP) e o `ScrollTrigger.min.js` para o funcionamento da mecânica de rolagem e revelação. Registrar plugin (`gsap.registerPlugin(ScrollTrigger)`)[cite: 19].
+- Resets Obrigatórios: `box-sizing: border-box; margin: 0; padding: 0;` em todos os elementos[cite: 19].
+- Tipografia: É necessário carregar a fonte `Newsreader` (peso 400, em `.woff2` local ou Google Fonts) e `Inter` (pesos 400, 500)[cite: 19].
+  - A Fonte Base (Body e Label) deve ser o `Inter`[cite: 19].
+  - A Fonte da Frase de Manifesto DEVE SER estritamente a `Newsreader` (Serifada)[cite: 19].
+- Tokens Estruturais e de Cores (Injeção Dinâmica via `:root`):
+  --bg-page: Fundo geral escuro (ex: #0e0f0d)[cite: 19]
+  --text-main: Cor da frase/textos (ex: #f3f1ea)[cite: 19]
+  --accent-color: Cor vibrante do label/linhas (ex: Verde-lima #c7ff4d)[cite: 19]
+  --word-dim: Nível de opacidade inicial para as palavras ocultas (ex: 0.12)[cite: 19]
+- Acessibilidade: Em `prefers-reduced-motion: reduce`, o container da seção perde a altura gigante (`min-height: 100vh;`) e TODAS as palavras (`.word`) e label devem receber `opacity: 1` e ter animações desligadas imediatamente[cite: 19].

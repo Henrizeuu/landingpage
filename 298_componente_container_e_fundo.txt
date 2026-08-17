@@ -1,0 +1,3 @@
+COMPONENTE: Container Pai e Área de Conteúdo
+- O Container Principal (`.bg-grid-fade`): Requer `position: relative` e `overflow: hidden` para confinar fisicamente a grade e a elipse[cite: 19]. O fundo geral é pintado com um `linear-gradient` vertical interpolando as três variáveis de fundo (top, mid, bottom)[cite: 19]. Possui arredondamento nos cantos inferiores (`border-bottom-*-radius: 0.75rem`)[cite: 19].
+- A Camada de Conteúdo (`.bgf-content`): Atua como z-index superior (`position: relative`, `z-index: 1`). Todo o texto, botões e títulos OBRIGATORIAMENTE devem morar aqui para ficarem acima dos efeitos de fundo[cite: 19].

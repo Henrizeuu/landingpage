@@ -1,0 +1,4 @@
+COMPONENTE: Reveal Text Grid (Desktop Copy)
+- Estrutura: Um grid de 4 colunas (`.team__copy`) abaixo das imagens contendo parágrafos curtos[cite: 20].
+- Rótulos Injetados (O Macete CSS): Cada `<p>` possui um atributo `data-loc` (ex: "China", "Saigon"). Um pseudo-elemento `::before` captura esse texto via `content: attr(data-loc)` formatando-o como um mini-label (11px, uppercase, letter-spacing largo) acima do parágrafo[cite: 20].
+- Animação GSAP: Envelopados em `.reveal-line > span`, os textos iniciam com `yPercent: 110` e `opacity: 0` e sobem via ScrollTrigger com `power3.out` e stagger de 0.1[cite: 20].

@@ -1,0 +1,10 @@
+GLOBAL STYLES & TOKENS (NEON FLOW)
+- Efeito Visual: Linhas neon 3D brilhantes renderizadas via WebGL que reagem de forma fluida ao movimento do mouse do usuário[cite: 18].
+- Dependências Críticas: Utiliza a biblioteca `threejs-components` injetada OBRIGATORIAMENTE via importação dinâmica (ES6 module) direto do CDN no JavaScript[cite: 18].
+- Tokens Base de Fundo (Injetados via CSS):
+  - Fundo Geral: Um `radial-gradient` escuro e espacial partindo de `20% 20%` misturando roxo escuro (`#1f1742`) e azul noite/preto (`#07070f`)[cite: 18].
+  - Máscara de Escurecimento (Overlay): Um `linear-gradient` sobreposto (`::after`) indo de opacidade 0.2 a 0.72 para garantir a legibilidade do texto[cite: 18].
+- Tokens de Tipografia e Botão:
+  - Textos principais em azul muito claro (`#ecf4ff`)[cite: 18].
+  - CTA (Botão): Um gradiente horizontal chamativo (`#f967fb` para `#60aed5` para `#53bc28`) com texto escuro e sombra difusa[cite: 18].
+- Acessibilidade: Em casos de `prefers-reduced-motion: reduce`, o canvas 3D é completamente desativado (`display: none`) e a página exibe um fundo degradê estático elegante[cite: 18].

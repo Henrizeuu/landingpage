@@ -1,0 +1,11 @@
+COMPONENTE: Stacked Cards Container
+- O Container (`.csh-stack`): Um `display: flex; align-items: center;` com um padding direito configurado como `padding: 2rem var(--csh-card-w) 2rem 0` para garantir área extra que suporte o "espalhar" físico dos cards sem vazar para a barra de rolagem horizontal[cite: 19].
+- A Estrutura do Card (`.csh-card`):
+  - Propriedades de fluxo: `flex-shrink: 0`, definindo largura e altura pelas variáveis[cite: 19].
+  - O Empilhamento (O Macete Físico): Aplica-se `margin-left: var(--csh-overlap)` em todos os cards, esmagando-os[cite: 19].
+  - A Exceção (`.csh-first`): Uma classe OBRIGATÓRIA no primeiro card para forçar `margin-left: 0 !important` e iniciar a pilha encostada à esquerda[cite: 19].
+  - Fundo & Sombras Complexas: 
+    1. Background com múltiplos `radial-gradient` no topo de uma cor sólida base, para forjar profundidade translúcida[cite: 19].
+    2. Sombra agressiva voltada à ESQUERDA: `filter: drop-shadow(-1rem 0rem 4rem #000)` simulando a projeção sobre o card vizinho[cite: 19].
+- Borda Translúcida por Máscara (O Macete Decorativo 1): Pseudoelemento `::before` aplicando fundo `linear-gradient` revelado através da subtração de dois `linear-gradient` opacos (`mask-composite: exclude` / `-webkit-mask-composite: xor`)[cite: 19].
+- Barra Superior com Multi-Glow (O Macete Decorativo 2): Pseudoelemento `::after` posicionado em `top: 0`, largura fixa de `151px`. Combina 8 camadas de `box-shadow` em graduações suaves criando um forte LED de luz[cite: 19].

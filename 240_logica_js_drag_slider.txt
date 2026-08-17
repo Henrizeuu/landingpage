@@ -1,0 +1,12 @@
+COMPONENTE: JS Infinite Drag Slider Logic (O Macete Físico)
+- Setup & Clonagem: O JS detecta os cards originais e os clona até que existam no mínimo 10 elementos no track para garantir a ilusão de loop infinito. Clones recebem `data-cloned-slide="true"`[cite: 20].
+- Rotação Base Alternada: Ao inicializar, cada slide ganha um valor de rotação estática base aleatório entre 2 e 5 graus. Índices pares recebem valor negativo, ímpares recebem positivo[cite: 20].
+- As Três Camadas de Lerp (Parallax Suave): 
+  - Os slides são divididos em 3 camadas (usando `index % 3`). 
+  - No loop de animação, o JS incrementa um valor `current` e usa interpolação linear (Lerp) para aproximar os valores de cada camada a este `current`, com velocidades diferentes (`0.09`, `0.1`, `0.11` multiplicados pela variação do frame ratio)[cite: 20].
+- A Inclinação por Velocidade (Velocity Tilt): Calcula a diferença entre o deslocamento real e o desejado. Esse "arrasto" gera um tilt dinâmico na rotação do card (limitado suavemente por uma função exponencial `Math.exp`) dando a sensação de que os cards estão pendurados por um fio ao serem puxados[cite: 20].
+- Loop Infinito Visível (Wrap): Utilizar `gsap.utils.wrap` para reposicionar os cards que saem da tela no começo/fim da fila. A renderização é otimizada para aplicar `visibility: hidden` em cards que estão muito fora do limite do viewport[cite: 20].
+- Interação do Usuário:
+  - ScrollTrigger: Ativa/desativa a reprodução automática se a seção está visível na tela[cite: 20].
+  - Wheel (Roda do Mouse): Altera dinamicamente o valor de `current` adicionando `event.deltaY * 0.5`[cite: 20].
+  - Drag (Arrasto/Swipe): Eventos `mousedown/touchstart` gravam a posição. `mousemove/touchmove` injeta as coordenadas multiplicadas por um `speedMultiplier` (2 no desktop, 3.5 no mobile). No soltar do mouse (`mouseup`), o JS usa `gsap.utils.snap` para encontrar a parada mais próxima e tracionar suavemente o slide para ficar perfeitamente alinhado[cite: 20].
