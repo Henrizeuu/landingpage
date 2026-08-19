@@ -30,7 +30,7 @@ for directory in [DIR_DADOS, DIR_BUILD]:
 # =====================================================================
 # 2. INFRAESTRUTURA UI PREMIUM (EPIVERSO)
 # =====================================================================
-Peço desculpas por isso! O que aconteceu foi que o Streamlit não usa uma tag <select> simples em HTML para o menu de opções (Selectbox). Ele usa um componente complexo construído em React (Baseweb). Quando forçamos o fundo escuro de forma genérica, o texto das opções no menu suspenso ficou invisível ou com péssimo contraste.Vamos resolver isso agora criando um Visual Premium de Alta Visibilidade (Corporate Dark). Substitua o verde neon por um Azul Corporativo muito mais limpo, arrumei todas as caixas de texto para terem bordas claras e resolvi o problema do menu de opções para que você consiga ler e clicar perfeitamente.Substitua todo o bloco de st.markdown (da Seção 2 do App 9) por este código aqui:  Pythonst.markdown("""
+st.markdown("""
     <style>
         /* Tipografia de Alta Legibilidade */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
