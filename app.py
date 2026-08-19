@@ -40,80 +40,83 @@ st.markdown("""
         header[data-testid="stHeader"] { background: transparent !important; }
         footer { visibility: hidden; }
         
-        /* Fundo Geral - Dark Clean Corporativo */
+        /* Fundo Geral - Tema Claro Clean e Premium */
         .stApp {
-            background-color: #0B0F19;
-            color: #F3F4F6;
+            background-color: #F8FAFC; /* Cinza gelo super claro */
+            color: #1E293B; /* Texto grafite escuro */
             font-family: 'Inter', sans-serif;
         }
         
-        /* Títulos com Visibilidade Total (Branco puro) */
+        /* Títulos com Visibilidade Total (Escuros) */
         h1, h2, h3, h4 {
-            color: #FFFFFF !important;
-            font-weight: 700 !important;
+            color: #0F172A !important;
+            font-weight: 800 !important;
             letter-spacing: -0.02em;
         }
         
-        /* Sidebar mais escura para contraste */
+        /* Sidebar Branca para separar do fundo */
         [data-testid="stSidebar"] {
-            background-color: #06090F !important;
-            border-right: 1px solid #1F2937;
+            background-color: #FFFFFF !important;
+            border-right: 1px solid #E2E8F0;
         }
 
         /* =========================================
            INPUTS E CAIXAS DE TEXTO
            ========================================= */
         .stTextInput input {
-            background-color: #111827 !important;
-            color: #FFFFFF !important;
-            border: 1px solid #374151 !important;
+            background-color: #FFFFFF !important;
+            color: #0F172A !important;
+            border: 1px solid #CBD5E1 !important;
             border-radius: 8px !important;
             padding: 14px 16px !important;
             font-size: 15px !important;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02) !important;
         }
         .stTextInput input:focus {
-            border-color: #3B82F6 !important;
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+            border-color: #2563EB !important;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
         }
 
         /* =========================================
-           CORREÇÃO DO SELECTBOX (O LUGAR DE OPÇÃO)
+           CORREÇÃO DO SELECTBOX (MENU DE OPÇÕES)
            ========================================= */
         /* Caixa principal do Select */
         div[data-baseweb="select"] > div {
-            background-color: #111827 !important;
-            color: #FFFFFF !important;
-            border: 1px solid #374151 !important;
+            background-color: #FFFFFF !important;
+            color: #0F172A !important;
+            border: 1px solid #CBD5E1 !important;
             border-radius: 8px !important;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02) !important;
         }
         /* Texto selecionado */
         div[data-baseweb="select"] div[class*="singleValue"] {
-            color: #FFFFFF !important;
+            color: #0F172A !important;
         }
         /* Fundo do Menu Suspenso (A lista que abre) */
         div[data-baseweb="popover"] ul[role="listbox"] {
-            background-color: #1F2937 !important;
-            border: 1px solid #374151 !important;
+            background-color: #FFFFFF !important;
+            border: 1px solid #E2E8F0 !important;
             border-radius: 8px !important;
             padding: 4px !important;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1) !important;
         }
         /* Itens da lista */
         div[data-baseweb="popover"] li {
-            color: #F3F4F6 !important;
+            color: #334155 !important;
             font-size: 15px !important;
             border-radius: 4px !important;
         }
         /* Hover quando passa o mouse na opção */
         div[data-baseweb="popover"] li:hover {
-            background-color: #374151 !important;
-            color: #FFFFFF !important;
+            background-color: #F1F5F9 !important;
+            color: #0F172A !important;
         }
 
         /* =========================================
            BOTÃO PRINCIPAL DE AÇÃO
            ========================================= */
         .stButton>button {
-            background-color: #3B82F6 !important; /* Azul Corporativo Premium */
+            background-color: #2563EB !important; /* Azul Corporativo Vibrante */
             color: #FFFFFF !important;
             border: none !important;
             border-radius: 8px !important;
@@ -123,23 +126,24 @@ st.markdown("""
             text-transform: uppercase;
             width: 100%;
             transition: all 0.2s ease-in-out !important;
-            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2) !important;
         }
         .stButton>button:hover {
-            background-color: #2563EB !important;
+            background-color: #1D4ED8 !important;
             transform: translateY(-2px) !important;
-            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.5) !important;
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3) !important;
         }
         
         /* Paineis de Status, Alertas e Expansores */
         div[data-testid="stStatusWidget"], .streamlit-expanderHeader, div[data-testid="stAlert"] {
-            background-color: #111827 !important;
-            border: 1px solid #1F2937 !important;
+            background-color: #FFFFFF !important;
+            border: 1px solid #E2E8F0 !important;
             border-radius: 8px !important;
-            color: #FFFFFF !important;
+            color: #0F172A !important;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05) !important;
         }
         div[data-testid="stStatusWidget"] {
-            border-left: 4px solid #3B82F6 !important;
+            border-left: 4px solid #2563EB !important;
         }
         
         /* Abas (Tabs) - Visibilidade Limpa */
@@ -148,25 +152,27 @@ st.markdown("""
             gap: 8px;
         }
         .stTabs [data-baseweb="tab"] {
-            background-color: #111827 !important;
-            border: 1px solid #1F2937 !important;
+            background-color: #FFFFFF !important;
+            border: 1px solid #E2E8F0 !important;
             border-radius: 6px !important;
-            color: #9CA3AF !important;
+            color: #64748B !important;
             padding: 12px 20px !important;
             height: auto !important;
         }
         .stTabs [aria-selected="true"] {
-            background-color: #1F2937 !important;
-            color: #FFFFFF !important;
-            border-bottom: 2px solid #3B82F6 !important;
+            background-color: #F8FAFC !important;
+            color: #0F172A !important;
+            border-bottom: 2px solid #2563EB !important;
+            font-weight: 700 !important;
         }
 
-        /* Console de Logs */
+        /* Console de Logs - Clean */
         pre {
-            background-color: #000000 !important;
-            border: 1px solid #1F2937 !important;
+            background-color: #F1F5F9 !important;
+            border: 1px solid #E2E8F0 !important;
             border-radius: 8px !important;
-            color: #A7F3D0 !important; /* Verde terminal para os logs */
+            color: #334155 !important;
+            font-family: monospace;
         }
     </style>
 """, unsafe_allow_html=True)
