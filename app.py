@@ -21,8 +21,8 @@ logger = logging.getLogger(__name__)
 # Diretórios do Sistema
 DIR_DADOS = "dados_empresas"
 DIR_BUILD = "build_epiverso"
-ARQ_MENU = "menu (1).txt"
-ARQ_ESTRUTURA = "estrutura (1).txt"
+ARQ_MENU = "menu.txt"
+ARQ_ESTRUTURA = "estrutura.txt"
 
 for directory in [DIR_DADOS, DIR_BUILD]:
     os.makedirs(directory, exist_ok=True)
