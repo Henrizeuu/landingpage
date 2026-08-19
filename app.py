@@ -30,118 +30,143 @@ for directory in [DIR_DADOS, DIR_BUILD]:
 # =====================================================================
 # 2. INFRAESTRUTURA UI PREMIUM (EPIVERSO)
 # =====================================================================
-st.markdown("""
+Peço desculpas por isso! O que aconteceu foi que o Streamlit não usa uma tag <select> simples em HTML para o menu de opções (Selectbox). Ele usa um componente complexo construído em React (Baseweb). Quando forçamos o fundo escuro de forma genérica, o texto das opções no menu suspenso ficou invisível ou com péssimo contraste.Vamos resolver isso agora criando um Visual Premium de Alta Visibilidade (Corporate Dark). Substitua o verde neon por um Azul Corporativo muito mais limpo, arrumei todas as caixas de texto para terem bordas claras e resolvi o problema do menu de opções para que você consiga ler e clicar perfeitamente.Substitua todo o bloco de st.markdown (da Seção 2 do App 9) por este código aqui:  Pythonst.markdown("""
     <style>
-        /* Importando uma tipografia premium e moderna */
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        /* Tipografia de Alta Legibilidade */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-        /* Ocultar elementos nativos do Streamlit */
+        /* Ocultar poluição visual do Streamlit */
         #MainMenu {visibility: hidden;}
         header[data-testid="stHeader"] { background: transparent !important; }
         footer { visibility: hidden; }
         
-        /* Fundo principal super escuro e limpo */
+        /* Fundo Geral - Dark Clean Corporativo */
         .stApp {
-            background-color: #030303;
-            color: #EDEDED;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0B0F19;
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
         }
         
-        /* Sidebar com Glassmorphism (Translúcido) */
+        /* Títulos com Visibilidade Total (Branco puro) */
+        h1, h2, h3, h4 {
+            color: #FFFFFF !important;
+            font-weight: 700 !important;
+            letter-spacing: -0.02em;
+        }
+        
+        /* Sidebar mais escura para contraste */
         [data-testid="stSidebar"] {
-            background-color: rgba(10, 10, 10, 0.6) !important;
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: #06090F !important;
+            border-right: 1px solid #1F2937;
         }
 
-        /* Títulos com efeito gradiente */
-        h1, h2, h3 {
-            letter-spacing: -0.03em;
-        }
-        h1 {
-            background: linear-gradient(90deg, #FFFFFF 0%, #888888 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* Inputs e Formulários estilo Dashboard Vercel */
-        .stTextInput input, .stSelectbox select {
-            background-color: #0E0E11 !important;
+        /* =========================================
+           INPUTS E CAIXAS DE TEXTO
+           ========================================= */
+        .stTextInput input {
+            background-color: #111827 !important;
             color: #FFFFFF !important;
-            border: 1px solid #27272A !important;
+            border: 1px solid #374151 !important;
             border-radius: 8px !important;
             padding: 14px 16px !important;
-            transition: all 0.2s ease !important;
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+            font-size: 15px !important;
         }
-        .stTextInput input:focus, .stSelectbox select:focus {
-            border-color: #b2fe02 !important;
-            box-shadow: 0 0 0 2px rgba(178, 254, 2, 0.15) !important;
-        }
-        
-        /* Botão Primário (Efeito Glow) */
-        .stButton>button {
-            background: linear-gradient(135deg, #b2fe02 0%, #8bcc00 100%) !important;
-            color: #050505 !important;
-            border-radius: 8px !important;
-            padding: 14px !important;
-            font-weight: 800 !important;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
-            box-shadow: 0 4px 14px 0 rgba(178, 254, 2, 0.2) !important;
-            width: 100%;
-        }
-        .stButton>button:hover {
-            transform: translateY(-2px) !important;
-            box-shadow: 0 6px 20px 0 rgba(178, 254, 2, 0.4) !important;
-            background: linear-gradient(135deg, #c7ff4d 0%, #b2fe02 100%) !important;
-        }
-        
-        /* Paineis de Status, Alertas e Expansores (Cards) */
-        div[data-testid="stStatusWidget"], .streamlit-expanderHeader, div[data-testid="stAlert"] {
-            background-color: #0E0E11 !important;
-            border: 1px solid #27272A !important;
-            border-radius: 8px !important;
-            color: #EDEDED !important;
-        }
-        div[data-testid="stStatusWidget"] {
-            border-left: 4px solid #b2fe02 !important;
-        }
-        
-        /* Abas (Tabs) Premium */
-        .stTabs [data-baseweb="tab-list"] {
-            background-color: #0E0E11;
-            border: 1px solid #27272A;
-            border-radius: 8px;
-            padding: 4px;
-            gap: 4px;
-        }
-        .stTabs [data-baseweb="tab"] {
-            border-radius: 6px !important;
-            color: #888888 !important;
-            border: none !important;
-            background-color: transparent !important;
-            padding: 10px 20px !important;
-            height: auto !important;
-            transition: all 0.2s ease !important;
-        }
-        .stTabs [aria-selected="true"] {
-            background-color: #1A1A1E !important;
-            color: #b2fe02 !important;
-            box-shadow: inset 0 -2px 0 0 #b2fe02 !important;
-        }
-        .stTabs [data-baseweb="tab"]:hover:not([aria-selected="true"]) {
-            color: #EDEDED !important;
+        .stTextInput input:focus {
+            border-color: #3B82F6 !important;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
         }
 
-        /* Código / Console de Logs */
-        pre {
-            background-color: #09090B !important;
-            border: 1px solid #27272A !important;
+        /* =========================================
+           CORREÇÃO DO SELECTBOX (O LUGAR DE OPÇÃO)
+           ========================================= */
+        /* Caixa principal do Select */
+        div[data-baseweb="select"] > div {
+            background-color: #111827 !important;
+            color: #FFFFFF !important;
+            border: 1px solid #374151 !important;
             border-radius: 8px !important;
+        }
+        /* Texto selecionado */
+        div[data-baseweb="select"] div[class*="singleValue"] {
+            color: #FFFFFF !important;
+        }
+        /* Fundo do Menu Suspenso (A lista que abre) */
+        div[data-baseweb="popover"] ul[role="listbox"] {
+            background-color: #1F2937 !important;
+            border: 1px solid #374151 !important;
+            border-radius: 8px !important;
+            padding: 4px !important;
+        }
+        /* Itens da lista */
+        div[data-baseweb="popover"] li {
+            color: #F3F4F6 !important;
+            font-size: 15px !important;
+            border-radius: 4px !important;
+        }
+        /* Hover quando passa o mouse na opção */
+        div[data-baseweb="popover"] li:hover {
+            background-color: #374151 !important;
+            color: #FFFFFF !important;
+        }
+
+        /* =========================================
+           BOTÃO PRINCIPAL DE AÇÃO
+           ========================================= */
+        .stButton>button {
+            background-color: #3B82F6 !important; /* Azul Corporativo Premium */
+            color: #FFFFFF !important;
+            border: none !important;
+            border-radius: 8px !important;
+            padding: 16px !important;
+            font-size: 16px !important;
+            font-weight: 800 !important;
+            text-transform: uppercase;
+            width: 100%;
+            transition: all 0.2s ease-in-out !important;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+        }
+        .stButton>button:hover {
+            background-color: #2563EB !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.5) !important;
+        }
+        
+        /* Paineis de Status, Alertas e Expansores */
+        div[data-testid="stStatusWidget"], .streamlit-expanderHeader, div[data-testid="stAlert"] {
+            background-color: #111827 !important;
+            border: 1px solid #1F2937 !important;
+            border-radius: 8px !important;
+            color: #FFFFFF !important;
+        }
+        div[data-testid="stStatusWidget"] {
+            border-left: 4px solid #3B82F6 !important;
+        }
+        
+        /* Abas (Tabs) - Visibilidade Limpa */
+        .stTabs [data-baseweb="tab-list"] {
+            background-color: transparent;
+            gap: 8px;
+        }
+        .stTabs [data-baseweb="tab"] {
+            background-color: #111827 !important;
+            border: 1px solid #1F2937 !important;
+            border-radius: 6px !important;
+            color: #9CA3AF !important;
+            padding: 12px 20px !important;
+            height: auto !important;
+        }
+        .stTabs [aria-selected="true"] {
+            background-color: #1F2937 !important;
+            color: #FFFFFF !important;
+            border-bottom: 2px solid #3B82F6 !important;
+        }
+
+        /* Console de Logs */
+        pre {
+            background-color: #000000 !important;
+            border: 1px solid #1F2937 !important;
+            border-radius: 8px !important;
+            color: #A7F3D0 !important; /* Verde terminal para os logs */
         }
     </style>
 """, unsafe_allow_html=True)
