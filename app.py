@@ -181,7 +181,7 @@ def extrair_google_maps(empresa: str, pasta_destino: str, max_reviews: int = 10)
             "scrapeContacts": False
         })
         
-        dataset_id = run.get("defaultDatasetId") or getattr(run, "default_dataset_id", None)
+        dataset_id = run.get("defaultDatasetId") if isinstance(run, dict) else getattr(run, "defaultDatasetId", getattr(run, "default_dataset_id", None))
         
         if dataset_id:
             for place in client_apify.dataset(dataset_id).iterate_items():
@@ -215,7 +215,7 @@ def extrair_instagram(usuario: str, pasta_destino: str, max_posts: int = 8) -> b
         run_profile = client_apify.actor("apify/instagram-scraper").call(
             run_input={"resultsType": "details", "directUrls": [f"https://www.instagram.com/{usuario}/"]}
         )
-        dataset_profile_id = run_profile.get("defaultDatasetId") or getattr(run_profile, "default_dataset_id", None)
+        dataset_profile_id = run_profile.get("defaultDatasetId") if isinstance(run_profile, dict) else getattr(run_profile, "defaultDatasetId", getattr(run_profile, "default_dataset_id", None))
         
         if dataset_profile_id:
             for item in client_apify.dataset(dataset_profile_id).iterate_items():
@@ -230,7 +230,7 @@ def extrair_instagram(usuario: str, pasta_destino: str, max_posts: int = 8) -> b
         run_posts = client_apify.actor("apify/instagram-scraper").call(
             run_input={"resultsType": "posts", "directUrls": [f"https://www.instagram.com/{usuario}/"], "resultsLimit": max_posts}
         )
-        dataset_posts_id = run_posts.get("defaultDatasetId") or getattr(run_posts, "default_dataset_id", None)
+        dataset_posts_id = run_posts.get("defaultDatasetId") if isinstance(run_posts, dict) else getattr(run_posts, "defaultDatasetId", getattr(run_posts, "default_dataset_id", None))
         
         if dataset_posts_id:
             contador_img = 1
