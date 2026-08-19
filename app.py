@@ -591,15 +591,12 @@ with col2:
 
 # Novas opções de estética focadas em conversão e autoridade institucional
 esteticas_disponiveis = [
-    "Light Premium (Corporativo Claro, cantos quadrados)",
-    "Dark Mode Brutalista (Fundo Negro, tipografia robusta)",
-    "Minimalismo Japandi (Tons terrosos, limpo e quente)",
-    "Neumórfico de Luxo (Sombras suaves, fundo bege claro)",
-    "Glassmorphism Moderno (Fundos translúcidos e vibrantes)",
-    "Corporativo Clássico (Azul marinho e branco, focado em confiança e tradição)",
-    "Tech Moderno (Escuro com detalhes em neon, fontes geométricas)",
-    "Elegância Monocromática (Preto, branco e cinza, alto contraste e luxo)",
-    "Minimalismo Financeiro (Verde musgo e off-white, sobriedade institucional)"
+    "Autoridade Clássica (Design tradicional e estruturado, tipografia serifada nos títulos, focado em transmitir extrema confiança e estabilidade)",
+    "Minimalismo Corporativo (Espaços em branco generosos, tipografia limpa e sóbria, focado em clareza, transparência e organização)",
+    "Luxo Silencioso / High-Ticket (Estética premium, elementos muito sutis, sem poluição visual, voltado para serviços exclusivos e consultorias)",
+    "Inovação e Precisão (Design contemporâneo, linhas finas, blocos matematicamente definidos, focado em eficiência, dados e modernidade)",
+    "Pragmatismo de Conversão (Layout direto ao ponto, tipografia imponente de alto contraste, focado em resolver problemas e gerar ação imediata)",
+    "Elegância Monocromática (Foco total no contraste de luz e sombra e no peso das fontes, transmitindo seriedade e alto rigor técnico)"
 ]
 
 estetica_selecionada = st.selectbox(
