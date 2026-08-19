@@ -472,7 +472,7 @@ A sua resposta deve conter estritamente blocos de código formatados da seguinte
     config = types.GenerateContentConfig(temperature=0.0)
 
     resposta = client_gemini.models.generate_content(
-        model='gemini-3.5-pro',
+        model='gemini-3.5-flash',
         contents=prompt,
         config=config
     )
