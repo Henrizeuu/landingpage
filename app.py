@@ -30,91 +30,118 @@ for directory in [DIR_DADOS, DIR_BUILD]:
 # =====================================================================
 # 2. INFRAESTRUTURA UI PREMIUM (EPIVERSO)
 # =====================================================================
-st.set_page_config(
-    page_title="Epiverso | Architect AI Engine", 
-    page_icon="🏛️", 
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
 st.markdown("""
     <style>
+        /* Importando uma tipografia premium e moderna */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        /* Ocultar elementos nativos do Streamlit */
         #MainMenu {visibility: hidden;}
-        header {visibility: hidden;}
-        footer {visibility: hidden;}
+        header[data-testid="stHeader"] { background: transparent !important; }
+        footer { visibility: hidden; }
         
-        /* Tema Dark Neo-Corporativo Epiverso */
+        /* Fundo principal super escuro e limpo */
         .stApp {
-            background-color: #080808;
-            color: #e5e7eb;
-            font-family: 'Inter', sans-serif;
+            background-color: #030303;
+            color: #EDEDED;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
         
-        /* Inputs e Formulários */
-        .stTextInput>div>div>input, .stSelectbox>div>div>select {
-            background-color: #111827 !important;
-            color: #ffffff !important;
-            border: 1px solid #374151 !important;
-            border-radius: 6px;
-            padding: 14px;
-            font-size: 14px;
+        /* Sidebar com Glassmorphism (Translúcido) */
+        [data-testid="stSidebar"] {
+            background-color: rgba(10, 10, 10, 0.6) !important;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
         }
-        .stTextInput>div>div>input:focus {
+
+        /* Títulos com efeito gradiente */
+        h1, h2, h3 {
+            letter-spacing: -0.03em;
+        }
+        h1 {
+            background: linear-gradient(90deg, #FFFFFF 0%, #888888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        /* Inputs e Formulários estilo Dashboard Vercel */
+        .stTextInput input, .stSelectbox select {
+            background-color: #0E0E11 !important;
+            color: #FFFFFF !important;
+            border: 1px solid #27272A !important;
+            border-radius: 8px !important;
+            padding: 14px 16px !important;
+            transition: all 0.2s ease !important;
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+        }
+        .stTextInput input:focus, .stSelectbox select:focus {
             border-color: #b2fe02 !important;
-            box-shadow: 0 0 0 1px rgba(178, 254, 2, 0.3) !important;
+            box-shadow: 0 0 0 2px rgba(178, 254, 2, 0.15) !important;
         }
         
-        /* Botões de Ação Principal */
+        /* Botão Primário (Efeito Glow) */
         .stButton>button {
-            background-color: #b2fe02 !important;
-            color: #0a0a0a !important;
-            border-radius: 4px !important;
-            padding: 1rem 3rem !important;
-            font-weight: 900 !important;
+            background: linear-gradient(135deg, #b2fe02 0%, #8bcc00 100%) !important;
+            color: #050505 !important;
+            border-radius: 8px !important;
+            padding: 14px !important;
+            font-weight: 800 !important;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
-            border: none !important;
-            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important;
-            box-shadow: 0 4px 15px rgba(178, 254, 2, 0.1) !important;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1) !important;
+            box-shadow: 0 4px 14px 0 rgba(178, 254, 2, 0.2) !important;
             width: 100%;
         }
         .stButton>button:hover {
-            transform: translateY(-4px) !important;
-            box-shadow: 0 15px 35px rgba(178, 254, 2, 0.4) !important;
-            background-color: #c7ff4d !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px 0 rgba(178, 254, 2, 0.4) !important;
+            background: linear-gradient(135deg, #c7ff4d 0%, #b2fe02 100%) !important;
         }
         
-        /* Paineis de Status e Expansores */
-        .streamlit-expanderHeader {
-            background-color: #111827 !important;
-            border-radius: 4px;
-            color: #b2fe02 !important;
-            font-weight: bold;
+        /* Paineis de Status, Alertas e Expansores (Cards) */
+        div[data-testid="stStatusWidget"], .streamlit-expanderHeader, div[data-testid="stAlert"] {
+            background-color: #0E0E11 !important;
+            border: 1px solid #27272A !important;
+            border-radius: 8px !important;
+            color: #EDEDED !important;
         }
         div[data-testid="stStatusWidget"] {
-            background-color: #111827 !important;
-            border: 1px solid #374151;
-            border-left: 4px solid #b2fe02;
-            border-radius: 4px;
+            border-left: 4px solid #b2fe02 !important;
         }
         
-        /* Abas (Tabs) */
+        /* Abas (Tabs) Premium */
         .stTabs [data-baseweb="tab-list"] {
-            gap: 24px;
+            background-color: #0E0E11;
+            border: 1px solid #27272A;
+            border-radius: 8px;
+            padding: 4px;
+            gap: 4px;
         }
         .stTabs [data-baseweb="tab"] {
-            height: 50px;
-            white-space: pre-wrap;
-            background-color: transparent;
-            border-radius: 4px 4px 0px 0px;
-            gap: 1px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            color: #9ca3af;
+            border-radius: 6px !important;
+            color: #888888 !important;
+            border: none !important;
+            background-color: transparent !important;
+            padding: 10px 20px !important;
+            height: auto !important;
+            transition: all 0.2s ease !important;
         }
         .stTabs [aria-selected="true"] {
+            background-color: #1A1A1E !important;
             color: #b2fe02 !important;
-            border-bottom: 2px solid #b2fe02 !important;
+            box-shadow: inset 0 -2px 0 0 #b2fe02 !important;
+        }
+        .stTabs [data-baseweb="tab"]:hover:not([aria-selected="true"]) {
+            color: #EDEDED !important;
+        }
+
+        /* Código / Console de Logs */
+        pre {
+            background-color: #09090B !important;
+            border: 1px solid #27272A !important;
+            border-radius: 8px !important;
         }
     </style>
 """, unsafe_allow_html=True)
