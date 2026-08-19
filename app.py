@@ -7,6 +7,7 @@ import shutil
 import random
 import time
 import logging
+import urllib.parse
 from PIL import Image
 from apify_client import ApifyClient
 from google import genai
@@ -384,6 +385,7 @@ def gerar_blueprint_estrategico(empresa: str, contexto_texto: str, imagens: list
 1. ESTRATÉGIA DE CONVERSÃO: Redija textos diretos, persuasivos e baseados na resolução de problemas extraídos dos <dados_cliente>. É imperativo evitar formulações robóticas e genéricas. O tom deve transmitir autoridade e focar na captação de clientes corporativos ou de alto ticket.
 2. ADAPTAÇÃO TEMÁTICA: A estética final exige obrigatoriamente a abordagem: **{estetica}**. Você selecionará componentes que nativamente possam ser escuros, devendo planear e documentar as ordens exatas de inversão de propriedades de cor (fundos, textos, sombras) para o engenheiro subsequente.
 3. SELEÇÃO DE COMPONENTES: O mapeamento entre a <estrutura_exigida> e o <catalogo_componentes> deve ser exato e cirúrgico.
+4. FOTO DE PERFIL COMO AUTORIDADE: A imagem "foto_perfil.webp" deve OBRIGATORIAMENTE ser alocada na primeira seção da página (Topo/Hero), garantindo o reconhecimento imediato da marca.
 </core_directives>
 
 <constraints>
@@ -473,10 +475,10 @@ def coletar_codigos_fontes(blueprint_text: str) -> str:
     adicionar_log(f"Total de fragmentos de código injetados: {arquivos_encontrados}")
     return codigo_dos_blocos
 
-def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str) -> str:
+def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str, empresa: str) -> str:
     """Executa o Mega Prompt II: Engenheiro de Síntese, gerando o HTML final exaustivo."""
     adicionar_log("Iniciando compilação do Engenheiro (Mega Prompt II)...")
-    
+    empresa_mapa = urllib.parse.quote_plus(empresa)
     # Aplicação exata da arquitetura de prompt do documento "Melhoria Mega Prompts Epiverso.docx"
     prompt = f"""
 <system_persona>Atue como um Engenheiro Frontend Especialista e Arquiteto de Sistemas de Interface da Epiverso. Possui domínio absoluto sobre manipulação avançada de Document Object Model (DOM), propriedades CSS variáveis (Custom Properties) e arquitetura de animações utilizando Vanilla JavaScript e bibliotecas GSAP.</system_persona>
@@ -489,6 +491,8 @@ def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str) -> str:
 4. ASSINATURA OBRIGATÓRIA DA AGÊNCIA: No Footer da página, inclua EXATAMENTE o seguinte HTML para os direitos reservados: 
    `<p>Desenvolvido por <a href="https://epiverso.com" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">EPIVERSO</a></p>`.
 5. GALERIA DE FOTOS (WEBP): Quando inserir imagens do portfólio no HTML, utilize estritamente a nomenclatura sequencial: `foto1.webp`, `foto2.webp`, `foto3.webp`, etc.
+6. MAPA DE LOCALIZAÇÃO (OBRIGATÓRIO): Imediatamente ANTES do Footer, crie uma seção limpa e responsiva injetando EXATAMENTE este código de iframe que busca a localização pelo nome:
+   `<div style="width: 100%; height: 400px; margin-top: 40px;"><iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q={empresa_mapa}&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe></div>`
 </core_constraints>
 
 <context>
@@ -645,7 +649,7 @@ if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
             if not codigos_fragmentados:
                 adicionar_log("AVISO: Os IDs gerados pelo arquiteto não correspondem a arquivos .txt locais.")
                 
-            codigo_completo = gerar_codigo_engenheiro(blueprint, codigos_fragmentados)
+            codigo_completo = gerar_codigo_engenheiro(blueprint, codigos_fragmentados, empresa_input)
             st.session_state.codigo_gerado = codigo_completo
             progresso.progress(95)
             
