@@ -219,10 +219,25 @@ def extrair_instagram(usuario: str, pasta_destino: str, max_posts: int = 8) -> b
         
         if dataset_profile_id:
             for item in client_apify.dataset(dataset_profile_id).iterate_items():
+                # 1. Salva a Bio
                 bio = item.get("biography", "Sem biografia fornecida.")
                 with open(os.path.join(pasta_destino, "insta_bio.txt"), "w", encoding="utf-8") as f:
                     f.write(f"--- BIO DO INSTAGRAM (@{usuario}) ---\n{bio}")
                 adicionar_log("Sucesso: Biografia do Instagram extraída.")
+                
+                # 2. Salva a Foto de Perfil (Adaptado para .webp)
+                perfil_url = item.get("profilePicUrlHD") or item.get("profilePicUrl")
+                if perfil_url:
+                    try:
+                        resp = requests.get(perfil_url, timeout=15)
+                        if resp.status_code == 200:
+                            caminho_perfil = os.path.join(pasta_destino, "foto_perfil.webp")
+                            with open(caminho_perfil, "wb") as img_f:
+                                img_f.write(resp.content)
+                            adicionar_log("Sucesso: Foto de perfil extraída.")
+                    except Exception as img_err:
+                        adicionar_log(f"Aviso: Falha ao baixar foto de perfil: {str(img_err)}")
+                
                 break
 
         # Extração de Mídias e Legendas
