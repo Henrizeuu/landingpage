@@ -475,9 +475,9 @@ resposta = client_gemini.models.generate_content(
 )
 adicionar_log("Código fonte compilado com sucesso pelo Engenheiro.")
 return resposta.text
-=====================================================================
-7. INTERFACE PRINCIPAL STREAMLIT
-=====================================================================
+#=====================================================================
+#7. INTERFACE PRINCIPAL STREAMLIT
+#=====================================================================
 if not client_apify or not client_gemini:
 st.error("🚨 O sistema está inoperante devido à falta de credenciais nas configurações de Secrets do Streamlit.")
 st.stop()
@@ -600,7 +600,7 @@ st.session_state.logs_execucao = []
         st.error(f"🚨 Ocorreu um erro crítico no pipeline: {str(e)}")
         adicionar_log(f"ERRO FATAL: {str(e)}")
 =====================================================================
-8. EXIBIÇÃO DE RESULTADOS (ABAS)
+#8. EXIBIÇÃO DE RESULTADOS (ABAS)
 =====================================================================
 if st.session_state.processo_concluido:
 st.markdown("---")
