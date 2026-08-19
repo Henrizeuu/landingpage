@@ -18,11 +18,8 @@ from google.genai import types
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# Diretórios do Sistema
 DIR_DADOS = "dados_empresas"
 DIR_BUILD = "build_epiverso"
-ARQ_MENU = "menu (1).txt"
-ARQ_ESTRUTURA = "estrutura (1).txt"
 
 for directory in [DIR_DADOS, DIR_BUILD]:
     os.makedirs(directory, exist_ok=True)
@@ -84,7 +81,7 @@ st.markdown("""
             background-color: #c7ff4d !important;
         }
         
-        /* Paineis de Status e Expansores */
+        /* Paineis de Status */
         .streamlit-expanderHeader {
             background-color: #111827 !important;
             border-radius: 4px;
@@ -96,25 +93,6 @@ st.markdown("""
             border: 1px solid #374151;
             border-left: 4px solid #b2fe02;
             border-radius: 4px;
-        }
-        
-        /* Abas (Tabs) */
-        .stTabs [data-baseweb="tab-list"] {
-            gap: 24px;
-        }
-        .stTabs [data-baseweb="tab"] {
-            height: 50px;
-            white-space: pre-wrap;
-            background-color: transparent;
-            border-radius: 4px 4px 0px 0px;
-            gap: 1px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            color: #9ca3af;
-        }
-        .stTabs [aria-selected="true"] {
-            color: #b2fe02 !important;
-            border-bottom: 2px solid #b2fe02 !important;
         }
     </style>
 """, unsafe_allow_html=True)
@@ -163,13 +141,11 @@ client_apify, client_gemini = init_clients()
 # 5. MÓDULOS DE WEB SCRAPING AVANÇADO
 # =====================================================================
 def zip_directory(folder_path, zip_path):
-    """Compacta o diretório de build para download."""
     adicionar_log(f"Iniciando compactação do diretório: {folder_path}")
     shutil.make_archive(zip_path, 'zip', folder_path)
     adicionar_log(f"Compactação concluída: {zip_path}.zip")
 
 def extrair_google_maps(empresa: str, pasta_destino: str, max_reviews: int = 10) -> bool:
-    """Extrai avaliações do Google Maps via Apify para a seção de Provas de Confiança."""
     adicionar_log(f"Solicitando dados do Google Maps para: {empresa}")
     try:
         run = client_apify.actor("compass/crawler-google-places").call(run_input={
@@ -189,7 +165,6 @@ def extrair_google_maps(empresa: str, pasta_destino: str, max_reviews: int = 10)
                 for r in place.get("reviews", [])[:max_reviews]:
                     texto = r.get('text', '')
                     if texto:
-                        # Limpa quebras de linha que possam quebrar o prompt
                         texto_limpo = texto.replace('\n', ' ').replace('\r', '')
                         avaliacoes.append(f"[{r.get('stars', 5)}⭐] {r.get('name', 'Cliente')}: {texto_limpo}")
                 
@@ -207,11 +182,9 @@ def extrair_google_maps(empresa: str, pasta_destino: str, max_reviews: int = 10)
         return False
 
 def extrair_instagram(usuario: str, pasta_destino: str, max_posts: int = 8) -> bool:
-    """Extrai bio e portfólio visual (em .webp) do Instagram via Apify."""
     adicionar_log(f"Iniciando raspagem do Instagram para o perfil: @{usuario}")
     sucesso = False
     try:
-        # Extração de Detalhes do Perfil (Bio)
         run_profile = client_apify.actor("apify/instagram-scraper").call(
             run_input={"resultsType": "details", "directUrls": [f"https://www.instagram.com/{usuario}/"]}
         )
@@ -225,7 +198,6 @@ def extrair_instagram(usuario: str, pasta_destino: str, max_posts: int = 8) -> b
                 adicionar_log("Sucesso: Biografia do Instagram extraída.")
                 break
 
-        # Extração de Mídias e Legendas
         adicionar_log(f"Buscando as últimas {max_posts} publicações...")
         run_posts = client_apify.actor("apify/instagram-scraper").call(
             run_input={"resultsType": "posts", "directUrls": [f"https://www.instagram.com/{usuario}/"], "resultsLimit": max_posts}
@@ -243,11 +215,10 @@ def extrair_instagram(usuario: str, pasta_destino: str, max_posts: int = 8) -> b
                     
                 urls = item.get("carouselImages") or (item.get("images") if item.get("images") else [item.get("displayUrl")])
                 if urls:
-                    for url in urls[:1]: # Pega a primeira imagem de alta qualidade
+                    for url in urls[:1]:
                         try:
                             resp = requests.get(url, timeout=15)
                             if resp.status_code == 200:
-                                # Conversão forçada para .webp conforme regras do Epiverso
                                 caminho_img = os.path.join(pasta_destino, f"foto{contador_img}.webp")
                                 with open(caminho_img, "wb") as img_f:
                                     img_f.write(resp.content)
@@ -266,16 +237,15 @@ def extrair_instagram(usuario: str, pasta_destino: str, max_posts: int = 8) -> b
 # 6. FUNÇÕES DE ORQUESTRAÇÃO DE IA (MEGA PROMPTS)
 # =====================================================================
 def ler_arquivos_base():
-    """Lê os arquivos de Menu e Estrutura necessários para o prompt."""
     try:
-        if not os.path.exists(ARQ_MENU):
-            raise FileNotFoundError(f"Arquivo vital não encontrado: {ARQ_MENU}")
-        if not os.path.exists(ARQ_ESTRUTURA):
-            raise FileNotFoundError(f"Arquivo vital não encontrado: {ARQ_ESTRUTURA}")
+        if not os.path.exists("menu (1).txt"):
+            raise FileNotFoundError("Arquivo vital não encontrado: menu (1).txt")
+        if not os.path.exists("estrutura (1).txt"):
+            raise FileNotFoundError("Arquivo vital não encontrado: estrutura (1).txt")
             
-        with open(ARQ_MENU, "r", encoding="utf-8") as f:
+        with open("menu (1).txt", "r", encoding="utf-8") as f:
             menu = f.read()
-        with open(ARQ_ESTRUTURA, "r", encoding="utf-8") as f:
+        with open("estrutura (1).txt", "r", encoding="utf-8") as f:
             estrutura = f.read()
             
         return menu, estrutura
@@ -284,7 +254,6 @@ def ler_arquivos_base():
         raise e
 
 def compilar_contexto_cliente(pasta_cliente: str) -> tuple[str, list]:
-    """Agrupa todos os TXTs e WEBP extraídos na fase de scraping."""
     contexto_texto = ""
     for txt_file in glob.glob(os.path.join(pasta_cliente, "*.txt")):
         with open(txt_file, "r", encoding="utf-8") as f:
@@ -300,17 +269,17 @@ def compilar_contexto_cliente(pasta_cliente: str) -> tuple[str, list]:
     return contexto_texto, imagens
 
 def gerar_blueprint_estrategico(empresa: str, contexto_texto: str, imagens: list, menu: str, estrutura: str, estetica: str) -> str:
-    """Executa o Mega Prompt I: O Arquiteto Estratégico, utilizando Chain of Thought."""
     adicionar_log("Iniciando processamento do Arquiteto (Mega Prompt I)...")
     
-    # Aplicação exata da arquitetura de prompt do documento "Melhoria Mega Prompts Epiverso.docx"
-    prompt = f"""
+    # MEGA PROMPT I: Estruturado rigorosamente com aspas simples triplas para evitar colisões
+    prompt = f'''
 <system_persona>Atue como o Arquiteto Principal de Interfaces (UX/UI) e Especialista em Conversão Comercial do sistema Epiverso. A sua competência central é projetar páginas institucionais de alto valor para prestadores de serviços, cruzando a psicologia do consumidor com a estética minimalista e luxuosa.</system_persona>
 
 <core_directives>
 1. ESTRATÉGIA DE CONVERSÃO: Redija textos diretos, persuasivos e baseados na resolução de problemas extraídos dos <dados_cliente>. É imperativo evitar formulações robóticas e genéricas. O tom deve transmitir autoridade e focar na captação de clientes corporativos ou de alto ticket.
 2. ADAPTAÇÃO TEMÁTICA: A estética final exige obrigatoriamente a abordagem: **{estetica}**. Você selecionará componentes que nativamente possam ser escuros, devendo planear e documentar as ordens exatas de inversão de propriedades de cor (fundos, textos, sombras) para o engenheiro subsequente.
 3. SELEÇÃO DE COMPONENTES: O mapeamento entre a <estrutura_exigida> e o <catalogo_componentes> deve ser exato e cirúrgico.
+4. LEITURA VISUAL: Analise as imagens enviadas e defina uma `--accent-color` (Cor de Destaque) no formato hexadecimal baseando-se na paleta dominante da identidade do cliente.
 </core_directives>
 
 <constraints>
@@ -340,7 +309,7 @@ Sintetize as informações do <context> para traçar o perfil do prestador de se
 </task>
 
 <output_format>
-Antes de materializar o projeto, execute uma decomposição lógica do seu planeamento dentro da etiqueta <analise_estrategica>, justificando as suas escolhas. Após a análise, forneça o projeto final seguindo escrupulosamente a formatação exigida em Markdown.
+Antes de materializar o projeto, execute uma decomposição lógica do seu planeamento dentro da etiqueta <analise_estrategica>, justificando as suas escolhas passo a passo. Após a análise, forneça o projeto final seguindo escrupulosamente a formatação exigida em Markdown.
 
 <analise_estrategica>
 1. Diagnóstico do Público: [Avaliação das dores e necessidades baseadas no Maps/Instagram].
@@ -351,9 +320,9 @@ Antes de materializar o projeto, execute uma decomposição lógica do seu plane
 # 🎨 IDENTIDADE VISUAL E TOKENS DA PÁGINA
 * **Tema**: {estetica}
 * **Paleta de Cores Gerada**:
-  * `--bg-page`: [Hexadecimal]
-  * `--text-main`: [Hexadecimal]
-  * `--accent-color`: [Hexadecimal vibrante associado à marca do cliente]
+  * `--bg-page`: [Hexadecimal muito claro]
+  * `--text-main`: [Hexadecimal escuro para contraste]
+  * `--accent-color`: [Hexadecimal vibrante extraído das imagens]
 * **Tipografia (Google Fonts)**: [Duas fontes elegantes]
 
 # 🏗️ BLUEPRINT DA PÁGINA (ESTRUTURA)
@@ -368,8 +337,7 @@ Antes de materializar o projeto, execute uma decomposição lógica do seu plane
   * **Call to Action (Botão)**: "..."
   * **Elementos Adicionais**: "..."
 </output_format>
-"""
-    # Conforme o documento[cite: 4], a temperatura do Arquiteto deve ser entre 0.35 e 0.40
+'''
     config = types.GenerateContentConfig(temperature=0.35)
     conteudo_envio = [prompt] + imagens
     
@@ -382,7 +350,6 @@ Antes de materializar o projeto, execute uma decomposição lógica do seu plane
     return resposta.text
 
 def coletar_codigos_fontes(blueprint_text: str) -> str:
-    """Busca no diretório local os arquivos TXT correspondentes aos IDs mapeados no Blueprint."""
     adicionar_log("Analisando IDs mapeados e coletando códigos-fonte...")
     ids_selecionados = list(set(re.findall(r'\[ID:\s*(\d+)\]', blueprint_text)))
     adicionar_log(f"IDs identificados pela IA: {ids_selecionados}")
@@ -401,21 +368,21 @@ def coletar_codigos_fontes(blueprint_text: str) -> str:
     return codigo_dos_blocos
 
 def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str) -> str:
-    """Executa o Mega Prompt II: Engenheiro de Síntese, gerando o HTML final exaustivo."""
     adicionar_log("Iniciando compilação do Engenheiro (Mega Prompt II)...")
     
-    # Aplicação exata da arquitetura de prompt do documento "Melhoria Mega Prompts Epiverso.docx"
-    prompt = f"""
+    # MEGA PROMPT II: Estruturado rigorosamente com aspas simples triplas para evitar colisões de sintaxe
+    prompt = f'''
 <system_persona>Atue como um Engenheiro Frontend Especialista e Arquiteto de Sistemas de Interface da Epiverso. Possui domínio absoluto sobre manipulação avançada de Document Object Model (DOM), propriedades CSS variáveis (Custom Properties) e arquitetura de animações utilizando Vanilla JavaScript e bibliotecas GSAP.</system_persona>
 
 <core_constraints>
 [IMPORTANTE]: O seu objetivo primário é a COMPILAÇÃO e MONTAGEM EXAUSTIVA. Nenhuma linha de código deve ser omitida.
-1. PROIBIDO ECONOMIZAR CÓDIGO: Escreva o script de fora a fora. Não abrevie, não crie módulos incompletos e NUNCA use placeholders como "adicione o resto aqui" ou "<!-- Mais itens da lista -->". Eu exijo a página 100% pronta para ir ao ar no servidor VPS do cliente.
-2. INTOCABILIDADE ESTRUTURAL: É absolutamente proibido alterar a hierarquia das etiquetas HTML, eliminar classes existentes ou reescrever a arquitetura das divisórias (`divs`) fornecidas nos códigos fonte. A geometria dos componentes já está perfeita. O seu dever é unicamente posicionar os blocos na ordem exigida, alterar propriedades CSS e preenchê-los com o texto providenciado.
-3. BANIMENTO DE FRAMEWORKS EXTERNOS: Todo o código deve operar nativamente (Plain HTML, CSS, JS). A inclusão não autorizada de bibliotecas como Tailwind CSS, Bootstrap ou React resultará em falha crítica.
-4. ASSINATURA OBRIGATÓRIA DA AGÊNCIA: No Footer da página, inclua EXATAMENTE o seguinte HTML para os direitos reservados: 
-   `<p>Desenvolvido por <a href="https://epiverso.com" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">EPIVERSO</a></p>`.
-5. GALERIA DE FOTOS (WEBP): Quando inserir imagens do portfólio no HTML, utilize estritamente a nomenclatura sequencial: `foto1.webp`, `foto2.webp`, `foto3.webp`, etc.
+1. PROIBIDO ECONOMIZAR CÓDIGO: Escreva o script de fora a fora. Não abrevie, não crie módulos incompletos e NUNCA use placeholders como "adicione o resto aqui". Eu exijo a página 100% pronta para ir ao ar.
+2. INTOCABILIDADE ESTRUTURAL: É absolutamente proibido alterar a hierarquia das etiquetas HTML, eliminar classes existentes ou reescrever a arquitetura das divisórias (divs) fornecidas nos códigos fonte.
+3. BANIMENTO DE FRAMEWORKS EXTERNOS: Todo o código deve operar nativamente (Plain HTML, CSS, JS). Proibido Tailwind CSS ou React.
+4. CONVERSÃO DE TEMAS (DARK PARA LIGHT PREMIUM): A maioria dos blocos fornecidos tem génese no modo escuro. O seu dever é aplicar engenharia inversa nas variáveis cromáticas (inverter de escuro para claro).
+5. ASSINATURA OBRIGATÓRIA DA AGÊNCIA: No Footer da página, inclua EXATAMENTE o seguinte HTML: 
+   <p>Desenvolvido por <a href="https://epiverso.com" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">EPIVERSO</a></p>
+6. GALERIA DE FOTOS (WEBP): Quando inserir imagens do portfólio no HTML, utilize estritamente a nomenclatura sequencial: foto1.webp, foto2.webp, foto3.webp...
 </core_constraints>
 
 <context>
@@ -429,19 +396,19 @@ def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str) -> str:
 </context>
 
 <task>
-1. Extraia a paleta de cores e tipografia do <projeto_arquitetonico> e converta-as num seletor `:root` unificado no início da tag `<style>`.
-2. Inicie a montagem do ficheiro HTML, substituindo estritamente o conteúdo textual de placeholder e os caminhos de imagens pelas diretrizes exatas do projeto.
-3. Agregue todos os fragmentos de CSS na tag `<style>`, certificando-se de que a lógica de inversão de cor ou adaptação de tema (ditada pelo arquiteto) é rigorosamente aplicada às classes originais.
-4. Centralize toda a lógica JavaScript na tag `<script>` no final do body, assegurando que os detetores de deslocamento (Intersection Observers e ScrollTriggers) ocorram após o carregamento completo do documento.
+1. Extraia a paleta de cores e tipografia do <projeto_arquitetonico> e converta-as num seletor :root unificado na tag style.
+2. Inicie a montagem do ficheiro HTML, substituindo o conteúdo textual de placeholder e os caminhos de imagens pelas diretrizes exatas do projeto.
+3. Agregue todos os fragmentos de CSS na tag style, garantindo a lógica de inversão de cor.
+4. Centralize toda a lógica JavaScript na tag script no final do body.
 </task>
 
 <output_format>
-Antes da geração final do código, planeie a fusão executando uma <verificacao_de_sintese>, identificando possíveis conflitos na união dos blocos e garantindo que o plano de cores respeita o limite do tema exigido.
+Antes da geração final do código, planeie a fusão executando uma <verificacao_de_sintese>.
 A sua resposta deve conter estritamente blocos de código formatados da seguinte forma:
 
 <verificacao_de_sintese>
-1. Validação de Conflitos de Z-Index/Sticky: [Análise...]
-2. Adaptação de Cores e Glassmorphism: [Análise...]
+1. Validação de Conflitos: [Análise...]
+2. Adaptação de Cores: [Análise...]
 3. Injeção da Assinatura Epiverso: [Confirmado]
 </verificacao_de_sintese>
 
