@@ -570,20 +570,6 @@ with st.sidebar:
     st.header("⚙️ Painel de Controle Epiverso")
     st.markdown("Monitoramento em tempo real da orquestração de IA.")
 
-    st.subheader("Roteamento Dinâmico de Design")
-    # Prevenção sistêmica da convergência de design
-    esteticas_disponiveis = [
-        "Light Premium (Corporativo Claro, cantos quadrados)",
-        "Dark Mode Brutalista (Fundo Negro, tipografia robusta)",
-        "Minimalismo Japandi (Tons terrosos, limpo e quente)",
-        "Neumórfico de Luxo (Sombras suaves, fundo bege claro)",
-        "Glassmorphism Moderno (Fundos translúcidos e vibrantes)"
-    ]
-    estetica_selecionada = st.selectbox(
-        "Forçar Padrão Estético (Opcional):", 
-        ["Sorteio Automático (IA decide)"] + esteticas_disponiveis
-    )
-
     st.markdown("---")
     st.subheader("Console de Logs")
     log_container = st.empty()
@@ -603,6 +589,25 @@ with col1:
 with col2:
     insta_input = st.text_input("📸 Perfil do Instagram (Sem @)", placeholder="Ex: alphacontabilidade")
 
+# Novas opções de estética focadas em conversão e autoridade institucional
+esteticas_disponiveis = [
+    "Light Premium (Corporativo Claro, cantos quadrados)",
+    "Dark Mode Brutalista (Fundo Negro, tipografia robusta)",
+    "Minimalismo Japandi (Tons terrosos, limpo e quente)",
+    "Neumórfico de Luxo (Sombras suaves, fundo bege claro)",
+    "Glassmorphism Moderno (Fundos translúcidos e vibrantes)",
+    "Corporativo Clássico (Azul marinho e branco, focado em confiança e tradição)",
+    "Tech Moderno (Escuro com detalhes em neon, fontes geométricas)",
+    "Elegância Monocromática (Preto, branco e cinza, alto contraste e luxo)",
+    "Minimalismo Financeiro (Verde musgo e off-white, sobriedade institucional)"
+]
+
+estetica_selecionada = st.selectbox(
+    "🎨 Selecione o Padrão Estético da Página:",
+    esteticas_disponiveis
+)
+
+
 st.markdown("---")
 
 if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
@@ -616,7 +621,7 @@ if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
         pasta_alvo = os.path.join(DIR_DADOS, empresa_input.replace("/", "-").replace(" ", "_"))
         os.makedirs(pasta_alvo, exist_ok=True)
         
-        estetica_final = random.choice(esteticas_disponiveis) if estetica_selecionada == "Sorteio Automático (IA decide)" else estetica_selecionada
+        estetica_final = estetica_selecionada
         
         # --- INÍCIO DA EXECUÇÃO VISUAL ---
         progresso = st.progress(0)
