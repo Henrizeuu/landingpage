@@ -464,17 +464,21 @@ A sua resposta deve conter estritamente blocos de código formatados da seguinte
 </body>
 </html>
 </output_format>
+</output_format>
 """
-# Conforme o documento[cite: 4], a temperatura do Engenheiro deve ser 0.0 para evitar invenções no código.
-config = types.GenerateContentConfig(temperature=0.0)
+    # 👇 Todas as linhas abaixo precisam estar indentadas para dentro da função!
+    
+    # Conforme o documento, a temperatura do Engenheiro deve ser 0.0 para evitar invenções no código.
+    config = types.GenerateContentConfig(temperature=0.0)
 
-resposta = client_gemini.models.generate_content(
-    model='gemini-3.5-pro',
-    contents=prompt,
-    config=config
-)
-adicionar_log("Código fonte compilado com sucesso pelo Engenheiro.")
-return resposta.text
+    resposta = client_gemini.models.generate_content(
+        model='gemini-3.5-pro',
+        contents=prompt,
+        config=config
+    )
+    adicionar_log("Código fonte compilado com sucesso pelo Engenheiro.")
+    
+    return resposta.text
 # =====================================================================
 # 7. INTERFACE PRINCIPAL STREAMLIT
 # =====================================================================
