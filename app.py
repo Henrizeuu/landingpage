@@ -430,3 +430,155 @@ A sua resposta deve conter estritamente blocos de código formatados da seguinte
     </script>
 </body>
 </html>
+</output_format>
+'''
+config = types.GenerateContentConfig(temperature=0.0)
+
+resposta = client_gemini.models.generate_content(
+    model='gemini-3.5-pro',
+    contents=prompt,
+    config=config
+)
+adicionar_log("Código fonte compilado com sucesso pelo Engenheiro.")
+return resposta.text
+=====================================================================
+7. INTERFACE PRINCIPAL STREAMLIT
+=====================================================================
+if not client_apify or not client_gemini:
+st.error("🚨 O sistema está inoperante devido à falta de credenciais nas configurações de Secrets do Streamlit.")
+st.stop()
+
+--- SIDEBAR: Configurações e Logs ---
+with st.sidebar:
+st.header("⚙️ Painel Epiverso")
+st.markdown("Controle de rotas arquiteturais.")
+
+esteticas_disponiveis = [
+    "Light Premium (Corporativo Claro, cantos quadrados)",
+    "Dark Mode Brutalista (Fundo Negro, tipografia robusta)",
+    "Minimalismo Japandi (Tons terrosos, limpo e quente)",
+    "Neumórfico de Luxo (Sombras suaves, fundo bege claro)",
+    "Glassmorphism Moderno (Fundos translúcidos e vibrantes)"
+]
+estetica_selecionada = st.selectbox(
+    "Forçar Padrão Estético (Opcional):", 
+    ["Sorteio Automático (IA decide)"] + esteticas_disponiveis
+)
+
+st.markdown("---")
+st.subheader("Console de Logs")
+log_container = st.empty()
+if st.session_state.logs_execucao:
+    log_text = "\n".join(st.session_state.logs_execucao[-10:])
+    log_container.code(log_text, language="bash")
+else:
+    log_container.info("Aguardando pipeline...")
+--- ÁREA PRINCIPAL ---
+st.markdown("### 1. Parâmetros de Prospecção")
+st.markdown("A inteligência extrairá os dados e adaptará a estrutura de 10 passos perfeitamente ao nicho do prospecto.")
+
+col1, col2 = st.columns(2)
+with col1:
+empresa_input = st.text_input("📍 Nome do Negócio (Google Maps)", placeholder="Ex: Advogados Associados")
+with col2:
+insta_input = st.text_input("📸 Perfil do Instagram (Sem @)", placeholder="Ex: advogados_associados")
+
+st.markdown("---")
+
+if st.button("🚀 INICIAR PIPELINE DE SÍNTESE", use_container_width=True):
+if not empresa_input or not insta_input:
+st.warning("⚠️ Preencha os dois campos obrigatórios acima.")
+else:
+st.session_state.processo_concluido = False
+st.session_state.logs_execucao = []
+
+    pasta_alvo = os.path.join(DIR_DADOS, empresa_input.replace("/", "-").replace(" ", "_"))
+    os.makedirs(pasta_alvo, exist_ok=True)
+    
+    estetica_final = random.choice(esteticas_disponiveis) if estetica_selecionada == "Sorteio Automático (IA decide)" else estetica_selecionada
+    
+    progresso = st.progress(0)
+    status_text = st.empty()
+    
+    try:
+        status_text.markdown("#### ⏳ Etapa 1/4: Minerando provas sociais e ativos visuais...")
+        extrair_google_maps(empresa_input, pasta_alvo)
+        progresso.progress(15)
+        extrair_instagram(insta_input, pasta_alvo)
+        progresso.progress(30)
+        
+        status_text.markdown("#### ⏳ Etapa 2/4: Preparando matrizes de contexto (Estrutura e Menu)...")
+        menu_texto, estrutura_texto = ler_arquivos_base()
+        contexto_cli, imagens_cli = compilar_contexto_cliente(pasta_alvo)
+        progresso.progress(45)
+        
+        status_text.markdown("#### ⏳ Etapa 3/4: O Arquiteto está estruturando o Blueprint Estratégico...")
+        blueprint = gerar_blueprint_estrategico(
+            empresa_input, contexto_cli, imagens_cli, menu_texto, estrutura_texto, estetica_final
+        )
+        st.session_state.blueprint_gerado = blueprint
+        progresso.progress(70)
+        
+        status_text.markdown("#### ⏳ Etapa 4/4: O Engenheiro Sênior está compilando o código-fonte massivo...")
+        codigos_fragmentados = coletar_codigos_fontes(blueprint)
+        
+        if not codigos_fragmentados:
+            adicionar_log("AVISO: Os IDs gerados pelo arquiteto não correspondem a arquivos .txt locais.")
+            
+        codigo_completo = gerar_codigo_engenheiro(blueprint, codigos_fragmentados)
+        st.session_state.codigo_gerado = codigo_completo
+        progresso.progress(95)
+        
+        status_text.markdown("#### ⏳ Finalizando artefatos web...")
+        pasta_build = os.path.join(DIR_BUILD, empresa_input.replace(" ", "_"))
+        os.makedirs(pasta_build, exist_ok=True)
+        
+        match = re.search(r'```html(.*?)```', codigo_completo, re.DOTALL | re.IGNORECASE)
+        codigo_limpo = match.group(1).strip() if match else codigo_completo.replace('```html', '').replace('```', '').strip()
+        
+        with open(os.path.join(pasta_build, "index.html"), "w", encoding="utf-8") as f:
+            f.write(codigo_limpo)
+            
+        for img_webp in glob.glob(os.path.join(pasta_alvo, "*.webp")):
+            shutil.copy(img_webp, pasta_build)
+            
+        caminho_zip = os.path.join(DIR_BUILD, f"Epiverso_{empresa_input.replace(' ', '_')}")
+        zip_directory(pasta_build, caminho_zip)
+        
+        st.session_state.caminho_zip = f"{caminho_zip}.zip"
+        st.session_state.processo_concluido = True
+        progresso.progress(100)
+        status_text.empty()
+        st.balloons()
+        
+    except Exception as e:
+        st.error(f"🚨 Ocorreu um erro crítico no pipeline: {str(e)}")
+        adicionar_log(f"ERRO FATAL: {str(e)}")
+=====================================================================
+8. PAINEL DE RESULTADOS
+=====================================================================
+if st.session_state.processo_concluido:
+st.markdown("---")
+st.markdown("### 🏆 Projeto Finalizado com Sucesso")
+
+aba1, aba2, aba3 = st.tabs(["📦 Download do Pacote", "📐 Blueprint Arquitetural", "💻 Inspecionar Código Fonte"])
+
+with aba1:
+    st.info("A página institucional foi estruturada com sucesso. As provas sociais foram injetadas e as imagens do Instagram foram padronizadas como .webp.")
+    with open(st.session_state.caminho_zip, "rb") as fp:
+        st.download_button(
+            label="⬇️ BAIXAR ARQUIVO .ZIP COMPLETO",
+            data=fp,
+            file_name=os.path.basename(st.session_state.caminho_zip),
+            mime="application/zip",
+            use_container_width=True
+        )
+        
+with aba2:
+    st.markdown("O documento abaixo foi gerado pelo **Mega Prompt I**. A IA utilizou o método Chain-of-Thought antes de mapear os componentes do menu e desenhar a copy.")
+    st.markdown(st.session_state.blueprint_gerado)
+    
+with aba3:
+    st.markdown("Código HTML/CSS/JS bruto gerado pelo **Mega Prompt II**.")
+    with st.expander("Expandir para visualizar o código"):
+        st.code(st.session_state.codigo_gerado, language="html")
