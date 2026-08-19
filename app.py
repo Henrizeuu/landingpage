@@ -493,6 +493,8 @@ def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str, empresa: str
 5. GALERIA DE FOTOS (WEBP): Quando inserir imagens do portfólio no HTML, utilize estritamente a nomenclatura sequencial: `foto1.webp`, `foto2.webp`, `foto3.webp`, etc.
 6. MAPA DE LOCALIZAÇÃO (OBRIGATÓRIO): Imediatamente ANTES do Footer, crie uma seção limpa e responsiva injetando EXATAMENTE este código de iframe que busca a localização pelo nome:
    `<div style="width: 100%; height: 400px; margin-top: 40px;"><iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q={empresa_mapa}&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe></div>`
+7. PREVENÇÃO DE TELA EM BRANCO (ANTI-INVISIBILIDADE): É ESTRITAMENTE PROIBIDO usar `opacity: 0` ou `visibility: hidden` no CSS estático (ex: em classes como .animate-on-scroll). Se o JS falhar, o site fica quebrado em branco. Deixe os elementos 100% visíveis no CSS original e use APENAS o GSAP no JavaScript para definir o estado inicial transparente e fazer a revelação.
+8. FALLBACK DE IMAGENS QUEBRADAS: Como os arquivos .webp locais podem falhar durante o download, TODA tag <img> deve obrigatoriamente ter uma cor de fundo segura e o atributo 'onerror' para carregar um placeholder caso a imagem quebre. Use EXATAMENTE esta estrutura de segurança nas imagens: `<img src="foto1.webp" style="background-color: var(--bg-warm-accent);" onerror="this.onerror=null; this.src='https://placehold.co/800x800/dedede/333?text=Imagem+Indisponivel'">`
 </core_constraints>
 
 <context>
