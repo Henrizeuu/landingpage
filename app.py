@@ -665,7 +665,7 @@ status_text = st.empty()
         pasta_build = os.path.join(DIR_BUILD, empresa_input.replace(" ", "_"))
         os.makedirs(pasta_build, exist_ok=True)
         
-        # Correção sintática e segura da Regex (numa linha contínua sem quebras literais)
+        # ATENÇÃO: Regex corrigido para uma linha só (Evita o SyntaxError)
         match = re.search(r'
 html(.*?)', str(codigo_completo), re.DOTALL | re.IGNORECASE)
 codigo_limpo = match.group(1).strip() if match else str(codigo_completo).replace('
