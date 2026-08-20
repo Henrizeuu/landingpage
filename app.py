@@ -1,10 +1,3 @@
-Peço desculpas! Esse é um erro clássico de sintaxe (SyntaxError) que aconteceu porque, na hora de gerar o código anterior, o trecho que procurava a tag HTML usou quebras de linha dentro de uma string simples (onde tem o re.search), quebrando o script. Além disso, a formatação (identação) de uma das funções se perdeu no meio do caminho.
-
-Eu corrigi completamente a sintaxe da expressão regular (Regex) para ser lida numa linha só de forma segura e restaurei a identação perfeita do Python.
-
-Aqui está o arquivo app.py 100% corrigido e pronto para rodar:
-
-Snippet de código
 import streamlit as st
 import os
 import requests
