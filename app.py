@@ -684,23 +684,31 @@ if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
             st.session_state.blueprint_gerado = blueprint
             progresso.progress(70)
             
-            status_text.markdown("#### ⏳ Etapa 4/4: O Engenheiro Sênior está compilando o código HTML...")
+            status_text.markdown("#### ⏳ Etapa 4/5: O Engenheiro Sênior está compilando o código HTML bruto...")
             codigos_fragmentados = coletar_codigos_fontes(blueprint)
-            codigo_completo = gerar_codigo_engenheiro(blueprint, codigos_fragmentados, empresa_input)
+            codigo_bruto = gerar_codigo_engenheiro(blueprint, codigos_fragmentados, empresa_input)
             
-            if not codigo_completo:
+            if not codigo_bruto:
                 raise Exception("O pipeline falhou pois a IA Engenheiro gerou um código vazio.")
                 
-            st.session_state.codigo_gerado = codigo_completo
+            progresso.progress(85)
+
+            status_text.markdown("#### ⏳ Etapa 5/5: O Auditor de Qualidade está revisando todo o index e corrigindo falhas...")
+            codigo_auditado = auditar_codigo_final(codigo_bruto, empresa_input, nicho_input)
+            
+            if not codigo_auditado:
+                raise Exception("O pipeline falhou pois a IA Auditora gerou um código vazio.")
+
+            st.session_state.codigo_gerado = codigo_auditado
             progresso.progress(95)
             
-            status_text.markdown("#### ⏳ Finalizando e empacotando artefatos...")
+            status_text.markdown("#### ⏳ Finalizando e empacotando artefatos para a VPS...")
             pasta_build = os.path.join(DIR_BUILD, empresa_input.replace(" ", "_"))
             os.makedirs(pasta_build, exist_ok=True)
             
-            # REGEX CORRIGIDO AQUI
-            match = re.search(r'```html(.*?)```', str(codigo_completo), re.DOTALL | re.IGNORECASE)
-            codigo_limpo = match.group(1).strip() if match else str(codigo_completo).replace('```html', '').replace('```', '').strip()
+            # Limpeza com regex no código FINAL do auditor
+            match = re.search(r'```html(.*?)```', str(codigo_auditado), re.DOTALL | re.IGNORECASE)
+            codigo_limpo = match.group(1).strip() if match else str(codigo_auditado).replace('```html', '').replace('```', '').strip()
 
             with open(os.path.join(pasta_build, "index.html"), "w", encoding="utf-8") as f:
                 f.write(codigo_limpo)
@@ -708,7 +716,7 @@ if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
             for img_webp in glob.glob(os.path.join(pasta_alvo, "*.webp")):
                 shutil.copy(img_webp, pasta_build)
                 
-            caminho_zip = os.path.join(DIR_BUILD, f"LandingPage_{empresa_input.replace(' ', '_')}")
+            caminho_zip = os.path.join(DIR_BUILD, f"PaginaInstitucional_{empresa_input.replace(' ', '_')}")
             zip_directory(pasta_build, caminho_zip)
             st.session_state.caminho_zip = f"{caminho_zip}.zip"
             st.session_state.processo_concluido = True
