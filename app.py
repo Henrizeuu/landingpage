@@ -583,68 +583,23 @@ Inspecione o <codigo_bruto_engenheiro>, aplique as correções necessárias sile
 </output_format>
 """
 # Temperatura baixa (0.1) para garantir precisão cirúrgica na correção de código
-config = types.GenerateContentConfig(temperature=0.1)
 
-try:
-    resposta = client_gemini.models.generate_content(
-        model='gemini-3.5-flash',
-        contents=prompt,
-        config=config
-    )
-    if not resposta or not hasattr(resposta, 'text') or not resposta.text:
-        raise ValueError("O Auditor (Gemini) retornou uma resposta em branco.")
+        config = types.GenerateContentConfig(temperature=0.1)
+
+        try:
+            resposta = client_gemini.models.generate_content(
+                model='gemini-3.5-flash',
+                contents=prompt,
+                config=config
+            )
+            if not resposta or not hasattr(resposta, 'text') or not resposta.text:
+                raise ValueError("O Auditor (Gemini) retornou uma resposta em branco.")
         
-    adicionar_log("Código final auditado e polido com sucesso pelo QA.")
-    return str(resposta.text)
-except Exception as e:
-    adicionar_log(f"Erro Crítico no Gemini (Auditor): {str(e)}")
-    raise e
-
-### 2. Atualizar o Botão de Execução (Streamlit)
-No bloco **7. INTERFACE PRINCIPAL STREAMLIT**, onde as etapas são executadas (dentro do `if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA..."):`), nós vamos adicionar a **Etapa 5** antes de salvar o arquivo.
-
-Substitua a parte final da execução (a partir da "Etapa 4") por isto:
-
-```python
-            status_text.markdown("#### ⏳ Etapa 4/5: O Engenheiro Sênior está compilando o código HTML bruto...")
-            codigos_fragmentados = coletar_codigos_fontes(blueprint)
-            codigo_bruto = gerar_codigo_engenheiro(blueprint, codigos_fragmentados, empresa_input)
-            
-            if not codigo_bruto:
-                raise Exception("O pipeline falhou pois a IA Engenheiro gerou um código vazio.")
-                
-            progresso.progress(85)
-
-            status_text.markdown("#### ⏳ Etapa 5/5: O Auditor de Qualidade está revisando todo o index e corrigindo falhas...")
-            codigo_auditado = auditar_codigo_final(codigo_bruto, empresa_input, nicho_input)
-            
-            if not codigo_auditado:
-                raise Exception("O pipeline falhou pois a IA Auditora gerou um código vazio.")
-
-            st.session_state.codigo_gerado = codigo_auditado
-            progresso.progress(95)
-            
-            status_text.markdown("#### ⏳ Finalizando e empacotando artefatos para a VPS...")
-            pasta_build = os.path.join(DIR_BUILD, empresa_input.replace(" ", "_"))
-            os.makedirs(pasta_build, exist_ok=True)
-            
-            # Limpeza com regex no código FINAL do auditor
-            match = re.search(r'```html(.*?)```', str(codigo_auditado), re.DOTALL | re.IGNORECASE)
-            codigo_limpo = match.group(1).strip() if match else str(codigo_auditado).replace('```html', '').replace('```', '').strip()
-
-            with open(os.path.join(pasta_build, "index.html"), "w", encoding="utf-8") as f:
-                f.write(codigo_limpo)
-                
-            for img_webp in glob.glob(os.path.join(pasta_alvo, "*.webp")):
-                shutil.copy(img_webp, pasta_build)
-                
-            caminho_zip = os.path.join(DIR_BUILD, f"PaginaInstitucional_{empresa_input.replace(' ', '_')}")
-            zip_directory(pasta_build, caminho_zip)
-            st.session_state.caminho_zip = f"{caminho_zip}.zip"
-            st.session_state.processo_concluido = True
-            progresso.progress(100)
-            status_text.empty()
-            st.balloons()
+            adicionar_log("Código final auditado e polido com sucesso pelo QA.")
+            return str(resposta.text)
+         except Exception as e:
+            adicionar_log(f"Erro Crítico no Gemini (Auditor): {str(e)}")
+            raise e
 
 # =====================================================================
 # 7. INTERFACE PRINCIPAL STREAMLIT
