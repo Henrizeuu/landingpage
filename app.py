@@ -591,12 +591,14 @@ with col2:
 
 # Novas opções de estética focadas em conversão e autoridade institucional
 esteticas_disponiveis = [
-    "Autoridade Clássica (Design tradicional e estruturado, tipografia serifada nos títulos, focado em transmitir extrema confiança e estabilidade)",
-    "Minimalismo Corporativo (Espaços em branco generosos, tipografia limpa e sóbria, focado em clareza, transparência e organização)",
-    "Luxo Silencioso / High-Ticket (Estética premium, elementos muito sutis, sem poluição visual, voltado para serviços exclusivos e consultorias)",
-    "Inovação e Precisão (Design contemporâneo, linhas finas, blocos matematicamente definidos, focado em eficiência, dados e modernidade)",
-    "Pragmatismo de Conversão (Layout direto ao ponto, tipografia imponente de alto contraste, focado em resolver problemas e gerar ação imediata)",
-    "Elegância Monocromática (Foco total no contraste de luz e sombra e no peso das fontes, transmitindo seriedade e alto rigor técnico)"
+    "Autoridade Clássica (Design imponente com fontes serifadas e cores sóbrias, ideal para advogados, contadores e consultorias financeiras)",
+    "Minimalismo Clínico (Layout ultra limpo, tons claros e muito respiro, projetado para transmitir higiene e paz para médicos, dentistas e saúde)",
+    "High-Ticket Exclusivo (Estética premium, elementos sutis e design luxuoso, focado em fechar contratos altos, arquitetura de luxo e serviços VIP)",
+    "Vanguarda Tecnológica (Linhas precisas, blocos matemáticos e design contemporâneo, perfeito para empresas de TI, engenharia e agências de dados)",
+    "Conversão Pragmática (Layout agressivo e direto ao ponto, com CTAs em alto contraste, ideal para serviços de urgência, manutenções e despachantes)",
+    "Acolhimento Humanizado (Tons terrosos ou pastéis, tipografia suave e formas orgânicas, focado em terapeutas, psicólogos e clínicas familiares)",
+    "Rigor Monocromático (Foco absoluto no contraste de luz e sombra, transmitindo extrema seriedade, ideal para auditorias, segurança e perícias)",
+    "Dinamismo Criativo (Cores ousadas, tipografia marcante e layout moderno, feito para criadores, produtoras e agências de marketing)"
 ]
 
 estetica_selecionada = st.selectbox(
