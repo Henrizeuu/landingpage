@@ -373,7 +373,7 @@ def compilar_contexto_cliente(pasta_cliente: str) -> tuple[str, list]:
             
     return contexto_texto, imagens
 
-def gerar_blueprint_estrategico(empresa: str, contexto_texto: str, imagens: list, menu: str, estrutura: str, estetica: str) -> str:
+def gerar_blueprint_estrategico(empresa: str, nicho: str, contexto_texto: str, imagens: list, menu: str, estrutura: str, estetica: str) -> str:
     """Executa o Mega Prompt I: O Arquiteto Estratégico, utilizando Chain of Thought."""
     adicionar_log("Iniciando processamento do Arquiteto (Mega Prompt I)...")
     
@@ -381,17 +381,14 @@ def gerar_blueprint_estrategico(empresa: str, contexto_texto: str, imagens: list
 <system_persona>Atue como o Arquiteto Principal de Interfaces (UX/UI) e Especialista em Conversão Comercial do sistema Epiverso. A sua competência central é projetar páginas institucionais de alto valor que respeitem PROFUNDAMENTE a identidade visual real do cliente.</system_persona>
 
 <core_directives>
-1. ESTRATÉGIA DE CONVERSÃO: Redija textos diretos e persuasivos. O tom deve transmitir autoridade e focar na captação de clientes corporativos ou de alto ticket.
+1. ESTRATÉGIA DE CONVERSÃO: O cliente atua no nicho de **{nicho}**. Redija textos diretos e persuasivos focados nas dores, objeções e jargões deste mercado. O tom deve transmitir máxima autoridade.
 2. ANÁLISE VISUAL OBRIGATÓRIA (CRÍTICO): Você DEVE observar as imagens anexadas do portfólio do cliente antes de definir cores. 
-   - Se as fotos mostrarem ambientes claros, iluminados, minimalistas e "clean" (ex: branco, bege, madeira clara), É EXPRESSAMENTE PROIBIDO usar fundo preto ou escuro. Você DEVE usar um tema claro (Light Mode) com tons pastéis, off-white ou fendi para refletir o trabalho do cliente.
-   - O estilo escolhido foi: **{estetica}**. Adapte este estilo à paleta real extraída das imagens. "Premium" ou "Autoridade" não significa necessariamente "fundo escuro". Luxo claro (Ethereal Premium) é altamente encorajado se as fotos forem claras.
-3. SELEÇÃO DE COMPONENTES: O mapeamento entre a <estrutura_exigida> e o <catalogo_componentes> deve ser exato e cirúrgico.
-4. FOTO DE PERFIL: A imagem "foto_perfil.webp" deve OBRIGATORIAMENTE ser alocada na primeira seção da página (Topo/Hero).
+   - Se as fotos mostrarem ambientes claros, É EXPRESSAMENTE PROIBIDO usar fundo escuro. Você DEVE usar um tema claro (Light Mode) que reflita o trabalho do cliente.
+   - O estilo escolhido foi: **{estetica}**. Adapte este estilo à paleta real extraída.
+3. SELEÇÃO DE COMPONENTES: O mapeamento entre a <estrutura_exigida> e o <catalogo_componentes> deve ser exato.
+4. MUTAÇÃO DINÂMICA DE LAYOUT: Para garantir que a página institucional seja única, você DEVE sugerir alterações estruturais (mutações) rigorosas para pelo menos dois blocos do catálogo. Por exemplo, instruir a transformação de uma lista padrão num grid de 3 colunas, ou alterar a disposição da imagem de perfil.
+5. FOTO DE PERFIL: A imagem "foto_perfil.webp" deve obrigatoriamente ser alocada no Topo/Hero.
 </core_directives>
-
-<constraints>
-- FIDELIDADE AO CATÁLOGO: É obrigatória a utilização exclusiva de identificadores de componentes que constem textualmente no <catalogo_componentes>.
-</constraints>
 
 <context>
   <estrutura_exigida>
@@ -409,42 +406,32 @@ def gerar_blueprint_estrategico(empresa: str, contexto_texto: str, imagens: list
 </context>
 
 <task>
-1. Analise as imagens do cliente. Defina se a vibe dominante é Clara/Leve ou Escura/Sóbria.
-2. Percorra a <estrutura_exigida> passo a passo. 
-3. Selecione os IDs numéricos perfeitos no <catalogo_componentes>. 
-4. Redija o copy e estipule as diretrizes matemáticas exatas de CSS (hexadecimais), garantindo que as cores do site não destruam o trabalho visual (fotos) do cliente.
+Gere o blueprint definindo as cores estritas e listando cada bloco da estrutura. Para os blocos escolhidos, passe instruções de mutação de CSS/Layout para o Engenheiro.
 </task>
 
 <output_format>
-<analise_estrategica>
-1. Diagnóstico do Público: [Avaliação baseada no texto].
-2. Extração Visual (Visão Computacional): [Descreva o que você está vendo nas imagens fornecidas (ex: luz natural, madeiras, tons claros) e justifique por que o site deve ser Light ou Dark baseado APENAS nisso].
-3. Lógica Cromática: [Cores hexadecimais escolhidas, em harmonia com as fotos analisadas acima].
-4. Mapeamento Lógico: [Associação de cada secção da estrutura ao ID].
-</analise_estrategica>
-
 # 🎨 IDENTIDADE VISUAL E TOKENS DA PÁGINA
 * **Tema**: {estetica}
 * **Paleta de Cores Gerada**:
-  * `--bg-page`: [Hexadecimal exato - DEVE harmonizar com as fotos]
+  * `--bg-page`: [Hexadecimal exato]
   * `--text-main`: [Hexadecimal exato]
   * `--accent-color`: [Hexadecimal vibrante extraído das fotos ou da marca]
 * **Tipografia (Google Fonts)**: [Duas fontes perfeitamente alinhadas]
 
-# 🏗️ BLUEPRINT DA PÁGINA (ESTRUTURA)
+# 🏗️ BLUEPRINT DA PÁGINA INSTITUCIONAL
 
 ## 1. [Nome da Secção conforme Estrutura Exigida]
-* **Blocos Escolhidos**: [ID: XXX] - [Nome literal do bloco no catálogo]
-* **Instruções de Adaptação (Design)**: [Diretriz exata para o engenheiro (ex: "Manter fundo bege claro (#F5F5FDC), texto cinza chumbo, remover sombras pesadas")]
+* **Blocos Escolhidos**: [ID: XXX] - [Nome do bloco]
+* **Instruções de Adaptação (Design & MUTAÇÃO)**: [Diretriz exata para o engenheiro. Ex: "MUTAÇÃO: Usar Tailwind para converter as divs filhas num flexbox row gap-8", "Manter fundo bege claro"]
 * **Copywriting**:
   * **Kicker/Eyebrow**: "..."
   * **Título Principal**: "..."
   * **Subtítulo/Texto de Apoio**: "..."
   * **Call to Action (Botão)**: "..."
-  * **Elementos Adicionais**: "..."
 </output_format>
 """
-    config = types.GenerateContentConfig(temperature=0.35)
+    # Temperatura aumentada para gerar layouts mais criativos e únicos
+    config = types.GenerateContentConfig(temperature=0.6)
     conteudo_envio = [prompt] + imagens
     
     try:
@@ -494,20 +481,18 @@ def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str, empresa: str
     empresa_mapa = urllib.parse.quote_plus(empresa)
     
     prompt = f"""
-<system_persona>Atue como um Engenheiro Frontend Especialista e Arquiteto de Sistemas de Interface da Epiverso. Possui domínio absoluto sobre manipulação avançada de Document Object Model (DOM), propriedades CSS variáveis (Custom Properties) e arquitetura de animações utilizando Vanilla JavaScript e bibliotecas GSAP.</system_persona>
+<system_persona>Atue como um Engenheiro Frontend Especialista e Arquiteto de Sistemas de Interface da Epiverso. Possui domínio absoluto sobre manipulação avançada de DOM, Tailwind CSS e arquitetura de animações utilizando Vanilla JavaScript e GSAP.</system_persona>
 
 <core_constraints>
 [IMPORTANTE]: O seu objetivo primário é a COMPILAÇÃO e MONTAGEM EXAUSTIVA. Nenhuma linha de código deve ser omitida.
-1. PROIBIDO ECONOMIZAR CÓDIGO: Escreva o script de fora a fora. Não abrevie, não crie módulos incompletos e NUNCA use placeholders como "adicione o resto aqui" ou "<!-- Mais itens da lista -->". Eu exijo a página 100% pronta para ir ao ar no servidor VPS do cliente.
-2. INTOCABILIDADE ESTRUTURAL: É absolutamente proibido alterar a hierarquia das etiquetas HTML, eliminar classes existentes ou reescrever a arquitetura das divisórias (`divs`) fornecidas nos códigos fonte. A geometria dos componentes já está perfeita. O seu dever é unicamente posicionar os blocos na ordem exigida, alterar propriedades CSS e preenchê-los com o texto providenciado.
-3. BANIMENTO DE FRAMEWORKS EXTERNOS: Todo o código deve operar nativamente (Plain HTML, CSS, JS). A inclusão não autorizada de bibliotecas como Tailwind CSS, Bootstrap ou React resultará em falha crítica.
-4. ASSINATURA OBRIGATÓRIA DA AGÊNCIA: No Footer da página, inclua EXATAMENTE o seguinte HTML para os direitos reservados: 
-   `<p>Desenvolvido por <a href="https://epiverso.com" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">EPIVERSO</a></p>`.
-5. GALERIA DE FOTOS (WEBP): Quando inserir imagens do portfólio no HTML, utilize estritamente a nomenclatura sequencial: `foto1.webp`, `foto2.webp`, `foto3.webp`, etc.
-6. MAPA DE LOCALIZAÇÃO (OBRIGATÓRIO): Imediatamente ANTES do Footer, crie uma seção limpa e responsiva injetando EXATAMENTE este código de iframe que busca a localização pelo nome:
+1. PROIBIDO ECONOMIZAR CÓDIGO: Escreva o script de fora a fora. A página institucional deve ficar 100% pronta.
+2. MUTAÇÕES E ESTRUTURA (LIBERADO): Você está expressamente AUTORIZADO a alterar a hierarquia das divs originais e utilizar Tailwind CSS via CDN (`<script src="https://cdn.tailwindcss.com"></script>`) para aplicar as mutações de layout exigidas pelo Arquiteto no Blueprint.
+3. ASSINATURA OBRIGATÓRIA DA AGÊNCIA: No Footer da página, inclua EXATAMENTE: `<p>Desenvolvido por <a href="https://epiverso.com" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">EPIVERSO</a></p>`.
+4. MAPA DE LOCALIZAÇÃO (OBRIGATÓRIO): Imediatamente ANTES do Footer, injete EXATAMENTE:
    `<div style="width: 100%; height: 400px; margin-top: 40px;"><iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q={empresa_mapa}&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe></div>`
-7. PREVENÇÃO DE TELA EM BRANCO E ZERO DESLOCAMENTO (ANTI-INVISIBILIDADE): É ESTRITAMENTE PROIBIDO usar `opacity: 0` ou `visibility: hidden` no CSS estático. Deixe os elementos 100% visíveis no CSS original. Ao usar o GSAP no JavaScript para fazer a revelação, altere APENAS a opacidade (`opacity: 0` para `opacity: 1`). É TERMINANTEMENTE PROIBIDO utilizar animações de deslocamento no eixo Y (ex: `y: 40`, `translateY`). Remova qualquer comportamento do elemento "ficar subindo" na tela.
-8. FALLBACK DE IMAGENS QUEBRADAS: Como os arquivos .webp locais podem falhar durante o download, TODA tag <img> deve obrigatoriamente ter uma cor de fundo segura e o atributo 'onerror' para carregar um placeholder caso a imagem quebre. Use EXATAMENTE esta estrutura de segurança nas imagens: `<img src="foto1.webp" style="background-color: var(--bg-warm-accent);" onerror="this.onerror=null; this.src='https://placehold.co/800x800/dedede/333?text=Imagem+Indisponivel'">`
+5. ANIMAÇÕES GSAP DINÂMICAS (BLOQUEIO EIXO Y): Utilize GSAP com ScrollTrigger para animar a entrada dos elementos. É ESTRITAMENTE PROIBIDO configurar animações que façam o elemento ficar subindo na tela (banido o uso de `y: 40`, `translateY`, ou deslocamentos verticais de entrada). Use APENAS variações de `opacity`, `scale` ou deslocamentos horizontais (`x`).
+6. PREVENÇÃO TELA BRANCA: Não use `opacity: 0` direto no CSS inline das tags. Deixe o GSAP aplicar o estilo inicial (ex: `gsap.from(element, {{ opacity: 0, duration: 1 }})`).
+7. FALLBACK DE IMAGENS: Para prevenir quebra de layout: `<img src="foto1.webp" style="background-color: var(--bg-page);" onerror="this.onerror=null; this.src='https://placehold.co/800x800/dedede/333?text=Imagem+Indisponivel'">`
 </core_constraints>
 
 <context>
@@ -521,36 +506,26 @@ def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str, empresa: str
 </context>
 
 <task>
-1. Extraia a paleta de cores e tipografia do <projeto_arquitetonico> e converta-as num seletor `:root` unificado no início da tag `<style>`.
-2. Inicie a montagem do ficheiro HTML, substituindo estritamente o conteúdo textual de placeholder e os caminhos de imagens pelas diretrizes exatas do projeto.
-3. Agregue todos os fragmentos de CSS na tag `<style>`, certificando-se de que a lógica de cores (ditada pelo arquiteto) é rigorosamente aplicada às classes originais, evitando conflitos de contraste.
-4. Centralize toda a lógica JavaScript na tag `<script>` no final do body.
+Compile a página combinando os blocos, aplicando Tailwind CSS conforme o Arquiteto pediu para mutar os componentes, e configure as animações GSAP de forma polida (sem movimentos de subida vertical).
 </task>
 
 <output_format>
-Antes da geração final do código, planeie a fusão executando uma <verificacao_de_sintese>.
-A sua resposta deve conter estritamente blocos de código formatados da seguinte forma:
-
-<verificacao_de_sintese>
-1. Validação de Conflitos de Z-Index/Sticky: [Análise...]
-2. Adaptação de Cores e Contraste: [Análise...]
-</verificacao_de_sintese>
-
 ```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Institucional</title>
+    <title>Página Institucional - {empresa_mapa}</title>
+    <!-- Adicione os CDNs do Tailwind, GSAP e ScrollTrigger aqui -->
     <style>
         /* CSS EXAUSTIVO AQUI */
     </style>
 </head>
 <body>
-    <!-- HTML EXAUSTIVO AQUI COM A CÓPIA DO ARQUITETO -->
+    <!-- HTML EXAUSTIVO AQUI COM TAILWIND -->
     <script>
-        /* JS EXAUSTIVO AQUI */
+        /* GSAP SEM MOVIMENTOS VERTICAIS (y) AQUI */
     </script>
 </body>
 </html>
@@ -593,11 +568,13 @@ with st.sidebar:
         log_container.info("Aguardando inicialização do pipeline...")
 
 st.markdown("### 1. Parâmetros do Cliente High-Ticket")
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 with col1:
-    empresa_input = st.text_input("📍 Nome do Negócio (Google Maps)", placeholder="Ex: Escritório de Contabilidade Alpha")
+    empresa_input = st.text_input("📍 Nome do Negócio", placeholder="Ex: Escritório Alpha")
 with col2:
     insta_input = st.text_input("📸 Perfil do Instagram (Sem @)", placeholder="Ex: alphacontabilidade")
+with col3:
+    nicho_input = st.text_input("🎯 Nicho de Mercado", value="Contabilidade", placeholder="Ex: Contabilidade, Advocacia")
 
 # Opções Visuais Estratégicas
 esteticas_disponiveis = [
@@ -642,8 +619,9 @@ if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
             progresso.progress(45)
             
             status_text.markdown("#### ⏳ Etapa 3/4: O Arquiteto está usando Visão Computacional para ler as fotos do cliente...")
+            # Agora injetamos o nicho_input
             blueprint = gerar_blueprint_estrategico(
-                empresa_input, contexto_cli, imagens_cli, menu_texto, estrutura_texto, estetica_final
+                empresa_input, nicho_input, contexto_cli, imagens_cli, menu_texto, estrutura_texto, estetica_final
             )
             
             if not blueprint:
