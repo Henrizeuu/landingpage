@@ -584,22 +584,23 @@ Inspecione o <codigo_bruto_engenheiro>, aplique as correções necessárias sile
 """
 # Temperatura baixa (0.1) para garantir precisão cirúrgica na correção de código
 
-        config = types.GenerateContentConfig(temperature=0.1)
+    config = types.GenerateContentConfig(temperature=0.1)
+    
+    try:
+        resposta = client_gemini.models.generate_content(
+            model='gemini-3.5-flash',
+            contents=prompt,
+            config=config
+        )
+        if not resposta or not hasattr(resposta, 'text') or not resposta.text:
+            raise ValueError("O Auditor (Gemini) retornou uma resposta em branco.")
+            
+        adicionar_log("Código final auditado e polido com sucesso pelo QA.")
+        return str(resposta.text)
+    except Exception as e:
+        adicionar_log(f"Erro Crítico no Gemini (Arquiteto): {str(e)}")
+        raise e
 
-        try:
-            resposta = client_gemini.models.generate_content(
-                model='gemini-3.5-flash',
-                contents=prompt,
-                config=config
-            )
-            if not resposta or not hasattr(resposta, 'text') or not resposta.text:
-                raise ValueError("O Auditor (Gemini) retornou uma resposta em branco.")
-        
-            adicionar_log("Código final auditado e polido com sucesso pelo QA.")
-            return str(resposta.text)
-         except Exception as e:
-            adicionar_log(f"Erro Crítico no Gemini (Auditor): {str(e)}")
-            raise e
 
 # =====================================================================
 # 7. INTERFACE PRINCIPAL STREAMLIT
