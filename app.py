@@ -217,6 +217,9 @@ def init_clients():
     except Exception as e:
         return None, None
 
+# 👇 ADICIONE ESTA LINHA EXATAMENTE AQUI!
+client_apify, client_gemini = init_clients()
+
 # =====================================================================
 # 5. MÓDULOS DE WEB SCRAPING AVANÇADO
 # =====================================================================
