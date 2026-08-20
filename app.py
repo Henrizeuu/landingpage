@@ -555,7 +555,7 @@ A sua resposta deve conter estritamente blocos de código formatados da seguinte
 </html>
 </output_format>
 """
-config = types.GenerateContentConfig(temperature=0.0)
+    config = types.GenerateContentConfig(temperature=0.0)
 
     try:
         resposta = client_gemini.models.generate_content(
