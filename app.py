@@ -572,144 +572,144 @@ try:
 except Exception as e:
     adicionar_log(f"Erro Crítico no Gemini (Engenheiro): {str(e)}")
     raise e
-=====================================================================
-7. INTERFACE PRINCIPAL STREAMLIT
-=====================================================================
+# =====================================================================
+# 7. INTERFACE PRINCIPAL STREAMLIT
+# =====================================================================
 if not client_apify or not client_gemini:
-st.error("🚨 O sistema está inoperante devido à falta de credenciais nas configurações de Secrets do Streamlit.")
-st.stop()
+    st.error("🚨 O sistema está inoperante devido à falta de credenciais nas configurações de Secrets do Streamlit.")
+    st.stop()
 
 with st.sidebar:
-st.header("⚙️ Painel de Controle Epiverso")
-st.markdown("Monitoramento em tempo real da orquestração de IA.")
-st.markdown("---")
-st.subheader("Console de Logs")
-log_container = st.empty()
-if st.session_state.logs_execucao:
-log_text = "\n".join(st.session_state.logs_execucao[-10:])
-log_container.code(log_text, language="bash")
-else:
-log_container.info("Aguardando inicialização do pipeline...")
+    st.header("⚙️ Painel de Controle Epiverso")
+    st.markdown("Monitoramento em tempo real da orquestração de IA.")
+    st.markdown("---")
+    st.subheader("Console de Logs")
+    
+    log_container = st.empty()
+    if st.session_state.logs_execucao:
+        log_text = "\n".join(st.session_state.logs_execucao[-10:])
+        log_container.code(log_text, language="bash")
+    else:
+        log_container.info("Aguardando inicialização do pipeline...")
 
 st.markdown("### 1. Parâmetros do Cliente High-Ticket")
 col1, col2 = st.columns(2)
 with col1:
-empresa_input = st.text_input("📍 Nome do Negócio (Google Maps)", placeholder="Ex: Escritório de Contabilidade Alpha")
+    empresa_input = st.text_input("📍 Nome do Negócio (Google Maps)", placeholder="Ex: Escritório de Contabilidade Alpha")
 with col2:
-insta_input = st.text_input("📸 Perfil do Instagram (Sem @)", placeholder="Ex: alphacontabilidade")
+    insta_input = st.text_input("📸 Perfil do Instagram (Sem @)", placeholder="Ex: alphacontabilidade")
 
-Opções Visuais Estratégicas - Ajustadas para não forçar "Dark Mode"
+# Opções Visuais Estratégicas
 esteticas_disponiveis = [
-"Moderno & Essencial (Visual limpo, direto e profissional. Foca na clareza da mensagem, ideal para transmitir paz e organização.)",
-"Autoridade & Prestígio (Design imponente. Transmite máxima confiança e tradição no mercado através de contrastes marcantes.)",
-"Máxima Conversão (Layout focado em ação rápida e pragmatismo. Direto ao ponto e desenhado para transformar visitantes em clientes hoje.)",
-"Premium & Elegância (Estética luxuosa e curadoria visual. Pode ser claro e 'clean' ou escuro dependendo das imagens, focando sempre na exclusividade.)",
-"Impacto Inovador (Visual criativo e vibrante. Feito para marcas que querem se destacar fortemente da concorrência e quebrar padrões.)"
+    "Moderno & Essencial (Visual limpo, direto e profissional. Foca na clareza da mensagem, ideal para transmitir paz e organização.)",
+    "Autoridade & Prestígio (Design imponente. Transmite máxima confiança e tradição no mercado através de contrastes marcantes.)",
+    "Máxima Conversão (Layout focado em ação rápida e pragmatismo. Direto ao ponto e desenhado para transformar visitantes em clientes hoje.)",
+    "Premium & Elegância (Estética luxuosa e curadoria visual. Pode ser claro e 'clean' ou escuro dependendo das imagens, focando sempre na exclusividade.)",
+    "Impacto Inovador (Visual criativo e vibrante. Feito para marcas que querem se destacar fortemente da concorrência e quebrar padrões.)"
 ]
 
 estetica_selecionada = st.selectbox(
-"🎨 Selecione o Estilo Visual e Estratégico da Página:",
-options=esteticas_disponiveis,
-help="O sistema usará VISÃO COMPUTACIONAL nas fotos do cliente para garantir que as cores do site não destoem da identidade real da marca.",
-key="select_arquetipo_universal"
+    "🎨 Selecione o Estilo Visual e Estratégico da Página:",
+    options=esteticas_disponiveis,
+    help="O sistema usará VISÃO COMPUTACIONAL nas fotos do cliente para garantir que as cores do site não destoem da identidade real da marca.",
+    key="select_arquetipo_universal"
 )
 
 st.markdown("---")
 
 if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
-if not empresa_input or not insta_input:
-st.warning("⚠️ Preencha os dois campos obrigatórios acima.")
-else:
-st.session_state.processo_concluido = False
-st.session_state.logs_execucao = []
-pasta_alvo = os.path.join(DIR_DADOS, empresa_input.replace("/", "-").replace(" ", "_"))
-os.makedirs(pasta_alvo, exist_ok=True)
-estetica_final = estetica_selecionada
-progresso = st.progress(0)
-status_text = st.empty()
+    if not empresa_input or not insta_input:
+        st.warning("⚠️ Preencha os dois campos obrigatórios acima.")
+    else:
+        st.session_state.processo_concluido = False
+        st.session_state.logs_execucao = []
+        pasta_alvo = os.path.join(DIR_DADOS, empresa_input.replace("/", "-").replace(" ", "_"))
+        os.makedirs(pasta_alvo, exist_ok=True)
+        estetica_final = estetica_selecionada
+        progresso = st.progress(0)
+        status_text = st.empty()
 
-    try:
-        status_text.markdown("#### ⏳ Etapa 1/4: Minerando dados brutos e provas sociais...")
-        extrair_google_maps(empresa_input, pasta_alvo)
-        progresso.progress(15)
-        extrair_instagram(insta_input, pasta_alvo)
-        progresso.progress(30)
-        
-        status_text.markdown("#### ⏳ Etapa 2/4: Preparando matrizes de contexto...")
-        menu_texto, estrutura_texto = ler_arquivos_base()
-        contexto_cli, imagens_cli = compilar_contexto_cliente(pasta_alvo)
-        progresso.progress(45)
-        
-        status_text.markdown("#### ⏳ Etapa 3/4: O Arquiteto está usando Visão Computacional para ler as fotos do cliente...")
-        blueprint = gerar_blueprint_estrategico(
-            empresa_input, contexto_cli, imagens_cli, menu_texto, estrutura_texto, estetica_final
-        )
-        
-        if not blueprint:
-            raise Exception("O pipeline falhou pois a IA Arquiteto gerou um documento vazio.")
+        try:
+            status_text.markdown("#### ⏳ Etapa 1/4: Minerando dados brutos e provas sociais...")
+            extrair_google_maps(empresa_input, pasta_alvo)
+            progresso.progress(15)
+            extrair_instagram(insta_input, pasta_alvo)
+            progresso.progress(30)
             
-        st.session_state.blueprint_gerado = blueprint
-        progresso.progress(70)
-        
-        status_text.markdown("#### ⏳ Etapa 4/4: O Engenheiro Sênior está compilando o código HTML...")
-        codigos_fragmentados = coletar_codigos_fontes(blueprint)
-        codigo_completo = gerar_codigo_engenheiro(blueprint, codigos_fragmentados, empresa_input)
-        
-        if not codigo_completo:
-            raise Exception("O pipeline falhou pois a IA Engenheiro gerou um código vazio.")
+            status_text.markdown("#### ⏳ Etapa 2/4: Preparando matrizes de contexto...")
+            menu_texto, estrutura_texto = ler_arquivos_base()
+            contexto_cli, imagens_cli = compilar_contexto_cliente(pasta_alvo)
+            progresso.progress(45)
             
-        st.session_state.codigo_gerado = codigo_completo
-        progresso.progress(95)
-        
-        status_text.markdown("#### ⏳ Finalizando e empacotando artefatos...")
-        pasta_build = os.path.join(DIR_BUILD, empresa_input.replace(" ", "_"))
-        os.makedirs(pasta_build, exist_ok=True)
-        
-        # ATENÇÃO: Regex corrigido para uma linha só (Evita o SyntaxError)
-        match = re.search(r'
-html(.*?)', str(codigo_completo), re.DOTALL | re.IGNORECASE)
-codigo_limpo = match.group(1).strip() if match else str(codigo_completo).replace('
-html', '').replace('', '').strip()
+            status_text.markdown("#### ⏳ Etapa 3/4: O Arquiteto está usando Visão Computacional para ler as fotos do cliente...")
+            blueprint = gerar_blueprint_estrategico(
+                empresa_input, contexto_cli, imagens_cli, menu_texto, estrutura_texto, estetica_final
+            )
+            
+            if not blueprint:
+                raise Exception("O pipeline falhou pois a IA Arquiteto gerou um documento vazio.")
+                
+            st.session_state.blueprint_gerado = blueprint
+            progresso.progress(70)
+            
+            status_text.markdown("#### ⏳ Etapa 4/4: O Engenheiro Sênior está compilando o código HTML...")
+            codigos_fragmentados = coletar_codigos_fontes(blueprint)
+            codigo_completo = gerar_codigo_engenheiro(blueprint, codigos_fragmentados, empresa_input)
+            
+            if not codigo_completo:
+                raise Exception("O pipeline falhou pois a IA Engenheiro gerou um código vazio.")
+                
+            st.session_state.codigo_gerado = codigo_completo
+            progresso.progress(95)
+            
+            status_text.markdown("#### ⏳ Finalizando e empacotando artefatos...")
+            pasta_build = os.path.join(DIR_BUILD, empresa_input.replace(" ", "_"))
+            os.makedirs(pasta_build, exist_ok=True)
+            
+            # REGEX CORRIGIDO AQUI
+            match = re.search(r'```html(.*?)```', str(codigo_completo), re.DOTALL | re.IGNORECASE)
+            codigo_limpo = match.group(1).strip() if match else str(codigo_completo).replace('```html', '').replace('```', '').strip()
 
-        with open(os.path.join(pasta_build, "index.html"), "w", encoding="utf-8") as f:
-            f.write(codigo_limpo)
+            with open(os.path.join(pasta_build, "index.html"), "w", encoding="utf-8") as f:
+                f.write(codigo_limpo)
+                
+            for img_webp in glob.glob(os.path.join(pasta_alvo, "*.webp")):
+                shutil.copy(img_webp, pasta_build)
+                
+            caminho_zip = os.path.join(DIR_BUILD, f"LandingPage_{empresa_input.replace(' ', '_')}")
+            zip_directory(pasta_build, caminho_zip)
+            st.session_state.caminho_zip = f"{caminho_zip}.zip"
+            st.session_state.processo_concluido = True
+            progresso.progress(100)
+            status_text.empty()
+            st.balloons()
             
-        for img_webp in glob.glob(os.path.join(pasta_alvo, "*.webp")):
-            shutil.copy(img_webp, pasta_build)
-            
-        caminho_zip = os.path.join(DIR_BUILD, f"LandingPage_{empresa_input.replace(' ', '_')}")
-        zip_directory(pasta_build, caminho_zip)
-        st.session_state.caminho_zip = f"{caminho_zip}.zip"
-        st.session_state.processo_concluido = True
-        progresso.progress(100)
-        status_text.empty()
-        st.balloons()
-        
-    except Exception as e:
-        st.error(f"🚨 Falha Crítica no Fluxo: {str(e)}")
-        adicionar_log(f"ERRO FATAL REPORTADO: {str(e)}")
-=====================================================================
-8. EXIBIÇÃO DE RESULTADOS
-=====================================================================
+        except Exception as e:
+            st.error(f"🚨 Falha Crítica no Fluxo: {str(e)}")
+            adicionar_log(f"ERRO FATAL REPORTADO: {str(e)}")
+
+# =====================================================================
+# 8. EXIBIÇÃO DE RESULTADOS
+# =====================================================================
 if st.session_state.processo_concluido:
-st.markdown("---")
-st.markdown("### 🏆 Orquestração Finalizada com Sucesso")
-aba1, aba2, aba3 = st.tabs(["📦 Download do Pacote", "📐 Blueprint Arquitetural", "💻 Inspecionar Código Fonte"])
+    st.markdown("---")
+    st.markdown("### 🏆 Orquestração Finalizada com Sucesso")
+    aba1, aba2, aba3 = st.tabs(["📦 Download do Pacote", "📐 Blueprint Arquitetural", "💻 Inspecionar Código Fonte"])
 
-with aba1:
-    st.info("Página estruturada e cores alinhadas com o portfólio visual do cliente.")
-    with open(st.session_state.caminho_zip, "rb") as fp:
-        st.download_button(
-            label="⬇️ BAIXAR ARQUIVO .ZIP COMPLETO",
-            data=fp,
-            file_name=os.path.basename(st.session_state.caminho_zip),
-            mime="application/zip",
-            use_container_width=True
-        )
+    with aba1:
+        st.info("Página estruturada e cores alinhadas com o portfólio visual do cliente.")
+        with open(st.session_state.caminho_zip, "rb") as fp:
+            st.download_button(
+                label="⬇️ BAIXAR ARQUIVO .ZIP COMPLETO",
+                data=fp,
+                file_name=os.path.basename(st.session_state.caminho_zip),
+                mime="application/zip",
+                use_container_width=True
+            )
+            
+    with aba2:
+        st.markdown(st.session_state.blueprint_gerado)
         
-with aba2:
-    st.markdown(st.session_state.blueprint_gerado)
-    
-with aba3:
-    with st.expander("Expandir para visualizar o código HTML"):
-        st.code(st.session_state.codigo_gerado, language="html")
+    with aba3:
+        with st.expander("Expandir para visualizar o código HTML"):
+            st.code(st.session_state.codigo_gerado, language="html")
