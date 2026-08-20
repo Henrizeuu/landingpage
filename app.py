@@ -557,20 +557,20 @@ A sua resposta deve conter estritamente blocos de código formatados da seguinte
 """
 config = types.GenerateContentConfig(temperature=0.0)
 
-try:
-    resposta = client_gemini.models.generate_content(
-        model='gemini-3.5-flash',
-        contents=prompt,
-        config=config
-    )
-    if not resposta or not hasattr(resposta, 'text') or not resposta.text:
-        raise ValueError("O Engenheiro (Gemini) retornou uma resposta em branco.")
-        
-    adicionar_log("Código fonte compilado com sucesso pelo Engenheiro.")
-    return str(resposta.text)
-except Exception as e:
-    adicionar_log(f"Erro Crítico no Gemini (Engenheiro): {str(e)}")
-    raise e
+    try:
+        resposta = client_gemini.models.generate_content(
+            model='gemini-3.5-flash',
+            contents=prompt,
+            config=config
+        )
+        if not resposta or not hasattr(resposta, 'text') or not resposta.text:
+            raise ValueError("O Engenheiro (Gemini) retornou uma resposta em branco.")
+            
+        adicionar_log("Código fonte compilado com sucesso pelo Engenheiro.")
+        return str(resposta.text)
+    except Exception as e:
+        adicionar_log(f"Erro Crítico no Gemini (Engenheiro): {str(e)}")
+        raise e
 # =====================================================================
 # 7. INTERFACE PRINCIPAL STREAMLIT
 # =====================================================================
