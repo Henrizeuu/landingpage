@@ -204,9 +204,8 @@ def adicionar_log(mensagem):
 @st.cache_resource
 def init_clients():
     try:
-        # Tenta pegar da variável de ambiente primeiro (Cloud Run), se não achar, tenta o secrets (Local)
-        apify_token = os.environ.get("APIFY_TOKEN") or st.secrets.get("APIFY_TOKEN")
-        gemini_key = os.environ.get("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY")
+        apify_token = st.secrets.get("APIFY_TOKEN")
+        gemini_key = st.secrets.get("GEMINI_API_KEY")
         
         if not apify_token or not gemini_key:
             raise KeyError("Chaves ausentes")
@@ -217,7 +216,6 @@ def init_clients():
     except Exception as e:
         return None, None
 
-# 👇 ADICIONE ESTA LINHA EXATAMENTE AQUI!
 client_apify, client_gemini = init_clients()
 
 # =====================================================================
@@ -379,20 +377,22 @@ def gerar_blueprint_estrategico(empresa: str, contexto_texto: str, imagens: list
     """Executa o Mega Prompt I: O Arquiteto Estratégico, utilizando Chain of Thought."""
     adicionar_log("Iniciando processamento do Arquiteto (Mega Prompt I)...")
     
+    # Aplicação exata da arquitetura de prompt do documento "Melhoria Mega Prompts Epiverso.docx"
     prompt = f"""
-<system_persona>Atue como o Arquiteto Principal de Interfaces (UX/UI) e Especialista em Conversão Comercial do sistema Epiverso. A sua competência central é projetar páginas institucionais de alto valor que respeitem PROFUNDAMENTE a identidade visual real do cliente.</system_persona>
+<system_persona>Atue como o Arquiteto Principal de Interfaces (UX/UI) e Especialista em Conversão Comercial do sistema Epiverso. A sua competência central é projetar páginas institucionais de alto valor para prestadores de serviços, cruzando a psicologia do consumidor com a estética minimalista e luxuosa.</system_persona>
 
 <core_directives>
-1. ESTRATÉGIA DE CONVERSÃO: Redija textos diretos e persuasivos. O tom deve transmitir autoridade e focar na captação de clientes corporativos ou de alto ticket.
-2. ANÁLISE VISUAL OBRIGATÓRIA (CRÍTICO): Você DEVE observar as imagens anexadas do portfólio do cliente antes de definir cores. 
-   - Se as fotos mostrarem ambientes claros, iluminados, minimalistas e "clean" (ex: branco, bege, madeira clara), É EXPRESSAMENTE PROIBIDO usar fundo preto ou escuro. Você DEVE usar um tema claro (Light Mode) com tons pastéis, off-white ou fendi para refletir o trabalho do cliente.
-   - O estilo escolhido foi: **{estetica}**. Adapte este estilo à paleta real extraída das imagens. "Premium" ou "Autoridade" não significa necessariamente "fundo escuro". Luxo claro (Ethereal Premium) é altamente encorajado se as fotos forem claras.
+1. ESTRATÉGIA DE CONVERSÃO: Redija textos diretos, persuasivos e baseados na resolução de problemas extraídos dos <dados_cliente>. É imperativo evitar formulações robóticas e genéricas. O tom deve transmitir autoridade e focar na captação de clientes corporativos ou de alto ticket.
+2. ADAPTAÇÃO TEMÁTICA: A estética final exige obrigatoriamente a abordagem: **{estetica}**. Você selecionará componentes que nativamente possam ser escuros, devendo planear e documentar as ordens exatas de inversão de propriedades de cor (fundos, textos, sombras) para o engenheiro subsequente.
 3. SELEÇÃO DE COMPONENTES: O mapeamento entre a <estrutura_exigida> e o <catalogo_componentes> deve ser exato e cirúrgico.
-4. FOTO DE PERFIL: A imagem "foto_perfil.webp" deve OBRIGATORIAMENTE ser alocada na primeira seção da página (Topo/Hero).
+4. FOTO DE PERFIL COMO AUTORIDADE: A imagem "foto_perfil.webp" deve OBRIGATORIAMENTE ser alocada na primeira seção da página (Topo/Hero), garantindo o reconhecimento imediato da marca.
 </core_directives>
 
 <constraints>
 - FIDELIDADE AO CATÁLOGO: É obrigatória a utilização exclusiva de identificadores de componentes que constem textualmente no <catalogo_componentes>.
+- COMPREENSÃO POR CONTRASTE: 
+  [Ação Rejeitada]: Escolher [ID: 999] por inferir que seria útil, apesar de não existir na lista fornecida. 
+  [Ação Aprovada]: Analisar a necessidade de mostrar "Benefícios", percorrer a lista, encontrar o [ID: 059] - Benefits e instruir a sua adaptação para o tema exigido.
 </constraints>
 
 <context>
@@ -411,33 +411,31 @@ def gerar_blueprint_estrategico(empresa: str, contexto_texto: str, imagens: list
 </context>
 
 <task>
-1. Analise as imagens do cliente. Defina se a vibe dominante é Clara/Leve ou Escura/Sóbria.
-2. Percorra a <estrutura_exigida> passo a passo. 
-3. Selecione os IDs numéricos perfeitos no <catalogo_componentes>. 
-4. Redija o copy e estipule as diretrizes matemáticas exatas de CSS (hexadecimais), garantindo que as cores do site não destruam o trabalho visual (fotos) do cliente.
+Sintetize as informações do <context> para traçar o perfil do prestador de serviço. Percorra meticulosamente a <estrutura_exigida> passo a passo. Para cada bloco lógico exigido, selecione o identificador numérico perfeito correspondente no <catalogo_componentes>. Após a seleção, redija o conteúdo persuasivo (Copy) para preencher a estrutura do componente e estipule as diretrizes de adaptação cromática para assegurar a consistência do tema.
 </task>
 
 <output_format>
+Antes de materializar o projeto, execute uma decomposição lógica do seu planeamento dentro da etiqueta <analise_estrategica>, justificando as suas escolhas. Após a análise, forneça o projeto final seguindo escrupulosamente a formatação exigida em Markdown.
+
 <analise_estrategica>
-1. Diagnóstico do Público: [Avaliação baseada no texto].
-2. Extração Visual (Visão Computacional): [Descreva o que você está vendo nas imagens fornecidas (ex: luz natural, madeiras, tons claros) e justifique por que o site deve ser Light ou Dark baseado APENAS nisso].
-3. Lógica Cromática: [Cores hexadecimais escolhidas, em harmonia com as fotos analisadas acima].
-4. Mapeamento Lógico: [Associação de cada secção da estrutura ao ID].
+1. Diagnóstico do Público: [Avaliação das dores e necessidades baseadas no Maps/Instagram].
+2. Lógica Cromática: [Justificação para as cores hexadecimais escolhidas baseadas nas imagens e estética solicitada].
+3. Mapeamento Lógico: [Associação de cada secção da estrutura ao ID específico do catálogo].
 </analise_estrategica>
 
 # 🎨 IDENTIDADE VISUAL E TOKENS DA PÁGINA
 * **Tema**: {estetica}
 * **Paleta de Cores Gerada**:
-  * `--bg-page`: [Hexadecimal exato - DEVE harmonizar com as fotos]
-  * `--text-main`: [Hexadecimal exato]
-  * `--accent-color`: [Hexadecimal vibrante extraído das fotos ou da marca]
-* **Tipografia (Google Fonts)**: [Duas fontes perfeitamente alinhadas]
+  * `--bg-page`: [Hexadecimal]
+  * `--text-main`: [Hexadecimal]
+  * `--accent-color`: [Hexadecimal vibrante associado à marca do cliente]
+* **Tipografia (Google Fonts)**: [Duas fontes elegantes]
 
 # 🏗️ BLUEPRINT DA PÁGINA (ESTRUTURA)
 
 ## 1. [Nome da Secção conforme Estrutura Exigida]
 * **Blocos Escolhidos**: [ID: XXX] - [Nome literal do bloco no catálogo]
-* **Instruções de Adaptação (Design)**: [Diretriz exata para o engenheiro (ex: "Manter fundo bege claro (#F5F5FDC), texto cinza chumbo, remover sombras pesadas")]
+* **Instruções de Adaptação (Design)**: [Diretriz exata para converter o bloco, mencionando sombras, fundos e opacidades]
 * **Copywriting**:
   * **Kicker/Eyebrow**: "..."
   * **Título Principal**: "..."
@@ -446,30 +444,20 @@ def gerar_blueprint_estrategico(empresa: str, contexto_texto: str, imagens: list
   * **Elementos Adicionais**: "..."
 </output_format>
 """
+    # Conforme o documento, a temperatura do Arquiteto deve ser entre 0.35 e 0.40
     config = types.GenerateContentConfig(temperature=0.35)
     conteudo_envio = [prompt] + imagens
     
-    try:
-        resposta = client_gemini.models.generate_content(
-            model='gemini-3.5-flash',
-            contents=conteudo_envio,
-            config=config
-        )
-        if not resposta or not hasattr(resposta, 'text') or not resposta.text:
-            raise ValueError("O Google Gemini não retornou nenhum texto.")
-            
-        adicionar_log("Blueprint Arquitetural gerado com sucesso.")
-        return str(resposta.text)
-    except Exception as e:
-        adicionar_log(f"Erro Crítico no Gemini (Arquiteto): {str(e)}")
-        raise e
+    resposta = client_gemini.models.generate_content(
+        model='gemini-3.5-flash',
+        contents=conteudo_envio,
+        config=config
+    )
+    adicionar_log("Blueprint Arquitetural gerado com sucesso.")
+    return resposta.text
 
 def coletar_codigos_fontes(blueprint_text: str) -> str:
     """Busca no diretório local os arquivos TXT correspondentes aos IDs mapeados no Blueprint."""
-    if not blueprint_text or not isinstance(blueprint_text, str):
-        adicionar_log("Erro: O blueprint recebido para coleta de IDs está vazio ou inválido.")
-        return ""
-        
     adicionar_log("Analisando IDs mapeados e coletando códigos-fonte...")
     ids_selecionados = list(set(re.findall(r'\[ID:\s*(\d+)\]', blueprint_text)))
     adicionar_log(f"IDs identificados pela IA: {ids_selecionados}")
@@ -489,12 +477,9 @@ def coletar_codigos_fontes(blueprint_text: str) -> str:
 
 def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str, empresa: str) -> str:
     """Executa o Mega Prompt II: Engenheiro de Síntese, gerando o HTML final exaustivo."""
-    if not blueprint_text or not codigos_base:
-        raise ValueError("O Engenheiro não recebeu o blueprint ou os códigos base necessários para trabalhar.")
-        
     adicionar_log("Iniciando compilação do Engenheiro (Mega Prompt II)...")
     empresa_mapa = urllib.parse.quote_plus(empresa)
-    
+    # Aplicação exata da arquitetura de prompt do documento "Melhoria Mega Prompts Epiverso.docx"
     prompt = f"""
 <system_persona>Atue como um Engenheiro Frontend Especialista e Arquiteto de Sistemas de Interface da Epiverso. Possui domínio absoluto sobre manipulação avançada de Document Object Model (DOM), propriedades CSS variáveis (Custom Properties) e arquitetura de animações utilizando Vanilla JavaScript e bibliotecas GSAP.</system_persona>
 
@@ -525,17 +510,18 @@ def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str, empresa: str
 <task>
 1. Extraia a paleta de cores e tipografia do <projeto_arquitetonico> e converta-as num seletor `:root` unificado no início da tag `<style>`.
 2. Inicie a montagem do ficheiro HTML, substituindo estritamente o conteúdo textual de placeholder e os caminhos de imagens pelas diretrizes exatas do projeto.
-3. Agregue todos os fragmentos de CSS na tag `<style>`, certificando-se de que a lógica de cores (ditada pelo arquiteto) é rigorosamente aplicada às classes originais, evitando conflitos de contraste.
-4. Centralize toda a lógica JavaScript na tag `<script>` no final do body.
+3. Agregue todos os fragmentos de CSS na tag `<style>`, certificando-se de que a lógica de inversão de cor ou adaptação de tema (ditada pelo arquiteto) é rigorosamente aplicada às classes originais.
+4. Centralize toda a lógica JavaScript na tag `<script>` no final do body, assegurando que os detetores de deslocamento (Intersection Observers e ScrollTriggers) ocorram após o carregamento completo do documento.
 </task>
 
 <output_format>
-Antes da geração final do código, planeie a fusão executando uma <verificacao_de_sintese>.
+Antes da geração final do código, planeie a fusão executando uma <verificacao_de_sintese>, identificando possíveis conflitos na união dos blocos e garantindo que o plano de cores respeita o limite do tema exigido.
 A sua resposta deve conter estritamente blocos de código formatados da seguinte forma:
 
 <verificacao_de_sintese>
 1. Validação de Conflitos de Z-Index/Sticky: [Análise...]
-2. Adaptação de Cores e Contraste: [Análise...]
+2. Adaptação de Cores e Glassmorphism: [Análise...]
+3. Injeção da Assinatura Epiverso: [Confirmado]
 </verificacao_de_sintese>
 
 ```html
@@ -557,23 +543,21 @@ A sua resposta deve conter estritamente blocos de código formatados da seguinte
 </body>
 </html>
 </output_format>
+</output_format>
 """
+    # 👇 Todas as linhas abaixo precisam estar indentadas para dentro da função!
+    
+    # Conforme o documento, a temperatura do Engenheiro deve ser 0.0 para evitar invenções no código.
     config = types.GenerateContentConfig(temperature=0.0)
 
-    try:
-        resposta = client_gemini.models.generate_content(
-            model='gemini-3.5-flash',
-            contents=prompt,
-            config=config
-        )
-        if not resposta or not hasattr(resposta, 'text') or not resposta.text:
-            raise ValueError("O Engenheiro (Gemini) retornou uma resposta em branco.")
-            
-        adicionar_log("Código fonte compilado com sucesso pelo Engenheiro.")
-        return str(resposta.text)
-    except Exception as e:
-        adicionar_log(f"Erro Crítico no Gemini (Engenheiro): {str(e)}")
-        raise e
+    resposta = client_gemini.models.generate_content(
+        model='gemini-3.5-flash',
+        contents=prompt,
+        config=config
+    )
+    adicionar_log("Código fonte compilado com sucesso pelo Engenheiro.")
+    
+    return resposta.text
 # =====================================================================
 # 7. INTERFACE PRINCIPAL STREAMLIT
 # =====================================================================
@@ -581,41 +565,47 @@ if not client_apify or not client_gemini:
     st.error("🚨 O sistema está inoperante devido à falta de credenciais nas configurações de Secrets do Streamlit.")
     st.stop()
 
+# --- SIDEBAR: Configurações e Logs ---
 with st.sidebar:
     st.header("⚙️ Painel de Controle Epiverso")
     st.markdown("Monitoramento em tempo real da orquestração de IA.")
+
     st.markdown("---")
     st.subheader("Console de Logs")
-    
     log_container = st.empty()
     if st.session_state.logs_execucao:
-        log_text = "\n".join(st.session_state.logs_execucao[-10:])
+        log_text = "\n".join(st.session_state.logs_execucao[-10:]) # Mostra os últimos 10
         log_container.code(log_text, language="bash")
     else:
         log_container.info("Aguardando inicialização do pipeline...")
 
+# --- ÁREA PRINCIPAL ---
 st.markdown("### 1. Parâmetros do Cliente High-Ticket")
+st.markdown("Insira os dados do alvo da prospecção. O sistema desenhará uma página institucional corporativa completa.")
+
 col1, col2 = st.columns(2)
 with col1:
     empresa_input = st.text_input("📍 Nome do Negócio (Google Maps)", placeholder="Ex: Escritório de Contabilidade Alpha")
 with col2:
     insta_input = st.text_input("📸 Perfil do Instagram (Sem @)", placeholder="Ex: alphacontabilidade")
 
-# Opções Visuais Estratégicas
+# Novas opções de estética focadas em conversão e autoridade institucional
 esteticas_disponiveis = [
-    "Moderno & Essencial (Visual limpo, direto e profissional. Foca na clareza da mensagem, ideal para transmitir paz e organização.)",
-    "Autoridade & Prestígio (Design imponente. Transmite máxima confiança e tradição no mercado através de contrastes marcantes.)",
-    "Máxima Conversão (Layout focado em ação rápida e pragmatismo. Direto ao ponto e desenhado para transformar visitantes em clientes hoje.)",
-    "Premium & Elegância (Estética luxuosa e curadoria visual. Pode ser claro e 'clean' ou escuro dependendo das imagens, focando sempre na exclusividade.)",
-    "Impacto Inovador (Visual criativo e vibrante. Feito para marcas que querem se destacar fortemente da concorrência e quebrar padrões.)"
+    "Autoridade Clássica (Design imponente com fontes serifadas e cores sóbrias, ideal para advogados, contadores e consultorias financeiras)",
+    "Minimalismo Clínico (Layout ultra limpo, tons claros e muito respiro, projetado para transmitir higiene e paz para médicos, dentistas e saúde)",
+    "High-Ticket Exclusivo (Estética premium, elementos sutis e design luxuoso, focado em fechar contratos altos, arquitetura de luxo e serviços VIP)",
+    "Vanguarda Tecnológica (Linhas precisas, blocos matemáticos e design contemporâneo, perfeito para empresas de TI, engenharia e agências de dados)",
+    "Conversão Pragmática (Layout agressivo e direto ao ponto, com CTAs em alto contraste, ideal para serviços de urgência, manutenções e despachantes)",
+    "Acolhimento Humanizado (Tons terrosos ou pastéis, tipografia suave e formas orgânicas, focado em terapeutas, psicólogos e clínicas familiares)",
+    "Rigor Monocromático (Foco absoluto no contraste de luz e sombra, transmitindo extrema seriedade, ideal para auditorias, segurança e perícias)",
+    "Dinamismo Criativo (Cores ousadas, tipografia marcante e layout moderno, feito para criadores, produtoras e agências de marketing)"
 ]
 
 estetica_selecionada = st.selectbox(
-    "🎨 Selecione o Estilo Visual e Estratégico da Página:",
-    options=esteticas_disponiveis,
-    help="O sistema usará VISÃO COMPUTACIONAL nas fotos do cliente para garantir que as cores do site não destoem da identidade real da marca.",
-    key="select_arquetipo_universal"
+    "🎨 Selecione o Padrão Estético da Página:",
+    esteticas_disponiveis
 )
+
 
 st.markdown("---")
 
@@ -623,63 +613,71 @@ if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
     if not empresa_input or not insta_input:
         st.warning("⚠️ Preencha os dois campos obrigatórios acima.")
     else:
+        # Reset de estados
         st.session_state.processo_concluido = False
         st.session_state.logs_execucao = []
+
         pasta_alvo = os.path.join(DIR_DADOS, empresa_input.replace("/", "-").replace(" ", "_"))
         os.makedirs(pasta_alvo, exist_ok=True)
+        
         estetica_final = estetica_selecionada
+        
+        # --- INÍCIO DA EXECUÇÃO VISUAL ---
         progresso = st.progress(0)
         status_text = st.empty()
-
+        
         try:
+            # Etapa 1: Scraping
             status_text.markdown("#### ⏳ Etapa 1/4: Minerando dados brutos e provas sociais...")
             extrair_google_maps(empresa_input, pasta_alvo)
             progresso.progress(15)
             extrair_instagram(insta_input, pasta_alvo)
             progresso.progress(30)
             
+            # Etapa 2: Leitura de Contexto
             status_text.markdown("#### ⏳ Etapa 2/4: Preparando matrizes de contexto...")
             menu_texto, estrutura_texto = ler_arquivos_base()
             contexto_cli, imagens_cli = compilar_contexto_cliente(pasta_alvo)
             progresso.progress(45)
             
-            status_text.markdown("#### ⏳ Etapa 3/4: O Arquiteto está usando Visão Computacional para ler as fotos do cliente...")
+            # Etapa 3: Arquiteto (Blueprint)
+            status_text.markdown("#### ⏳ Etapa 3/4: O Arquiteto está desenhando o Blueprint Estratégico (Chain-of-Thought)...")
             blueprint = gerar_blueprint_estrategico(
                 empresa_input, contexto_cli, imagens_cli, menu_texto, estrutura_texto, estetica_final
             )
-            
-            if not blueprint:
-                raise Exception("O pipeline falhou pois a IA Arquiteto gerou um documento vazio.")
-                
             st.session_state.blueprint_gerado = blueprint
             progresso.progress(70)
             
-            status_text.markdown("#### ⏳ Etapa 4/4: O Engenheiro Sênior está compilando o código HTML...")
+            # Etapa 4: Engenheiro (Código HTML)
+            status_text.markdown("#### ⏳ Etapa 4/4: O Engenheiro Sênior está compilando o código-fonte massivo...")
             codigos_fragmentados = coletar_codigos_fontes(blueprint)
-            codigo_completo = gerar_codigo_engenheiro(blueprint, codigos_fragmentados, empresa_input)
             
-            if not codigo_completo:
-                raise Exception("O pipeline falhou pois a IA Engenheiro gerou um código vazio.")
+            if not codigos_fragmentados:
+                adicionar_log("AVISO: Os IDs gerados pelo arquiteto não correspondem a arquivos .txt locais.")
                 
+            codigo_completo = gerar_codigo_engenheiro(blueprint, codigos_fragmentados, empresa_input)
             st.session_state.codigo_gerado = codigo_completo
             progresso.progress(95)
             
+            # Fechamento e Zip
             status_text.markdown("#### ⏳ Finalizando e empacotando artefatos...")
             pasta_build = os.path.join(DIR_BUILD, empresa_input.replace(" ", "_"))
             os.makedirs(pasta_build, exist_ok=True)
             
-            # REGEX CORRIGIDO AQUI
-            match = re.search(r'```html(.*?)```', str(codigo_completo), re.DOTALL | re.IGNORECASE)
-            codigo_limpo = match.group(1).strip() if match else str(codigo_completo).replace('```html', '').replace('```', '').strip()
-
+            # Limpeza via Regex para capturar só o conteúdo HTML
+            match = re.search(r'```html(.*?)```', codigo_completo, re.DOTALL | re.IGNORECASE)
+            codigo_limpo = match.group(1).strip() if match else codigo_completo.replace('```html', '').replace('```', '').strip()
+            
             with open(os.path.join(pasta_build, "index.html"), "w", encoding="utf-8") as f:
                 f.write(codigo_limpo)
                 
+            # Move as imagens .webp
             for img_webp in glob.glob(os.path.join(pasta_alvo, "*.webp")):
                 shutil.copy(img_webp, pasta_build)
                 
             caminho_zip = os.path.join(DIR_BUILD, f"LandingPage_{empresa_input.replace(' ', '_')}")
             zip_directory(pasta_build, caminho_zip)
+            
             st.session_state.caminho_zip = f"{caminho_zip}.zip"
             st.session_state.processo_concluido = True
             progresso.progress(100)
@@ -687,19 +685,21 @@ if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
             st.balloons()
             
         except Exception as e:
-            st.error(f"🚨 Falha Crítica no Fluxo: {str(e)}")
-            adicionar_log(f"ERRO FATAL REPORTADO: {str(e)}")
+            st.error(f"🚨 Ocorreu um erro crítico no pipeline: {str(e)}")
+            adicionar_log(f"ERRO FATAL: {str(e)}")
 
 # =====================================================================
-# 8. EXIBIÇÃO DE RESULTADOS
+# 8. EXIBIÇÃO DE RESULTADOS (ABAS)
 # =====================================================================
 if st.session_state.processo_concluido:
     st.markdown("---")
     st.markdown("### 🏆 Orquestração Finalizada com Sucesso")
+
+    # Aba 1: Download, Aba 2: Blueprint, Aba 3: Código Bruto
     aba1, aba2, aba3 = st.tabs(["📦 Download do Pacote", "📐 Blueprint Arquitetural", "💻 Inspecionar Código Fonte"])
 
     with aba1:
-        st.info("Página estruturada e cores alinhadas com o portfólio visual do cliente.")
+        st.info("A página institucional foi estruturada com sucesso, as provas sociais foram injetadas e as imagens foram convertidas para .webp conforme as regras do Epiverso.")
         with open(st.session_state.caminho_zip, "rb") as fp:
             st.download_button(
                 label="⬇️ BAIXAR ARQUIVO .ZIP COMPLETO",
@@ -710,8 +710,12 @@ if st.session_state.processo_concluido:
             )
             
     with aba2:
+        st.markdown("O documento abaixo foi gerado pelo **Mega Prompt I**, utilizando o raciocínio Chain-of-Thought antes de selecionar os componentes de UI/UX e estruturar a copy.")
         st.markdown(st.session_state.blueprint_gerado)
         
     with aba3:
-        with st.expander("Expandir para visualizar o código HTML"):
+        st.markdown("Código gerado pelo **Mega Prompt II**. O Engenheiro Sênior compilou as variáveis CSS, injetou a Copy e estruturou o HTML.")
+        with st.expander("Expandir para visualizar o código"):
             st.code(st.session_state.codigo_gerado, language="html")
+
+# Mantive a explicação final que você escreveu como markdown extra (você pode deixá-la dentro de st.markdown se quiser exibi-la na tela, ou apenas comentá-la se for documentação interna)
