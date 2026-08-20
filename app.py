@@ -591,19 +591,18 @@ with col2:
 
 # Novas opções de estética focadas em conversão e autoridade institucional
 esteticas_disponiveis = [
-    "Autoridade Clássica (Design imponente com fontes serifadas e cores sóbrias, ideal para advogados, contadores e consultorias financeiras)",
-    "Minimalismo Clínico (Layout ultra limpo, tons claros e muito respiro, projetado para transmitir higiene e paz para médicos, dentistas e saúde)",
-    "High-Ticket Exclusivo (Estética premium, elementos sutis e design luxuoso, focado em fechar contratos altos, arquitetura de luxo e serviços VIP)",
-    "Vanguarda Tecnológica (Linhas precisas, blocos matemáticos e design contemporâneo, perfeito para empresas de TI, engenharia e agências de dados)",
-    "Conversão Pragmática (Layout agressivo e direto ao ponto, com CTAs em alto contraste, ideal para serviços de urgência, manutenções e despachantes)",
-    "Acolhimento Humanizado (Tons terrosos ou pastéis, tipografia suave e formas orgânicas, focado em terapeutas, psicólogos e clínicas familiares)",
-    "Rigor Monocromático (Foco absoluto no contraste de luz e sombra, transmitindo extrema seriedade, ideal para auditorias, segurança e perícias)",
-    "Dinamismo Criativo (Cores ousadas, tipografia marcante e layout moderno, feito para criadores, produtoras e agências de marketing)"
+    "Minimalismo Funcional (Clareza absoluta, uso generoso de espaços em branco e tipografia sem serifa. Universal e direto, ideal para qualquer setor.)",
+    "Autoridade Clássica (Design estruturado e imponente, com forte uso de tipografia elegante e paleta de cores sóbrias. Transmite peso e confiança.)",
+    "Conversão Pragmática (Layout direcionado à ação imediata, forte contraste visual e CTAs em destaque agressivo. Foco exclusivo em resultados e métricas.)",
+    "Elegância Premium (Estética altamente sofisticada, uso refinado da luz e de espaço, minimalismo luxuoso. Vocacionado para o alto valor percebido.)",
+    "Modernidade Arrojada (Composição visual criativa, cores vibrantes não-convencionais e layouts fluidos e inovadores. Ideal para marcas que querem se destacar.)"
 ]
 
 estetica_selecionada = st.selectbox(
-    "🎨 Selecione o Padrão Estético da Página:",
-    esteticas_disponiveis
+    "🎨 Selecione o Arquétipo Estético Universal da Página:",
+    options=esteticas_disponiveis,
+    help="Estes arquétipos visuais abstraídos ditam imperativamente todas as regras de CSS, hierarquia tipográfica e paleta cromática aplicadas na compilação final da página.",
+    key="select_arquetipo_universal"
 )
 
 
