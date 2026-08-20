@@ -591,17 +591,17 @@ with col2:
 
 # Novas opções de estética focadas em conversão e autoridade institucional
 esteticas_disponiveis = [
-    "Minimalismo Funcional (Clareza absoluta, uso generoso de espaços em branco e tipografia sem serifa. Universal e direto, ideal para qualquer setor.)",
-    "Autoridade Clássica (Design estruturado e imponente, com forte uso de tipografia elegante e paleta de cores sóbrias. Transmite peso e confiança.)",
-    "Conversão Pragmática (Layout direcionado à ação imediata, forte contraste visual e CTAs em destaque agressivo. Foco exclusivo em resultados e métricas.)",
-    "Elegância Premium (Estética altamente sofisticada, uso refinado da luz e de espaço, minimalismo luxuoso. Vocacionado para o alto valor percebido.)",
-    "Modernidade Arrojada (Composição visual criativa, cores vibrantes não-convencionais e layouts fluidos e inovadores. Ideal para marcas que querem se destacar.)"
+    "Moderno & Essencial (Visual limpo, direto e profissional. Foca na clareza da mensagem sem distrações. Funciona perfeitamente para qualquer empresa.)",
+    "Autoridade & Prestígio (Design imponente, com tons sóbrios e elegantes. Feito para transmitir máxima confiança, segurança e tradição no mercado.)",
+    "Máxima Conversão (Layout agressivo em vendas e focado em ação rápida. Direto ao ponto e desenhado para transformar visitantes em clientes hoje.)",
+    "Premium High-Ticket (Estética de luxo, altamente sofisticada. Ideal para transmitir exclusividade, valorizar a marca e vender serviços mais caros.)",
+    "Impacto Inovador (Visual criativo, vibrante e fora da caixa. Feito para marcas arrojadas que querem se destacar fortemente da concorrência.)"
 ]
 
 estetica_selecionada = st.selectbox(
-    "🎨 Selecione o Arquétipo Estético Universal da Página:",
+    "🎨 Selecione o Estilo Visual e Estratégico da Página:",
     options=esteticas_disponiveis,
-    help="Estes arquétipos visuais abstraídos ditam imperativamente todas as regras de CSS, hierarquia tipográfica e paleta cromática aplicadas na compilação final da página.",
+    help="O sistema adaptará inteligentemente as cores, as fontes e a organização dos elementos com base no objetivo estratégico escolhido.",
     key="select_arquetipo_universal"
 )
 
