@@ -641,7 +641,6 @@ if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
         st.session_state.logs_execucao = []
         pasta_alvo = os.path.join(DIR_DADOS, empresa_input.replace("/", "-").replace(" ", "_"))
         os.makedirs(pasta_alvo, exist_ok=True)
-        estetica_final = estetica_selecionada
         progresso = st.progress(0)
         status_text = st.empty()
 
