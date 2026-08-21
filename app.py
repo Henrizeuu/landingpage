@@ -561,7 +561,7 @@ def auditar_codigo_final(codigo_html: str, empresa: str, nicho: str) -> str:
 2. GUARDIÃO DA PÁGINA INSTITUCIONAL: Verifique o copy. Garanta que o tom de voz transmite máxima autoridade e confiança corporativa focada em adquirir clientes para o nicho de {nicho}. Remova qualquer jargão barato de "landing page de vendas" agressiva e substitua por postura institucional.
 3. REFINAMENTO DE ANIMAÇÃO GSAP (CRÍTICO): Inspecione a tag `<script>`. VOCÊ DEVE REMOVER qualquer animação que faça os elementos "subirem" na tela no eixo Y (ex: `y: 20`, `translateY`). Apenas permita transições suaves de opacidade (`opacity`), escala (`scale`) ou entrada horizontal.
 4. INTEGRIDADE DOS REQUISITOS OBRIGATÓRIOS: 
-   - Confirme se o mapa do Google para "{empresa}" está renderizado corretamente e responsivo antes do footer.
+   - Confirme se o mapa do Google está renderizado usando a URL exata com `output=embed` antes do footer.
    - Verifique se a assinatura da agência `<p>Desenvolvido por <a href="https://epiverso.com"...` está intacta no rodapé.
 5. PRESERVAÇÃO DE ATIVOS: Garanta que todas as imagens mantiveram a tag de segurança `onerror` para carregar placeholders caso a imagem local `.webp` falhe.
 </core_directives>
