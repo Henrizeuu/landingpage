@@ -373,7 +373,7 @@ def compilar_contexto_cliente(pasta_cliente: str) -> tuple[str, list]:
             
     return contexto_texto, imagens
 
-def gerar_blueprint_estrategico(empresa: str, nicho: str, contexto_texto: str, imagens: list, menu: str, estrutura: str, estetica: str) -> str:
+def gerar_blueprint_estrategico(empresa: str, nicho: str, contexto_texto: str, imagens: list, menu: str, estrutura: str) -> str:
     """Executa o Mega Prompt I: O Arquiteto Estratégico, utilizando Chain of Thought."""
     adicionar_log("Iniciando processamento do Arquiteto (Mega Prompt I)...")
     
@@ -384,7 +384,7 @@ def gerar_blueprint_estrategico(empresa: str, nicho: str, contexto_texto: str, i
 1. ESTRATÉGIA DE CONVERSÃO: O cliente atua no nicho de **{nicho}**. Redija textos diretos e persuasivos focados nas dores, objeções e jargões deste mercado. O tom deve transmitir máxima autoridade.
 2. ANÁLISE VISUAL OBRIGATÓRIA (CRÍTICO): Você DEVE observar as imagens anexadas do portfólio do cliente antes de definir cores. 
    - Se as fotos mostrarem ambientes claros, É EXPRESSAMENTE PROIBIDO usar fundo escuro. Você DEVE usar um tema claro (Light Mode) que reflita o trabalho do cliente.
-   - O estilo escolhido foi: **{estetica}**. Adapte este estilo à paleta real extraída.
+   - O estilo escolhido foi:. Adapte este estilo à paleta real extraída.
 3. SELEÇÃO DE COMPONENTES: O mapeamento entre a <estrutura_exigida> e o <catalogo_componentes> deve ser exato.
 4. MUTAÇÃO DINÂMICA DE LAYOUT: Para garantir que a página institucional seja única, você DEVE sugerir alterações estruturais (mutações) rigorosas para pelo menos dois blocos do catálogo. Por exemplo, instruir a transformação de uma lista padrão num grid de 3 colunas, ou alterar a disposição da imagem de perfil.
 5. FOTO DE PERFIL: A imagem "foto_perfil.webp" deve obrigatoriamente ser alocada no Topo/Hero.
@@ -411,7 +411,7 @@ Gere o blueprint definindo as cores estritas e listando cada bloco da estrutura.
 
 <output_format>
 # 🎨 IDENTIDADE VISUAL E TOKENS DA PÁGINA
-* **Tema**: {estetica}
+* **Tema**:
 * **Paleta de Cores Gerada**:
   * `--bg-page`: [Hexadecimal exato]
   * `--text-main`: [Hexadecimal exato]
