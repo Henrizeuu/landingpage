@@ -662,21 +662,21 @@ if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
         status_text = st.empty()
 
         try:
-            status_text.markdown("#### ⏳ Etapa 1/4: Minerando dados brutos e provas sociais...")
+            status_text.markdown("#### ⏳ Etapa 1/5: Minerando dados brutos e provas sociais...")
             extrair_google_maps(empresa_input, pasta_alvo)
             progresso.progress(15)
             extrair_instagram(insta_input, pasta_alvo)
             progresso.progress(30)
             
-            status_text.markdown("#### ⏳ Etapa 2/4: Preparando matrizes de contexto...")
+            status_text.markdown("#### ⏳ Etapa 2/5: Preparando matrizes de contexto...")
             menu_texto, estrutura_texto = ler_arquivos_base()
             contexto_cli, imagens_cli = compilar_contexto_cliente(pasta_alvo)
             progresso.progress(45)
             
-            status_text.markdown("#### ⏳ Etapa 3/4: O Arquiteto está usando Visão Computacional para ler as fotos do cliente...")
-            # Agora injetamos o nicho_input
+            status_text.markdown("#### ⏳ Etapa 3/5: O Arquiteto está analisando a presença digital...")
+            # O parâmetro estetica_final foi removido, a IA deduz tudo via Mega Prompt atualizado
             blueprint = gerar_blueprint_estrategico(
-                empresa_input, nicho_input, contexto_cli, imagens_cli, menu_texto, estrutura_texto, estetica_final
+                empresa_input, nicho_input, contexto_cli, imagens_cli, menu_texto, estrutura_texto
             )
             
             if not blueprint:
