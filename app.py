@@ -631,22 +631,6 @@ with col2:
 with col3:
     nicho_input = st.text_input("🎯 Nicho de Mercado", value="Contabilidade", placeholder="Ex: Contabilidade, Advocacia")
 
-# Opções Visuais Estratégicas
-esteticas_disponiveis = [
-    "Moderno & Essencial (Visual limpo, direto e profissional. Foca na clareza da mensagem, ideal para transmitir paz e organização.)",
-    "Autoridade & Prestígio (Design imponente. Transmite máxima confiança e tradição no mercado através de contrastes marcantes.)",
-    "Máxima Conversão (Layout focado em ação rápida e pragmatismo. Direto ao ponto e desenhado para transformar visitantes em clientes hoje.)",
-    "Premium & Elegância (Estética luxuosa e curadoria visual. Pode ser claro e 'clean' ou escuro dependendo das imagens, focando sempre na exclusividade.)",
-    "Impacto Inovador (Visual criativo e vibrante. Feito para marcas que querem se destacar fortemente da concorrência e quebrar padrões.)"
-]
-
-estetica_selecionada = st.selectbox(
-    "🎨 Selecione o Estilo Visual e Estratégico da Página:",
-    options=esteticas_disponiveis,
-    help="O sistema usará VISÃO COMPUTACIONAL nas fotos do cliente para garantir que as cores do site não destoem da identidade real da marca.",
-    key="select_arquetipo_universal"
-)
-
 st.markdown("---")
 
 if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
