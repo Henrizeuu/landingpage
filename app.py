@@ -481,18 +481,15 @@ def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str, empresa: str
     empresa_mapa = urllib.parse.quote_plus(empresa)
     
     prompt = f"""
-<system_persona>Atue como um Engenheiro Frontend Especialista e Arquiteto de Sistemas de Interface da Epiverso. Possui domínio absoluto sobre manipulação avançada de DOM, Tailwind CSS e arquitetura de animações utilizando Vanilla JavaScript e GSAP.</system_persona>
+<system_persona>Atue como um Engenheiro Frontend Especialista e Arquiteto de Sistemas de Interface da Epiverso. Seu domínio é manipulação de DOM, Tailwind CSS e GSAP para criar páginas institucionais cinematográficas estáticas de alto impacto para a área contábil e corporativa.</system_persona>
 
 <core_constraints>
-[IMPORTANTE]: O seu objetivo primário é a COMPILAÇÃO e MONTAGEM EXAUSTIVA. Nenhuma linha de código deve ser omitida.
-1. PROIBIDO ECONOMIZAR CÓDIGO: Escreva o script de fora a fora. A página institucional deve ficar 100% pronta.
-2. MUTAÇÕES E ESTRUTURA (LIBERADO): Você está expressamente AUTORIZADO a alterar a hierarquia das divs originais e utilizar Tailwind CSS via CDN (`<script src="https://cdn.tailwindcss.com"></script>`) para aplicar as mutações de layout exigidas pelo Arquiteto no Blueprint.
-3. ASSINATURA OBRIGATÓRIA DA AGÊNCIA: No Footer da página, inclua EXATAMENTE: `<p>Desenvolvido por <a href="https://epiverso.com" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">EPIVERSO</a></p>`.
-4. MAPA DE LOCALIZAÇÃO (OBRIGATÓRIO): Imediatamente ANTES do Footer, injete EXATAMENTE:
-   `<div style="width: 100%; height: 400px; margin-top: 40px;"><iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q={empresa_mapa}&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe></div>`
-5. ANIMAÇÕES GSAP DINÂMICAS (BLOQUEIO EIXO Y): Utilize GSAP com ScrollTrigger para animar a entrada dos elementos. É ESTRITAMENTE PROIBIDO configurar animações que façam o elemento ficar subindo na tela (banido o uso de `y: 40`, `translateY`, ou deslocamentos verticais de entrada). Use APENAS variações de `opacity`, `scale` ou deslocamentos horizontais (`x`).
-6. PREVENÇÃO TELA BRANCA: Não use `opacity: 0` direto no CSS inline das tags. Deixe o GSAP aplicar o estilo inicial (ex: `gsap.from(element, {{ opacity: 0, duration: 1 }})`).
-7. FALLBACK DE IMAGENS: Para prevenir quebra de layout: `<img src="foto1.webp" style="background-color: var(--bg-page);" onerror="this.onerror=null; this.src='https://placehold.co/800x800/dedede/333?text=Imagem+Indisponivel'">`
+1. STATIC HERO CINEMATOGRÁFICO: O topo da página DEVE ser um "Static Hero"[cite: 6]. Use a imagem `foto_perfil.webp` (ou a melhor foto extraída) como background com `background-size: cover` e `background-position: center`.
+2. SISTEMA DE LEGIBILIDADE (SCRIM): Você DEVE aplicar um `scrim` (camada de gradiente escuro) sobre a imagem de fundo do Hero para garantir contraste absoluto (no mínimo 3.5:1) com o texto por cima[cite: 6].
+3. ANIMAÇÕES GSAP (PROIBIDO EIXO Y): Use GSAP com ScrollTrigger. É ESTRITAMENTE PROIBIDO qualquer movimento de subida (banido o uso de `y`, `translateY`). Use APENAS variações de `opacity`, `scale` (como um zoom sutil de 1.05 para 1.0 no background) e entrada lateral (`x`). 
+4. ESTRUTURA INSTITUCIONAL: A página não é uma landing page agressiva; é uma página institucional desenhada para conquistar clientes para a contabilidade. Use Tailwind CSS via CDN para aplicar as mutações exigidas pelo Arquiteto.
+5. ASSINATURA E MAPA: Inclua a assinatura da Epiverso no footer e o iframe do Google Maps para "{empresa_mapa}" imediatamente antes do rodapé.
+6. FALLBACK: Todas as tags `<img>` devem ter `onerror="this.onerror=null; this.src='https://placehold.co/800x800/dedede/333?text=Imagem+Indisponivel'"`.
 </core_constraints>
 
 <context>
@@ -506,7 +503,7 @@ def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str, empresa: str
 </context>
 
 <task>
-Compile a página combinando os blocos, aplicando Tailwind CSS conforme o Arquiteto pediu para mutar os componentes, e configure as animações GSAP de forma polida (sem movimentos de subida vertical).
+Compile a página completa em um único arquivo HTML, integrando Tailwind CSS, o Static Hero com Scrim e as animações GSAP (restritas a eixo X, escala e opacidade).
 </task>
 
 <output_format>
@@ -516,16 +513,19 @@ Compile a página combinando os blocos, aplicando Tailwind CSS conforme o Arquit
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Institucional - {empresa_mapa}</title>
-    <!-- Adicione os CDNs do Tailwind, GSAP e ScrollTrigger aqui -->
+    <title>Página Institucional - {empresa}</title>
+    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+    <script src="[https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js](https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js)"></script>
+    <script src="[https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js](https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js)"></script>
     <style>
-        /* CSS EXAUSTIVO AQUI */
+        /* CSS adicional aqui */
     </style>
 </head>
 <body>
-    <!-- HTML EXAUSTIVO AQUI COM TAILWIND -->
+    <!-- HTML EXAUSTIVO AQUI -->
     <script>
-        /* GSAP SEM MOVIMENTOS VERTICAIS (y) AQUI */
+        gsap.registerPlugin(ScrollTrigger);
+        /* Lógica GSAP blindada contra eixo Y aqui */
     </script>
 </body>
 </html>
