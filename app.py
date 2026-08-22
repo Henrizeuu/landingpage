@@ -381,12 +381,12 @@ def gerar_blueprint_estrategico(empresa: str, nicho: str, contexto_texto: str, i
 <system_persona>Atue como o Arquiteto Principal de Interfaces (UX/UI) e Especialista em Conversão Comercial do sistema Epiverso. A sua competência central é projetar páginas institucionais de alto valor que respeitem PROFUNDAMENTE a identidade visual real do cliente.</system_persona>
 
 <core_directives>
-1. ESTRATÉGIA DE CONVERSÃO: O cliente atua no nicho de **{nicho}**. Redija textos diretos e persuasivos focados nas dores, objeções e jargões deste mercado. O tom deve transmitir máxima autoridade.
+1. ESTRATÉGIA DE CONVERSÃO: O cliente atua no nicho de **{nicho}**. Redija textos diretos e persuasivos focados nas dores, objeções e jargões deste mercado. O tom deve transmitir máxima autoridade. A página é INSTITUCIONAL, não uma landing page agressiva.
 2. ANÁLISE VISUAL OBRIGATÓRIA (CRÍTICO): Você DEVE observar as imagens anexadas do portfólio do cliente antes de definir cores. 
    - Se as fotos mostrarem ambientes claros, É EXPRESSAMENTE PROIBIDO usar fundo escuro. Você DEVE usar um tema claro (Light Mode) que reflita o trabalho do cliente.
 3. SELEÇÃO DE COMPONENTES: O mapeamento entre a <estrutura_exigida> e o <catalogo_componentes> deve ser exato.
 4. MUTAÇÃO DINÂMICA DE LAYOUT: Para garantir que a página institucional seja única, você DEVE sugerir alterações estruturais (mutações) rigorosas para pelo menos dois blocos do catálogo. Por exemplo, instruir a transformação de uma lista padrão num grid de 3 colunas, ou alterar a disposição da imagem de perfil.
-5. FOTO DE PERFIL: A imagem "foto_perfil.webp" deve obrigatoriamente ser alocada no Topo/Hero.
+5. FOTO DE PERFIL: A imagem "foto_perfil.webp" deve ser usada EXCLUSIVAMENTE em uma tag <img> de apresentação no Topo/Hero. É ESTRITAMENTE PROIBIDO usá-la como imagem de fundo (background-image).
 </core_directives>
 
 <context>
@@ -483,10 +483,10 @@ def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str, empresa: str
 <system_persona>Atue como um Engenheiro Frontend Especialista e Arquiteto de Sistemas de Interface da Epiverso. Seu domínio é manipulação de DOM, Tailwind CSS e GSAP para criar páginas institucionais cinematográficas estáticas de alto impacto para a área contábil e corporativa.</system_persona>
 
 <core_constraints>
-1. STATIC HERO CINEMATOGRÁFICO: O topo da página DEVE ser um "Static Hero". Use a imagem `foto_perfil.webp` (ou a melhor foto extraída) como background com `background-size: cover` e `background-position: center`.
-2. SISTEMA DE LEGIBILIDADE (SCRIM): Você DEVE aplicar um `scrim` (camada de gradiente escuro) sobre a imagem de fundo do Hero para garantir contraste absoluto (no mínimo 3.5:1) com o texto por cima.
-3. ANIMAÇÕES GSAP (PROIBIDO EIXO Y): Use GSAP com ScrollTrigger. É ESTRITAMENTE PROIBIDO qualquer movimento de subida (banido o uso de `y`, `translateY`). Use APENAS variações de `opacity`, `scale` (como um zoom sutil de 1.05 para 1.0 no background) e entrada lateral (`x`). 
-4. ESTRUTURA INSTITUCIONAL: A página não é uma landing page agressiva; é uma página institucional desenhada para conquistar clientes para a contabilidade. Use Tailwind CSS via CDN para aplicar as mutações exigidas pelo Arquiteto.
+1. STATIC HERO CINEMATOGRÁFICO: O topo da página DEVE ser um "Static Hero". É ESTRITAMENTE PROIBIDO usar a imagem `foto_perfil.webp` como imagem de fundo (background-image), pois isso causará distorção extrema. Para o fundo da seção Hero, use apenas cores sólidas ou um gradiente elegante via Tailwind CSS. A imagem `foto_perfil.webp` deve ser usada APENAS em uma tag `<img>` dentro da estrutura lateral do Hero.
+2. SISTEMA DE LEGIBILIDADE: Garanta contraste absoluto (no mínimo 3.5:1) entre o fundo da seção Hero e o texto por cima.
+3. ANIMAÇÕES GSAP (PROIBIDO EIXO Y): Use GSAP com ScrollTrigger. É ESTRITAMENTE PROIBIDO qualquer movimento de subida (banido o uso de `y`, `translateY`). Use APENAS variações de `opacity`, `scale` e entrada lateral (`x`). 
+4. ESTRUTURA INSTITUCIONAL: A página não é uma landing page agressiva; é uma página institucional desenhada para conquistar clientes. Use Tailwind CSS via CDN para aplicar as mutações exigidas pelo Arquiteto.
 5. ASSINATURA E MAPA: Inclua a assinatura da Epiverso no footer e o iframe do Google Maps para "{empresa_mapa}" imediatamente antes do rodapé.
 6. FALLBACK: Todas as tags `<img>` devem ter `onerror="this.onerror=null; this.src='https://placehold.co/800x800/dedede/333?text=Imagem+Indisponivel'"`.
 </core_constraints>
@@ -502,7 +502,7 @@ def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str, empresa: str
 </context>
 
 <task>
-Compile a página completa em um único arquivo HTML, integrando Tailwind CSS, o Static Hero com Scrim e as animações GSAP (restritas a eixo X, escala e opacidade).
+Compile a página completa em um único arquivo HTML, integrando Tailwind CSS, o Static Hero e as animações GSAP (restritas a eixo X, escala e opacidade).
 </task>
 
 <output_format>
