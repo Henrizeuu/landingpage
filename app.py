@@ -384,7 +384,6 @@ def gerar_blueprint_estrategico(empresa: str, nicho: str, contexto_texto: str, i
 1. ESTRATÉGIA DE CONVERSÃO: O cliente atua no nicho de **{nicho}**. Redija textos diretos e persuasivos focados nas dores, objeções e jargões deste mercado. O tom deve transmitir máxima autoridade.
 2. ANÁLISE VISUAL OBRIGATÓRIA (CRÍTICO): Você DEVE observar as imagens anexadas do portfólio do cliente antes de definir cores. 
    - Se as fotos mostrarem ambientes claros, É EXPRESSAMENTE PROIBIDO usar fundo escuro. Você DEVE usar um tema claro (Light Mode) que reflita o trabalho do cliente.
-   - O estilo escolhido foi:. Adapte este estilo à paleta real extraída.
 3. SELEÇÃO DE COMPONENTES: O mapeamento entre a <estrutura_exigida> e o <catalogo_componentes> deve ser exato.
 4. MUTAÇÃO DINÂMICA DE LAYOUT: Para garantir que a página institucional seja única, você DEVE sugerir alterações estruturais (mutações) rigorosas para pelo menos dois blocos do catálogo. Por exemplo, instruir a transformação de uma lista padrão num grid de 3 colunas, ou alterar a disposição da imagem de perfil.
 5. FOTO DE PERFIL: A imagem "foto_perfil.webp" deve obrigatoriamente ser alocada no Topo/Hero.
@@ -472,20 +471,20 @@ def coletar_codigos_fontes(blueprint_text: str) -> str:
     adicionar_log(f"Total de fragmentos de código injetados: {arquivos_encontrados}")
     return codigo_dos_blocos
 
-def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str, empresa: str) -> str:
+def gerar_codigo_engenheiro(blueprint_text: str, codigos_base: str, empresa: str, cidade: str = "") -> str:
     """Executa o Mega Prompt II: Engenheiro de Síntese, gerando o HTML final exaustivo."""
     if not blueprint_text or not codigos_base:
         raise ValueError("O Engenheiro não recebeu o blueprint ou os códigos base necessários para trabalhar.")
         
     adicionar_log("Iniciando compilação do Engenheiro (Mega Prompt II)...")
-    empresa_mapa = urllib.parse.quote_plus(empresa)
+    empresa_mapa = urllib.parse.quote_plus(f"{empresa} {cidade}".strip())
     
     prompt = f"""
 <system_persona>Atue como um Engenheiro Frontend Especialista e Arquiteto de Sistemas de Interface da Epiverso. Seu domínio é manipulação de DOM, Tailwind CSS e GSAP para criar páginas institucionais cinematográficas estáticas de alto impacto para a área contábil e corporativa.</system_persona>
 
 <core_constraints>
-1. STATIC HERO CINEMATOGRÁFICO: O topo da página DEVE ser um "Static Hero"[cite: 6]. Use a imagem `foto_perfil.webp` (ou a melhor foto extraída) como background com `background-size: cover` e `background-position: center`.
-2. SISTEMA DE LEGIBILIDADE (SCRIM): Você DEVE aplicar um `scrim` (camada de gradiente escuro) sobre a imagem de fundo do Hero para garantir contraste absoluto (no mínimo 3.5:1) com o texto por cima[cite: 6].
+1. STATIC HERO CINEMATOGRÁFICO: O topo da página DEVE ser um "Static Hero". Use a imagem `foto_perfil.webp` (ou a melhor foto extraída) como background com `background-size: cover` e `background-position: center`.
+2. SISTEMA DE LEGIBILIDADE (SCRIM): Você DEVE aplicar um `scrim` (camada de gradiente escuro) sobre a imagem de fundo do Hero para garantir contraste absoluto (no mínimo 3.5:1) com o texto por cima.
 3. ANIMAÇÕES GSAP (PROIBIDO EIXO Y): Use GSAP com ScrollTrigger. É ESTRITAMENTE PROIBIDO qualquer movimento de subida (banido o uso de `y`, `translateY`). Use APENAS variações de `opacity`, `scale` (como um zoom sutil de 1.05 para 1.0 no background) e entrada lateral (`x`). 
 4. ESTRUTURA INSTITUCIONAL: A página não é uma landing page agressiva; é uma página institucional desenhada para conquistar clientes para a contabilidade. Use Tailwind CSS via CDN para aplicar as mutações exigidas pelo Arquiteto.
 5. ASSINATURA E MAPA: Inclua a assinatura da Epiverso no footer e o iframe do Google Maps para "{empresa_mapa}" imediatamente antes do rodapé.
@@ -514,9 +513,9 @@ Compile a página completa em um único arquivo HTML, integrando Tailwind CSS, o
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Institucional - {empresa}</title>
-    <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <script src="[https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js](https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js)"></script>
-    <script src="[https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js](https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js)"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <style>
         /* CSS adicional aqui */
     </style>
@@ -529,6 +528,7 @@ Compile a página completa em um único arquivo HTML, integrando Tailwind CSS, o
     </script>
 </body>
 </html>
+```
 </output_format>
 """
     config = types.GenerateContentConfig(temperature=0.0)
@@ -579,7 +579,8 @@ Inspecione o <codigo_bruto_engenheiro>, aplique as correções necessárias sile
 <output_format>
 ```html
 <!DOCTYPE html>
-<!-- SEU CÓDIGO FINAL REVISADO AQUI -->
+<!-- ESCREVA O CÓDIGO HTML COMPLETO E ABSOLUTAMENTE NADA MAIS. NÃO CORTE NENHUMA LINHA. -->
+```
 </output_format>
 """
 # Temperatura baixa (0.1) para garantir precisão cirúrgica na correção de código
@@ -623,19 +624,21 @@ with st.sidebar:
         log_container.info("Aguardando inicialização do pipeline...")
 
 st.markdown("### 1. Parâmetros do Cliente High-Ticket")
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 with col1:
     empresa_input = st.text_input("📍 Nome do Negócio", placeholder="Ex: Escritório Alpha")
 with col2:
-    insta_input = st.text_input("📸 Perfil do Instagram (Sem @)", placeholder="Ex: alphacontabilidade")
+    cidade_input = st.text_input("📍 Cidade/Endereço", placeholder="Ex: Santa Cruz do Sul")
 with col3:
+    insta_input = st.text_input("📸 Perfil do Instagram (Sem @)", placeholder="Ex: alphacontabilidade")
+with col4:
     nicho_input = st.text_input("🎯 Nicho de Mercado", value="Contabilidade", placeholder="Ex: Contabilidade, Advocacia")
 
 st.markdown("---")
 
 if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
     if not empresa_input or not insta_input:
-        st.warning("⚠️ Preencha os dois campos obrigatórios acima.")
+        st.warning("⚠️ Preencha os campos obrigatórios.")
     else:
         st.session_state.processo_concluido = False
         st.session_state.logs_execucao = []
@@ -657,7 +660,6 @@ if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
             progresso.progress(45)
             
             status_text.markdown("#### ⏳ Etapa 3/5: O Arquiteto está analisando a presença digital...")
-            # O parâmetro estetica_final foi removido, a IA deduz tudo via Mega Prompt atualizado
             blueprint = gerar_blueprint_estrategico(
                 empresa_input, nicho_input, contexto_cli, imagens_cli, menu_texto, estrutura_texto
             )
@@ -670,7 +672,7 @@ if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
             
             status_text.markdown("#### ⏳ Etapa 4/5: O Engenheiro Sênior está compilando o código HTML bruto...")
             codigos_fragmentados = coletar_codigos_fontes(blueprint)
-            codigo_bruto = gerar_codigo_engenheiro(blueprint, codigos_fragmentados, empresa_input)
+            codigo_bruto = gerar_codigo_engenheiro(blueprint, codigos_fragmentados, empresa_input, cidade_input)
             
             if not codigo_bruto:
                 raise Exception("O pipeline falhou pois a IA Engenheiro gerou um código vazio.")
@@ -690,7 +692,6 @@ if st.button("🚀 INICIAR PIPELINE DE ARQUITETURA", use_container_width=True):
             pasta_build = os.path.join(DIR_BUILD, empresa_input.replace(" ", "_"))
             os.makedirs(pasta_build, exist_ok=True)
             
-            # Limpeza com regex no código FINAL do auditor
             match = re.search(r'```html(.*?)```', str(codigo_auditado), re.DOTALL | re.IGNORECASE)
             codigo_limpo = match.group(1).strip() if match else str(codigo_auditado).replace('```html', '').replace('```', '').strip()
 
